@@ -14,6 +14,8 @@ TEMPLATE = app
 INCLUDEPATH += $$PWD/inc
 LIBS += -L"$$_PRO_FILE_PWD_/lib/Win32/Release/" -lCAENComm -lCAENDigitizer
 
+QMAKE_CXXFLAGS += -fpermissive
+
 SOURCES += main.cpp\
         mainwindow.cpp \
     src/fft.c \

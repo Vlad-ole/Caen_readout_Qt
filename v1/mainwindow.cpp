@@ -73,6 +73,63 @@ void MainWindow::on_pushButton_clicked()
     fclose(f_ini);
 
 
+    /* *************************************************************************************** */
+    /* Open the digitizer and read the board information                                       */
+    /* *************************************************************************************** */
+    isVMEDevice = WDcfg.BaseAddress ? 1 : 0;
+
+    ret = CAEN_DGTZ_OpenDigitizer(WDcfg.LinkType, WDcfg.LinkNum, WDcfg.ConetNode, WDcfg.BaseAddress, &handle);
+    if (ret) {
+        ErrCode = ERR_DGZ_OPEN;
+        goto QuitProgram;
+    }
+
+    ret = CAEN_DGTZ_GetInfo(handle, &BoardInfo);
+    if (ret) {
+        ErrCode = ERR_BOARD_INFO_READ;
+        goto QuitProgram;
+    }
+    printf("Connected to CAEN Digitizer Model %s\n", BoardInfo.ModelName);
+    printf("ROC FPGA Release is %s\n", BoardInfo.ROC_FirmwareRel);
+    printf("AMC FPGA Release is %s\n", BoardInfo.AMC_FirmwareRel);
+
+    // Check firmware rivision (DPP firmwares cannot be used with WaveDump */
+    sscanf(BoardInfo.AMC_FirmwareRel, "%d", &MajorNumber);
+    if (MajorNumber >= 128) {
+        printf("This digitizer has a DPP firmware\n");
+        ErrCode = ERR_INVALID_BOARD_TYPE;
+        goto QuitProgram;
+    }
+
+    // Get Number of Channels, Number of bits, Number of Groups of the board */
+    ret = GetMoreBoardInfo(handle, BoardInfo, &WDcfg);
+    if (ret) {
+        ErrCode = ERR_INVALID_BOARD_TYPE;
+        goto QuitProgram;
+    }
+
+Restart:
+    // mask the channels not available for this model
+    if ((BoardInfo.FamilyCode != CAEN_DGTZ_XX740_FAMILY_CODE) && (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)){
+        WDcfg.EnableMask &= (1<<WDcfg.Nch)-1;
+    } else {
+        WDcfg.EnableMask &= (1<<(WDcfg.Nch/8))-1;
+    }
+    if ((BoardInfo.FamilyCode == CAEN_DGTZ_XX751_FAMILY_CODE) && WDcfg.DesMode) {
+        WDcfg.EnableMask &= 0xAA;
+    }
+    if ((BoardInfo.FamilyCode == CAEN_DGTZ_XX731_FAMILY_CODE) && WDcfg.DesMode) {
+        WDcfg.EnableMask &= 0x55;
+    }
+    // Set plot mask
+    if ((BoardInfo.FamilyCode != CAEN_DGTZ_XX740_FAMILY_CODE) && (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)){
+        WDrun.ChannelPlotMask = WDcfg.EnableMask;
+    } else {
+        WDrun.ChannelPlotMask = (WDcfg.FastTriggerEnabled == 0) ? 0xFF: 0x1FF;
+    }
+
+
+
 
 QuitProgram:
     if (ErrCode) {

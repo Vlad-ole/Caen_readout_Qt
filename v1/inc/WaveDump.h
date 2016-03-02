@@ -205,6 +205,6 @@ static char ErrMsg[ERR_DUMMY_LAST][100] = {
 
 /* Function prototypes */
 int ParseConfigFile(FILE *f_ini, WaveDumpConfig_t *WDcfg);
-
+int GetMoreBoardInfo(int handle, CAEN_DGTZ_BoardInfo_t BoardInfo, WaveDumpConfig_t *WDcfg);
 
 #endif /* _WAVEDUMP__H */

@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\fft.o
+./debug\keyb.o
+./debug\WaveDump.o
+./debug\WDconfig.o
+./debug\WDplot.o
+./debug\X742CorrectionRoutines.o
+./debug\test.o
+./debug\moc_mainwindow.o
+);

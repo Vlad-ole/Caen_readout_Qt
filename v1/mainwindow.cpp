@@ -3,6 +3,7 @@
 
 #include "WaveDump.h"
 #include "WDplot.h"
+#include "WDconfig.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -18,6 +19,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    int argc = 1;
+    char* argv[0] = {};
+
     WaveDumpConfig_t   WDcfg;
     WaveDumpRun_t      WDrun;
     CAEN_DGTZ_ErrorCode ret=0;
@@ -51,22 +55,56 @@ void MainWindow::on_pushButton_clicked()
 
     printf("text");
 
-//    /* *************************************************************************************** */
-//    /* Open and parse configuration file                                                       */
-//    /* *************************************************************************************** */
-//    memset(&WDrun, 0, sizeof(WDrun));
-//    if (argc > 1)
-//        strcpy(ConfigFileName, argv[1]);
-//    else
-//        strcpy(ConfigFileName, DEFAULT_CONFIG_FILE);
-//    printf("Opening Configuration File %s\n", ConfigFileName);
-//    f_ini = fopen(ConfigFileName, "r");
-//    if (f_ini == NULL ) {
-//        ErrCode = ERR_CONF_FILE_NOT_FOUND;
-//        goto QuitProgram;
-//    }
-//    ParseConfigFile(f_ini, &WDcfg);
-//    fclose(f_ini);
+    /* *************************************************************************************** */
+    /* Open and parse configuration file                                                       */
+    /* *************************************************************************************** */
+    memset(&WDrun, 0, sizeof(WDrun));
+    if (argc > 1)
+        strcpy(ConfigFileName, argv[1]);
+    else
+        strcpy(ConfigFileName, DEFAULT_CONFIG_FILE);
+    printf("Opening Configuration File %s\n", ConfigFileName);
+    f_ini = fopen(ConfigFileName, "r");
+    if (f_ini == NULL ) {
+        ErrCode = ERR_CONF_FILE_NOT_FOUND;
+        goto QuitProgram;
+    }
+    ParseConfigFile(f_ini, &WDcfg);
+    fclose(f_ini);
+
+
+
+QuitProgram:
+    if (ErrCode) {
+        printf("\a%s\n", ErrMsg[ErrCode]);
+#ifdef WIN32
+        printf("Press a key to quit\n");
+        getch();
+#endif
+    }
+
+    /* stop the acquisition */
+    CAEN_DGTZ_SWStopAcquisition(handle);
+
+    /* close the plotter */
+    if (PlotVar)
+        ClosePlotter();
+
+    /* close the output files and free histograms*/
+    for(ch=0; ch<WDcfg.Nch; ch++) {
+        if( WDrun.fout[ch])
+            fclose(WDrun.fout[ch]);
+        if( WDrun.Histogram[ch])
+            free(WDrun.Histogram[ch]);
+    }
+
+    /* close the device and free the buffers */
+    if(Event8)
+        CAEN_DGTZ_FreeEvent(handle, (void**)&Event8);
+    if(Event16)
+        CAEN_DGTZ_FreeEvent(handle, (void**)&Event16);
+    CAEN_DGTZ_FreeReadoutBuffer(&buffer);
+    CAEN_DGTZ_CloseDigitizer(handle);
 
     ui->label_3->setText("I work correct!");
 

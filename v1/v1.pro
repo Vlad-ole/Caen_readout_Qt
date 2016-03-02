@@ -18,12 +18,12 @@ QMAKE_CXXFLAGS += -fpermissive
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    src/fft.c \
-    src/keyb.c \
-    src/WaveDump.c \
-    src/WDconfig.c \
-    src/WDplot.c \
-    src/X742CorrectionRoutines.c
+    src/fft.cpp \
+    src/keyb.cpp \
+    src/WaveDump.cpp \
+    src/WDconfig.cpp \
+    src/WDplot.cpp \
+    src/X742CorrectionRoutines.cpp
 
 HEADERS  += mainwindow.h \
     inc/CAENComm.h \

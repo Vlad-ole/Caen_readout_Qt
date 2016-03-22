@@ -59,7 +59,7 @@
 *
 *   \return  time in msec
 */
-static long get_time()
+long get_time()
 {
     long time_ms;
 #ifdef WIN32

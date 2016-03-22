@@ -4,11 +4,18 @@
 #include "WaveDump.h"
 #include "WDplot.h"
 #include "WDconfig.h"
+#include "X742CorrectionRoutines.h"
+#include "fft.h"
+
+#ifndef max
+#define max(a,b)            (((a) > (b)) ? (a) : (b))
+#endif
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    ui->groupBox_3->setEnabled(false);
+    ui->pushButton->setStyleSheet("background-color: red");
 }
 
 MainWindow::~MainWindow()
@@ -93,6 +100,7 @@ void MainWindow::on_pushButton_clicked()
     printf("ROC FPGA Release is %s\n", BoardInfo.ROC_FirmwareRel);
     printf("AMC FPGA Release is %s\n", BoardInfo.AMC_FirmwareRel);
 
+
     // Check firmware rivision (DPP firmwares cannot be used with WaveDump */
     sscanf(BoardInfo.AMC_FirmwareRel, "%d", &MajorNumber);
     if (MajorNumber >= 128) {
@@ -128,12 +136,122 @@ Restart:
         WDrun.ChannelPlotMask = (WDcfg.FastTriggerEnabled == 0) ? 0xFF: 0x1FF;
     }
 
+    /* *************************************************************************************** */
+    /* program the digitizer                                                                   */
+    /* *************************************************************************************** */
+    ret = ProgramDigitizer(handle, WDcfg, BoardInfo);
+    if (ret) {
+        ErrCode = ERR_DGZ_PROGRAM;
+        goto QuitProgram;
+    }
+
+    // Select the next enabled group for plotting
+    if ((WDcfg.EnableMask) && (BoardInfo.FamilyCode == CAEN_DGTZ_XX742_FAMILY_CODE))
+        if( ((WDcfg.EnableMask>>WDrun.GroupPlotIndex)&0x1)==0 )
+            GoToNextEnabledGroup(&WDrun, &WDcfg);
+
+    // Read again the board infos, just in case some of them were changed by the programming
+    // (like, for example, the TSample and the number of channels if DES mode is changed)
+    if(ReloadCfgStatus > 0) {
+        ret = CAEN_DGTZ_GetInfo(handle, &BoardInfo);
+        if (ret) {
+            ErrCode = ERR_BOARD_INFO_READ;
+            goto QuitProgram;
+        }
+        ret = GetMoreBoardInfo(handle,BoardInfo, &WDcfg);
+        if (ret) {
+            ErrCode = ERR_INVALID_BOARD_TYPE;
+            goto QuitProgram;
+        }
+
+        // Reload Correction Tables if changed
+        if(BoardInfo.FamilyCode == CAEN_DGTZ_XX742_FAMILY_CODE && (ReloadCfgStatus & (0x1 << CFGRELOAD_CORRTABLES_BIT)) ) {
+            if(WDcfg.useCorrections != -1) { // Use Manual Corrections
+                uint32_t GroupMask = 0;
+
+                // Disable Automatic Corrections
+                if ((ret = CAEN_DGTZ_DisableDRS4Correction(handle)) != CAEN_DGTZ_Success)
+                    goto QuitProgram;
+
+                // Load the Correction Tables from the Digitizer flash
+                if ((ret = CAEN_DGTZ_GetCorrectionTables(handle, WDcfg.DRS4Frequency, (void*)X742Tables)) != CAEN_DGTZ_Success)
+                    goto QuitProgram;
+
+                if(WDcfg.UseManualTables != -1) { // The user wants to use some custom tables
+                    uint32_t gr;
+                    GroupMask = WDcfg.UseManualTables;
+
+                    for(gr = 0; gr < WDcfg.MaxGroupNumber; gr++) {
+                        if (((GroupMask>>gr)&0x1) == 0)
+                            continue;
+                        LoadCorrectionTable(WDcfg.TablesFilenames[gr], &(X742Tables[gr]));
+                    }
+                }
+                // Save to file the Tables read from flash
+                GroupMask = (~GroupMask) & ((0x1<<WDcfg.MaxGroupNumber)-1);
+                SaveCorrectionTables("X742Table", GroupMask, X742Tables);
+            }
+            else { // Use Automatic Corrections
+                if ((ret = CAEN_DGTZ_LoadDRS4CorrectionData(handle, WDcfg.DRS4Frequency)) != CAEN_DGTZ_Success)
+                    goto QuitProgram;
+                if ((ret = CAEN_DGTZ_EnableDRS4Correction(handle)) != CAEN_DGTZ_Success)
+                    goto QuitProgram;
+            }
+        }
+    }
+
+    // Allocate memory for the event data and readout buffer
+    if(WDcfg.Nbit == 8)
+        ret = CAEN_DGTZ_AllocateEvent(handle, (void**)&Event8);
+    else {
+        if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE) {
+            ret = CAEN_DGTZ_AllocateEvent(handle, (void**)&Event16);
+        }
+        else {
+            ret = CAEN_DGTZ_AllocateEvent(handle, (void**)&Event742);
+        }
+    }
+    if (ret != CAEN_DGTZ_Success) {
+        ErrCode = ERR_MALLOC;
+        goto QuitProgram;
+    }
+    ret = CAEN_DGTZ_MallocReadoutBuffer(handle, &buffer,&AllocatedSize); /* WARNING: This malloc must be done after the digitizer programming */
+    if (ret) {
+        ErrCode = ERR_MALLOC;
+        goto QuitProgram;
+    }
+
+
+
+
+
+
+
+    //if (WDcfg.TestPattern) CAEN_DGTZ_DisableDRS4Correction(handle);
+    //else CAEN_DGTZ_EnableDRS4Correction(handle);
+
+    if (WDrun.Restart && WDrun.AcqRun)
+        CAEN_DGTZ_SWStartAcquisition(handle);
+    else
+        printf("[s] start/stop the acquisition, [q] quit, [SPACE] help\n");
+    WDrun.Restart = 0;
+    PrevRateTime = get_time();
+
+
+
+    ui->textBrowser->setText("Device was connected");
+
+    ui->groupBox_3->setEnabled(true);
+    ui->radioButton_13->setChecked(true);
+    ui->pushButton->setStyleSheet("background-color: green");
+    ui->pushButton->setEnabled(false);
 
 
 
 QuitProgram:
     if (ErrCode) {
         printf("\a%s\n", ErrMsg[ErrCode]);
+        ui->textBrowser->setText(ErrMsg[ErrCode]);
 #ifdef WIN32
         printf("Press a key to quit\n");
         getch();
@@ -163,6 +281,23 @@ QuitProgram:
     CAEN_DGTZ_FreeReadoutBuffer(&buffer);
     CAEN_DGTZ_CloseDigitizer(handle);
 
-    ui->label_3->setText("I work correct!");
+    //ui->label_3->setText("I work correct!");
+
+}
+
+void MainWindow::on_radioButton_13_clicked()
+{
+    ui->spinBox_2->setEnabled(true);
+    ui->groupBox_2->setEnabled(true);
+}
+
+void MainWindow::on_radioButton_12_clicked()
+{
+    ui->spinBox_2->setEnabled(false);
+    ui->groupBox_2->setEnabled(false);
+}
+
+void MainWindow::on_checkBox_clicked()
+{
 
 }

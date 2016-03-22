@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = v1
 TEMPLATE = app
@@ -23,7 +23,9 @@ SOURCES += main.cpp\
     src/WaveDump.cpp \
     src/WDconfig.cpp \
     src/WDplot.cpp \
-    src/X742CorrectionRoutines.cpp
+    src/X742CorrectionRoutines.cpp \
+    src/qcustomplot.cpp
+
 
 HEADERS  += mainwindow.h \
     inc/CAENComm.h \
@@ -34,6 +36,7 @@ HEADERS  += mainwindow.h \
     inc/WaveDump.h \
     inc/WDconfig.h \
     inc/WDplot.h \
-    inc/X742CorrectionRoutines.h
+    inc/X742CorrectionRoutines.h \
+    inc/qcustomplot.h
 
 FORMS    += mainwindow.ui

@@ -194,6 +194,7 @@ Makefile: ../v1/v1.pro C:/Qt/5.5/mingw492_32/mkspecs/win32-g++/qmake.conf C:/Qt/
 		C:/Qt/5.5/mingw492_32/mkspecs/features/lex.prf \
 		../v1/v1.pro \
 		C:/Qt/5.5/mingw492_32/lib/qtmaind.prl \
+		C:/Qt/5.5/mingw492_32/lib/Qt5PrintSupport.prl \
 		C:/Qt/5.5/mingw492_32/lib/Qt5Widgets.prl \
 		C:/Qt/5.5/mingw492_32/lib/Qt5Gui.prl \
 		C:/Qt/5.5/mingw492_32/lib/Qt5Core.prl
@@ -333,6 +334,7 @@ C:/Qt/5.5/mingw492_32/mkspecs/features/yacc.prf:
 C:/Qt/5.5/mingw492_32/mkspecs/features/lex.prf:
 ../v1/v1.pro:
 C:/Qt/5.5/mingw492_32/lib/qtmaind.prl:
+C:/Qt/5.5/mingw492_32/lib/Qt5PrintSupport.prl:
 C:/Qt/5.5/mingw492_32/lib/Qt5Widgets.prl:
 C:/Qt/5.5/mingw492_32/lib/Qt5Gui.prl:
 C:/Qt/5.5/mingw492_32/lib/Qt5Core.prl:

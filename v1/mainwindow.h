@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "CAENDigitizerType.h"
 
 namespace Ui
 {
@@ -25,8 +26,27 @@ private slots:
 
     void on_checkBox_clicked();
 
+    void on_spinBox_3_valueChanged(int arg1);
+
+    void on_doubleSpinBox_valueChanged(double arg1);
+
+    void on_doubleSpinBox_2_valueChanged(double arg1);
+
+    void on_spinBox_4_valueChanged(int arg1);
+
+    void on_radioButton_15_clicked(bool checked);
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
+    //int  handle;
+    //CAEN_DGTZ_ErrorCode ret;
+    //char *buffer;
+
+    //uint32_t AllocatedSize;
+    //uint32_t BufferSize;
+    //uint32_t NumEvents;
 };
 
 #endif // MAINWINDOW_H

@@ -8,6 +8,8 @@ INPUT(
 ./release\WDplot.o
 ./release\X742CorrectionRoutines.o
 ./release\qcustomplot.o
+./release\myworker.o
 ./release\moc_mainwindow.o
 ./release\moc_qcustomplot.o
+./release\moc_myworker.o
 );

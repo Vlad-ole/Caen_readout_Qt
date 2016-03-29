@@ -1,4 +1,6 @@
 #include "myworker.h"
+#include <QtCore>
+#include <QThread>
 
 MyWorker::MyWorker()
 {
@@ -7,6 +9,8 @@ MyWorker::MyWorker()
 
 void MyWorker::Init()
 {
+    qDebug() << "Thread in Init() is " << QThread::currentThreadId();
+
     int argc = 1;
     char* argv[0] = {};
 
@@ -16,7 +20,7 @@ void MyWorker::Init()
     /* initialization                                                      */
     /* *************************************************************************************** */
     ret=0;
-    ERROR_CODES ErrCode= ERR_NONE;
+    ErrCode = ERR_NONE;
     Nb=0, Ne=0;
     buffer = NULL;
     EventPtr = NULL;
@@ -58,6 +62,7 @@ void MyWorker::Init()
         ErrCode = ERR_CONF_FILE_NOT_FOUND;
         //goto QuitProgram;
         QuitProgram();
+        return;
     }
     ParseConfigFile(f_ini, &WDcfg);
     fclose(f_ini);
@@ -69,17 +74,22 @@ void MyWorker::Init()
     isVMEDevice = WDcfg.BaseAddress ? 1 : 0;
 
     ret = CAEN_DGTZ_OpenDigitizer(WDcfg.LinkType, WDcfg.LinkNum, WDcfg.ConetNode, WDcfg.BaseAddress, &handle);
-    if (ret) {
+    if (ret)
+    {
         ErrCode = ERR_DGZ_OPEN;
         //goto QuitProgram;
         QuitProgram();
+        //QThread::sleep(5);
+        return;
     }
+
 
     ret = CAEN_DGTZ_GetInfo(handle, &BoardInfo);
     if (ret) {
         ErrCode = ERR_BOARD_INFO_READ;
         //goto QuitProgram;
         QuitProgram();
+        return;
     }
     printf("Connected to CAEN Digitizer Model %s\n", BoardInfo.ModelName);
     printf("ROC FPGA Release is %s\n", BoardInfo.ROC_FirmwareRel);
@@ -93,6 +103,7 @@ void MyWorker::Init()
         ErrCode = ERR_INVALID_BOARD_TYPE;
         //goto QuitProgram;
         QuitProgram();
+        return;
     }
 
     // Get Number of Channels, Number of bits, Number of Groups of the board */
@@ -101,27 +112,45 @@ void MyWorker::Init()
         ErrCode = ERR_INVALID_BOARD_TYPE;
         //goto QuitProgram;
         QuitProgram();
+        return;
     }
 
+    //Mask_the_channels();
+    //Program_the_digitizer();
 
 
+//    for(int i=0; i < 10000000; i++)
+//    {
+//        double a = log( exp(i) * sin(i) ) * sin(log( exp(i) * sin(i) ));
 
-    for(int i=0; i < 10000000; i++)
-    {
-        double a = log( exp(i) * sin(i) ) * sin(log( exp(i) * sin(i) ));
+//    }
 
-    }
+    emit this->InitializationComplete();
 
+}
+
+void MyWorker::StopReadout_loop()
+{
+    WDrun.Quit = 1;
+    qDebug() << "in StopReadout_loop() " << endl;
+    qDebug() << "WDrun.Quit = " << WDrun.Quit << endl;
 }
 
 void MyWorker::Readout_loop()
 {
+    qDebug() << "in Readout_loop() " << endl;
+    //qDebug() << "WDrun.Quit = " << WDrun.Quit << endl;
+
+    WDrun.Quit = 0;
+
+
     while(!WDrun.Quit)
     {
 
         // Check for keyboard commands (key pressed)
         CheckKeyboardCommands(handle, &WDrun, &WDcfg, BoardInfo);
-        if (WDrun.Restart) {
+        if (WDrun.Restart)
+        {
             CAEN_DGTZ_SWStopAcquisition(handle);
             CAEN_DGTZ_FreeReadoutBuffer(&buffer);
             ClosePlotter();
@@ -129,10 +158,12 @@ void MyWorker::Readout_loop()
             if(WDcfg.Nbit == 8)
                 CAEN_DGTZ_FreeEvent(handle, (void**)&Event8);
             else
-                if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE) {
+                if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)
+                {
                     CAEN_DGTZ_FreeEvent(handle, (void**)&Event16);
                 }
-                else {
+                else
+                {
                     CAEN_DGTZ_FreeEvent(handle, (void**)&Event742);
                 }
                 f_ini = fopen(ConfigFileName, "r");
@@ -177,6 +208,7 @@ void MyWorker::Readout_loop()
                 ErrCode = ERR_INTERRUPT;
                 //goto QuitProgram;
                 QuitProgram();
+                return;
             }
             // Interrupt Ack
             if (isVMEDevice)
@@ -204,6 +236,7 @@ void MyWorker::Readout_loop()
             ErrCode = ERR_READOUT;
             //goto QuitProgram;
             QuitProgram();
+            return;
         }
 
         NumEvents = 0;
@@ -215,6 +248,7 @@ void MyWorker::Readout_loop()
                 ErrCode = ERR_READOUT;
                 //goto QuitProgram;
                 QuitProgram();
+                return;
             }
         }
         else
@@ -226,6 +260,7 @@ void MyWorker::Readout_loop()
                 ErrCode = ERR_OVERTEMP;
                 //goto QuitProgram;
                 QuitProgram();
+                return;
             }
         }
 
@@ -242,6 +277,8 @@ void MyWorker::Restart()
 
 void MyWorker::Mask_the_channels()
 {
+    qDebug() << "Thread in Mask_the_channels() is " << QThread::currentThreadId();
+
     // mask the channels not available for this model
     if ((BoardInfo.FamilyCode != CAEN_DGTZ_XX740_FAMILY_CODE) && (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)){
         WDcfg.EnableMask &= (1<<WDcfg.Nch)-1;
@@ -264,6 +301,8 @@ void MyWorker::Mask_the_channels()
 
 void MyWorker::Program_the_digitizer()
 {
+    qDebug() << "Thread in Program_the_digitizer() is " << QThread::currentThreadId();
+
     /* *************************************************************************************** */
     /* program the digitizer                                                                   */
     /* *************************************************************************************** */
@@ -272,6 +311,7 @@ void MyWorker::Program_the_digitizer()
         ErrCode = ERR_DGZ_PROGRAM;
         //goto QuitProgram;
         QuitProgram();
+        return;
     }
 
     // Select the next enabled group for plotting
@@ -287,12 +327,14 @@ void MyWorker::Program_the_digitizer()
             ErrCode = ERR_BOARD_INFO_READ;
             //goto QuitProgram;
             QuitProgram();
+            return;
         }
         ret = GetMoreBoardInfo(handle,BoardInfo, &WDcfg);
         if (ret) {
             ErrCode = ERR_INVALID_BOARD_TYPE;
             //goto QuitProgram;
             QuitProgram();
+            return;
         }
 
         // Reload Correction Tables if changed
@@ -305,6 +347,7 @@ void MyWorker::Program_the_digitizer()
                 {
                     //goto QuitProgram;
                     QuitProgram();
+                    return;
                 }
 
                 // Load the Correction Tables from the Digitizer flash
@@ -312,6 +355,7 @@ void MyWorker::Program_the_digitizer()
                 {
                     //goto QuitProgram;
                     QuitProgram();
+                    return;
                 }
 
                 if(WDcfg.UseManualTables != -1) { // The user wants to use some custom tables
@@ -333,11 +377,13 @@ void MyWorker::Program_the_digitizer()
                 {
                     //goto QuitProgram;
                     QuitProgram();
+                    return;
                 }
                 if ((ret = CAEN_DGTZ_EnableDRS4Correction(handle)) != CAEN_DGTZ_Success)
                 {
                    // goto QuitProgram;
                     QuitProgram();
+                    return;
                 }
             }
         }
@@ -358,12 +404,14 @@ void MyWorker::Program_the_digitizer()
         ErrCode = ERR_MALLOC;
         //goto QuitProgram;
         QuitProgram();
+        return;
     }
     ret = CAEN_DGTZ_MallocReadoutBuffer(handle, &buffer,&AllocatedSize); /* WARNING: This malloc must be done after the digitizer programming */
     if (ret) {
         ErrCode = ERR_MALLOC;
         //goto QuitProgram;
         QuitProgram();
+        return;
     }
 
     //if (WDcfg.TestPattern) CAEN_DGTZ_DisableDRS4Correction(handle);
@@ -379,6 +427,8 @@ void MyWorker::Program_the_digitizer()
     /* *************************************************************************************** */
     /* end program the digitizer                                                                   */
     /* *************************************************************************************** */
+
+
 }
 
 
@@ -413,6 +463,7 @@ void MyWorker::InterruptTimeout()
             ErrCode = ERR_EVENT_BUILD;
             //goto QuitProgram;
             QuitProgram();
+            return;
         }
         /* decode the event */
         if (WDcfg.Nbit == 8)
@@ -439,6 +490,7 @@ void MyWorker::InterruptTimeout()
                 ErrCode = ERR_EVENT_BUILD;
                 //goto QuitProgram;
                 QuitProgram();
+                return;
             }
 
             /* Update Histograms */
@@ -453,6 +505,7 @@ void MyWorker::InterruptTimeout()
                             ErrCode = ERR_HISTO_MALLOC;
                             //goto QuitProgram;
                             QuitProgram();
+                            return;
                         }
                         memset(WDrun.Histogram[ch], 0, (uint64_t)(1<<WDcfg.Nbit) * sizeof(uint32_t));
                     }
@@ -489,6 +542,7 @@ void MyWorker::InterruptTimeout()
                     ErrCode = ERR_OUTFILE_WRITE;
                     //goto QuitProgram;
                     QuitProgram();
+                    return;
                 }
                 if (WDrun.SingleWrite) {
                     printf("Single Event saved to output files\n");
@@ -609,10 +663,12 @@ void MyWorker::InterruptTimeout()
 
 void MyWorker::QuitProgram()
 {
+
+    qDebug() << "Thread in QuitProgram() is " << QThread::currentThreadId();
     if (ErrCode)
     {
         printf("\a%s\n", ErrMsg[ErrCode]);
-        //ui->textBrowser->setText(ErrMsg[ErrCode]);//gui_slot
+        emit this->Message(ErrMsg[ErrCode]);
 #ifdef WIN32
         printf("Press a key to quit\n");
         getch();
@@ -641,4 +697,6 @@ void MyWorker::QuitProgram()
         CAEN_DGTZ_FreeEvent(handle, (void**)&Event16);
     CAEN_DGTZ_FreeReadoutBuffer(&buffer);
     CAEN_DGTZ_CloseDigitizer(handle);
+
+    emit this->finished();
 }

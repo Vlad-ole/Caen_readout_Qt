@@ -25,8 +25,7 @@ SOURCES += main.cpp\
     src/WDplot.cpp \
     src/X742CorrectionRoutines.cpp \
     src/qcustomplot.cpp \
-    myworker.cpp \
-    mythread.cpp
+    myworker.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -40,7 +39,6 @@ HEADERS  += mainwindow.h \
     inc/WDplot.h \
     inc/X742CorrectionRoutines.h \
     inc/qcustomplot.h \
-    myworker.h \
-    mythread.h
+    myworker.h
 
 FORMS    += mainwindow.ui

@@ -44,8 +44,25 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_4_clicked();
+
+public slots:
+    void Message(QString);
+    void InitializationComplete();
+
 private:
     Ui::MainWindow *ui;
+
+signals:
+    void Init();
+    void QuitProgram();
+    void InterruptTimeout();
+    void Program_the_digitizer();
+    void Restart();
+    void Mask_the_channels();
+    void Readout_loop();
+
+    void StopReadout_loop();
 
 };
 

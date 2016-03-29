@@ -43,13 +43,26 @@ public:
     char ConfigFileName[100];
     int ReloadCfgStatus;
 
-    void Init();
-    void QuitProgram();
-    void InterruptTimeout();
     void Program_the_digitizer();
-    void Restart();
     void Mask_the_channels();
+
+public slots:
+    void Init();
+
+//    void Program_the_digitizer();
+//    void Mask_the_channels();
     void Readout_loop();
+
+    void Restart();
+    void InterruptTimeout();
+    void QuitProgram();
+
+    void StopReadout_loop();
+
+signals:
+    void Message(QString);
+    void finished();
+    void InitializationComplete();
 
 };
 

@@ -63,6 +63,7 @@ public:
     QVBoxLayout *verticalLayout_4;
     QRadioButton *radioButton_14;
     QRadioButton *radioButton_15;
+    QPushButton *pushButton_4;
     QGroupBox *groupBox_6;
     QPushButton *pushButton_3;
     QSpinBox *spinBox;
@@ -286,6 +287,9 @@ public:
 
         verticalLayout_4->addWidget(radioButton_15);
 
+        pushButton_4 = new QPushButton(groupBox_3);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(10, 170, 91, 31));
         groupBox_6 = new QGroupBox(centralWidget);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
         groupBox_6->setGeometry(QRect(150, 10, 271, 121));
@@ -511,6 +515,7 @@ public:
         groupBox_8->setTitle(QApplication::translate("MainWindow", "Single / continious", 0));
         radioButton_14->setText(QApplication::translate("MainWindow", "Single", 0));
         radioButton_15->setText(QApplication::translate("MainWindow", "Continious", 0));
+        pushButton_4->setText(QApplication::translate("MainWindow", "Stop acquisition", 0));
         groupBox_6->setTitle(QApplication::translate("MainWindow", "Output settings", 0));
         pushButton_3->setText(QApplication::translate("MainWindow", "Write data", 0));
         label_2->setText(QApplication::translate("MainWindow", "Events per file", 0));

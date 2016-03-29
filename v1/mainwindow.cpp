@@ -13,15 +13,41 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    thread = new MyThread();
-    worker = new MyWorker();
+    qDebug() << "Thread in MainWindow is " << QThread::currentThreadId();
 
     ui->setupUi(this);
     ui->groupBox_3->setEnabled(false);
     ui->groupBox_6->setEnabled(false);
     ui->groupBox_7->setEnabled(false);
     ui->pushButton->setStyleSheet("background-color: red");
+
+    worker = new MyWorker();
+    thread = new QThread();
+
+    //connect signal and slots in different threads
+    connect( worker, SIGNAL(Message(QString)), this, SLOT(Message(QString)) );
+    connect( worker, SIGNAL(InitializationComplete()), this, SLOT(InitializationComplete()) );
+
+    connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL(Readout_loop()), worker, SLOT(Readout_loop()) );
+    connect( this, SIGNAL(StopReadout_loop()), worker, SLOT(StopReadout_loop()), Qt::DirectConnection );
+    //connect( this, SIGNAL(Mask_the_channels()), worker, SLOT(Mask_the_channels()) );
+    //connect( this, SIGNAL(Program_the_digitizer()), worker, SLOT(Program_the_digitizer()) );
+
+    // delete the worker obj whenever this obj is destroyed
+    connect( this, SIGNAL(destroyed()), worker, SLOT(deleteLater()) );
+
+    // stop the thread whenever the worker is destroyed
+    connect( worker, SIGNAL(destroyed()), thread, SLOT(quit()) );
+
+    // clean up the thread
+    connect( thread, SIGNAL(finished()), thread, SLOT(deleteLater()) );
+
+    worker->moveToThread( thread );
+    thread->start();
 }
+
+
 
 MainWindow::~MainWindow()
 {
@@ -31,11 +57,13 @@ MainWindow::~MainWindow()
 //connect
 void MainWindow::on_pushButton_clicked()
 {
-    worker->moveToThread(thread);
-    thread->start();
+    emit this->Init();
+    //emit this->Mask_the_channels();
+    //emit this->Program_the_digitizer();
+}
 
-    worker->Init();
-
+void MainWindow::InitializationComplete()
+{
     ui->textBrowser->setText("Device was connected");
     ui->groupBox_3->setEnabled(true);
     ui->groupBox_6->setEnabled(true);
@@ -95,7 +123,11 @@ void MainWindow::on_pushButton_clicked()
             ui->widget_011->replot();
 
     }
+}
 
+void MainWindow::Message(QString s)
+{
+    ui->textBrowser->setText(s);
 }
 
 
@@ -237,5 +269,10 @@ void MainWindow::on_radioButton_15_clicked(bool checked)
 
 void MainWindow::on_pushButton_2_clicked()
 {
+    emit this->Readout_loop();
+}
 
+void MainWindow::on_pushButton_4_clicked()
+{
+    emit this->StopReadout_loop();
 }

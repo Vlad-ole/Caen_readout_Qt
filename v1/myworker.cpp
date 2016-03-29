@@ -5,6 +5,115 @@ MyWorker::MyWorker()
 
 }
 
+void MyWorker::Init()
+{
+    int argc = 1;
+    char* argv[0] = {};
+
+    //my variant.
+    //---------------------------------------------------------------
+    /* *************************************************************************************** */
+    /* initialization                                                      */
+    /* *************************************************************************************** */
+    ret=0;
+    ERROR_CODES ErrCode= ERR_NONE;
+    Nb=0, Ne=0;
+    buffer = NULL;
+    EventPtr = NULL;
+    isVMEDevice= 0;
+    nCycles = 0;
+    Event16=NULL; /* generic event struct with 16 bit data (10, 12, 14 and 16 bit digitizers */
+    Event8 = NULL; /* generic event struct with 8 bit data (only for 8 bit digitizers) */
+    Event742 = NULL;  /* custom event struct with 8 bit data (only for 8 bit digitizers) */
+    PlotVar = NULL;
+    ReloadCfgStatus = 0x7FFFFFFF; // Init to the bigger positive number
+    //---------------------------------------------------------------
+
+
+    printf("\n");
+    printf("**************************************************************\n");
+    printf("                        Wave Dump %s\n", WaveDump_Release);
+    printf("**************************************************************\n");
+
+    printf("text");
+    /* *************************************************************************************** */
+    /*  end initialization                                                      */
+    /* *************************************************************************************** */
+
+
+
+
+
+    /* *************************************************************************************** */
+    /* Open and parse configuration file                                                       */
+    /* *************************************************************************************** */
+    memset(&WDrun, 0, sizeof(WDrun));
+    if (argc > 1)
+        strcpy(ConfigFileName, argv[1]);
+    else
+        strcpy(ConfigFileName, DEFAULT_CONFIG_FILE);
+    printf("Opening Configuration File %s\n", ConfigFileName);
+    f_ini = fopen(ConfigFileName, "r");
+    if (f_ini == NULL ) {
+        ErrCode = ERR_CONF_FILE_NOT_FOUND;
+        //goto QuitProgram;
+        QuitProgram();
+    }
+    ParseConfigFile(f_ini, &WDcfg);
+    fclose(f_ini);
+
+
+    /* *************************************************************************************** */
+    /* Open the digitizer and read the board information                                       */
+    /* *************************************************************************************** */
+    isVMEDevice = WDcfg.BaseAddress ? 1 : 0;
+
+    ret = CAEN_DGTZ_OpenDigitizer(WDcfg.LinkType, WDcfg.LinkNum, WDcfg.ConetNode, WDcfg.BaseAddress, &handle);
+    if (ret) {
+        ErrCode = ERR_DGZ_OPEN;
+        //goto QuitProgram;
+        QuitProgram();
+    }
+
+    ret = CAEN_DGTZ_GetInfo(handle, &BoardInfo);
+    if (ret) {
+        ErrCode = ERR_BOARD_INFO_READ;
+        //goto QuitProgram;
+        QuitProgram();
+    }
+    printf("Connected to CAEN Digitizer Model %s\n", BoardInfo.ModelName);
+    printf("ROC FPGA Release is %s\n", BoardInfo.ROC_FirmwareRel);
+    printf("AMC FPGA Release is %s\n", BoardInfo.AMC_FirmwareRel);
+
+
+    // Check firmware rivision (DPP firmwares cannot be used with WaveDump */
+    sscanf(BoardInfo.AMC_FirmwareRel, "%d", &MajorNumber);
+    if (MajorNumber >= 128) {
+        printf("This digitizer has a DPP firmware\n");
+        ErrCode = ERR_INVALID_BOARD_TYPE;
+        //goto QuitProgram;
+        QuitProgram();
+    }
+
+    // Get Number of Channels, Number of bits, Number of Groups of the board */
+    ret = GetMoreBoardInfo(handle, BoardInfo, &WDcfg);
+    if (ret) {
+        ErrCode = ERR_INVALID_BOARD_TYPE;
+        //goto QuitProgram;
+        QuitProgram();
+    }
+
+
+
+
+    for(int i=0; i < 10000000; i++)
+    {
+        double a = log( exp(i) * sin(i) ) * sin(log( exp(i) * sin(i) ));
+
+    }
+
+}
+
 void MyWorker::Readout_loop()
 {
     while(!WDrun.Quit)

@@ -43,6 +43,7 @@ public:
     char ConfigFileName[100];
     int ReloadCfgStatus;
 
+    void Init();
     void QuitProgram();
     void InterruptTimeout();
     void Program_the_digitizer();

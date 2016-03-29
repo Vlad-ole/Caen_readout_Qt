@@ -22,6 +22,8 @@ public:
 
 int main(int argc, char *argv[])
 {
+    qDebug() << "Thread in main1 is " << QThread::currentThreadId();
+
     QApplication a(argc, argv);
     QLCDNumber lcd;
     MyThread thread;
@@ -42,6 +44,8 @@ int main(int argc, char *argv[])
 
     thread.start();
     worker.doWork();
+
+    qDebug() << "Thread in main2 is " << QThread::currentThreadId();
 
     return a.exec();
 }

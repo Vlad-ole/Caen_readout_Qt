@@ -2989,7 +2989,8 @@ release/myworker.o: ../v1/myworker.cpp ../v1/myworker.h \
 		../v1/inc/WDplot.h \
 		../v1/inc/WDconfig.h \
 		../v1/inc/X742CorrectionRoutines.h \
-		../v1/inc/fft.h
+		../v1/inc/fft.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QThread
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\myworker.o ..\v1\myworker.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 

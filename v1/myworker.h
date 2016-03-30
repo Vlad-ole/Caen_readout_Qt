@@ -45,6 +45,7 @@ public:
 
     void Program_the_digitizer();
     void Mask_the_channels();
+    void InterruptTimeout();
 
 public slots:
     void Init();
@@ -54,15 +55,17 @@ public slots:
     void Readout_loop();
 
     void Restart();
-    void InterruptTimeout();
+
     void QuitProgram();
 
     void StopReadout_loop();
+    void ContinuousTrigger();
 
 signals:
     void Message(QString);
     void finished();
     void InitializationComplete();
+    void RedrawGraphs();
 
 };
 

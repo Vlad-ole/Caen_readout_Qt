@@ -57,7 +57,7 @@ GNUPLOT_PATH  ".\"
 # OUTPUT_FILE_FORMAT: output file can be either ASCII (column of decimal numbers) or binary 
 # (2 bytes per sample, except for Mod 721 and Mod 731 that is 1 byte per sample)
 # options: BINARY, ASCII
-OUTPUT_FILE_FORMAT  ASCII
+OUTPUT_FILE_FORMAT  BINARY
 
 # OUTPUT_FILE_HEADER: if enabled, the header is included in the output file data
 # options: YES, NO
@@ -65,11 +65,11 @@ OUTPUT_FILE_HEADER  NO
 
 # RECORD_LENGTH = number of samples in the acquisition window
 # For the models 742 the options available are only 1024, 520, 256 and 136
-RECORD_LENGTH  1024
+RECORD_LENGTH  20000
 
 # TEST_PATTERN: if enabled, data from ADC are replaced by test pattern (triangular wave)
 # options: YES, NO
-TEST_PATTERN   NO
+TEST_PATTERN   YES
 
 # ENABLE_DES_MODE: double edge sampling mode for the models 731 and 751. If enabled, the
 # board interleaves two channels to make one channel running at double sampling frequency.
@@ -97,7 +97,7 @@ ENABLED_FAST_TRIGGER_DIGITIZING		NO
 # MAX_NUM_EVENTS_BLT: maximum number of events to read out in one Block Transfer. Higher values may lead
 # to higher readout bandwidth, requiring more memory allocation for the block transfer.
 # options: 1 to 1023
-MAX_NUM_EVENTS_BLT   1
+MAX_NUM_EVENTS_BLT   1023
 
 # DECIMATION_FACTOR: ONLY FOR 740 MODELS. change the decimation factor for the acquisition.
 # options: 1 2 4 8 16 32 64 128  
@@ -107,7 +107,7 @@ DECIMATION_FACTOR  1
 # options: 0 to 100
 # On models 742 there is a delay of about 35nsec on signal Fast Trigger TR; the post trigger is added to
 # this delay  
-POST_TRIGGER  20
+POST_TRIGGER  90
 
 # TRIGGER_EDGE: decides whether the trigger occurs on the rising or falling edge of the signal
 # options: RISING, FALLING
@@ -184,7 +184,7 @@ CHANNEL_TRIGGER        ACQUISITION_ONLY
 ENABLE_INPUT           YES
 DC_OFFSET              0
 #GRP_CH_DC_OFFSET       0,0,0,0,0,0,0,0 
-TRIGGER_THRESHOLD      0
+TRIGGER_THRESHOLD      2000
 CHANNEL_TRIGGER        ACQUISITION_ONLY
 #GROUP_TRG_ENABLE_MASK  01
 

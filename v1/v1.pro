@@ -12,7 +12,7 @@ TARGET = v1
 TEMPLATE = app
 
 INCLUDEPATH += $$PWD/inc
-LIBS += -L"$$_PRO_FILE_PWD_/lib/Win32/Release/" -lCAENComm -lCAENDigitizer
+LIBS += -L"$$PWD/lib/Win32/Release/" -lCAENComm -lCAENDigitizer
 
 QMAKE_CXXFLAGS += -fpermissive
 

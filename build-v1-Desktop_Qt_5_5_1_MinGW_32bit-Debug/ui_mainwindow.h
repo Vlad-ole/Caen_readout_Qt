@@ -62,6 +62,7 @@ public:
     QWidget *layoutWidget_2;
     QVBoxLayout *verticalLayout_4;
     QRadioButton *radioButton_14;
+    QRadioButton *radioButton;
     QRadioButton *radioButton_15;
     QPushButton *pushButton_4;
     QGroupBox *groupBox_6;
@@ -215,7 +216,7 @@ public:
 
         groupBox_3 = new QGroupBox(centralWidget);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(20, 130, 401, 231));
+        groupBox_3->setGeometry(QRect(20, 130, 401, 241));
         groupBox_4 = new QGroupBox(groupBox_3);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
         groupBox_4->setGeometry(QRect(10, 30, 91, 91));
@@ -268,10 +269,10 @@ public:
         pushButton_2->setGeometry(QRect(10, 130, 91, 31));
         groupBox_8 = new QGroupBox(groupBox_3);
         groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
-        groupBox_8->setGeometry(QRect(110, 130, 101, 91));
+        groupBox_8->setGeometry(QRect(110, 130, 141, 111));
         layoutWidget_2 = new QWidget(groupBox_8);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(10, 20, 77, 61));
+        layoutWidget_2->setGeometry(QRect(10, 20, 119, 81));
         verticalLayout_4 = new QVBoxLayout(layoutWidget_2);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -281,6 +282,11 @@ public:
         radioButton_14->setObjectName(QStringLiteral("radioButton_14"));
 
         verticalLayout_4->addWidget(radioButton_14);
+
+        radioButton = new QRadioButton(layoutWidget_2);
+        radioButton->setObjectName(QStringLiteral("radioButton"));
+
+        verticalLayout_4->addWidget(radioButton);
 
         radioButton_15 = new QRadioButton(layoutWidget_2);
         radioButton_15->setObjectName(QStringLiteral("radioButton_15"));
@@ -514,7 +520,8 @@ public:
         pushButton_2->setText(QApplication::translate("MainWindow", "Start acquisition", 0));
         groupBox_8->setTitle(QApplication::translate("MainWindow", "Single / continious", 0));
         radioButton_14->setText(QApplication::translate("MainWindow", "Single", 0));
-        radioButton_15->setText(QApplication::translate("MainWindow", "Continious", 0));
+        radioButton->setText(QApplication::translate("MainWindow", "Continious (with th)", 0));
+        radioButton_15->setText(QApplication::translate("MainWindow", "Continious (no th)", 0));
         pushButton_4->setText(QApplication::translate("MainWindow", "Stop acquisition", 0));
         groupBox_6->setTitle(QApplication::translate("MainWindow", "Output settings", 0));
         pushButton_3->setText(QApplication::translate("MainWindow", "Write data", 0));

@@ -587,7 +587,7 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
     if (WDcfg->Nbit == 8)
         Event8 = (CAEN_DGTZ_UINT8_EVENT_t *)Event;
     else
-        Event16 = (CAEN_DGTZ_UINT16_EVENT_t *)Event;
+        Event16 = (CAEN_DGTZ_UINT16_EVENT_t *)Event; // my case
 
     for(ch=0; ch<WDcfg->Nch; ch++) {
         int Size = (WDcfg->Nbit == 8) ? Event8->ChSize[ch] : Event16->ChSize[ch];
@@ -623,7 +623,7 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
             if (WDcfg->Nbit == 8)
                 ns = (int)fwrite(Event8->DataChannel[ch], 1, Size, WDrun->fout[ch]);
             else
-                ns = (int)fwrite(Event16->DataChannel[ch] , 1 , Size*2, WDrun->fout[ch]) / 2;
+                ns = (int)fwrite(Event16->DataChannel[ch] , 1 , Size*2, WDrun->fout[ch]) / 2; // my case
             if (ns != Size) {
                 // error writing to file
                 fclose(WDrun->fout[ch]);

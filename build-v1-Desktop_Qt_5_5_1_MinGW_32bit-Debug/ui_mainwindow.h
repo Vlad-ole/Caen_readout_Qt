@@ -108,6 +108,8 @@ public:
     QCustomPlot *widget_041;
     QCustomPlot *widget_031;
     QCustomPlot *widget_051;
+    QLabel *label_3;
+    QLCDNumber *lcdNumber_2;
     QMenuBar *menuBar;
     QMenu *menuCAEN;
     QMenu *menuTriggers;
@@ -123,13 +125,14 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         lcdNumber = new QLCDNumber(centralWidget);
         lcdNumber->setObjectName(QStringLiteral("lcdNumber"));
-        lcdNumber->setGeometry(QRect(20, 650, 101, 71));
+        lcdNumber->setGeometry(QRect(20, 650, 111, 71));
+        lcdNumber->setSmallDecimalPoint(true);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(20, 610, 101, 16));
+        label->setGeometry(QRect(20, 620, 121, 31));
         checkBox = new QCheckBox(centralWidget);
         checkBox->setObjectName(QStringLiteral("checkBox"));
-        checkBox->setGeometry(QRect(160, 640, 70, 17));
+        checkBox->setGeometry(QRect(370, 620, 70, 17));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(20, 10, 121, 102));
@@ -336,7 +339,7 @@ public:
         widget_012->setGeometry(QRect(760, 10, 271, 171));
         verticalSlider_2 = new QSlider(centralWidget);
         verticalSlider_2->setObjectName(QStringLiteral("verticalSlider_2"));
-        verticalSlider_2->setGeometry(QRect(140, 610, 19, 160));
+        verticalSlider_2->setGeometry(QRect(350, 590, 19, 160));
         verticalSlider_2->setOrientation(Qt::Vertical);
         groupBox_7 = new QGroupBox(centralWidget);
         groupBox_7->setObjectName(QStringLiteral("groupBox_7"));
@@ -361,10 +364,10 @@ public:
         doubleSpinBox_2->setSingleStep(0.1);
         label_8 = new QLabel(groupBox_7);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(10, 20, 71, 16));
+        label_8->setGeometry(QRect(0, 20, 151, 31));
         spinBox_4 = new QSpinBox(groupBox_7);
         spinBox_4->setObjectName(QStringLiteral("spinBox_4"));
-        spinBox_4->setGeometry(QRect(90, 20, 61, 22));
+        spinBox_4->setGeometry(QRect(140, 30, 61, 22));
         spinBox_4->setMaximum(1000000);
         spinBox_4->setSingleStep(100);
         widget_022 = new QCustomPlot(centralWidget);
@@ -439,6 +442,12 @@ public:
         widget_051 = new QCustomPlot(centralWidget);
         widget_051->setObjectName(QStringLiteral("widget_051"));
         widget_051->setGeometry(QRect(490, 690, 271, 171));
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(150, 620, 121, 31));
+        lcdNumber_2 = new QLCDNumber(centralWidget);
+        lcdNumber_2->setObjectName(QStringLiteral("lcdNumber_2"));
+        lcdNumber_2->setGeometry(QRect(150, 650, 111, 71));
         MainWindow->setCentralWidget(centralWidget);
         groupBox_7->raise();
         groupBox_3->raise();
@@ -474,6 +483,8 @@ public:
         widget_041->raise();
         widget_031->raise();
         widget_051->raise();
+        label_3->raise();
+        lcdNumber_2->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 1860, 21));
@@ -502,7 +513,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "CAEN readout (v 1.0)", 0));
-        label->setText(QApplication::translate("MainWindow", "Transfer speed", 0));
+        label->setText(QApplication::translate("MainWindow", "Transfer speed [MB / s]", 0));
         checkBox->setText(QApplication::translate("MainWindow", "Read data", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Connect!", 0));
         textBrowser->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -533,7 +544,8 @@ public:
         groupBox_7->setTitle(QApplication::translate("MainWindow", "Plot settings", 0));
         label_6->setText(QApplication::translate("MainWindow", "y bottom", 0));
         label_7->setText(QApplication::translate("MainWindow", "y top", 0));
-        label_8->setText(QApplication::translate("MainWindow", "Record length", 0));
+        label_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Record length [sample]</p></body></html>", 0));
+        label_3->setText(QApplication::translate("MainWindow", "Trigger rate [Hz]", 0));
         menuCAEN->setTitle(QApplication::translate("MainWindow", "Main", 0));
         menuTriggers->setTitle(QApplication::translate("MainWindow", "Triggers", 0));
     } // retranslateUi

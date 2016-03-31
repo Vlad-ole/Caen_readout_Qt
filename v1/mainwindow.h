@@ -48,10 +48,15 @@ private slots:
 
     void on_radioButton_15_clicked();
 
+    void on_pushButton_3_clicked();
+
 public slots:
     void Message(QString);
     void InitializationComplete();
     void RedrawGraphs();
+    void TransferSpeed(double);
+    void TriggerRate(double);
+    void GraphData(double **array, int rows, int cols);
 
 private:
     Ui::MainWindow *ui;
@@ -67,6 +72,9 @@ signals:
 
     void StopReadout_loop();
     void ContinuousTrigger();
+
+    void ContinuousWrite();
+
 
 };
 

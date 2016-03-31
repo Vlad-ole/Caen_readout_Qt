@@ -60,12 +60,16 @@ public slots:
 
     void StopReadout_loop();
     void ContinuousTrigger();
+    void ContinuousWrite();
 
 signals:
     void Message(QString);
     void finished();
     void InitializationComplete();
     void RedrawGraphs();
+    void TransferSpeed(double);
+    void TriggerRate(double);
+    void GraphData(double **array, int rows, int cols);
 
 };
 

@@ -28,12 +28,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL(Message(QString)), this, SLOT(Message(QString)) );
     connect( worker, SIGNAL(InitializationComplete()), this, SLOT(InitializationComplete()) );
     connect( worker, SIGNAL( RedrawGraphs() ), this, SLOT( RedrawGraphs() ) );
+    connect( worker, SIGNAL( TransferSpeed(double) ) , this, SLOT( TransferSpeed(double)) );
+    connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
-    connect( this, SIGNAL(Readout_loop()), worker, SLOT(Readout_loop()) );
+    connect( this, SIGNAL(Readout_loop()), worker, SLOT(Readout_loop()));
     connect( this, SIGNAL(StopReadout_loop()), worker, SLOT(StopReadout_loop()), Qt::DirectConnection );
     connect( this, SIGNAL(ContinuousTrigger()), worker, SLOT(ContinuousTrigger()), Qt::DirectConnection );
     connect( this, SIGNAL(QuitProgram()), worker, SLOT(QuitProgram()), Qt::DirectConnection );
+    connect( this, SIGNAL(ContinuousWrite()), worker, SLOT( ContinuousWrite()), Qt::DirectConnection ) ;
     //connect( this, SIGNAL(Mask_the_channels()), worker, SLOT(Mask_the_channels()) );
     //connect( this, SIGNAL(Program_the_digitizer()), worker, SLOT(Program_the_digitizer()) );
 
@@ -65,6 +68,16 @@ void MainWindow::on_pushButton_clicked()
     emit this->Init();
     //emit this->Mask_the_channels();
     //emit this->Program_the_digitizer();
+}
+
+void  MainWindow::TransferSpeed(double trf_spd)
+{
+    ui->lcdNumber->display(trf_spd);
+}
+
+void MainWindow::TriggerRate(double trg_rate)
+{
+    ui->lcdNumber_2->display(trg_rate);
 }
 
 void MainWindow::InitializationComplete()
@@ -213,6 +226,8 @@ void MainWindow::InitializationComplete()
     }
 }
 
+
+
 void MainWindow::RedrawGraphs()
 {
     ui->widget_011->clearGraphs();
@@ -277,6 +292,11 @@ void MainWindow::on_checkBox_clicked()
 }
 
 void MainWindow::on_spinBox_3_valueChanged(int arg1)
+{
+
+}
+
+void MainWindow::GraphData(double **array, int rows, int cols)
 {
 
 }
@@ -397,15 +417,50 @@ void MainWindow::on_radioButton_15_clicked(bool checked)
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    emit this->Readout_loop();
+    //if(worker->WDrun.Quit)
+//    {
+//        ui->pushButton_2->setStyleSheet("");
+//        emit this->StopReadout_loop();
+//        Sleep(1.5);
+//        ui->lcdNumber->display(0);
+//        ui->lcdNumber_2->display(0);
+
+//        qDebug() << "else !worker->WDrun.Quit" << endl;
+
+//    }
+//    else
+//    {
+        ui->pushButton_2->setStyleSheet("background-color: yellow");
+        emit this->Readout_loop();
+        qDebug() << "worker->WDrun.Quit == 0" << endl;
+//    }
+
+//    ui->pushButton_2->setStyleSheet("background-color: yellow");
+//    emit this->Readout_loop();
+
+
 }
 
 void MainWindow::on_pushButton_4_clicked()
 {
     emit this->StopReadout_loop();
+
+    Sleep(1);
+    ui->lcdNumber->display(0);
+    ui->lcdNumber_2->display(0);
 }
 
 void MainWindow::on_radioButton_15_clicked()
 {
     emit this->ContinuousTrigger();
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    if(!worker->WDrun.ContinuousWrite)
+        ui->pushButton_3->setStyleSheet("background-color: yellow");
+    else
+        ui->pushButton_3->setStyleSheet("");
+
+    emit this->ContinuousWrite();
 }

@@ -9,6 +9,7 @@
 #include "../../v1/myworker.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
+#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'myworker.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
@@ -19,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MyWorker_t {
-    QByteArrayData data[20];
-    char stringdata0[213];
+    QByteArrayData data[19];
+    char stringdata0[233];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,29 +36,28 @@ QT_MOC_LITERAL(2, 17, 0), // ""
 QT_MOC_LITERAL(3, 18, 8), // "finished"
 QT_MOC_LITERAL(4, 27, 22), // "InitializationComplete"
 QT_MOC_LITERAL(5, 50, 12), // "RedrawGraphs"
-QT_MOC_LITERAL(6, 63, 13), // "TransferSpeed"
-QT_MOC_LITERAL(7, 77, 11), // "TriggerRate"
-QT_MOC_LITERAL(8, 89, 9), // "GraphData"
-QT_MOC_LITERAL(9, 99, 8), // "double**"
-QT_MOC_LITERAL(10, 108, 5), // "array"
-QT_MOC_LITERAL(11, 114, 4), // "rows"
-QT_MOC_LITERAL(12, 119, 4), // "cols"
-QT_MOC_LITERAL(13, 124, 4), // "Init"
-QT_MOC_LITERAL(14, 129, 12), // "Readout_loop"
-QT_MOC_LITERAL(15, 142, 7), // "Restart"
-QT_MOC_LITERAL(16, 150, 11), // "QuitProgram"
-QT_MOC_LITERAL(17, 162, 16), // "StopReadout_loop"
-QT_MOC_LITERAL(18, 179, 17), // "ContinuousTrigger"
-QT_MOC_LITERAL(19, 197, 15) // "ContinuousWrite"
+QT_MOC_LITERAL(6, 63, 15), // "QVector<double>"
+QT_MOC_LITERAL(7, 79, 13), // "TransferSpeed"
+QT_MOC_LITERAL(8, 93, 11), // "TriggerRate"
+QT_MOC_LITERAL(9, 105, 16), // "RedrawGraphsTest"
+QT_MOC_LITERAL(10, 122, 4), // "Init"
+QT_MOC_LITERAL(11, 127, 12), // "Readout_loop"
+QT_MOC_LITERAL(12, 140, 7), // "Restart"
+QT_MOC_LITERAL(13, 148, 11), // "QuitProgram"
+QT_MOC_LITERAL(14, 160, 16), // "StopReadout_loop"
+QT_MOC_LITERAL(15, 177, 17), // "ContinuousTrigger"
+QT_MOC_LITERAL(16, 195, 15), // "ContinuousWrite"
+QT_MOC_LITERAL(17, 211, 15), // "SetRecordLength"
+QT_MOC_LITERAL(18, 227, 5) // "value"
 
     },
     "MyWorker\0Message\0\0finished\0"
     "InitializationComplete\0RedrawGraphs\0"
-    "TransferSpeed\0TriggerRate\0GraphData\0"
-    "double**\0array\0rows\0cols\0Init\0"
-    "Readout_loop\0Restart\0QuitProgram\0"
-    "StopReadout_loop\0ContinuousTrigger\0"
-    "ContinuousWrite"
+    "QVector<double>\0TransferSpeed\0TriggerRate\0"
+    "RedrawGraphsTest\0Init\0Readout_loop\0"
+    "Restart\0QuitProgram\0StopReadout_loop\0"
+    "ContinuousTrigger\0ContinuousWrite\0"
+    "SetRecordLength\0value"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,7 +67,7 @@ static const uint qt_meta_data_MyWorker[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      14,   14, // methods
+      15,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -75,31 +75,32 @@ static const uint qt_meta_data_MyWorker[] = {
        7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   84,    2, 0x06 /* Public */,
-       3,    0,   87,    2, 0x06 /* Public */,
-       4,    0,   88,    2, 0x06 /* Public */,
-       5,    0,   89,    2, 0x06 /* Public */,
-       6,    1,   90,    2, 0x06 /* Public */,
-       7,    1,   93,    2, 0x06 /* Public */,
-       8,    3,   96,    2, 0x06 /* Public */,
+       1,    1,   89,    2, 0x06 /* Public */,
+       3,    0,   92,    2, 0x06 /* Public */,
+       4,    0,   93,    2, 0x06 /* Public */,
+       5,    2,   94,    2, 0x06 /* Public */,
+       7,    1,   99,    2, 0x06 /* Public */,
+       8,    1,  102,    2, 0x06 /* Public */,
+       9,    0,  105,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      13,    0,  103,    2, 0x0a /* Public */,
-      14,    0,  104,    2, 0x0a /* Public */,
-      15,    0,  105,    2, 0x0a /* Public */,
-      16,    0,  106,    2, 0x0a /* Public */,
-      17,    0,  107,    2, 0x0a /* Public */,
-      18,    0,  108,    2, 0x0a /* Public */,
-      19,    0,  109,    2, 0x0a /* Public */,
+      10,    0,  106,    2, 0x0a /* Public */,
+      11,    0,  107,    2, 0x0a /* Public */,
+      12,    0,  108,    2, 0x0a /* Public */,
+      13,    0,  109,    2, 0x0a /* Public */,
+      14,    0,  110,    2, 0x0a /* Public */,
+      15,    0,  111,    2, 0x0a /* Public */,
+      16,    0,  112,    2, 0x0a /* Public */,
+      17,    1,  113,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 6, 0x80000000 | 6,    2,    2,
+    QMetaType::Void, QMetaType::Double,    2,
+    QMetaType::Void, QMetaType::Double,    2,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Double,    2,
-    QMetaType::Void, QMetaType::Double,    2,
-    QMetaType::Void, 0x80000000 | 9, QMetaType::Int, QMetaType::Int,   10,   11,   12,
 
  // slots: parameters
     QMetaType::Void,
@@ -109,6 +110,7 @@ static const uint qt_meta_data_MyWorker[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Double,   18,
 
        0        // eod
 };
@@ -122,10 +124,10 @@ void MyWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 0: _t->Message((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->finished(); break;
         case 2: _t->InitializationComplete(); break;
-        case 3: _t->RedrawGraphs(); break;
+        case 3: _t->RedrawGraphs((*reinterpret_cast< QVector<double>(*)>(_a[1])),(*reinterpret_cast< QVector<double>(*)>(_a[2]))); break;
         case 4: _t->TransferSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 5: _t->TriggerRate((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 6: _t->GraphData((*reinterpret_cast< double**(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 6: _t->RedrawGraphsTest(); break;
         case 7: _t->Init(); break;
         case 8: _t->Readout_loop(); break;
         case 9: _t->Restart(); break;
@@ -133,7 +135,20 @@ void MyWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 11: _t->StopReadout_loop(); break;
         case 12: _t->ContinuousTrigger(); break;
         case 13: _t->ContinuousWrite(); break;
+        case 14: _t->SetRecordLength((*reinterpret_cast< double(*)>(_a[1]))); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 3:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 1:
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<double> >(); break;
+            }
+            break;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
@@ -157,7 +172,7 @@ void MyWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             }
         }
         {
-            typedef void (MyWorker::*_t)();
+            typedef void (MyWorker::*_t)(QVector<double> , QVector<double> );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MyWorker::RedrawGraphs)) {
                 *result = 3;
             }
@@ -175,8 +190,8 @@ void MyWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             }
         }
         {
-            typedef void (MyWorker::*_t)(double * * , int , int );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MyWorker::GraphData)) {
+            typedef void (MyWorker::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MyWorker::RedrawGraphsTest)) {
                 *result = 6;
             }
         }
@@ -208,13 +223,13 @@ int MyWorker::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 14)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 14;
+        _id -= 15;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 14)
-            *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 14;
+        if (_id < 15)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 15;
     }
     return _id;
 }
@@ -239,9 +254,10 @@ void MyWorker::InitializationComplete()
 }
 
 // SIGNAL 3
-void MyWorker::RedrawGraphs()
+void MyWorker::RedrawGraphs(QVector<double> _t1, QVector<double> _t2)
 {
-    QMetaObject::activate(this, &staticMetaObject, 3, Q_NULLPTR);
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 
 // SIGNAL 4
@@ -259,9 +275,8 @@ void MyWorker::TriggerRate(double _t1)
 }
 
 // SIGNAL 6
-void MyWorker::GraphData(double * * _t1, int _t2, int _t3)
+void MyWorker::RedrawGraphsTest()
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
-    QMetaObject::activate(this, &staticMetaObject, 6, _a);
+    QMetaObject::activate(this, &staticMetaObject, 6, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

@@ -703,19 +703,6 @@ p, li { white-space: pre-wrap; }
       </layout>
      </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>170</y>
-       <width>91</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Stop acquisition</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_6">
     <property name="geometry">
@@ -909,10 +896,10 @@ p, li { white-space: pre-wrap; }
       </rect>
      </property>
      <property name="minimum">
-      <double>-10.000000000000000</double>
+      <double>-10000.000000000000000</double>
      </property>
      <property name="maximum">
-      <double>10.000000000000000</double>
+      <double>10000.000000000000000</double>
      </property>
      <property name="singleStep">
       <double>0.100000000000000</double>
@@ -928,10 +915,10 @@ p, li { white-space: pre-wrap; }
       </rect>
      </property>
      <property name="minimum">
-      <double>-10.000000000000000</double>
+      <double>-10000.000000000000000</double>
      </property>
      <property name="maximum">
-      <double>10.000000000000000</double>
+      <double>10000.000000000000000</double>
      </property>
      <property name="singleStep">
       <double>0.100000000000000</double>

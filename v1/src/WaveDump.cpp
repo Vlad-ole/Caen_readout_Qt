@@ -45,6 +45,7 @@
 #include "fft.h"
 #include "keyb.h"
 #include "X742CorrectionRoutines.h"
+#include <QDebug>
 
 
 #ifndef max
@@ -596,8 +597,9 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
         }
 
         // Check the file format type
-        if( WDcfg->OutFileFlags& OFF_BINARY) {
+        if( WDcfg->OutFileFlags& OFF_BINARY && false) {
             // Binary file format
+            qDebug() << " Binary file format" << endl;
             uint32_t BinHeader[6];
             BinHeader[0] = (WDcfg->Nbit == 8) ? Size + 6*sizeof(*BinHeader) : Size*2 + 6*sizeof(*BinHeader);
             BinHeader[1] = EventInfo->BoardId;
@@ -632,6 +634,7 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
             }
         } else {
             // Ascii file format
+            qDebug() << " Ascii file format" << endl;
             if (!WDrun->fout[ch]) {
                 char fname[100];
                 sprintf(fname, "wave%d.txt", ch);

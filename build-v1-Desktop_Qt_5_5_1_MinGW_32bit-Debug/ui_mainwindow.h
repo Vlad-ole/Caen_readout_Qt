@@ -64,7 +64,6 @@ public:
     QRadioButton *radioButton_14;
     QRadioButton *radioButton;
     QRadioButton *radioButton_15;
-    QPushButton *pushButton_4;
     QGroupBox *groupBox_6;
     QPushButton *pushButton_3;
     QSpinBox *spinBox;
@@ -296,9 +295,6 @@ public:
 
         verticalLayout_4->addWidget(radioButton_15);
 
-        pushButton_4 = new QPushButton(groupBox_3);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(10, 170, 91, 31));
         groupBox_6 = new QGroupBox(centralWidget);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
         groupBox_6->setGeometry(QRect(150, 10, 271, 121));
@@ -353,14 +349,14 @@ public:
         doubleSpinBox = new QDoubleSpinBox(groupBox_7);
         doubleSpinBox->setObjectName(QStringLiteral("doubleSpinBox"));
         doubleSpinBox->setGeometry(QRect(70, 70, 62, 22));
-        doubleSpinBox->setMinimum(-10);
-        doubleSpinBox->setMaximum(10);
+        doubleSpinBox->setMinimum(-10000);
+        doubleSpinBox->setMaximum(10000);
         doubleSpinBox->setSingleStep(0.1);
         doubleSpinBox_2 = new QDoubleSpinBox(groupBox_7);
         doubleSpinBox_2->setObjectName(QStringLiteral("doubleSpinBox_2"));
         doubleSpinBox_2->setGeometry(QRect(70, 100, 62, 22));
-        doubleSpinBox_2->setMinimum(-10);
-        doubleSpinBox_2->setMaximum(10);
+        doubleSpinBox_2->setMinimum(-10000);
+        doubleSpinBox_2->setMaximum(10000);
         doubleSpinBox_2->setSingleStep(0.1);
         label_8 = new QLabel(groupBox_7);
         label_8->setObjectName(QStringLiteral("label_8"));
@@ -533,7 +529,6 @@ public:
         radioButton_14->setText(QApplication::translate("MainWindow", "Single", 0));
         radioButton->setText(QApplication::translate("MainWindow", "Continious (with th)", 0));
         radioButton_15->setText(QApplication::translate("MainWindow", "Continious (no th)", 0));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Stop acquisition", 0));
         groupBox_6->setTitle(QApplication::translate("MainWindow", "Output settings", 0));
         pushButton_3->setText(QApplication::translate("MainWindow", "Write data", 0));
         label_2->setText(QApplication::translate("MainWindow", "Events per file", 0));

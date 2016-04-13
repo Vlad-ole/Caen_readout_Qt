@@ -47,6 +47,13 @@ public:
     void Mask_the_channels();
     void InterruptTimeout();
 
+    QVector<double> array_x_data;
+    QVector<double> array_y_data;
+
+    //QVector<double> array_x;
+    //QVector<double> array_y;
+
+
 public slots:
     void Init();
 
@@ -61,15 +68,18 @@ public slots:
     void StopReadout_loop();
     void ContinuousTrigger();
     void ContinuousWrite();
+    void SetRecordLength(double value);
 
 signals:
     void Message(QString);
     void finished();
     void InitializationComplete();
-    void RedrawGraphs();
+    void RedrawGraphs(QVector<double>, QVector<double> );
     void TransferSpeed(double);
     void TriggerRate(double);
-    void GraphData(double **array, int rows, int cols);
+    //void GraphData(double **array, int rows, int cols);
+    //void GraphData1D(double *array, int size);
+    void RedrawGraphsTest();
 
 };
 

@@ -7,6 +7,8 @@
 #include "X742CorrectionRoutines.h"
 #include "fft.h"
 
+#include "QTime"
+
 #ifndef max
 #define max(a,b)            (((a) > (b)) ? (a) : (b))
 #endif
@@ -27,11 +29,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     //connect signal and slots in different threads
     connect( worker, SIGNAL(Message(QString)), this, SLOT(Message(QString)) );
     connect( worker, SIGNAL(InitializationComplete()), this, SLOT(InitializationComplete()) );
-    connect( worker, SIGNAL( RedrawGraphs() ), this, SLOT( RedrawGraphs() ) );
+    connect( worker, SIGNAL( RedrawGraphs(QVector<double> , QVector<double>) ), this, SLOT( RedrawGraphs(QVector<double> , QVector<double> ) ));
+    //connect( worker, SIGNAL( RedrawGraphsTest() ), this, SLOT( RedrawGraphsTest() ));
     connect( worker, SIGNAL( TransferSpeed(double) ) , this, SLOT( TransferSpeed(double)) );
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL(SetRecordLength(double)), worker, SLOT(SetRecordLength(double)) );
     connect( this, SIGNAL(Readout_loop()), worker, SLOT(Readout_loop()));
     connect( this, SIGNAL(StopReadout_loop()), worker, SLOT(StopReadout_loop()), Qt::DirectConnection );
     connect( this, SIGNAL(ContinuousTrigger()), worker, SLOT(ContinuousTrigger()), Qt::DirectConnection );
@@ -51,6 +55,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     worker->moveToThread( thread );
     thread->start();
+
+
+    on_pushButton_2_clicked_bool = false;
 }
 
 
@@ -83,8 +90,8 @@ void MainWindow::TriggerRate(double trg_rate)
 void MainWindow::InitializationComplete()
 {
     ui->textBrowser->setText("Device was connected");
+
     ui->groupBox_3->setEnabled(true);
-    ui->groupBox_6->setEnabled(true);
     ui->groupBox_7->setEnabled(true);
     ui->radioButton_13->setChecked(true);
     ui->pushButton->setStyleSheet("background-color: green");
@@ -228,11 +235,20 @@ void MainWindow::InitializationComplete()
 
 
 
-void MainWindow::RedrawGraphs()
+void MainWindow::RedrawGraphs(QVector<double> array_x, QVector<double> array_y)
 {
     ui->widget_011->clearGraphs();
     ui->widget_011->addGraph();
-    //ui->widget_011->graph(0)->setData(x, y);
+
+//    QVector<double> array_x(100);
+//    QVector<double> array_y(100);
+//    for(int i = 0; i<100; i++)
+//    {
+//        array_x[i] = i;
+//        array_y[i] = sin(qrand());
+//    }
+
+    ui->widget_011->graph(0)->setData(array_x, array_y);
     //ui->widget_011->xAxis->setRange(a, b);
     //ui->widget_011->yAxis->setRange(minY, maxY);
 
@@ -266,6 +282,7 @@ void MainWindow::RedrawGraphs()
     ui->widget_054->replot();
     ui->widget_055->replot();
 
+    qDebug() << "in RedrawGraphs" << endl;
 }
 
 void MainWindow::Message(QString s)
@@ -375,6 +392,8 @@ void MainWindow::on_spinBox_4_valueChanged(int arg1)
 {
     const double sampling_rate = 4; // ns
 
+    emit this->SetRecordLength(arg1);
+
     ui->widget_011->xAxis->setRange(0, arg1*4.0/1000);
     ui->widget_012->xAxis->setRange(0, arg1*4.0/1000);
     ui->widget_013->xAxis->setRange(0, arg1*4.0/1000);
@@ -417,38 +436,31 @@ void MainWindow::on_radioButton_15_clicked(bool checked)
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    //if(worker->WDrun.Quit)
-//    {
-//        ui->pushButton_2->setStyleSheet("");
-//        emit this->StopReadout_loop();
-//        Sleep(1.5);
-//        ui->lcdNumber->display(0);
-//        ui->lcdNumber_2->display(0);
-
-//        qDebug() << "else !worker->WDrun.Quit" << endl;
-
-//    }
-//    else
-//    {
+    if(!on_pushButton_2_clicked_bool)
+    {
         ui->pushButton_2->setStyleSheet("background-color: yellow");
         emit this->Readout_loop();
         qDebug() << "worker->WDrun.Quit == 0" << endl;
-//    }
+        on_pushButton_2_clicked_bool = true;
+        ui->groupBox_6->setEnabled(true);
+    }
+    else
+    {
+        ui->pushButton_2->setStyleSheet("");
+        emit this->StopReadout_loop();
 
-//    ui->pushButton_2->setStyleSheet("background-color: yellow");
-//    emit this->Readout_loop();
+        Sleep(1);
+        ui->lcdNumber->display(0);
+        ui->lcdNumber_2->display(0);
+
+        on_pushButton_2_clicked_bool = false;
+        ui->groupBox_6->setEnabled(false);
+    }
 
 
 }
 
-void MainWindow::on_pushButton_4_clicked()
-{
-    emit this->StopReadout_loop();
 
-    Sleep(1);
-    ui->lcdNumber->display(0);
-    ui->lcdNumber_2->display(0);
-}
 
 void MainWindow::on_radioButton_15_clicked()
 {
@@ -463,4 +475,14 @@ void MainWindow::on_pushButton_3_clicked()
         ui->pushButton_3->setStyleSheet("");
 
     emit this->ContinuousWrite();
+}
+
+void MainWindow::on_groupBox_3_clicked()
+{
+
+}
+
+void MainWindow::on_spinBox_4_editingFinished()
+{
+
 }

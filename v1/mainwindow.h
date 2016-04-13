@@ -23,6 +23,8 @@ public:
     MyThread *thread;
     MyWorker *worker;
 
+    bool on_pushButton_2_clicked_bool;
+
 private slots:
     void on_pushButton_clicked();
 
@@ -44,19 +46,24 @@ private slots:
 
     void on_pushButton_2_clicked();
 
-    void on_pushButton_4_clicked();
 
     void on_radioButton_15_clicked();
 
     void on_pushButton_3_clicked();
 
+    void on_groupBox_3_clicked();
+
+    void on_spinBox_4_editingFinished();
+
 public slots:
     void Message(QString);
     void InitializationComplete();
-    void RedrawGraphs();
+    void RedrawGraphs(QVector<double> , QVector<double> );
     void TransferSpeed(double);
     void TriggerRate(double);
     void GraphData(double **array, int rows, int cols);
+    //void GraphData1D(double *array, int size);
+    //void RedrawGraphsTest();
 
 private:
     Ui::MainWindow *ui;
@@ -74,6 +81,7 @@ signals:
     void ContinuousTrigger();
 
     void ContinuousWrite();
+    void SetRecordLength(double value);
 
 
 };

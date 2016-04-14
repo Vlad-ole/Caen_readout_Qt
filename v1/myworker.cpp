@@ -4,6 +4,7 @@
 
 MyWorker::MyWorker()
 {
+    array_y_data.resize(8);
 
 }
 
@@ -130,6 +131,8 @@ void MyWorker::Init()
 
 //    }
 
+    WDrun.ContinuousPlot = 1;
+
     emit this->InitializationComplete();
 
 }
@@ -146,6 +149,7 @@ void MyWorker::Readout_loop()
     qDebug() << "in Readout_loop() " << endl;
 
     WDrun.Quit = 0;
+
 
     CAEN_DGTZ_SWStartAcquisition(handle);
     WDrun.AcqRun = 1;
@@ -248,115 +252,96 @@ void MyWorker::Readout_loop()
             PrevRateTime = CurrentTime;
 
 
-            const int size = 100;
-            QVector<double> array_x(size);
-            QVector<double> array_y(size);
-
-
-            /* Analyze data */
-            for(i = 0; i < (int)NumEvents; i++)
+            if(WDrun.ContinuousPlot)
             {
+                long time_label_start = get_time();
 
+                array_y_data[0].clear();
+                array_y_data[1].clear();
+                array_y_data[2].clear();
+                array_y_data[3].clear();
+                array_y_data[4].clear();
+                array_y_data[5].clear();
+                array_y_data[6].clear();
+                array_y_data[7].clear();
 
-                /* Get one event from the readout buffer */
-                ret = CAEN_DGTZ_GetEventInfo(handle, buffer, BufferSize, i, &EventInfo, &EventPtr);
-                if (ret)
+                /* Analyze data */
+                for(i = 0; i < (int)NumEvents; i++)
                 {
-                    ErrCode = ERR_EVENT_BUILD;
-                    //goto QuitProgram;
-                    QuitProgram();
-                    return;
-                }
 
 
-                /* decode the event */
-                if (WDcfg.Nbit == 8)
-                    ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event8);
-                else
-                    if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)
+                    /* Get one event from the readout buffer */
+                    ret = CAEN_DGTZ_GetEventInfo(handle, buffer, BufferSize, i, &EventInfo, &EventPtr);
+                    if (ret)
                     {
-                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event16); // it's my case
+                        ErrCode = ERR_EVENT_BUILD;
+                        //goto QuitProgram;
+                        QuitProgram();
+                        return;
                     }
+
+
+                    /* decode the event */
+                    if (WDcfg.Nbit == 8)
+                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event8);
                     else
-                    {
-                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event742);
-                        if (WDcfg.useCorrections != -1)
-                        { // if manual corrections
-                            uint32_t gr;
-                            for (gr = 0; gr < WDcfg.MaxGroupNumber; gr++)
-                            {
-                                if ( ((WDcfg.EnableMask >> gr) & 0x1) == 0)
-                                    continue;
-                                ApplyDataCorrection( &(X742Tables[gr]), WDcfg.DRS4Frequency, WDcfg.useCorrections, &(Event742->DataGroup[gr]));
+                        if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)
+                        {
+                            ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event16); // it's my case
+                        }
+                        else
+                        {
+                            ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event742);
+                            if (WDcfg.useCorrections != -1)
+                            { // if manual corrections
+                                uint32_t gr;
+                                for (gr = 0; gr < WDcfg.MaxGroupNumber; gr++)
+                                {
+                                    if ( ((WDcfg.EnableMask >> gr) & 0x1) == 0)
+                                        continue;
+                                    ApplyDataCorrection( &(X742Tables[gr]), WDcfg.DRS4Frequency, WDcfg.useCorrections, &(Event742->DataGroup[gr]));
+                                }
                             }
                         }
-                    }
 
 
-                if (ret)
-                {
-                    ErrCode = ERR_EVENT_BUILD;
-                    //goto QuitProgram;
-                    QuitProgram();
-                    return;
-                }
-
-
-                //qDebug() << "i = " << i << "Event16->DataChannel[0]" << Event16->DataChannel[0][0] << endl;
-                //qDebug() << "i = " << i << "Event16->DataChannel[0]" << Event16->DataChannel[0][1] << endl;
-                //qDebug() << "i = " << i << "Event16->DataChannel[0]" << Event16->DataChannel[0][2] << endl;
-
-
-
-                //Event16 = (CAEN_DGTZ_UINT16_EVENT_t *)Event;
-                for(ch=0; ch<WDcfg.Nch; ch++)
-                {
-                    int Size = (WDcfg.Nbit == 8) ? Event8->ChSize[ch] : Event16->ChSize[ch];
-                    if (Size <= 0)
+                    if (ret)
                     {
-                        continue;
+                        ErrCode = ERR_EVENT_BUILD;
+                        //goto QuitProgram;
+                        QuitProgram();
+                        return;
                     }
 
-                    //array_x_data.reserve(Size*2);
-                    array_x_data.resize(Size);
-                    array_y_data.resize(Size);
 
-                    for(int index = 0; index < Size; index++)
+                    bool flag = true;
+
+
+                    for(ch=0; ch<WDcfg.Nch; ch++)
                     {
-                        array_x_data[index] = index * 4 / 1000.0 ;
-                        array_y_data[index] = Event16->DataChannel[ch][index];
-                        //qDebug() << "Event = " << i << "; ch = " << ch << "; value = " << Event16->DataChannel[ch][index] << endl;
+                        int Size = (WDcfg.Nbit == 8) ? Event8->ChSize[ch] : Event16->ChSize[ch];
+                        if (Size <= 0)
+                        {
+                            continue;
+                        }
+
+                        for(int index = 0; index < Size; index++)
+                        {
+                            if(flag)
+                                array_x_data.push_back( (index  + i * Size) * (4 / 1000.0)  );
+                            array_y_data[ch].push_back( Event16->DataChannel[ch][index] );
+                        }
+
+                        flag = false;
                     }
-//                    //fwrite(Event16->DataChannel[ch] , 1 , Size*2, WDrun->fout[ch]);
+
+
 
                 }
 
-
-
-//                for(int i = 0; i < size; i++)
-//                {
-//                    array_x[i] = i;
-//                    array_y[i] = sin(qrand());
-//                }
-
-//                int Size = 100;
-//                array_x.resize(Size);
-//                array_y.resize(Size);
-//                for(int i = 0; i < Size; i++)
-//                {
-//                    array_x[i] = i;
-//                    array_y[i] = sin(qrand());
-//                }
-
-                //emit this->RedrawGraphs(array_x, array_y);
-                //emit this->RedrawGraphs(array_x_data, array_y_data);
-
-
-            }//for(i = 0; i < (int)NumEvents; i++)
-
-            emit this->RedrawGraphs(array_x_data, array_y_data);
-
-
+                emit this->RedrawGraphsFull(array_x_data, array_y_data);
+                qDebug() << "Delta time (prepare data)= " << get_time() - time_label_start;
+            }
 
         }//if( ElapsedTime >= 1000)
 
@@ -460,6 +445,7 @@ void MyWorker::ContinuousTrigger()
 
 void MyWorker::Restart()
 {
+    StopReadout_loop();
     Mask_the_channels();
     Program_the_digitizer();
 }
@@ -672,4 +658,45 @@ void MyWorker::QuitProgram()
 void MyWorker::ContinuousWrite()
 {
     WDrun.ContinuousWrite ^= 1;
+}
+
+void MyWorker::TestPattern()
+{
+    if(WDcfg.TestPattern)
+    {
+        WDcfg.TestPattern = 0;
+        Program_the_digitizer();
+    }
+    else
+    {
+        WDcfg.TestPattern = 1;
+        Program_the_digitizer();
+    }
+}
+
+void MyWorker::EnableContinuousPlot()
+{
+    WDrun.ContinuousPlot = 1;
+}
+
+void MyWorker::DisableContinuousPlot()
+{
+    WDrun.ContinuousPlot = 0;
+}
+
+void MyWorker::MaskChannel(int ch, bool Enable)
+{
+    if(Enable)
+    {
+        WDcfg.EnableMask |= (1 << ch);
+        qDebug() << " WDcfg.EnableMask |= (1 << ch) " << endl;
+    }
+    else
+    {
+        WDcfg.EnableMask &= ~(1 << ch);
+        qDebug() << " WDcfg.EnableMask &= ~(1 << ch) " << endl;
+    }
+
+    Restart();
+    //Sleep(5000);
 }

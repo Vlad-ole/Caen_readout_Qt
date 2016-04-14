@@ -55,10 +55,36 @@ private slots:
 
     void on_spinBox_4_editingFinished();
 
+    void on_Test_Pattern_button_clicked();
+
+    void on_checkBox_clicked(bool checked);
+
+    void on_Test_Pattern_button_clicked(bool checked);
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_checkBox_11_clicked(bool checked);
+
+    void on_checkBox_12_clicked(bool checked);
+
+    void on_checkBox_13_clicked(bool checked);
+
+    void on_checkBox_14_clicked(bool checked);
+
+    void on_checkBox_15_clicked(bool checked);
+
+    void on_checkBox_21_clicked(bool checked);
+
+    void on_checkBox_22_clicked(bool checked);
+
+    void on_checkBox_23_clicked(bool checked);
+
 public slots:
     void Message(QString);
     void InitializationComplete();
-    void RedrawGraphs(QVector<double> , QVector<double> );
+    void RedrawGraphsFull(QVector<double> , QVector< QVector<double> > );
     void TransferSpeed(double);
     void TriggerRate(double);
     void GraphData(double **array, int rows, int cols);
@@ -82,7 +108,11 @@ signals:
 
     void ContinuousWrite();
     void SetRecordLength(double value);
+    void TestPattern();
 
+    void EnableContinuousPlot();
+    void DisableContinuousPlot();
+    void MaskChannel(int, bool);
 
 };
 

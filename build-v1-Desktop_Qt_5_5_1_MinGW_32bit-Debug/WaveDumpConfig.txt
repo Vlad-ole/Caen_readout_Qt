@@ -69,7 +69,7 @@ RECORD_LENGTH  20000
 
 # TEST_PATTERN: if enabled, data from ADC are replaced by test pattern (triangular wave)
 # options: YES, NO
-TEST_PATTERN   YES
+TEST_PATTERN   NO
 
 # ENABLE_DES_MODE: double edge sampling mode for the models 731 and 751. If enabled, the
 # board interleaves two channels to make one channel running at double sampling frequency.
@@ -97,7 +97,7 @@ ENABLED_FAST_TRIGGER_DIGITIZING		NO
 # MAX_NUM_EVENTS_BLT: maximum number of events to read out in one Block Transfer. Higher values may lead
 # to higher readout bandwidth, requiring more memory allocation for the block transfer.
 # options: 1 to 1023
-MAX_NUM_EVENTS_BLT   1023
+MAX_NUM_EVENTS_BLT   1
 
 # DECIMATION_FACTOR: ONLY FOR 740 MODELS. change the decimation factor for the acquisition.
 # options: 1 2 4 8 16 32 64 128  
@@ -111,7 +111,7 @@ POST_TRIGGER  90
 
 # TRIGGER_EDGE: decides whether the trigger occurs on the rising or falling edge of the signal
 # options: RISING, FALLING
-TRIGGER_EDGE  RISING
+TRIGGER_EDGE  FALLING
 
 # USE_INTERRUPT: number of events that must be ready for the readout when the IRQ is asserted.
 # Zero means that the interrupts are not used (readout runs continuously)
@@ -184,16 +184,16 @@ CHANNEL_TRIGGER        ACQUISITION_ONLY
 ENABLE_INPUT           YES
 DC_OFFSET              0
 #GRP_CH_DC_OFFSET       0,0,0,0,0,0,0,0 
-TRIGGER_THRESHOLD      2000
+TRIGGER_THRESHOLD      2100
 CHANNEL_TRIGGER        ACQUISITION_ONLY
 #GROUP_TRG_ENABLE_MASK  01
 
 [1]
-ENABLE_INPUT           NO
+ENABLE_INPUT           YES
 DC_OFFSET              0
 #GRP_CH_DC_OFFSET       0,0,0,0,0,0,0,0 
-TRIGGER_THRESHOLD      0
-CHANNEL_TRIGGER        DISABLED
+TRIGGER_THRESHOLD      2000
+CHANNEL_TRIGGER        ACQUISITION_ONLY
 #GROUP_TRG_ENABLE_MASK  01
 
 [2]

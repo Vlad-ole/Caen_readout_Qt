@@ -48,7 +48,7 @@ public:
     void InterruptTimeout();
 
     QVector<double> array_x_data;
-    QVector<double> array_y_data;
+    QVector< QVector <double> > array_y_data;
 
     //QVector<double> array_x;
     //QVector<double> array_y;
@@ -69,12 +69,17 @@ public slots:
     void ContinuousTrigger();
     void ContinuousWrite();
     void SetRecordLength(double value);
+    void TestPattern();
+    void EnableContinuousPlot();
+    void DisableContinuousPlot();
+    void MaskChannel(int , bool);
 
 signals:
     void Message(QString);
     void finished();
     void InitializationComplete();
     void RedrawGraphs(QVector<double>, QVector<double> );
+    void RedrawGraphsFull(QVector<double>, QVector< QVector <double> > );
     void TransferSpeed(double);
     void TriggerRate(double);
     //void GraphData(double **array, int rows, int cols);

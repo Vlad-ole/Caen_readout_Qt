@@ -80,19 +80,19 @@ ENABLE_DES_MODE  NO
 # EXTERNAL_TRIGGER: external trigger input settings. When enabled, the ext. trg. can be either 
 # propagated (ACQUISITION_AND_TRGOUT) or not (ACQUISITION_ONLY) through the TRGOUT
 # options: DISABLED, ACQUISITION_ONLY, ACQUISITION_AND_TRGOUT
-EXTERNAL_TRIGGER   DISABLED
+EXTERNAL_TRIGGER   ACQUISITION_ONLY
 
 # FAST_TRIGGER: fast trigger input settings. ONLY FOR 742 MODELS. When enabled, the fast trigger is used
 # for the data acquisition 
 # options: DISABLED, ACQUISITION_ONLY
-#FAST_TRIGGER   ACQUISITION_ONLY	
-FAST_TRIGGER   DISABLED	
+FAST_TRIGGER   ACQUISITION_ONLY	
+#FAST_TRIGGER   DISABLED	
 
 # FAST_TRIGGER_DIGITIZING: ONLY FOR 742 MODELS. If enabled the fast trigger signal is digitized and it is
 # present in data readout as channel n.8 for each group.
 # options: YES, NO
-#ENABLED_FAST_TRIGGER_DIGITIZING		YES		
-ENABLED_FAST_TRIGGER_DIGITIZING		NO	
+ENABLED_FAST_TRIGGER_DIGITIZING		YES		
+#ENABLED_FAST_TRIGGER_DIGITIZING		NO	
 
 # MAX_NUM_EVENTS_BLT: maximum number of events to read out in one Block Transfer. Higher values may lead
 # to higher readout bandwidth, requiring more memory allocation for the block transfer.
@@ -107,7 +107,7 @@ DECIMATION_FACTOR  1
 # options: 0 to 100
 # On models 742 there is a delay of about 35nsec on signal Fast Trigger TR; the post trigger is added to
 # this delay  
-POST_TRIGGER  90
+POST_TRIGGER  20
 
 # TRIGGER_EDGE: decides whether the trigger occurs on the rising or falling edge of the signal
 # options: RISING, FALLING
@@ -145,7 +145,7 @@ FPIO_LEVEL  NIM
 
 # ENABLE_INPUT: enable/disable one channel (or one group in the case of the Mod 740 and Mod 742)
 # options: YES, NO
-ENABLE_INPUT          YES
+ENABLE_INPUT          NO
 
 # DC_OFFSET: DC offset adjust (DAC channel setting) in percent of the Full Scale. 
 # For model 740 and 742* the DC offset adjust is the same for all channel in the group
@@ -165,7 +165,7 @@ DC_OFFSET              0
 
 # TRIGGER_THRESHOLD: threshold for the channel auto trigger (ADC counts)
 # options 0 to 2^N-1 (N=Number of bit of the ADC)
-TRIGGER_THRESHOLD      0
+TRIGGER_THRESHOLD      100
 
 # CHANNEL_TRIGGER: channel auto trigger settings. When enabled, the ch. auto trg. can be either 
 # propagated (ACQUISITION_AND_TRGOUT) or not (ACQUISITION_ONLY) through the TRGOUT
@@ -173,7 +173,7 @@ TRIGGER_THRESHOLD      0
 # NOTE: since in x730 boards even and odd channels are paired, their 'CHANNEL_TRIGGER' value
 # will be equal to the one specified on the even channel, unless one of the two channels of
 # the pair is set to 'DISABLED'. If so, the other one behaves as usual.
-CHANNEL_TRIGGER        ACQUISITION_ONLY
+CHANNEL_TRIGGER        DISABLED
 
 # GROUP_TRG_ENABLE_MASK: this option is used only for the Models x740. These models have the
 # channels grouped 8 by 8; one group of 8 channels has a common trigger that is generated as
@@ -184,20 +184,25 @@ CHANNEL_TRIGGER        ACQUISITION_ONLY
 ENABLE_INPUT           YES
 DC_OFFSET              0
 #GRP_CH_DC_OFFSET       0,0,0,0,0,0,0,0 
-TRIGGER_THRESHOLD      2100
+TRIGGER_THRESHOLD      2500
 CHANNEL_TRIGGER        ACQUISITION_ONLY
 #GROUP_TRG_ENABLE_MASK  01
 
 [1]
-ENABLE_INPUT           YES
+ENABLE_INPUT           NO
 DC_OFFSET              0
 #GRP_CH_DC_OFFSET       0,0,0,0,0,0,0,0 
-TRIGGER_THRESHOLD      2000
+TRIGGER_THRESHOLD      100
 CHANNEL_TRIGGER        ACQUISITION_ONLY
 #GROUP_TRG_ENABLE_MASK  01
 
 [2]
 ENABLE_INPUT           NO
+DC_OFFSET              0
+#GRP_CH_DC_OFFSET       0,0,0,0,0,0,0,0 
+TRIGGER_THRESHOLD      2500
+CHANNEL_TRIGGER        DISABLED
+#GROUP_TRG_ENABLE_MASK  01
 
 [3]
 ENABLE_INPUT           NO
@@ -237,3 +242,41 @@ ENABLE_INPUT           NO
 
 [15]
 ENABLE_INPUT           NO
+
+# ----------------------------------------------------------------
+# Custom Setting for Model 742 
+# ----------------------------------------------------------------
+# FAST TRIGGER CONDITION SETTINGS.
+# Remember that signal TR0 is the Fast Trigger for Groups 0 and 1, while signal TR1 is the Fast Trigger for Groups 2 and 3.
+# DC_OFFSET: DC offset adjust is DAC setting: 0 to 65535
+# TRIGGER_THRESHOLD: Trigger Threshold is the DAC setting for the comparation level: 0 to 65535 
+
+# EXAMPLES pcb rev0 (see also User's Manual):
+# NIM signal on TR
+# 	DC_OFFSET 4096 
+#  	TRIGGER_THRESHOLD 29053 
+# AC signal on TR
+# 	DC_OFFSET 4096 
+#  	TRIGGER_THRESHOLD 27776 
+# TTL signal on TR
+# 	DC_OFFSET 16384 
+# 	TRIGGER_THRESHOLD 29016
+
+# EXAMPLES pcb rev1 (see also User's Manual):
+# NIM signal on TR
+# 	DC_OFFSET 32768 
+#  	TRIGGER_THRESHOLD 20934 
+# AC signal on TR
+# 	DC_OFFSET 32768 
+#  	TRIGGER_THRESHOLD 26214 
+# +2V signal on TR
+# 	DC_OFFSET 43520 
+# 	TRIGGER_THRESHOLD 26214
+
+[TR0]
+DC_OFFSET              0	
+TRIGGER_THRESHOLD      20934	
+
+[TR1]
+DC_OFFSET              32768
+TRIGGER_THRESHOLD      20934

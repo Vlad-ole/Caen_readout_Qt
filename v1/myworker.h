@@ -73,6 +73,7 @@ public slots:
     void EnableContinuousPlot();
     void DisableContinuousPlot();
     void MaskChannel(int , bool);
+    void SetTriggerValue(int, int);
 
 signals:
     void Message(QString);

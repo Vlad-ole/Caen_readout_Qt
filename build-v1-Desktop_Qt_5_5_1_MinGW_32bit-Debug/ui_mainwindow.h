@@ -57,6 +57,7 @@ public:
     QGroupBox *groupBox_2;
     QSpinBox *spinBox_3;
     QSlider *verticalSlider;
+    QPushButton *pushButton_6;
     QPushButton *pushButton_2;
     QGroupBox *groupBox_8;
     QWidget *layoutWidget_2;
@@ -68,7 +69,7 @@ public:
     QGroupBox *groupBox_9;
     QLabel *label_11;
     QLabel *label_5;
-    QWidget *widget;
+    QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout;
     QCheckBox *checkBox_11;
@@ -105,6 +106,47 @@ public:
     QLabel *label_9;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
+    QPushButton *pushButton_Reprogram;
+    QGroupBox *groupBox_10;
+    QLabel *label_12;
+    QLabel *label_13;
+    QWidget *layoutWidget_3;
+    QVBoxLayout *verticalLayout_6;
+    QHBoxLayout *horizontalLayout_6;
+    QCheckBox *checkBox_16;
+    QCheckBox *checkBox_17;
+    QCheckBox *checkBox_18;
+    QCheckBox *checkBox_19;
+    QCheckBox *checkBox_20;
+    QHBoxLayout *horizontalLayout_7;
+    QCheckBox *checkBox_26;
+    QCheckBox *checkBox_27;
+    QCheckBox *checkBox_28;
+    QCheckBox *checkBox_29;
+    QCheckBox *checkBox_30;
+    QHBoxLayout *horizontalLayout_8;
+    QCheckBox *checkBox_36;
+    QCheckBox *checkBox_37;
+    QCheckBox *checkBox_38;
+    QCheckBox *checkBox_39;
+    QCheckBox *checkBox_40;
+    QHBoxLayout *horizontalLayout_9;
+    QCheckBox *checkBox_46;
+    QCheckBox *checkBox_47;
+    QCheckBox *checkBox_48;
+    QCheckBox *checkBox_49;
+    QCheckBox *checkBox_50;
+    QHBoxLayout *horizontalLayout_10;
+    QCheckBox *checkBox_56;
+    QCheckBox *checkBox_57;
+    QCheckBox *checkBox_58;
+    QCheckBox *checkBox_59;
+    QCheckBox *checkBox_60;
+    QLabel *label_14;
+    QLabel *label_15;
+    QLabel *label_16;
+    QPushButton *pushButton_7;
+    QPushButton *pushButton_8;
     QGroupBox *groupBox_6;
     QPushButton *pushButton_3;
     QSpinBox *spinBox;
@@ -113,7 +155,7 @@ public:
     QRadioButton *radioButton_11;
     QRadioButton *radioButton_9;
     QRadioButton *radioButton_10;
-    QWidget *layoutWidget2;
+    QWidget *layoutWidget3;
     QVBoxLayout *verticalLayout_3;
     QCustomPlot *widget_012;
     QGroupBox *groupBox_7;
@@ -165,11 +207,11 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         lcdNumber = new QLCDNumber(centralWidget);
         lcdNumber->setObjectName(QStringLiteral("lcdNumber"));
-        lcdNumber->setGeometry(QRect(20, 650, 111, 71));
+        lcdNumber->setGeometry(QRect(20, 800, 111, 71));
         lcdNumber->setSmallDecimalPoint(true);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(20, 620, 121, 31));
+        label->setGeometry(QRect(20, 770, 121, 31));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(20, 10, 121, 102));
@@ -256,7 +298,7 @@ public:
 
         groupBox_3 = new QGroupBox(centralWidget);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(20, 130, 431, 301));
+        groupBox_3->setGeometry(QRect(0, 150, 431, 421));
         groupBox_4 = new QGroupBox(groupBox_3);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
         groupBox_4->setGeometry(QRect(10, 30, 91, 91));
@@ -294,7 +336,7 @@ public:
         groupBox_2->setCheckable(false);
         spinBox_3 = new QSpinBox(groupBox_2);
         spinBox_3->setObjectName(QStringLiteral("spinBox_3"));
-        spinBox_3->setGeometry(QRect(60, 50, 71, 31));
+        spinBox_3->setGeometry(QRect(10, 50, 71, 31));
         spinBox_3->setMaximum(4095);
         verticalSlider = new QSlider(groupBox_2);
         verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
@@ -304,6 +346,9 @@ public:
         verticalSlider->setInvertedControls(true);
         verticalSlider->setTickPosition(QSlider::NoTicks);
         verticalSlider->setTickInterval(0);
+        pushButton_6 = new QPushButton(groupBox_2);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(90, 50, 91, 31));
         pushButton_2 = new QPushButton(groupBox_3);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(10, 130, 91, 31));
@@ -338,17 +383,17 @@ public:
         Test_Pattern_button->setGeometry(QRect(10, 170, 91, 31));
         groupBox_9 = new QGroupBox(groupBox_3);
         groupBox_9->setObjectName(QStringLiteral("groupBox_9"));
-        groupBox_9->setGeometry(QRect(250, 130, 161, 161));
+        groupBox_9->setGeometry(QRect(180, 250, 161, 161));
         label_11 = new QLabel(groupBox_9);
         label_11->setObjectName(QStringLiteral("label_11"));
         label_11->setGeometry(QRect(20, 100, 31, 16));
         label_5 = new QLabel(groupBox_9);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(20, 40, 31, 16));
-        widget = new QWidget(groupBox_9);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(50, 20, 93, 101));
-        verticalLayout_5 = new QVBoxLayout(widget);
+        layoutWidget2 = new QWidget(groupBox_9);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(50, 20, 93, 101));
+        verticalLayout_5 = new QVBoxLayout(layoutWidget2);
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
@@ -356,27 +401,28 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        checkBox_11 = new QCheckBox(widget);
+        checkBox_11 = new QCheckBox(layoutWidget2);
         checkBox_11->setObjectName(QStringLiteral("checkBox_11"));
+        checkBox_11->setChecked(true);
 
         horizontalLayout->addWidget(checkBox_11);
 
-        checkBox_12 = new QCheckBox(widget);
+        checkBox_12 = new QCheckBox(layoutWidget2);
         checkBox_12->setObjectName(QStringLiteral("checkBox_12"));
 
         horizontalLayout->addWidget(checkBox_12);
 
-        checkBox_13 = new QCheckBox(widget);
+        checkBox_13 = new QCheckBox(layoutWidget2);
         checkBox_13->setObjectName(QStringLiteral("checkBox_13"));
 
         horizontalLayout->addWidget(checkBox_13);
 
-        checkBox_14 = new QCheckBox(widget);
+        checkBox_14 = new QCheckBox(layoutWidget2);
         checkBox_14->setObjectName(QStringLiteral("checkBox_14"));
 
         horizontalLayout->addWidget(checkBox_14);
 
-        checkBox_15 = new QCheckBox(widget);
+        checkBox_15 = new QCheckBox(layoutWidget2);
         checkBox_15->setObjectName(QStringLiteral("checkBox_15"));
 
         horizontalLayout->addWidget(checkBox_15);
@@ -387,27 +433,27 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        checkBox_21 = new QCheckBox(widget);
+        checkBox_21 = new QCheckBox(layoutWidget2);
         checkBox_21->setObjectName(QStringLiteral("checkBox_21"));
 
         horizontalLayout_2->addWidget(checkBox_21);
 
-        checkBox_22 = new QCheckBox(widget);
+        checkBox_22 = new QCheckBox(layoutWidget2);
         checkBox_22->setObjectName(QStringLiteral("checkBox_22"));
 
         horizontalLayout_2->addWidget(checkBox_22);
 
-        checkBox_23 = new QCheckBox(widget);
+        checkBox_23 = new QCheckBox(layoutWidget2);
         checkBox_23->setObjectName(QStringLiteral("checkBox_23"));
 
         horizontalLayout_2->addWidget(checkBox_23);
 
-        checkBox_24 = new QCheckBox(widget);
+        checkBox_24 = new QCheckBox(layoutWidget2);
         checkBox_24->setObjectName(QStringLiteral("checkBox_24"));
 
         horizontalLayout_2->addWidget(checkBox_24);
 
-        checkBox_25 = new QCheckBox(widget);
+        checkBox_25 = new QCheckBox(layoutWidget2);
         checkBox_25->setObjectName(QStringLiteral("checkBox_25"));
 
         horizontalLayout_2->addWidget(checkBox_25);
@@ -418,27 +464,27 @@ public:
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        checkBox_31 = new QCheckBox(widget);
+        checkBox_31 = new QCheckBox(layoutWidget2);
         checkBox_31->setObjectName(QStringLiteral("checkBox_31"));
 
         horizontalLayout_3->addWidget(checkBox_31);
 
-        checkBox_32 = new QCheckBox(widget);
+        checkBox_32 = new QCheckBox(layoutWidget2);
         checkBox_32->setObjectName(QStringLiteral("checkBox_32"));
 
         horizontalLayout_3->addWidget(checkBox_32);
 
-        checkBox_33 = new QCheckBox(widget);
+        checkBox_33 = new QCheckBox(layoutWidget2);
         checkBox_33->setObjectName(QStringLiteral("checkBox_33"));
 
         horizontalLayout_3->addWidget(checkBox_33);
 
-        checkBox_34 = new QCheckBox(widget);
+        checkBox_34 = new QCheckBox(layoutWidget2);
         checkBox_34->setObjectName(QStringLiteral("checkBox_34"));
 
         horizontalLayout_3->addWidget(checkBox_34);
 
-        checkBox_35 = new QCheckBox(widget);
+        checkBox_35 = new QCheckBox(layoutWidget2);
         checkBox_35->setObjectName(QStringLiteral("checkBox_35"));
 
         horizontalLayout_3->addWidget(checkBox_35);
@@ -449,27 +495,27 @@ public:
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        checkBox_41 = new QCheckBox(widget);
+        checkBox_41 = new QCheckBox(layoutWidget2);
         checkBox_41->setObjectName(QStringLiteral("checkBox_41"));
 
         horizontalLayout_4->addWidget(checkBox_41);
 
-        checkBox_42 = new QCheckBox(widget);
+        checkBox_42 = new QCheckBox(layoutWidget2);
         checkBox_42->setObjectName(QStringLiteral("checkBox_42"));
 
         horizontalLayout_4->addWidget(checkBox_42);
 
-        checkBox_43 = new QCheckBox(widget);
+        checkBox_43 = new QCheckBox(layoutWidget2);
         checkBox_43->setObjectName(QStringLiteral("checkBox_43"));
 
         horizontalLayout_4->addWidget(checkBox_43);
 
-        checkBox_44 = new QCheckBox(widget);
+        checkBox_44 = new QCheckBox(layoutWidget2);
         checkBox_44->setObjectName(QStringLiteral("checkBox_44"));
 
         horizontalLayout_4->addWidget(checkBox_44);
 
-        checkBox_45 = new QCheckBox(widget);
+        checkBox_45 = new QCheckBox(layoutWidget2);
         checkBox_45->setObjectName(QStringLiteral("checkBox_45"));
 
         horizontalLayout_4->addWidget(checkBox_45);
@@ -480,27 +526,27 @@ public:
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        checkBox_51 = new QCheckBox(widget);
+        checkBox_51 = new QCheckBox(layoutWidget2);
         checkBox_51->setObjectName(QStringLiteral("checkBox_51"));
 
         horizontalLayout_5->addWidget(checkBox_51);
 
-        checkBox_52 = new QCheckBox(widget);
+        checkBox_52 = new QCheckBox(layoutWidget2);
         checkBox_52->setObjectName(QStringLiteral("checkBox_52"));
 
         horizontalLayout_5->addWidget(checkBox_52);
 
-        checkBox_53 = new QCheckBox(widget);
+        checkBox_53 = new QCheckBox(layoutWidget2);
         checkBox_53->setObjectName(QStringLiteral("checkBox_53"));
 
         horizontalLayout_5->addWidget(checkBox_53);
 
-        checkBox_54 = new QCheckBox(widget);
+        checkBox_54 = new QCheckBox(layoutWidget2);
         checkBox_54->setObjectName(QStringLiteral("checkBox_54"));
 
         horizontalLayout_5->addWidget(checkBox_54);
 
-        checkBox_55 = new QCheckBox(widget);
+        checkBox_55 = new QCheckBox(layoutWidget2);
         checkBox_55->setObjectName(QStringLiteral("checkBox_55"));
 
         horizontalLayout_5->addWidget(checkBox_55);
@@ -523,6 +569,197 @@ public:
         pushButton_5 = new QPushButton(groupBox_9);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(90, 130, 61, 23));
+        pushButton_Reprogram = new QPushButton(groupBox_3);
+        pushButton_Reprogram->setObjectName(QStringLiteral("pushButton_Reprogram"));
+        pushButton_Reprogram->setGeometry(QRect(10, 210, 91, 31));
+        groupBox_10 = new QGroupBox(groupBox_3);
+        groupBox_10->setObjectName(QStringLiteral("groupBox_10"));
+        groupBox_10->setGeometry(QRect(10, 250, 161, 161));
+        label_12 = new QLabel(groupBox_10);
+        label_12->setObjectName(QStringLiteral("label_12"));
+        label_12->setGeometry(QRect(20, 100, 31, 16));
+        label_13 = new QLabel(groupBox_10);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setGeometry(QRect(20, 40, 31, 16));
+        layoutWidget_3 = new QWidget(groupBox_10);
+        layoutWidget_3->setObjectName(QStringLiteral("layoutWidget_3"));
+        layoutWidget_3->setGeometry(QRect(50, 20, 93, 101));
+        verticalLayout_6 = new QVBoxLayout(layoutWidget_3);
+        verticalLayout_6->setSpacing(6);
+        verticalLayout_6->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
+        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        checkBox_16 = new QCheckBox(layoutWidget_3);
+        checkBox_16->setObjectName(QStringLiteral("checkBox_16"));
+        checkBox_16->setChecked(true);
+
+        horizontalLayout_6->addWidget(checkBox_16);
+
+        checkBox_17 = new QCheckBox(layoutWidget_3);
+        checkBox_17->setObjectName(QStringLiteral("checkBox_17"));
+
+        horizontalLayout_6->addWidget(checkBox_17);
+
+        checkBox_18 = new QCheckBox(layoutWidget_3);
+        checkBox_18->setObjectName(QStringLiteral("checkBox_18"));
+
+        horizontalLayout_6->addWidget(checkBox_18);
+
+        checkBox_19 = new QCheckBox(layoutWidget_3);
+        checkBox_19->setObjectName(QStringLiteral("checkBox_19"));
+
+        horizontalLayout_6->addWidget(checkBox_19);
+
+        checkBox_20 = new QCheckBox(layoutWidget_3);
+        checkBox_20->setObjectName(QStringLiteral("checkBox_20"));
+
+        horizontalLayout_6->addWidget(checkBox_20);
+
+
+        verticalLayout_6->addLayout(horizontalLayout_6);
+
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setSpacing(6);
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        checkBox_26 = new QCheckBox(layoutWidget_3);
+        checkBox_26->setObjectName(QStringLiteral("checkBox_26"));
+
+        horizontalLayout_7->addWidget(checkBox_26);
+
+        checkBox_27 = new QCheckBox(layoutWidget_3);
+        checkBox_27->setObjectName(QStringLiteral("checkBox_27"));
+
+        horizontalLayout_7->addWidget(checkBox_27);
+
+        checkBox_28 = new QCheckBox(layoutWidget_3);
+        checkBox_28->setObjectName(QStringLiteral("checkBox_28"));
+
+        horizontalLayout_7->addWidget(checkBox_28);
+
+        checkBox_29 = new QCheckBox(layoutWidget_3);
+        checkBox_29->setObjectName(QStringLiteral("checkBox_29"));
+
+        horizontalLayout_7->addWidget(checkBox_29);
+
+        checkBox_30 = new QCheckBox(layoutWidget_3);
+        checkBox_30->setObjectName(QStringLiteral("checkBox_30"));
+
+        horizontalLayout_7->addWidget(checkBox_30);
+
+
+        verticalLayout_6->addLayout(horizontalLayout_7);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setSpacing(6);
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        checkBox_36 = new QCheckBox(layoutWidget_3);
+        checkBox_36->setObjectName(QStringLiteral("checkBox_36"));
+
+        horizontalLayout_8->addWidget(checkBox_36);
+
+        checkBox_37 = new QCheckBox(layoutWidget_3);
+        checkBox_37->setObjectName(QStringLiteral("checkBox_37"));
+
+        horizontalLayout_8->addWidget(checkBox_37);
+
+        checkBox_38 = new QCheckBox(layoutWidget_3);
+        checkBox_38->setObjectName(QStringLiteral("checkBox_38"));
+
+        horizontalLayout_8->addWidget(checkBox_38);
+
+        checkBox_39 = new QCheckBox(layoutWidget_3);
+        checkBox_39->setObjectName(QStringLiteral("checkBox_39"));
+
+        horizontalLayout_8->addWidget(checkBox_39);
+
+        checkBox_40 = new QCheckBox(layoutWidget_3);
+        checkBox_40->setObjectName(QStringLiteral("checkBox_40"));
+
+        horizontalLayout_8->addWidget(checkBox_40);
+
+
+        verticalLayout_6->addLayout(horizontalLayout_8);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setSpacing(6);
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
+        checkBox_46 = new QCheckBox(layoutWidget_3);
+        checkBox_46->setObjectName(QStringLiteral("checkBox_46"));
+
+        horizontalLayout_9->addWidget(checkBox_46);
+
+        checkBox_47 = new QCheckBox(layoutWidget_3);
+        checkBox_47->setObjectName(QStringLiteral("checkBox_47"));
+
+        horizontalLayout_9->addWidget(checkBox_47);
+
+        checkBox_48 = new QCheckBox(layoutWidget_3);
+        checkBox_48->setObjectName(QStringLiteral("checkBox_48"));
+
+        horizontalLayout_9->addWidget(checkBox_48);
+
+        checkBox_49 = new QCheckBox(layoutWidget_3);
+        checkBox_49->setObjectName(QStringLiteral("checkBox_49"));
+
+        horizontalLayout_9->addWidget(checkBox_49);
+
+        checkBox_50 = new QCheckBox(layoutWidget_3);
+        checkBox_50->setObjectName(QStringLiteral("checkBox_50"));
+
+        horizontalLayout_9->addWidget(checkBox_50);
+
+
+        verticalLayout_6->addLayout(horizontalLayout_9);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setSpacing(6);
+        horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
+        checkBox_56 = new QCheckBox(layoutWidget_3);
+        checkBox_56->setObjectName(QStringLiteral("checkBox_56"));
+
+        horizontalLayout_10->addWidget(checkBox_56);
+
+        checkBox_57 = new QCheckBox(layoutWidget_3);
+        checkBox_57->setObjectName(QStringLiteral("checkBox_57"));
+
+        horizontalLayout_10->addWidget(checkBox_57);
+
+        checkBox_58 = new QCheckBox(layoutWidget_3);
+        checkBox_58->setObjectName(QStringLiteral("checkBox_58"));
+
+        horizontalLayout_10->addWidget(checkBox_58);
+
+        checkBox_59 = new QCheckBox(layoutWidget_3);
+        checkBox_59->setObjectName(QStringLiteral("checkBox_59"));
+
+        horizontalLayout_10->addWidget(checkBox_59);
+
+        checkBox_60 = new QCheckBox(layoutWidget_3);
+        checkBox_60->setObjectName(QStringLiteral("checkBox_60"));
+
+        horizontalLayout_10->addWidget(checkBox_60);
+
+
+        verticalLayout_6->addLayout(horizontalLayout_10);
+
+        label_14 = new QLabel(groupBox_10);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setGeometry(QRect(20, 20, 31, 16));
+        label_15 = new QLabel(groupBox_10);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setGeometry(QRect(20, 80, 31, 16));
+        label_16 = new QLabel(groupBox_10);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setGeometry(QRect(20, 60, 31, 16));
+        pushButton_7 = new QPushButton(groupBox_10);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        pushButton_7->setGeometry(QRect(10, 130, 61, 23));
+        pushButton_8 = new QPushButton(groupBox_10);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        pushButton_8->setGeometry(QRect(90, 130, 61, 23));
         groupBox_6 = new QGroupBox(centralWidget);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
         groupBox_6->setGeometry(QRect(150, 10, 271, 121));
@@ -550,10 +787,10 @@ public:
         radioButton_10 = new QRadioButton(groupBox_5);
         radioButton_10->setObjectName(QStringLiteral("radioButton_10"));
         radioButton_10->setGeometry(QRect(20, 40, 82, 17));
-        layoutWidget2 = new QWidget(centralWidget);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(0, 0, 2, 2));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget2);
+        layoutWidget3 = new QWidget(centralWidget);
+        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(0, 0, 2, 2));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget3);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
@@ -563,7 +800,7 @@ public:
         widget_012->setGeometry(QRect(760, 10, 271, 171));
         groupBox_7 = new QGroupBox(centralWidget);
         groupBox_7->setObjectName(QStringLiteral("groupBox_7"));
-        groupBox_7->setGeometry(QRect(10, 440, 241, 161));
+        groupBox_7->setGeometry(QRect(10, 610, 241, 161));
         label_6 = new QLabel(groupBox_7);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setGeometry(QRect(10, 100, 47, 13));
@@ -670,10 +907,10 @@ public:
         widget_051->setGeometry(QRect(490, 690, 271, 171));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(150, 620, 121, 31));
+        label_3->setGeometry(QRect(150, 770, 121, 31));
         lcdNumber_2 = new QLCDNumber(centralWidget);
         lcdNumber_2->setObjectName(QStringLiteral("lcdNumber_2"));
-        lcdNumber_2->setGeometry(QRect(150, 650, 111, 71));
+        lcdNumber_2->setGeometry(QRect(150, 800, 111, 71));
         MainWindow->setCentralWidget(centralWidget);
         groupBox_7->raise();
         groupBox_3->raise();
@@ -709,11 +946,6 @@ public:
         widget_051->raise();
         label_3->raise();
         lcdNumber_2->raise();
-        checkBox_12->raise();
-        checkBox_11->raise();
-        checkBox_14->raise();
-        checkBox_13->raise();
-        checkBox_15->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 1860, 21));
@@ -756,6 +988,7 @@ public:
         radioButton_13->setText(QApplication::translate("MainWindow", "Internal", 0));
         groupBox->setTitle(QApplication::translate("MainWindow", "Source", 0));
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Threshold", 0));
+        pushButton_6->setText(QApplication::translate("MainWindow", "Set", 0));
         pushButton_2->setText(QApplication::translate("MainWindow", "Acquisition", 0));
         groupBox_8->setTitle(QApplication::translate("MainWindow", "Single / continious", 0));
         radioButton_14->setText(QApplication::translate("MainWindow", "Single", 0));
@@ -795,6 +1028,40 @@ public:
         label_9->setText(QApplication::translate("MainWindow", "row 3", 0));
         pushButton_4->setText(QApplication::translate("MainWindow", "Enalble all", 0));
         pushButton_5->setText(QApplication::translate("MainWindow", "Disalble all", 0));
+        pushButton_Reprogram->setText(QApplication::translate("MainWindow", "Reprogram", 0));
+        groupBox_10->setTitle(QApplication::translate("MainWindow", "CHANNEL_TRIGGER", 0));
+        label_12->setText(QApplication::translate("MainWindow", "row 5", 0));
+        label_13->setText(QApplication::translate("MainWindow", "row 2", 0));
+        checkBox_16->setText(QString());
+        checkBox_17->setText(QString());
+        checkBox_18->setText(QString());
+        checkBox_19->setText(QString());
+        checkBox_20->setText(QString());
+        checkBox_26->setText(QString());
+        checkBox_27->setText(QString());
+        checkBox_28->setText(QString());
+        checkBox_29->setText(QString());
+        checkBox_30->setText(QString());
+        checkBox_36->setText(QString());
+        checkBox_37->setText(QString());
+        checkBox_38->setText(QString());
+        checkBox_39->setText(QString());
+        checkBox_40->setText(QString());
+        checkBox_46->setText(QString());
+        checkBox_47->setText(QString());
+        checkBox_48->setText(QString());
+        checkBox_49->setText(QString());
+        checkBox_50->setText(QString());
+        checkBox_56->setText(QString());
+        checkBox_57->setText(QString());
+        checkBox_58->setText(QString());
+        checkBox_59->setText(QString());
+        checkBox_60->setText(QString());
+        label_14->setText(QApplication::translate("MainWindow", "row 1", 0));
+        label_15->setText(QApplication::translate("MainWindow", "row 4", 0));
+        label_16->setText(QApplication::translate("MainWindow", "row 3", 0));
+        pushButton_7->setText(QApplication::translate("MainWindow", "Enalble all", 0));
+        pushButton_8->setText(QApplication::translate("MainWindow", "Disalble all", 0));
         groupBox_6->setTitle(QApplication::translate("MainWindow", "Output settings", 0));
         pushButton_3->setText(QApplication::translate("MainWindow", "Write data", 0));
         label_2->setText(QApplication::translate("MainWindow", "Events per file", 0));

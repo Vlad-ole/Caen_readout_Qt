@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     qDebug() << "Thread in MainWindow is " << QThread::currentThreadId();
 
+
+
     ui->setupUi(this);
     ui->groupBox_3->setEnabled(false);
     ui->groupBox_6->setEnabled(false);
@@ -35,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL(Restart()), worker, SLOT(Restart()) );
+    connect( this, SIGNAL(SetTriggerValue(int,int)), worker, SLOT(SetTriggerValue(int,int)) );
     connect( this, SIGNAL(MaskChannel(int,bool)), worker, SLOT(MaskChannel(int,bool)), Qt::DirectConnection);
     connect( this, SIGNAL(EnableContinuousPlot()), worker, SLOT(EnableContinuousPlot()),Qt::DirectConnection );
     connect( this, SIGNAL(DisableContinuousPlot()), worker, SLOT(DisableContinuousPlot()), Qt::DirectConnection );
@@ -102,85 +106,132 @@ void MainWindow::InitializationComplete()
     ui->pushButton->setEnabled(false);
 
 ///////////////
-    ui->widget_011->xAxis->setLabel("time [us]");
-    ui->widget_011->yAxis->setLabel("Amplitude [V]");
+    QString x_label = "time [us]";
+    QString y_label = "Amplitude [mV]";
 
-    ui->widget_012->xAxis->setLabel("time [us]");
-    ui->widget_012->yAxis->setLabel("Amplitude [V]");
+    ui->widget_011->axisRect()->setupFullAxesBox();
+    ui->widget_011->plotLayout()->insertRow(0);
+    ui->widget_011->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_011, "Channel 0"));
+    ui->widget_011->xAxis->setLabel(x_label);
+    ui->widget_011->yAxis->setLabel(y_label);
 
-    ui->widget_013->xAxis->setLabel("time [us]");
-    ui->widget_013->yAxis->setLabel("Amplitude [V]");
+    ui->widget_012->axisRect()->setupFullAxesBox();
+    ui->widget_012->plotLayout()->insertRow(0);
+    ui->widget_012->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_012, "Channel 1"));
+    ui->widget_012->xAxis->setLabel(x_label);
+    ui->widget_012->yAxis->setLabel(y_label);
 
-    ui->widget_014->xAxis->setLabel("time [us]");
-    ui->widget_014->yAxis->setLabel("Amplitude [V]");
+    ui->widget_013->axisRect()->setupFullAxesBox();
+    ui->widget_013->plotLayout()->insertRow(0);
+    ui->widget_013->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_013, "Channel 2"));
+    ui->widget_013->xAxis->setLabel(x_label);
+    ui->widget_013->yAxis->setLabel(y_label);
 
-    ui->widget_015->xAxis->setLabel("time [us]");
-    ui->widget_015->yAxis->setLabel("Amplitude [V]");
+    ui->widget_014->axisRect()->setupFullAxesBox();
+    ui->widget_014->plotLayout()->insertRow(0);
+    ui->widget_014->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_014, "Channel 3"));
+    ui->widget_014->xAxis->setLabel(x_label);
+    ui->widget_014->yAxis->setLabel(y_label);
+
+    ui->widget_015->axisRect()->setupFullAxesBox();
+    ui->widget_015->plotLayout()->insertRow(0);
+    ui->widget_015->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_015, "Channel 4"));
+    ui->widget_015->xAxis->setLabel(x_label);
+    ui->widget_015->yAxis->setLabel(y_label);
 
     ///////////////
-    ui->widget_021->xAxis->setLabel("time [us]");
-    ui->widget_021->yAxis->setLabel("Amplitude [V]");
+    ui->widget_021->axisRect()->setupFullAxesBox();
+    ui->widget_021->plotLayout()->insertRow(0);
+    ui->widget_021->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_021, "Channel 5"));
+    ui->widget_021->xAxis->setLabel(x_label);
+    ui->widget_021->yAxis->setLabel(y_label);
 
-    ui->widget_022->xAxis->setLabel("time [us]");
-    ui->widget_022->yAxis->setLabel("Amplitude [V]");
+    ui->widget_022->axisRect()->setupFullAxesBox();
+    ui->widget_022->plotLayout()->insertRow(0);
+    ui->widget_022->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_022, "Channel 6"));
+    ui->widget_022->xAxis->setLabel(x_label);
+    ui->widget_022->yAxis->setLabel(y_label);
 
-    ui->widget_023->xAxis->setLabel("time [us]");
-    ui->widget_023->yAxis->setLabel("Amplitude [V]");
+    ui->widget_023->axisRect()->setupFullAxesBox();
+    ui->widget_023->plotLayout()->insertRow(0);
+    ui->widget_023->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_023, "Channel 7"));
+    ui->widget_023->xAxis->setLabel(x_label);
+    ui->widget_023->yAxis->setLabel(y_label);
 
-    ui->widget_024->xAxis->setLabel("time [us]");
-    ui->widget_024->yAxis->setLabel("Amplitude [V]");
+    ui->widget_024->axisRect()->setupFullAxesBox();
+    ui->widget_024->plotLayout()->insertRow(0);
+    ui->widget_024->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_024, "Channel 8"));
+    ui->widget_024->xAxis->setLabel(x_label);
+    ui->widget_024->yAxis->setLabel(y_label);
 
-    ui->widget_025->xAxis->setLabel("time [us]");
-    ui->widget_025->yAxis->setLabel("Amplitude [V]");
+
+    ui->widget_025->axisRect()->setupFullAxesBox();
+    ui->widget_025->plotLayout()->insertRow(0);
+    ui->widget_025->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_025, "Channel 9"));
+    ui->widget_025->xAxis->setLabel(x_label);
+    ui->widget_025->yAxis->setLabel(y_label);
 
 ///////////////
-    ui->widget_031->xAxis->setLabel("time [us]");
-    ui->widget_031->yAxis->setLabel("Amplitude [V]");
+    ui->widget_031->axisRect()->setupFullAxesBox();
+    ui->widget_031->plotLayout()->insertRow(0);
+    ui->widget_031->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_031, "Channel 10"));
+    ui->widget_031->xAxis->setLabel(x_label);
+    ui->widget_031->yAxis->setLabel(y_label);
 
-    ui->widget_032->xAxis->setLabel("time [us]");
-    ui->widget_032->yAxis->setLabel("Amplitude [V]");
 
-    ui->widget_033->xAxis->setLabel("time [us]");
-    ui->widget_033->yAxis->setLabel("Amplitude [V]");
+    ui->widget_032->axisRect()->setupFullAxesBox();
+    ui->widget_032->plotLayout()->insertRow(0);
+    ui->widget_032->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_032, "Channel 11"));
+    ui->widget_032->xAxis->setLabel(x_label);
+    ui->widget_032->yAxis->setLabel(y_label);
 
-    ui->widget_034->xAxis->setLabel("time [us]");
-    ui->widget_034->yAxis->setLabel("Amplitude [V]");
+    ui->widget_033->axisRect()->setupFullAxesBox();
+    ui->widget_033->plotLayout()->insertRow(0);
+    ui->widget_033->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_033, "Channel 12"));
+    ui->widget_033->xAxis->setLabel(x_label);
+    ui->widget_033->yAxis->setLabel(y_label);
 
-    ui->widget_035->xAxis->setLabel("time [us]");
-    ui->widget_035->yAxis->setLabel("Amplitude [V]");
+    ui->widget_034->axisRect()->setupFullAxesBox();
+    ui->widget_034->plotLayout()->insertRow(0);
+    ui->widget_034->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_034, "Channel 13"));
+    ui->widget_034->xAxis->setLabel(x_label);
+    ui->widget_034->yAxis->setLabel(y_label);
+
+    ui->widget_035->xAxis->setLabel(x_label);
+    ui->widget_035->yAxis->setLabel(y_label);
     ///////////////
 
-    ui->widget_041->xAxis->setLabel("time [us]");
-    ui->widget_041->yAxis->setLabel("Amplitude [V]");
+    ui->widget_041->xAxis->setLabel(x_label);
+    ui->widget_041->yAxis->setLabel(y_label);
 
-    ui->widget_042->xAxis->setLabel("time [us]");
-    ui->widget_042->yAxis->setLabel("Amplitude [V]");
+    ui->widget_042->xAxis->setLabel(x_label);
+    ui->widget_042->yAxis->setLabel(y_label);
 
-    ui->widget_043->xAxis->setLabel("time [us]");
-    ui->widget_043->yAxis->setLabel("Amplitude [V]");
+    ui->widget_043->xAxis->setLabel(x_label);
+    ui->widget_043->yAxis->setLabel(y_label);
 
-    ui->widget_044->xAxis->setLabel("time [us]");
-    ui->widget_044->yAxis->setLabel("Amplitude [V]");
+    ui->widget_044->xAxis->setLabel(x_label);
+    ui->widget_044->yAxis->setLabel(y_label);
 
-    ui->widget_045->xAxis->setLabel("time [us]");
-    ui->widget_045->yAxis->setLabel("Amplitude [V]");
+    ui->widget_045->xAxis->setLabel(x_label);
+    ui->widget_045->yAxis->setLabel(y_label);
 
     ///////////////
 
-    ui->widget_051->xAxis->setLabel("time [us]");
-    ui->widget_051->yAxis->setLabel("Amplitude [V]");
+    ui->widget_051->xAxis->setLabel(x_label);
+    ui->widget_051->yAxis->setLabel(y_label);
 
-    ui->widget_052->xAxis->setLabel("time [us]");
-    ui->widget_052->yAxis->setLabel("Amplitude [V]");
+    ui->widget_052->xAxis->setLabel(x_label);
+    ui->widget_052->yAxis->setLabel(y_label);
 
-    ui->widget_053->xAxis->setLabel("time [us]");
-    ui->widget_053->yAxis->setLabel("Amplitude [V]");
+    ui->widget_053->xAxis->setLabel(x_label);
+    ui->widget_053->yAxis->setLabel(y_label);
 
-    ui->widget_054->xAxis->setLabel("time [us]");
-    ui->widget_054->yAxis->setLabel("Amplitude [V]");
+    ui->widget_054->xAxis->setLabel(x_label);
+    ui->widget_054->yAxis->setLabel(y_label);
 
-    ui->widget_055->xAxis->setLabel("time [us]");
-    ui->widget_055->yAxis->setLabel("Amplitude [V]");
+    ui->widget_055->xAxis->setLabel(x_label);
+    ui->widget_055->yAxis->setLabel(y_label);
 
 
 
@@ -189,57 +240,57 @@ void MainWindow::InitializationComplete()
     //ui->widget_011->
 
 
-    {
-        //Рисуем график y=x*x
+//    {
+//        //Рисуем график y=x*x
 
-            //Сгенерируем данные
-            //Для этого создадим два массива точек:
-            //один для созранения x координат точек,
-            //а второй для y соответственно
+//            //Сгенерируем данные
+//            //Для этого создадим два массива точек:
+//            //один для созранения x координат точек,
+//            //а второй для y соответственно
 
-            double a = -1; //Начало интервала, где рисуем график по оси Ox
-            double b =  1; //Конец интервала, где рисуем график по оси Ox
-            double h = 0.01; //Шаг, с которым будем пробегать по оси Ox
+//            double a = -1; //Начало интервала, где рисуем график по оси Ox
+//            double b =  1; //Конец интервала, где рисуем график по оси Ox
+//            double h = 0.01; //Шаг, с которым будем пробегать по оси Ox
 
-            int N=(b-a)/h + 2; //Вычисляем количество точек, которые будем отрисовывать
-            QVector<double> x(N), y(N); //Массивы координат точек
+//            int N=(b-a)/h + 2; //Вычисляем количество точек, которые будем отрисовывать
+//            QVector<double> x(N), y(N); //Массивы координат точек
 
-            //Вычисляем наши данные
-            int i=0;
-            for (double X=a; X<=b; X+=h)//Пробегаем по всем точкам
-            {
-                x[i] = X;
-                y[i] = X*X;//Формула нашей функции
-                i++;
-            }
+//            //Вычисляем наши данные
+//            int i=0;
+//            for (double X=a; X<=b; X+=h)//Пробегаем по всем точкам
+//            {
+//                x[i] = X;
+//                y[i] = X*X;//Формула нашей функции
+//                i++;
+//            }
 
-            ui->widget_011->clearGraphs();//Если нужно, но очищаем все графики
-            //Добавляем один график в widget
-            ui->widget_011->addGraph();
-            //Говорим, что отрисовать нужно график по нашим двум массивам x и y
-            ui->widget_011->graph(0)->setData(x, y);
+//            ui->widget_011->clearGraphs();//Если нужно, но очищаем все графики
+//            //Добавляем один график в widget
+//            ui->widget_011->addGraph();
+//            //Говорим, что отрисовать нужно график по нашим двум массивам x и y
+//            ui->widget_011->graph(0)->setData(x, y);
 
-            //Подписываем оси Ox и Oy
-            ui->widget_011->xAxis->setLabel("time [us]");
-            ui->widget_011->yAxis->setLabel("Amplitude [V]");
+//            //Подписываем оси Ox и Oy
+//            ui->widget_011->xAxis->setLabel("time [us]");
+//            ui->widget_011->yAxis->setLabel("Amplitude [V]");
 
-            //Установим область, которая будет показываться на графике
-            ui->widget_011->xAxis->setRange(a, b);//Для оси Ox
+//            //Установим область, которая будет показываться на графике
+//            ui->widget_011->xAxis->setRange(a, b);//Для оси Ox
 
-            //Для показа границ по оси Oy сложнее, так как надо по правильному
-            //вычислить минимальное и максимальное значение в векторах
-            double minY = y[0], maxY = y[0];
-            for (int i=1; i<N; i++)
-            {
-                if (y[i]<minY) minY = y[i];
-                if (y[i]>maxY) maxY = y[i];
-            }
-            ui->widget_011->yAxis->setRange(minY, maxY);//Для оси Oy
+//            //Для показа границ по оси Oy сложнее, так как надо по правильному
+//            //вычислить минимальное и максимальное значение в векторах
+//            double minY = y[0], maxY = y[0];
+//            for (int i=1; i<N; i++)
+//            {
+//                if (y[i]<minY) minY = y[i];
+//                if (y[i]>maxY) maxY = y[i];
+//            }
+//            ui->widget_011->yAxis->setRange(minY, maxY);//Для оси Oy
 
-            //И перерисуем график на нашем widget
-            ui->widget_011->replot();
+//            //И перерисуем график на нашем widget
+//            ui->widget_011->replot();
 
-    }
+//    }
 }
 
 
@@ -728,6 +779,8 @@ void MainWindow::on_checkBox_15_clicked(bool checked)
     emit this->MaskChannel(4, checked);
 }
 
+////////////////////////////////////////
+
 void MainWindow::on_checkBox_21_clicked(bool checked)
 {
     emit this->MaskChannel(5, checked);
@@ -741,4 +794,147 @@ void MainWindow::on_checkBox_22_clicked(bool checked)
 void MainWindow::on_checkBox_23_clicked(bool checked)
 {
     emit this->MaskChannel(7, checked);
+}
+
+void MainWindow::on_checkBox_24_clicked(bool checked)
+{
+    emit this->MaskChannel(8, checked);
+}
+
+////////////////////////////////////////
+
+void MainWindow::on_verticalSlider_valueChanged(int value)
+{
+    trigger_value_ch.value = value;
+    qDebug() << "trigger_value_ch.value = " << value << endl;
+}
+
+void MainWindow::on_spinBox_2_valueChanged(int arg1)
+{
+    trigger_value_ch.ch = arg1;
+    qDebug() << "trigger_value_ch.ch = " << arg1 << endl;
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    emit this->SetTriggerValue(trigger_value_ch.ch, trigger_value_ch.value);
+    qDebug() << "SetTriggerValue_clicked()" << endl;
+}
+
+void MainWindow::on_pushButton_Reprogram_clicked()
+{
+    if(on_pushButton_2_clicked_bool)
+    {
+        ui->pushButton_2->setStyleSheet("");
+        emit this->StopReadout_loop();
+
+        Sleep(1);
+        ui->lcdNumber->display(0);
+        ui->lcdNumber_2->display(0);
+
+        on_pushButton_2_clicked_bool = false;
+        ui->groupBox_6->setEnabled(false);
+    }
+
+    emit this->Restart();
+
+    qDebug() << "on_pushButton_Reprogram_clicked" << endl;
+}
+
+
+
+void MainWindow::on_checkBox_25_clicked(bool checked)
+{
+    emit this->MaskChannel(9, checked);
+}
+
+void MainWindow::on_checkBox_31_clicked(bool checked)
+{
+    emit this->MaskChannel(10, checked);
+}
+
+void MainWindow::on_checkBox_32_clicked(bool checked)
+{
+    emit this->MaskChannel(11, checked);
+}
+
+void MainWindow::on_checkBox_33_clicked(bool checked)
+{
+    emit this->MaskChannel(12, checked);
+}
+
+void MainWindow::on_checkBox_34_clicked(bool checked)
+{
+    emit this->MaskChannel(13, checked);
+}
+
+void MainWindow::on_checkBox_35_clicked(bool checked)
+{
+    emit this->MaskChannel(14, checked);
+}
+
+
+
+void MainWindow::on_checkBox_41_clicked(bool checked)
+{
+    emit this->MaskChannel(15, checked);
+}
+
+void MainWindow::on_checkBox_42_clicked(bool checked)
+{
+    emit this->MaskChannel(16, checked);
+}
+
+
+
+void MainWindow::on_checkBox_43_clicked(bool checked)
+{
+    emit this->MaskChannel(17, checked);
+}
+
+void MainWindow::on_checkBox_44_clicked(bool checked)
+{
+    emit this->MaskChannel(18, checked);
+}
+
+
+
+void MainWindow::on_checkBox_45_clicked(bool checked)
+{
+    emit this->MaskChannel(19, checked);
+}
+
+
+
+void MainWindow::on_checkBox_51_clicked(bool checked)
+{
+    emit this->MaskChannel(20, checked);
+}
+
+
+
+void MainWindow::on_checkBox_52_clicked(bool checked)
+{
+    emit this->MaskChannel(21, checked);
+}
+
+
+
+void MainWindow::on_checkBox_53_clicked(bool checked)
+{
+    emit this->MaskChannel(22, checked);
+}
+
+
+
+void MainWindow::on_checkBox_54_clicked(bool checked)
+{
+    emit this->MaskChannel(24, checked);
+}
+
+
+
+void MainWindow::on_checkBox_55_clicked(bool checked)
+{
+    emit this->MaskChannel(25, checked);
 }

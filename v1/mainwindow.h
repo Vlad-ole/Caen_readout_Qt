@@ -81,6 +81,48 @@ private slots:
 
     void on_checkBox_23_clicked(bool checked);
 
+    void on_verticalSlider_valueChanged(int value);
+
+    void on_spinBox_2_valueChanged(int arg1);
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_Reprogram_clicked();
+
+    void on_checkBox_24_clicked(bool checked);
+
+    void on_checkBox_25_clicked(bool checked);
+
+    void on_checkBox_31_clicked(bool checked);
+
+    void on_checkBox_32_clicked(bool checked);
+
+    void on_checkBox_33_clicked(bool checked);
+
+    void on_checkBox_34_clicked(bool checked);
+
+    void on_checkBox_35_clicked(bool checked);
+
+    void on_checkBox_41_clicked(bool checked);
+
+    void on_checkBox_42_clicked(bool checked);
+
+    void on_checkBox_43_clicked(bool checked);
+
+    void on_checkBox_44_clicked(bool checked);
+
+    void on_checkBox_45_clicked(bool checked);
+
+    void on_checkBox_51_clicked(bool checked);
+
+    void on_checkBox_52_clicked(bool checked);
+
+    void on_checkBox_53_clicked(bool checked);
+
+    void on_checkBox_54_clicked(bool checked);
+
+    void on_checkBox_55_clicked(bool checked);
+
 public slots:
     void Message(QString);
     void InitializationComplete();
@@ -93,6 +135,13 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    struct TriggerValueCh
+    {
+        int value;
+        int ch;
+    };
+
+    TriggerValueCh trigger_value_ch;
 
 signals:
     void Init();
@@ -113,6 +162,7 @@ signals:
     void EnableContinuousPlot();
     void DisableContinuousPlot();
     void MaskChannel(int, bool);
+    void SetTriggerValue(int, int);
 
 };
 

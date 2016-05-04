@@ -251,6 +251,10 @@ void MyWorker::Readout_loop()
             Ne = 0;
             PrevRateTime = CurrentTime;
 
+            qDebug() << "WDcfg.Threshold[0] = " << WDcfg.Threshold[0] << endl;
+            qDebug() << "WDcfg.Threshold[1] = " << WDcfg.Threshold[1] << endl;
+            qDebug() << "WDcfg.Threshold[2] = " << WDcfg.Threshold[2] << endl;
+
 
             if(WDrun.ContinuousPlot)
             {
@@ -697,6 +701,14 @@ void MyWorker::MaskChannel(int ch, bool Enable)
         qDebug() << " WDcfg.EnableMask &= ~(1 << ch) " << endl;
     }
 
+    QString myStringOfBits( QString::number( WDcfg.EnableMask, 2 ) );
+    qDebug() << " WDcfg.EnableMask = " << myStringOfBits << endl;
+
     Restart();
     //Sleep(5000);
+}
+
+void MyWorker::SetTriggerValue(int ch, int val)
+{
+    WDcfg.Threshold[ch] = val;
 }

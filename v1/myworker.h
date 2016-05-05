@@ -23,6 +23,7 @@ public:
     MyWorker();
 
     int events_per_file;
+    QString output_folder;
 
     int  handle;
     CAEN_DGTZ_ErrorCode ret;
@@ -86,6 +87,7 @@ public slots:
     void CHANNEL_TRIGGER_all(bool);
     void SetOutFileType(int);
     void SetEventsPerFile(int);
+    void SetFolder(QString);
 
 signals:
     void Message(QString);

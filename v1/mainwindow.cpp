@@ -6,6 +6,8 @@
 #include "WDconfig.h"
 #include "X742CorrectionRoutines.h"
 #include "fft.h"
+#include <QFileDialog>
+#include "QMessageBox"
 
 #include "QTime"
 
@@ -37,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL( SetFolder(QString) ) , worker, SLOT( SetFolder(QString) ) );
     connect( this, SIGNAL( SetOutFileType(int) ), worker, SLOT( SetOutFileType(int) ) );
     connect( this, SIGNAL( CHANNEL_TRIGGER_all(bool) ), worker, SLOT( CHANNEL_TRIGGER_all(bool) ) );
     connect( this, SIGNAL(CHANNEL_TRIGGER_signal(int,bool)), worker, SLOT(CHANNEL_TRIGGER_signal(int,bool)) );
@@ -1208,4 +1211,20 @@ void MainWindow::on_radioButton_root_tree_clicked(bool checked)
 void MainWindow::on_spinBox_valueChanged(int arg1)
 {
     emit this->SetEventsPerFile(arg1);
+}
+
+void MainWindow::on_pushButton_choose_folder_clicked()
+{
+    //QString filename = QFileDialog::getOpenFileName(this, tr("Open file"), "C://", "All files (*.*)");
+    QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+                                                    "/home",
+                                                    QFileDialog::ShowDirsOnly
+                                                    | QFileDialog::DontResolveSymlinks);
+
+    dir.replace("/","\\");
+    dir += "\\";
+    //dir = QDir::fromNativeSeparators(dir);
+    qDebug() << "dir = " << dir << endl;
+
+    emit this->SetFolder(dir);
 }

@@ -187,6 +187,8 @@ private slots:
 
     void on_spinBox_valueChanged(int arg1);
 
+    void on_pushButton_choose_folder_clicked();
+
 public slots:
     void Message(QString);
     void InitializationComplete();
@@ -234,6 +236,7 @@ signals:
     void CHANNEL_TRIGGER_all(bool);
     void SetOutFileType(int);
     void SetEventsPerFile(int);
+    void SetFolder(QString);
 
 };
 

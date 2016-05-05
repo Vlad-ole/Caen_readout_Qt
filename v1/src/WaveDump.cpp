@@ -46,6 +46,7 @@
 #include "keyb.h"
 #include "X742CorrectionRoutines.h"
 #include <QDebug>
+#include <sstream>
 
 
 #ifndef max
@@ -579,11 +580,13 @@ void CheckKeyboardCommands(int handle, WaveDumpRun_t *WDrun, WaveDumpConfig_t *W
 *   \param   EventInfo Pointer to the EventInfo data structure
 *   \param   Event Pointer to the Event to write
 */
-int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_EventInfo_t *EventInfo, void *Event)
+int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_EventInfo_t *EventInfo, void *Event, QString folder)
 {
     int ch, j, ns;
     CAEN_DGTZ_UINT16_EVENT_t  *Event16;
     CAEN_DGTZ_UINT8_EVENT_t   *Event8;
+
+
 
     if (WDcfg->Nbit == 8)
         Event8 = (CAEN_DGTZ_UINT8_EVENT_t *)Event;
@@ -608,13 +611,18 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
             BinHeader[3] = ch;
             BinHeader[4] = EventInfo->EventCounter;
             BinHeader[5] = EventInfo->TriggerTimeTag;
-            if (!WDrun->fout[ch]) {
-                char fname[100];
-                sprintf(fname, "wave%d.dat", ch);
+            if (!WDrun->fout[ch])
+            {
+                //sprintf(fname, "wave%d.dat", ch);
+                std::ostringstream oss;
+                oss << folder.toStdString() << "wave" << ch << ".dat";
+                char* fname = oss.str().c_str();
+
                 if ((WDrun->fout[ch] = fopen(fname, "wb")) == NULL)
                     return -1;
             }
-            if( WDcfg->out_file_isheader) {
+            if( WDcfg->out_file_isheader)
+            {
                 // Write the Channel Header
                 if(fwrite(BinHeader, sizeof(*BinHeader), 6, WDrun->fout[ch]) != 6) {
                     // error writing to file
@@ -638,9 +646,13 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
         {
             // Ascii file format
             qDebug() << " Ascii file format" << endl;
-            if (!WDrun->fout[ch]) {
-                char fname[100];
-                sprintf(fname, "wave%d.txt", ch);
+            if (!WDrun->fout[ch])
+            {
+                //sprintf(fname, "wave%d.txt", ch);
+                std::ostringstream oss;
+                oss << folder.toStdString() << "wave" << ch << ".dat";
+                char* fname = oss.str().c_str();
+
                 if ((WDrun->fout[ch] = fopen(fname, "w")) == NULL)
                     return -1;
             }

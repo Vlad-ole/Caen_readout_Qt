@@ -13,6 +13,7 @@ void MyWorker::Init()
     qDebug() << "Thread in Init() is " << QThread::currentThreadId();
 
     events_per_file = 10;
+    output_folder = "";
 
     int argc_my = 1;
     char* argv_my[0] = {};
@@ -413,10 +414,10 @@ void MyWorker::Readout_loop()
                         ret = WriteOutputFilesx742(&WDcfg, &WDrun, &EventInfo, Event742);
                     }
                     else if (WDcfg.Nbit == 8) {
-                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event8);
+                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event8, output_folder);
                     }
                     else {
-                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event16); //my case
+                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event16, output_folder); //my case
                     }
                     if (ret)
                     {
@@ -795,4 +796,14 @@ void MyWorker::SetOutFileType(int value)
         qDebug() << "SetOutFileType error!" << endl;
     }
 
+}
+
+void MyWorker::SetEventsPerFile(int)
+{
+
+}
+
+void MyWorker::SetFolder(QString value)
+{
+    output_folder = value;
 }

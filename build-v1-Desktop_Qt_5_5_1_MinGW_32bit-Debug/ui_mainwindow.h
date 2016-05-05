@@ -157,6 +157,7 @@ public:
     QRadioButton *radioButton_root_tree;
     QRadioButton *radioButton_9;
     QRadioButton *radioButton_10;
+    QPushButton *pushButton_choose_folder;
     QWidget *layoutWidget3;
     QVBoxLayout *verticalLayout_3;
     QCustomPlot *widget_012;
@@ -769,7 +770,7 @@ public:
         pushButton_8->setGeometry(QRect(90, 130, 61, 23));
         groupBox_6 = new QGroupBox(centralWidget);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
-        groupBox_6->setGeometry(QRect(150, 10, 271, 121));
+        groupBox_6->setGeometry(QRect(150, 10, 321, 141));
         pushButton_3 = new QPushButton(groupBox_6);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(30, 20, 75, 23));
@@ -795,6 +796,9 @@ public:
         radioButton_10 = new QRadioButton(groupBox_5);
         radioButton_10->setObjectName(QStringLiteral("radioButton_10"));
         radioButton_10->setGeometry(QRect(20, 40, 82, 17));
+        pushButton_choose_folder = new QPushButton(groupBox_6);
+        pushButton_choose_folder->setObjectName(QStringLiteral("pushButton_choose_folder"));
+        pushButton_choose_folder->setGeometry(QRect(30, 110, 75, 23));
         layoutWidget3 = new QWidget(centralWidget);
         layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
         layoutWidget3->setGeometry(QRect(0, 0, 2, 2));
@@ -1084,6 +1088,7 @@ public:
         radioButton_root_tree->setText(QApplication::translate("MainWindow", "root tree", 0));
         radioButton_9->setText(QApplication::translate("MainWindow", "ASCII", 0));
         radioButton_10->setText(QApplication::translate("MainWindow", "BINARY", 0));
+        pushButton_choose_folder->setText(QApplication::translate("MainWindow", "Choose folder", 0));
         groupBox_7->setTitle(QApplication::translate("MainWindow", "Plot settings", 0));
         label_6->setText(QApplication::translate("MainWindow", "y bottom", 0));
         label_7->setText(QApplication::translate("MainWindow", "y top", 0));

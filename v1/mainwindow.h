@@ -123,6 +123,70 @@ private slots:
 
     void on_checkBox_55_clicked(bool checked);
 
+    void on_pushButton_7_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_checkBox_12_clicked();
+
+    void on_CHANNEL_TRIGGER_checkBox_11_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_12_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_13_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_14_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_15_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_21_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_22_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_23_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_24_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_25_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_31_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_32_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_33_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_34_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_35_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_41_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_42_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_43_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_44_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_45_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_51_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_52_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_53_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_54_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_55_clicked(bool checked);
+
+    void on_radioButton_9_clicked(bool checked);
+
+    void on_radioButton_10_clicked(bool checked);
+
+    void on_radioButton_root_tree_clicked(bool checked);
+
+    void on_spinBox_valueChanged(int arg1);
+
 public slots:
     void Message(QString);
     void InitializationComplete();
@@ -140,6 +204,8 @@ private:
         int value;
         int ch;
     };
+
+
 
     TriggerValueCh trigger_value_ch;
 
@@ -163,6 +229,11 @@ signals:
     void DisableContinuousPlot();
     void MaskChannel(int, bool);
     void SetTriggerValue(int, int);
+    void MaskChannelAll(bool);
+    void CHANNEL_TRIGGER_signal(int, bool);
+    void CHANNEL_TRIGGER_all(bool);
+    void SetOutFileType(int);
+    void SetEventsPerFile(int);
 
 };
 

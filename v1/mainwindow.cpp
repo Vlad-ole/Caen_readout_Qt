@@ -37,6 +37,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL( SetOutFileType(int) ), worker, SLOT( SetOutFileType(int) ) );
+    connect( this, SIGNAL( CHANNEL_TRIGGER_all(bool) ), worker, SLOT( CHANNEL_TRIGGER_all(bool) ) );
+    connect( this, SIGNAL(CHANNEL_TRIGGER_signal(int,bool)), worker, SLOT(CHANNEL_TRIGGER_signal(int,bool)) );
+    connect( this, SIGNAL( MaskChannelAll(bool) ), worker, SLOT( MaskChannelAll(bool) ) );
     connect( this, SIGNAL(Restart()), worker, SLOT(Restart()) );
     connect( this, SIGNAL(SetTriggerValue(int,int)), worker, SLOT(SetTriggerValue(int,int)) );
     connect( this, SIGNAL(MaskChannel(int,bool)), worker, SLOT(MaskChannel(int,bool)), Qt::DirectConnection);
@@ -197,39 +201,72 @@ void MainWindow::InitializationComplete()
     ui->widget_034->xAxis->setLabel(x_label);
     ui->widget_034->yAxis->setLabel(y_label);
 
+    ui->widget_035->axisRect()->setupFullAxesBox();
+    ui->widget_035->plotLayout()->insertRow(0);
+    ui->widget_035->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_035, "Channel 14"));
     ui->widget_035->xAxis->setLabel(x_label);
     ui->widget_035->yAxis->setLabel(y_label);
     ///////////////
 
+    ui->widget_041->axisRect()->setupFullAxesBox();
+    ui->widget_041->plotLayout()->insertRow(0);
+    ui->widget_041->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_041, "Channel 15"));
     ui->widget_041->xAxis->setLabel(x_label);
     ui->widget_041->yAxis->setLabel(y_label);
 
+    ui->widget_042->axisRect()->setupFullAxesBox();
+    ui->widget_042->plotLayout()->insertRow(0);
+    ui->widget_042->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_042, "Channel 16"));
     ui->widget_042->xAxis->setLabel(x_label);
     ui->widget_042->yAxis->setLabel(y_label);
 
+    ui->widget_043->axisRect()->setupFullAxesBox();
+    ui->widget_043->plotLayout()->insertRow(0);
+    ui->widget_043->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_043, "Channel 17"));
     ui->widget_043->xAxis->setLabel(x_label);
     ui->widget_043->yAxis->setLabel(y_label);
 
+    ui->widget_044->axisRect()->setupFullAxesBox();
+    ui->widget_044->plotLayout()->insertRow(0);
+    ui->widget_044->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_044, "Channel 18"));
     ui->widget_044->xAxis->setLabel(x_label);
     ui->widget_044->yAxis->setLabel(y_label);
 
+    ui->widget_045->axisRect()->setupFullAxesBox();
+    ui->widget_045->plotLayout()->insertRow(0);
+    ui->widget_045->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_045, "Channel 19"));
     ui->widget_045->xAxis->setLabel(x_label);
     ui->widget_045->yAxis->setLabel(y_label);
 
     ///////////////
 
+    ui->widget_051->axisRect()->setupFullAxesBox();
+    ui->widget_051->plotLayout()->insertRow(0);
+    ui->widget_051->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_051, "Channel 20"));
     ui->widget_051->xAxis->setLabel(x_label);
     ui->widget_051->yAxis->setLabel(y_label);
 
+    ui->widget_052->axisRect()->setupFullAxesBox();
+    ui->widget_052->plotLayout()->insertRow(0);
+    ui->widget_052->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_052, "Channel 21"));
     ui->widget_052->xAxis->setLabel(x_label);
     ui->widget_052->yAxis->setLabel(y_label);
 
+    ui->widget_053->axisRect()->setupFullAxesBox();
+    ui->widget_053->plotLayout()->insertRow(0);
+    ui->widget_053->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_053, "Channel 22"));
     ui->widget_053->xAxis->setLabel(x_label);
     ui->widget_053->yAxis->setLabel(y_label);
 
+    ui->widget_054->axisRect()->setupFullAxesBox();
+    ui->widget_054->plotLayout()->insertRow(0);
+    ui->widget_054->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_054, "Channel 23"));
     ui->widget_054->xAxis->setLabel(x_label);
     ui->widget_054->yAxis->setLabel(y_label);
 
+    ui->widget_055->axisRect()->setupFullAxesBox();
+    ui->widget_055->plotLayout()->insertRow(0);
+    ui->widget_055->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_055, "Channel 24"));
     ui->widget_055->xAxis->setLabel(x_label);
     ui->widget_055->yAxis->setLabel(y_label);
 
@@ -610,6 +647,8 @@ void MainWindow::on_pushButton_2_clicked()
         emit this->Readout_loop();
         qDebug() << "worker->WDrun.Quit == 0" << endl;
         on_pushButton_2_clicked_bool = true;
+
+        ui->pushButton_3->setEnabled(true);
         ui->groupBox_6->setEnabled(true);
     }
     else
@@ -622,7 +661,7 @@ void MainWindow::on_pushButton_2_clicked()
         ui->lcdNumber_2->display(0);
 
         on_pushButton_2_clicked_bool = false;
-        ui->groupBox_6->setEnabled(false);
+        ui->pushButton_3->setEnabled(false);
     }
 
 
@@ -719,6 +758,8 @@ void MainWindow::on_pushButton_5_clicked()
     ui->checkBox_54->setChecked(false);
     ui->checkBox_55->setChecked(false);
 
+    emit this->MaskChannelAll(false);
+
 }
 
 void MainWindow::on_pushButton_4_clicked()
@@ -752,6 +793,11 @@ void MainWindow::on_pushButton_4_clicked()
     ui->checkBox_53->setChecked(true);
     ui->checkBox_54->setChecked(true);
     ui->checkBox_55->setChecked(true);
+
+
+    emit this->MaskChannelAll(true);
+
+
 }
 
 void MainWindow::on_checkBox_11_clicked(bool checked)
@@ -929,12 +975,237 @@ void MainWindow::on_checkBox_53_clicked(bool checked)
 
 void MainWindow::on_checkBox_54_clicked(bool checked)
 {
-    emit this->MaskChannel(24, checked);
+    emit this->MaskChannel(23, checked);
 }
 
 
 
 void MainWindow::on_checkBox_55_clicked(bool checked)
 {
-    emit this->MaskChannel(25, checked);
+    emit this->MaskChannel(24, checked);
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    ui->CHANNEL_TRIGGER_checkBox_11->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_12->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_13->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_14->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_15->setChecked(true);
+
+    ui->CHANNEL_TRIGGER_checkBox_21->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_22->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_23->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_24->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_25->setChecked(true);
+
+    ui->CHANNEL_TRIGGER_checkBox_31->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_32->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_33->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_34->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_35->setChecked(true);
+
+    ui->CHANNEL_TRIGGER_checkBox_41->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_42->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_43->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_44->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_45->setChecked(true);
+
+    ui->CHANNEL_TRIGGER_checkBox_51->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_52->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_53->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_54->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_55->setChecked(true);
+
+    emit this->CHANNEL_TRIGGER_all(true);
+}
+
+void MainWindow::on_pushButton_8_clicked()
+{
+    ui->CHANNEL_TRIGGER_checkBox_11->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_12->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_13->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_14->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_15->setChecked(false);
+
+    ui->CHANNEL_TRIGGER_checkBox_21->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_22->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_23->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_24->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_25->setChecked(false);
+
+    ui->CHANNEL_TRIGGER_checkBox_31->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_32->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_33->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_34->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_35->setChecked(false);
+
+    ui->CHANNEL_TRIGGER_checkBox_41->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_42->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_43->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_44->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_45->setChecked(false);
+
+    ui->CHANNEL_TRIGGER_checkBox_51->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_52->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_53->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_54->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_55->setChecked(false);
+
+    emit this->CHANNEL_TRIGGER_all(false);
+}
+
+void MainWindow::on_checkBox_12_clicked()
+{
+
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_11_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(0, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_12_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(1, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_13_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(2, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_14_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(3, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_15_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(4, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_21_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(5, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_22_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(6, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_23_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(7, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_24_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(8, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_25_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(9, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_31_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(10, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_32_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(11, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_33_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(12, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_34_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(13, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_35_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(14, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_41_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(15, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_42_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(16, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_43_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(17, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_44_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(18, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_45_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(19, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_51_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(20, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_52_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(21, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_53_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(22, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_54_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(23, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_55_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(24, checked);
+}
+
+void MainWindow::on_radioButton_9_clicked(bool checked)
+{
+    if(checked)
+        emit this->SetOutFileType(ASCII);
+}
+
+void MainWindow::on_radioButton_10_clicked(bool checked)
+{
+    if(checked)
+        emit this->SetOutFileType(BINARY);
+}
+
+void MainWindow::on_radioButton_root_tree_clicked(bool checked)
+{
+    if(checked)
+        emit this->SetOutFileType(ROOT);
+}
+
+void MainWindow::on_spinBox_valueChanged(int arg1)
+{
+    emit this->SetEventsPerFile(arg1);
 }

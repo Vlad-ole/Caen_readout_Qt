@@ -88,6 +88,11 @@ typedef enum {
 } OUTFILE_FLAGS;
 
 
+enum OutFileType
+{
+    ASCII, BINARY, ROOT
+};
+
 typedef struct {
     int LinkType;
     int LinkNum;
@@ -122,7 +127,14 @@ typedef struct {
     uint32_t GWaddr[MAX_GW];
     uint32_t GWdata[MAX_GW];
 	uint32_t GWmask[MAX_GW];
-	OUTFILE_FLAGS OutFileFlags;
+
+    //OUTFILE_FLAGS OutFileFlags; // Vlad's modification
+    // /////
+    OutFileType out_file_type;
+    bool out_file_isheader;
+    // ////
+
+
 	uint16_t DecimationFactor;
     int useCorrections;
     int UseManualTables;

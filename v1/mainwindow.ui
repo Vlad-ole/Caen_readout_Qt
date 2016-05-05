@@ -1094,7 +1094,7 @@ p, li { white-space: pre-wrap; }
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QCheckBox" name="checkBox_16">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_11">
            <property name="text">
             <string/>
            </property>
@@ -1104,28 +1104,28 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_17">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_12">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_18">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_13">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_19">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_14">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_20">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_15">
            <property name="text">
             <string/>
            </property>
@@ -1136,35 +1136,35 @@ p, li { white-space: pre-wrap; }
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
-          <widget class="QCheckBox" name="checkBox_26">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_21">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_27">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_22">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_28">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_23">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_29">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_24">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_30">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_25">
            <property name="text">
             <string/>
            </property>
@@ -1175,35 +1175,35 @@ p, li { white-space: pre-wrap; }
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
          <item>
-          <widget class="QCheckBox" name="checkBox_36">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_31">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_37">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_32">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_38">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_33">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_39">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_34">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_40">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_35">
            <property name="text">
             <string/>
            </property>
@@ -1214,35 +1214,35 @@ p, li { white-space: pre-wrap; }
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
          <item>
-          <widget class="QCheckBox" name="checkBox_46">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_41">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_47">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_42">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_48">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_43">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_49">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_44">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_50">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_45">
            <property name="text">
             <string/>
            </property>
@@ -1253,35 +1253,35 @@ p, li { white-space: pre-wrap; }
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_10">
          <item>
-          <widget class="QCheckBox" name="checkBox_56">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_51">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_57">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_52">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_58">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_53">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_59">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_54">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_60">
+          <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_55">
            <property name="text">
             <string/>
            </property>
@@ -1401,6 +1401,9 @@ p, li { white-space: pre-wrap; }
      <property name="singleStep">
       <number>10</number>
      </property>
+     <property name="value">
+      <number>10</number>
+     </property>
     </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
@@ -1427,7 +1430,7 @@ p, li { white-space: pre-wrap; }
      <property name="title">
       <string>Type of outputfile</string>
      </property>
-     <widget class="QRadioButton" name="radioButton_11">
+     <widget class="QRadioButton" name="radioButton_root_tree">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -1934,8 +1937,16 @@ p, li { white-space: pre-wrap; }
      <string>Triggers</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionAbout_author"/>
+    <addaction name="actionAbout_program"/>
+   </widget>
    <addaction name="menuCAEN"/>
    <addaction name="menuTriggers"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -1946,6 +1957,16 @@ p, li { white-space: pre-wrap; }
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAbout_author">
+   <property name="text">
+    <string>About author</string>
+   </property>
+  </action>
+  <action name="actionAbout_program">
+   <property name="text">
+    <string>About program</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

@@ -304,7 +304,7 @@ int ParseConfigFile(FILE *f_ini, WaveDumpConfig_t *WDcfg)
 		if (strstr(str, "OUTPUT_FILE_FORMAT")!=NULL) {
 			read = fscanf(f_ini, "%s", str1);
 			if (strcmp(str1, "BINARY")==0)
-				WDcfg->OutFileFlags|= OFF_BINARY;
+                WDcfg->out_file_type == BINARY;
 			else if (strcmp(str1, "ASCII")!=0)
 				printf("%s: invalid output file format\n", str1);
 			continue;
@@ -314,7 +314,7 @@ int ParseConfigFile(FILE *f_ini, WaveDumpConfig_t *WDcfg)
 		if (strstr(str, "OUTPUT_FILE_HEADER")!=NULL) {
 			read = fscanf(f_ini, "%s", str1);
 			if (strcmp(str1, "YES")==0)
-				WDcfg->OutFileFlags|= OFF_HEADER;
+                WDcfg->out_file_isheader = true;
 			else if (strcmp(str1, "NO")!=0)
 				printf("%s: invalid option\n", str);
 			continue;

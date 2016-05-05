@@ -12,6 +12,7 @@ void MyWorker::Init()
 {
     qDebug() << "Thread in Init() is " << QThread::currentThreadId();
 
+    events_per_file = 10;
 
     int argc_my = 1;
     char* argv_my[0] = {};
@@ -219,6 +220,7 @@ void MyWorker::Readout_loop()
            qDebug() << "BufferSize " << BufferSize ;
            qDebug() << "handle " << handle;
            qDebug() << "WDrun.Quit " << WDrun.Quit;
+           qDebug() << "WDrun.ContinuousWrite " << WDrun.ContinuousWrite;
 
             if (WDrun.ContinuousTrigger)
                 qDebug() << "Continuous trigger is enabled\n";
@@ -354,82 +356,83 @@ void MyWorker::Readout_loop()
 
 
 
+        if(WDrun.ContinuousWrite)
+        {
+            /* Analyze data */
+            for(i = 0; i < (int)NumEvents; i++)
+            {
 
-//        /* Analyze data */
-//        for(i = 0; i < (int)NumEvents; i++)
-//        {
-
-//            /* Get one event from the readout buffer */
-//            ret = CAEN_DGTZ_GetEventInfo(handle, buffer, BufferSize, i, &EventInfo, &EventPtr);
-//            if (ret)
-//            {
-//                ErrCode = ERR_EVENT_BUILD;
-//                //goto QuitProgram;
-//                QuitProgram();
-//                return;
-//            }
+                /* Get one event from the readout buffer */
+                ret = CAEN_DGTZ_GetEventInfo(handle, buffer, BufferSize, i, &EventInfo, &EventPtr);
+                if (ret)
+                {
+                    ErrCode = ERR_EVENT_BUILD;
+                    //goto QuitProgram;
+                    QuitProgram();
+                    return;
+                }
 
 
-//            /* decode the event */
-//            if (WDcfg.Nbit == 8)
-//                ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event8);
-//            else
-//                if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)
-//                {
-//                    ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event16); // it's my case
-//                }
-//                else
-//                {
-//                    ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event742);
-//                    if (WDcfg.useCorrections != -1)
-//                    { // if manual corrections
-//                        uint32_t gr;
-//                        for (gr = 0; gr < WDcfg.MaxGroupNumber; gr++)
-//                        {
-//                            if ( ((WDcfg.EnableMask >> gr) & 0x1) == 0)
-//                                continue;
-//                            ApplyDataCorrection( &(X742Tables[gr]), WDcfg.DRS4Frequency, WDcfg.useCorrections, &(Event742->DataGroup[gr]));
-//                        }
-//                    }
-//                }
-//                if (ret) {
-//                    ErrCode = ERR_EVENT_BUILD;
-//                    //goto QuitProgram;
-//                    QuitProgram();
-//                    return;
-//                }
+                /* decode the event */
+                if (WDcfg.Nbit == 8)
+                    ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event8);
+                else
+                    if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)
+                    {
+                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event16); // it's my case
+                    }
+                    else
+                    {
+                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event742);
+                        if (WDcfg.useCorrections != -1)
+                        { // if manual corrections
+                            uint32_t gr;
+                            for (gr = 0; gr < WDcfg.MaxGroupNumber; gr++)
+                            {
+                                if ( ((WDcfg.EnableMask >> gr) & 0x1) == 0)
+                                    continue;
+                                ApplyDataCorrection( &(X742Tables[gr]), WDcfg.DRS4Frequency, WDcfg.useCorrections, &(Event742->DataGroup[gr]));
+                            }
+                        }
+                    }
+                if (ret) {
+                    ErrCode = ERR_EVENT_BUILD;
+                    //goto QuitProgram;
+                    QuitProgram();
+                    return;
+                }
                 
 
-//                /* Write Event data to file */
-//                if (WDrun.ContinuousWrite || WDrun.SingleWrite)
-//                {
-//                    qDebug() << "Write data ..." << endl;
+                /* Write Event data to file */
+                if (WDrun.ContinuousWrite || WDrun.SingleWrite)
+                {
+                    qDebug() << "Write data ..." << endl;
 
-//                    // Note: use a thread here to allow parallel readout and file writing
-//                    if (BoardInfo.FamilyCode == CAEN_DGTZ_XX742_FAMILY_CODE) {
-//                        ret = WriteOutputFilesx742(&WDcfg, &WDrun, &EventInfo, Event742);
-//                    }
-//                    else if (WDcfg.Nbit == 8) {
-//                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event8);
-//                    }
-//                    else {
-//                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event16); //my case
-//                    }
-//                    if (ret)
-//                    {
-//                        ErrCode = ERR_OUTFILE_WRITE;
-//                        //goto QuitProgram;
-//                        QuitProgram();
-//                    }
-//                    if (WDrun.SingleWrite)
-//                    {
-//                        printf("Single Event saved to output files\n");
-//                        WDrun.SingleWrite = 0;
-//                    }
-//                }
+                    // Note: use a thread here to allow parallel readout and file writing
+                    if (BoardInfo.FamilyCode == CAEN_DGTZ_XX742_FAMILY_CODE) {
+                        ret = WriteOutputFilesx742(&WDcfg, &WDrun, &EventInfo, Event742);
+                    }
+                    else if (WDcfg.Nbit == 8) {
+                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event8);
+                    }
+                    else {
+                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event16); //my case
+                    }
+                    if (ret)
+                    {
+                        ErrCode = ERR_OUTFILE_WRITE;
+                        //goto QuitProgram;
+                        QuitProgram();
+                    }
+                    if (WDrun.SingleWrite)
+                    {
+                        printf("Single Event saved to output files\n");
+                        WDrun.SingleWrite = 0;
+                    }
+                }
 
-//        }//for(i = 0; i < (int)NumEvents; i++)
-
+            }//for(i = 0; i < (int)NumEvents; i++)
+        }
 
 
     }
@@ -708,7 +711,88 @@ void MyWorker::MaskChannel(int ch, bool Enable)
     //Sleep(5000);
 }
 
+void MyWorker::MaskChannelAll(bool value)
+{
+    for(int ch = 0; ch < 25; ch++)
+    {
+        if(value)
+            WDcfg.EnableMask |= (1 << ch);
+        else
+            WDcfg.EnableMask &= ~(1 << ch);
+    }
+
+    qDebug() << " MaskChannelAll " << value << endl;
+    Restart();
+}
+
 void MyWorker::SetTriggerValue(int ch, int val)
 {
     WDcfg.Threshold[ch] = val;
+    Restart();
+}
+
+void MyWorker::CHANNEL_TRIGGER_signal(int ch, bool value)
+{
+    CAEN_DGTZ_TriggerMode_t tm;
+
+    if(value)
+    {
+        tm = CAEN_DGTZ_TRGMODE_ACQ_ONLY;
+        qDebug() << " WDcfg.ChannelTriggerMode[" << ch << "] = CAEN_DGTZ_TRGMODE_ACQ_ONLY" << endl;
+    }
+    else
+    {
+        tm = CAEN_DGTZ_TRGMODE_DISABLED;
+        qDebug() << " WDcfg.ChannelTriggerMode[" << ch << "] = CAEN_DGTZ_TRGMODE_DISABLED" << endl;
+    }
+
+    WDcfg.ChannelTriggerMode[ch] = tm;
+
+    Restart();
+}
+
+void MyWorker::CHANNEL_TRIGGER_all(bool value)
+{
+    for(int ch = 0; ch < 25; ch++)
+    {
+        if(value)
+            WDcfg.ChannelTriggerMode[ch] = CAEN_DGTZ_TRGMODE_ACQ_ONLY;
+        else
+            WDcfg.ChannelTriggerMode[ch] = CAEN_DGTZ_TRGMODE_DISABLED;
+    }
+
+    qDebug() << "CHANNEL_TRIGGER_all = " << value << endl;
+
+    Restart();
+}
+
+void MyWorker::SetOutFileType(int value)
+{
+    switch(value)
+    {
+    case ASCII:
+    {
+        WDcfg.out_file_type = ASCII;
+        Restart();
+        qDebug() << "WDcfg.out_file_type = ASCII" << endl;
+        break;
+    }
+    case BINARY:
+    {
+        WDcfg.out_file_type = BINARY;
+        Restart();
+        qDebug() << "WDcfg.out_file_type = BINARY" << endl;
+        break;
+    }
+    case ROOT:
+    {
+        WDcfg.out_file_type = ROOT;
+        Restart();
+        qDebug() << "WDcfg.out_file_type = ROOT" << endl;
+        break;
+    }
+    default:
+        qDebug() << "SetOutFileType error!" << endl;
+    }
+
 }

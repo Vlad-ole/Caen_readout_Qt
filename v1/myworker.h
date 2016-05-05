@@ -14,11 +14,15 @@
 #endif
 
 
+
+
 class MyWorker : public QObject
 {
     Q_OBJECT
 public:
     MyWorker();
+
+    int events_per_file;
 
     int  handle;
     CAEN_DGTZ_ErrorCode ret;
@@ -43,6 +47,7 @@ public:
     char ConfigFileName[100];
     int ReloadCfgStatus;
 
+
     void Program_the_digitizer();
     void Mask_the_channels();
     void InterruptTimeout();
@@ -52,6 +57,8 @@ public:
 
     //QVector<double> array_x;
     //QVector<double> array_y;
+
+
 
 
 public slots:
@@ -74,6 +81,11 @@ public slots:
     void DisableContinuousPlot();
     void MaskChannel(int , bool);
     void SetTriggerValue(int, int);
+    void MaskChannelAll(bool);
+    void CHANNEL_TRIGGER_signal(int, bool);
+    void CHANNEL_TRIGGER_all(bool);
+    void SetOutFileType(int);
+    void SetEventsPerFile(int);
 
 signals:
     void Message(QString);
@@ -86,6 +98,7 @@ signals:
     //void GraphData(double **array, int rows, int cols);
     //void GraphData1D(double *array, int size);
     void RedrawGraphsTest();
+
 
 };
 

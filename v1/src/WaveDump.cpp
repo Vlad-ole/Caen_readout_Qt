@@ -88,7 +88,7 @@ int GetMoreBoardInfo(int handle, CAEN_DGTZ_BoardInfo_t BoardInfo, WaveDumpConfig
 {
     int ret;
     switch(BoardInfo.FamilyCode) {
-        CAEN_DGTZ_DRS4Frequency_t freq;
+    CAEN_DGTZ_DRS4Frequency_t freq;
 
     case CAEN_DGTZ_XX724_FAMILY_CODE:
     case CAEN_DGTZ_XX781_FAMILY_CODE:
@@ -102,7 +102,7 @@ int GetMoreBoardInfo(int handle, CAEN_DGTZ_BoardInfo_t BoardInfo, WaveDumpConfig
     case CAEN_DGTZ_XX725_FAMILY_CODE: WDcfg->Nbit = 14; WDcfg->Ts = 4.0; break;
     case CAEN_DGTZ_XX730_FAMILY_CODE: WDcfg->Nbit = 14; WDcfg->Ts = 2.0; break;
     case CAEN_DGTZ_XX742_FAMILY_CODE:
-        WDcfg->Nbit = 12; 
+        WDcfg->Nbit = 12;
         if ((ret = CAEN_DGTZ_GetDRS4SamplingFrequency(handle, &freq)) != CAEN_DGTZ_Success) return CAEN_DGTZ_CommError;
         switch (freq) {
         case CAEN_DGTZ_DRS4_1GHz:
@@ -130,7 +130,7 @@ int GetMoreBoardInfo(int handle, CAEN_DGTZ_BoardInfo_t BoardInfo, WaveDumpConfig
     default: return -1;
     }
     if (((BoardInfo.FamilyCode == CAEN_DGTZ_XX751_FAMILY_CODE) ||
-        (BoardInfo.FamilyCode == CAEN_DGTZ_XX731_FAMILY_CODE) ) && WDcfg->DesMode)
+         (BoardInfo.FamilyCode == CAEN_DGTZ_XX731_FAMILY_CODE) ) && WDcfg->DesMode)
         WDcfg->Ts /= 2;
 
     switch(BoardInfo.FamilyCode) {
@@ -266,10 +266,10 @@ int ProgramDigitizer(int handle, WaveDumpConfig_t WDcfg, CAEN_DGTZ_BoardInfo_t B
     if( WDcfg.InterruptNumEvents > 0) {
         // Interrupt handling
         if( ret |= CAEN_DGTZ_SetInterruptConfig( handle, CAEN_DGTZ_ENABLE,
-            VME_INTERRUPT_LEVEL, VME_INTERRUPT_STATUS_ID,
-            (uint16_t)WDcfg.InterruptNumEvents, INTERRUPT_MODE)!= CAEN_DGTZ_Success) {
-                printf( "\nError configuring interrupts. Interrupts disabled\n\n");
-                WDcfg.InterruptNumEvents = 0;
+                                                 VME_INTERRUPT_LEVEL, VME_INTERRUPT_STATUS_ID,
+                                                 (uint16_t)WDcfg.InterruptNumEvents, INTERRUPT_MODE)!= CAEN_DGTZ_Success) {
+            printf( "\nError configuring interrupts. Interrupts disabled\n\n");
+            WDcfg.InterruptNumEvents = 0;
         }
     }
     ret |= CAEN_DGTZ_SetMaxNumEventsBLT(handle, WDcfg.NumEvents);
@@ -293,7 +293,7 @@ int ProgramDigitizer(int handle, WaveDumpConfig_t WDcfg, CAEN_DGTZ_BoardInfo_t B
                     ret |= CAEN_DGTZ_SetGroupSelfTrigger(handle, WDcfg.ChannelTriggerMode[i], (1<<i));
                     ret |= CAEN_DGTZ_SetGroupTriggerThreshold(handle, i, WDcfg.Threshold[i]);
                     ret |= CAEN_DGTZ_SetChannelGroupMask(handle, i, WDcfg.GroupTrgEnableMask[i]);
-                } 
+                }
                 ret |= CAEN_DGTZ_SetTriggerPolarity(handle, i, WDcfg.TriggerEdge);
             }
         }
@@ -303,14 +303,14 @@ int ProgramDigitizer(int handle, WaveDumpConfig_t WDcfg, CAEN_DGTZ_BoardInfo_t B
             if (WDcfg.EnableMask & (1<<i)) {
                 ret |= CAEN_DGTZ_SetChannelDCOffset(handle, i, WDcfg.DCoffset[i]);
                 if (BoardInfo.FamilyCode != CAEN_DGTZ_XX730_FAMILY_CODE &&
-                    BoardInfo.FamilyCode != CAEN_DGTZ_XX725_FAMILY_CODE)
+                        BoardInfo.FamilyCode != CAEN_DGTZ_XX725_FAMILY_CODE)
                     ret |= CAEN_DGTZ_SetChannelSelfTrigger(handle, WDcfg.ChannelTriggerMode[i], (1<<i));
                 ret |= CAEN_DGTZ_SetChannelTriggerThreshold(handle, i, WDcfg.Threshold[i]);
                 ret |= CAEN_DGTZ_SetTriggerPolarity(handle, i, WDcfg.TriggerEdge);
             }
         }
         if (BoardInfo.FamilyCode == CAEN_DGTZ_XX730_FAMILY_CODE ||
-            BoardInfo.FamilyCode == CAEN_DGTZ_XX725_FAMILY_CODE) {
+                BoardInfo.FamilyCode == CAEN_DGTZ_XX725_FAMILY_CODE) {
             // channel pair settings for x730 boards
             for (i = 0; i < WDcfg.Nch; i += 2) {
                 if (WDcfg.EnableMask & (0x3 << i)) {
@@ -498,8 +498,8 @@ void CheckKeyboardCommands(int handle, WaveDumpRun_t *WDrun, WaveDumpConfig_t *W
             break;
         case 'm' :
             if (BoardInfo.FamilyCode == CAEN_DGTZ_XX751_FAMILY_CODE ||
-                BoardInfo.FamilyCode == CAEN_DGTZ_XX730_FAMILY_CODE ||
-                BoardInfo.FamilyCode == CAEN_DGTZ_XX725_FAMILY_CODE)
+                    BoardInfo.FamilyCode == CAEN_DGTZ_XX730_FAMILY_CODE ||
+                    BoardInfo.FamilyCode == CAEN_DGTZ_XX725_FAMILY_CODE)
             {
                 if (WDrun->AcqRun == 0) {
                     int32_t ch;
@@ -524,8 +524,8 @@ void CheckKeyboardCommands(int handle, WaveDumpRun_t *WDrun, WaveDumpConfig_t *W
             break;
         case 'c' :
             if (BoardInfo.FamilyCode == CAEN_DGTZ_XX751_FAMILY_CODE ||
-                BoardInfo.FamilyCode == CAEN_DGTZ_XX730_FAMILY_CODE ||
-                BoardInfo.FamilyCode == CAEN_DGTZ_XX725_FAMILY_CODE)
+                    BoardInfo.FamilyCode == CAEN_DGTZ_XX730_FAMILY_CODE ||
+                    BoardInfo.FamilyCode == CAEN_DGTZ_XX725_FAMILY_CODE)
             {
                 if (WDrun->AcqRun == 0) {
                     int32_t ret = CAEN_DGTZ_Calibrate(handle);
@@ -597,7 +597,8 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
         }
 
         // Check the file format type
-        if( WDcfg->OutFileFlags& OFF_BINARY && false) {
+        if( WDcfg->out_file_type == BINARY)
+        {
             // Binary file format
             qDebug() << " Binary file format" << endl;
             uint32_t BinHeader[6];
@@ -613,7 +614,7 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
                 if ((WDrun->fout[ch] = fopen(fname, "wb")) == NULL)
                     return -1;
             }
-            if( WDcfg->OutFileFlags & OFF_HEADER) {
+            if( WDcfg->out_file_isheader) {
                 // Write the Channel Header
                 if(fwrite(BinHeader, sizeof(*BinHeader), 6, WDrun->fout[ch]) != 6) {
                     // error writing to file
@@ -632,7 +633,9 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
                 WDrun->fout[ch]= NULL;
                 return -1;
             }
-        } else {
+        }
+        else if(WDcfg->out_file_type == ASCII)
+        {
             // Ascii file format
             qDebug() << " Ascii file format" << endl;
             if (!WDrun->fout[ch]) {
@@ -641,7 +644,7 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
                 if ((WDrun->fout[ch] = fopen(fname, "w")) == NULL)
                     return -1;
             }
-            if( WDcfg->OutFileFlags & OFF_HEADER) {
+            if( WDcfg->out_file_isheader) {
                 // Write the Channel Header
                 fprintf(WDrun->fout[ch], "Record Length: %d\n", Size);
                 fprintf(WDrun->fout[ch], "BoardID: %2d\n", EventInfo->BoardId);
@@ -658,6 +661,12 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
                     fprintf(WDrun->fout[ch], "%d\n", Event16->DataChannel[ch][j]);
             }
         }
+        else
+        {
+            //root trees
+        }
+
+
         if (WDrun->SingleWrite) {
             fclose(WDrun->fout[ch]);
             WDrun->fout[ch]= NULL;
@@ -677,7 +686,7 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
 int WriteOutputFilesx742(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_EventInfo_t *EventInfo, CAEN_DGTZ_X742_EVENT_t *Event)
 {
     int gr,ch, j, ns;
-    char trname[10], flag; 
+    char trname[10], flag;
     for (gr=0;gr<(WDcfg->Nch/8);gr++) {
         if (Event->GrPresent[gr]) {
             for(ch=0; ch<9; ch++) {
@@ -687,7 +696,8 @@ int WriteOutputFilesx742(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGT
                 }
 
                 // Check the file format type
-                if( WDcfg->OutFileFlags& OFF_BINARY) {
+                if( WDcfg->out_file_type == BINARY)
+                {
                     // Binary file format
                     uint32_t BinHeader[6];
                     BinHeader[0] = (WDcfg->Nbit == 8) ? Size + 6*sizeof(*BinHeader) : Size*4 + 6*sizeof(*BinHeader);
@@ -725,7 +735,7 @@ int WriteOutputFilesx742(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGT
                         if ((WDrun->fout[(gr*9+ch)] = fopen(fname, "wb")) == NULL)
                             return -1;
                     }
-                    if( WDcfg->OutFileFlags & OFF_HEADER) {
+                    if( WDcfg->out_file_isheader) {
                         // Write the Channel Header
                         if(fwrite(BinHeader, sizeof(*BinHeader), 6, WDrun->fout[(gr*9+ch)]) != 6) {
                             // error writing to file
@@ -741,7 +751,9 @@ int WriteOutputFilesx742(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGT
                         WDrun->fout[(gr*9+ch)]= NULL;
                         return -1;
                     }
-                } else {
+                }
+                else if(WDcfg->out_file_type == ASCII)
+                {
                     // Ascii file format
                     if (!WDrun->fout[(gr*9+ch)]) {
                         char fname[100];
@@ -772,7 +784,8 @@ int WriteOutputFilesx742(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGT
                         if ((WDrun->fout[(gr*9+ch)] = fopen(fname, "w")) == NULL)
                             return -1;
                     }
-                    if( WDcfg->OutFileFlags & OFF_HEADER) {
+                    if( WDcfg->out_file_isheader)
+                    {
                         // Write the Channel Header
                         fprintf(WDrun->fout[(gr*9+ch)], "Record Length: %d\n", Size);
                         fprintf(WDrun->fout[(gr*9+ch)], "BoardID: %2d\n", EventInfo->BoardId);
@@ -791,6 +804,13 @@ int WriteOutputFilesx742(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGT
                         fprintf(WDrun->fout[(gr*9+ch)], "%f\n", Event->DataGroup[gr].DataChannel[ch][j]);
                     }
                 }
+                else
+                {
+                    // Root trees
+                }
+
+
+
                 if (WDrun->SingleWrite) {
                     fclose(WDrun->fout[(gr*9+ch)]);
                     WDrun->fout[(gr*9+ch)]= NULL;

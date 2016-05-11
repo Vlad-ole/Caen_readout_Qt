@@ -39,7 +39,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
-    connect( this, SIGNAL( SetFolder(QString) ) , worker, SLOT( SetFolder(QString) ) );
+    connect( this, SIGNAL( SetEventsPerFile(int) ), worker, SLOT( SetEventsPerFile(int) ), Qt::DirectConnection );
+    connect( this, SIGNAL( SetFolder(QString) ) , worker, SLOT( SetFolder(QString) ), Qt::DirectConnection);
     connect( this, SIGNAL( SetOutFileType(int) ), worker, SLOT( SetOutFileType(int) ) );
     connect( this, SIGNAL( CHANNEL_TRIGGER_all(bool) ), worker, SLOT( CHANNEL_TRIGGER_all(bool) ) );
     connect( this, SIGNAL(CHANNEL_TRIGGER_signal(int,bool)), worker, SLOT(CHANNEL_TRIGGER_signal(int,bool)) );
@@ -1210,6 +1211,7 @@ void MainWindow::on_radioButton_root_tree_clicked(bool checked)
 
 void MainWindow::on_spinBox_valueChanged(int arg1)
 {
+    qDebug() << "events_per_file on_spinBox_valueChanged = " << arg1 << endl;
     emit this->SetEventsPerFile(arg1);
 }
 

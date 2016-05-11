@@ -14,6 +14,10 @@ void MyWorker::Init()
 
     events_per_file = 10;
     output_folder = "";
+    run_counter = 0;
+    absolute_event_counter = 0;
+
+    WDcfg.out_file_isheader = false;
 
     int argc_my = 1;
     char* argv_my[0] = {};
@@ -407,17 +411,53 @@ void MyWorker::Readout_loop()
                 /* Write Event data to file */
                 if (WDrun.ContinuousWrite || WDrun.SingleWrite)
                 {
-                    qDebug() << "Write data ..." << endl;
+                    //qDebug() << "Write data ..." << endl;
+
+
+                    if( absolute_event_counter % events_per_file == 0 )
+                    {
+                        int Ch;
+
+                        for(Ch=0; Ch<WDcfg.Nch; Ch++)
+                        {
+                            int Size = (WDcfg.Nbit == 8) ? Event8->ChSize[Ch] : Event16->ChSize[Ch];
+                            if (Size <= 0)
+                            {
+                                continue;
+                            }
+                        }
+
+                        qDebug() << "events_per_file  = " << events_per_file << endl;
+                        qDebug() << "run_counter  = " << run_counter << endl;
+                        qDebug() << "absolute_event_counter  = " << absolute_event_counter << endl;
+                        for(int ch = 0; ch < Ch ;ch++)
+                        {
+                            WDrun.fout[ch] = NULL;
+                            qDebug() << "WDrun.fout[" << ch << "] = " << WDrun.fout[ch] << endl;
+                        }
+
+                        //absolute_event_counter = 0;
+                        run_counter++;
+                    }
+
+
+
+                    std::ostringstream oss_path;
+                    oss_path << output_folder.toStdString() << "run_" << run_counter;
+                    std::string path_string = oss_path.str();
 
                     // Note: use a thread here to allow parallel readout and file writing
                     if (BoardInfo.FamilyCode == CAEN_DGTZ_XX742_FAMILY_CODE) {
                         ret = WriteOutputFilesx742(&WDcfg, &WDrun, &EventInfo, Event742);
                     }
-                    else if (WDcfg.Nbit == 8) {
-                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event8, output_folder);
+                    else if (WDcfg.Nbit == 8)
+                    {
+                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event8, path_string);
                     }
-                    else {
-                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event16, output_folder); //my case
+                    else
+                    {
+                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event16, path_string); //my case
+
                     }
                     if (ret)
                     {
@@ -430,6 +470,8 @@ void MyWorker::Readout_loop()
                         printf("Single Event saved to output files\n");
                         WDrun.SingleWrite = 0;
                     }
+
+                    absolute_event_counter++;
                 }
 
             }//for(i = 0; i < (int)NumEvents; i++)
@@ -798,9 +840,9 @@ void MyWorker::SetOutFileType(int value)
 
 }
 
-void MyWorker::SetEventsPerFile(int)
+void MyWorker::SetEventsPerFile(int value)
 {
-
+    events_per_file = value;
 }
 
 void MyWorker::SetFolder(QString value)

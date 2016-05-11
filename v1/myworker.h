@@ -9,6 +9,8 @@
 #include "X742CorrectionRoutines.h"
 #include "fft.h"
 
+#include <sstream>
+
 #ifndef max
 #define max(a,b)            (((a) > (b)) ? (a) : (b))
 #endif
@@ -24,6 +26,8 @@ public:
 
     int events_per_file;
     QString output_folder;
+    long unsigned int run_counter;
+    long unsigned int absolute_event_counter;
 
     int  handle;
     CAEN_DGTZ_ErrorCode ret;

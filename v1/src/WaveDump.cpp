@@ -580,7 +580,7 @@ void CheckKeyboardCommands(int handle, WaveDumpRun_t *WDrun, WaveDumpConfig_t *W
 *   \param   EventInfo Pointer to the EventInfo data structure
 *   \param   Event Pointer to the Event to write
 */
-int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_EventInfo_t *EventInfo, void *Event, QString folder)
+int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_EventInfo_t *EventInfo, void *Event, std::string path)
 {
     int ch, j, ns;
     CAEN_DGTZ_UINT16_EVENT_t  *Event16;
@@ -595,15 +595,19 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
 
     for(ch=0; ch<WDcfg->Nch; ch++) {
         int Size = (WDcfg->Nbit == 8) ? Event8->ChSize[ch] : Event16->ChSize[ch];
-        if (Size <= 0) {
+        if (Size <= 0)
+        {
             continue;
         }
+
+
 
         // Check the file format type
         if( WDcfg->out_file_type == BINARY)
         {
+
             // Binary file format
-            qDebug() << " Binary file format" << endl;
+            qDebug() << " Binary file format; !WDrun->fout[" << ch << "]" << !WDrun->fout[ch] << endl;
             uint32_t BinHeader[6];
             BinHeader[0] = (WDcfg->Nbit == 8) ? Size + 6*sizeof(*BinHeader) : Size*2 + 6*sizeof(*BinHeader);
             BinHeader[1] = EventInfo->BoardId;
@@ -611,12 +615,21 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
             BinHeader[3] = ch;
             BinHeader[4] = EventInfo->EventCounter;
             BinHeader[5] = EventInfo->TriggerTimeTag;
+
+
+
             if (!WDrun->fout[ch])
             {
+                //qDebug() << "WriteOutputFiles" << endl;
+
                 //sprintf(fname, "wave%d.dat", ch);
-                std::ostringstream oss;
-                oss << folder.toStdString() << "wave" << ch << ".dat";
-                char* fname = oss.str().c_str();
+                std::ostringstream oss_path;
+                oss_path << "__ch_" << ch << ".dat";
+                std::string final_path = path + oss_path.str();
+                char* fname = final_path.c_str();
+
+
+                qDebug() << "output file name(binary)" << fname << endl;
 
                 if ((WDrun->fout[ch] = fopen(fname, "wb")) == NULL)
                     return -1;
@@ -649,9 +662,10 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
             if (!WDrun->fout[ch])
             {
                 //sprintf(fname, "wave%d.txt", ch);
-                std::ostringstream oss;
-                oss << folder.toStdString() << "wave" << ch << ".dat";
-                char* fname = oss.str().c_str();
+                std::ostringstream oss_path;
+                oss_path << "__ch_" << ch << ".txt";
+                std::string final_path = path + oss_path.str();
+                char* fname = final_path.c_str();
 
                 if ((WDrun->fout[ch] = fopen(fname, "w")) == NULL)
                     return -1;
@@ -679,9 +693,12 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
         }
 
 
-        if (WDrun->SingleWrite) {
+        if (WDrun->SingleWrite)
+        {
             fclose(WDrun->fout[ch]);
             WDrun->fout[ch]= NULL;
+
+            qDebug() << "WDrun->SingleWrite  = " << WDrun->SingleWrite << endl;
         }
     }
     return 0;

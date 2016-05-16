@@ -827,11 +827,11 @@ void MyWorker::SetOutFileType(int value)
         qDebug() << "WDcfg.out_file_type = BINARY" << endl;
         break;
     }
-    case ROOT:
+    case ROOT_TREE:
     {
-        WDcfg.out_file_type = ROOT;
+        WDcfg.out_file_type = ROOT_TREE;
         Restart();
-        qDebug() << "WDcfg.out_file_type = ROOT" << endl;
+        qDebug() << "WDcfg.out_file_type = ROOT_TREE" << endl;
         break;
     }
     default:

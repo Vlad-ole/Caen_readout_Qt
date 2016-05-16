@@ -79,6 +79,8 @@
 
 #include <QString>
 
+#include "TFile.h"
+
 /* ###########################################################################
    Typedefs
    ###########################################################################
@@ -92,7 +94,7 @@ typedef enum {
 
 enum OutFileType
 {
-    ASCII, BINARY, ROOT
+    ASCII, BINARY, ROOT_TREE
 };
 
 typedef struct {

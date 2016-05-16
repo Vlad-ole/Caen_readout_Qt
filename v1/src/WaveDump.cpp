@@ -690,6 +690,12 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
         else
         {
             //root trees
+            qDebug() << " File format is root trees" << endl;
+            std::string final_path = path + "ch_all.root";
+
+            //TFile f_tree(final_path.c_str(), "RECREATE");
+
+
         }
 
 

@@ -1206,7 +1206,7 @@ void MainWindow::on_radioButton_10_clicked(bool checked)
 void MainWindow::on_radioButton_root_tree_clicked(bool checked)
 {
     if(checked)
-        emit this->SetOutFileType(ROOT);
+        emit this->SetOutFileType(ROOT_TREE);
 }
 
 void MainWindow::on_spinBox_valueChanged(int arg1)

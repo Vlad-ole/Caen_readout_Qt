@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MyWorker_t {
-    QByteArrayData data[32];
-    char stringdata0[459];
+    QByteArrayData data[33];
+    char stringdata0[481];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -58,10 +58,11 @@ QT_MOC_LITERAL(24, 331, 11), // "MaskChannel"
 QT_MOC_LITERAL(25, 343, 15), // "SetTriggerValue"
 QT_MOC_LITERAL(26, 359, 14), // "MaskChannelAll"
 QT_MOC_LITERAL(27, 374, 22), // "CHANNEL_TRIGGER_signal"
-QT_MOC_LITERAL(28, 397, 19), // "CHANNEL_TRIGGER_all"
-QT_MOC_LITERAL(29, 417, 14), // "SetOutFileType"
-QT_MOC_LITERAL(30, 432, 16), // "SetEventsPerFile"
-QT_MOC_LITERAL(31, 449, 9) // "SetFolder"
+QT_MOC_LITERAL(28, 397, 21), // "CHANNEL_TRIGGER_group"
+QT_MOC_LITERAL(29, 419, 19), // "CHANNEL_TRIGGER_all"
+QT_MOC_LITERAL(30, 439, 14), // "SetOutFileType"
+QT_MOC_LITERAL(31, 454, 16), // "SetEventsPerFile"
+QT_MOC_LITERAL(32, 471, 9) // "SetFolder"
 
     },
     "MyWorker\0Message\0\0finished\0"
@@ -75,9 +76,9 @@ QT_MOC_LITERAL(31, 449, 9) // "SetFolder"
     "TestPattern\0EnableContinuousPlot\0"
     "DisableContinuousPlot\0MaskChannel\0"
     "SetTriggerValue\0MaskChannelAll\0"
-    "CHANNEL_TRIGGER_signal\0CHANNEL_TRIGGER_all\0"
-    "SetOutFileType\0SetEventsPerFile\0"
-    "SetFolder"
+    "CHANNEL_TRIGGER_signal\0CHANNEL_TRIGGER_group\0"
+    "CHANNEL_TRIGGER_all\0SetOutFileType\0"
+    "SetEventsPerFile\0SetFolder"
 };
 #undef QT_MOC_LITERAL
 
@@ -87,7 +88,7 @@ static const uint qt_meta_data_MyWorker[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      27,   14, // methods
+      28,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -95,35 +96,36 @@ static const uint qt_meta_data_MyWorker[] = {
        8,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  149,    2, 0x06 /* Public */,
-       3,    0,  152,    2, 0x06 /* Public */,
-       4,    0,  153,    2, 0x06 /* Public */,
-       5,    2,  154,    2, 0x06 /* Public */,
-       7,    2,  159,    2, 0x06 /* Public */,
-       9,    1,  164,    2, 0x06 /* Public */,
-      10,    1,  167,    2, 0x06 /* Public */,
-      11,    0,  170,    2, 0x06 /* Public */,
+       1,    1,  154,    2, 0x06 /* Public */,
+       3,    0,  157,    2, 0x06 /* Public */,
+       4,    0,  158,    2, 0x06 /* Public */,
+       5,    2,  159,    2, 0x06 /* Public */,
+       7,    2,  164,    2, 0x06 /* Public */,
+       9,    1,  169,    2, 0x06 /* Public */,
+      10,    1,  172,    2, 0x06 /* Public */,
+      11,    0,  175,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      12,    0,  171,    2, 0x0a /* Public */,
-      13,    0,  172,    2, 0x0a /* Public */,
-      14,    0,  173,    2, 0x0a /* Public */,
-      15,    0,  174,    2, 0x0a /* Public */,
-      16,    0,  175,    2, 0x0a /* Public */,
-      17,    0,  176,    2, 0x0a /* Public */,
-      18,    0,  177,    2, 0x0a /* Public */,
-      19,    1,  178,    2, 0x0a /* Public */,
-      21,    0,  181,    2, 0x0a /* Public */,
-      22,    0,  182,    2, 0x0a /* Public */,
-      23,    0,  183,    2, 0x0a /* Public */,
-      24,    2,  184,    2, 0x0a /* Public */,
-      25,    2,  189,    2, 0x0a /* Public */,
-      26,    1,  194,    2, 0x0a /* Public */,
-      27,    2,  197,    2, 0x0a /* Public */,
-      28,    1,  202,    2, 0x0a /* Public */,
-      29,    1,  205,    2, 0x0a /* Public */,
-      30,    1,  208,    2, 0x0a /* Public */,
-      31,    1,  211,    2, 0x0a /* Public */,
+      12,    0,  176,    2, 0x0a /* Public */,
+      13,    0,  177,    2, 0x0a /* Public */,
+      14,    0,  178,    2, 0x0a /* Public */,
+      15,    0,  179,    2, 0x0a /* Public */,
+      16,    0,  180,    2, 0x0a /* Public */,
+      17,    0,  181,    2, 0x0a /* Public */,
+      18,    0,  182,    2, 0x0a /* Public */,
+      19,    1,  183,    2, 0x0a /* Public */,
+      21,    0,  186,    2, 0x0a /* Public */,
+      22,    0,  187,    2, 0x0a /* Public */,
+      23,    0,  188,    2, 0x0a /* Public */,
+      24,    2,  189,    2, 0x0a /* Public */,
+      25,    2,  194,    2, 0x0a /* Public */,
+      26,    1,  199,    2, 0x0a /* Public */,
+      27,    2,  202,    2, 0x0a /* Public */,
+      28,    2,  207,    2, 0x0a /* Public */,
+      29,    1,  212,    2, 0x0a /* Public */,
+      30,    1,  215,    2, 0x0a /* Public */,
+      31,    1,  218,    2, 0x0a /* Public */,
+      32,    1,  221,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
@@ -150,6 +152,7 @@ static const uint qt_meta_data_MyWorker[] = {
     QMetaType::Void, QMetaType::Int, QMetaType::Bool,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Bool,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Bool,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Bool,    2,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Int,    2,
@@ -188,10 +191,11 @@ void MyWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 20: _t->SetTriggerValue((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 21: _t->MaskChannelAll((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 22: _t->CHANNEL_TRIGGER_signal((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
-        case 23: _t->CHANNEL_TRIGGER_all((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 24: _t->SetOutFileType((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 25: _t->SetEventsPerFile((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 26: _t->SetFolder((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 23: _t->CHANNEL_TRIGGER_group((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 24: _t->CHANNEL_TRIGGER_all((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 25: _t->SetOutFileType((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 26: _t->SetEventsPerFile((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 27: _t->SetFolder((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -294,13 +298,13 @@ int MyWorker::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 27)
+        if (_id < 28)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 27;
+        _id -= 28;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 27)
+        if (_id < 28)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 27;
+        _id -= 28;
     }
     return _id;
 }

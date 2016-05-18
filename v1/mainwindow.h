@@ -24,6 +24,7 @@ public:
     MyWorker *worker;
 
     bool on_pushButton_2_clicked_bool;
+    void SetRangeX();
 
 private slots:
     void on_pushButton_clicked();
@@ -40,7 +41,7 @@ private slots:
 
     void on_doubleSpinBox_2_valueChanged(double arg1);
 
-    void on_spinBox_4_valueChanged(int arg1);
+    //void on_spinBox_4_valueChanged(int arg1);
 
     void on_radioButton_15_clicked(bool checked);
 
@@ -129,55 +130,41 @@ private slots:
 
     void on_checkBox_12_clicked();
 
-    void on_CHANNEL_TRIGGER_checkBox_11_clicked(bool checked);
 
-    void on_CHANNEL_TRIGGER_checkBox_12_clicked(bool checked);
 
-    void on_CHANNEL_TRIGGER_checkBox_13_clicked(bool checked);
+    //  //
 
-    void on_CHANNEL_TRIGGER_checkBox_14_clicked(bool checked);
 
-    void on_CHANNEL_TRIGGER_checkBox_15_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr0_ch0_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr0_ch1_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr0_ch2_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr0_ch3_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr0_ch4_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr0_ch5_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr0_ch6_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr0_ch7_clicked(bool checked);
 
-    void on_CHANNEL_TRIGGER_checkBox_21_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr1_ch8_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr1_ch9_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr1_ch10_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr1_ch11_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr1_ch12_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr1_ch13_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr1_ch14_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr1_ch15_clicked(bool checked);
 
-    void on_CHANNEL_TRIGGER_checkBox_22_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr2_ch16_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr2_ch17_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr2_ch18_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr2_ch19_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr2_ch20_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr2_ch21_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr2_ch22_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr2_ch23_clicked(bool checked);
 
-    void on_CHANNEL_TRIGGER_checkBox_23_clicked(bool checked);
+    void on_CHANNEL_TRIGGER_checkBox_gr3_ch24_clicked(bool checked);
 
-    void on_CHANNEL_TRIGGER_checkBox_24_clicked(bool checked);
 
-    void on_CHANNEL_TRIGGER_checkBox_25_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_31_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_32_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_33_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_34_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_35_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_41_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_42_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_43_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_44_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_45_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_51_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_52_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_53_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_54_clicked(bool checked);
-
-    void on_CHANNEL_TRIGGER_checkBox_55_clicked(bool checked);
 
     void on_radioButton_9_clicked(bool checked);
 
@@ -188,6 +175,90 @@ private slots:
     void on_spinBox_valueChanged(int arg1);
 
     void on_pushButton_choose_folder_clicked();
+
+
+
+    void on_CHANNEL_TRIGGER_checkBox_gr3_ch25_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr3_ch26_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr3_ch27_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr3_ch28_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr3_ch29_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr3_ch30_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr3_ch31_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr4_ch32_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr4_ch33_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr4_ch34_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr4_ch35_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr4_ch36_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr4_ch37_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr4_ch38_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr4_ch39_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr5_ch40_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr5_ch41_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr5_ch42_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr5_ch43_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr5_ch44_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr5_ch45_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr5_ch46_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr5_ch47_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr6_ch48_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr6_ch49_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr6_ch50_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr6_ch51_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr6_ch52_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr6_ch53_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr6_ch54_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr6_ch55_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr7_ch56_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr7_ch57_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr7_ch58_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr7_ch59_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr7_ch60_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr7_ch61_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr7_ch62_clicked(bool checked);
+
+    void on_CHANNEL_TRIGGER_checkBox_gr7_ch63_clicked(bool checked);
+
+
+    void on_spinBox_x_max_valueChanged(int arg1);
+    void on_spinBox_x_min_valueChanged(int arg1);
 
 public slots:
     void Message(QString);
@@ -207,6 +278,10 @@ private:
         int ch;
     };
 
+    double x_min;
+    double x_max;
+    double y_min;
+    double y_max;
 
 
     TriggerValueCh trigger_value_ch;
@@ -232,8 +307,12 @@ signals:
     void MaskChannel(int, bool);
     void SetTriggerValue(int, int);
     void MaskChannelAll(bool);
+
     void CHANNEL_TRIGGER_signal(int, bool);
+    void CHANNEL_TRIGGER_group(int, bool);
     void CHANNEL_TRIGGER_all(bool);
+
+
     void SetOutFileType(int);
     void SetEventsPerFile(int);
     void SetFolder(QString);

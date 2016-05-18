@@ -14,10 +14,10 @@ CXX           = g++
 DEFINES       = -DUNICODE -DQT_QML_DEBUG -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -pipe -fno-keep-inline-dllexport -g -Wall -Wextra $(DEFINES)
 CXXFLAGS      = -pipe -fno-keep-inline-dllexport -fpermissive -g -frtti -Wall -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I..\v1 -I. -I..\v1\inc -IC:\root_v5.34.34\include -IC:\Qt\5.5\mingw492_32\include -IC:\Qt\5.5\mingw492_32\include\QtPrintSupport -IC:\Qt\5.5\mingw492_32\include\QtWidgets -IC:\Qt\5.5\mingw492_32\include\QtGui -IC:\Qt\5.5\mingw492_32\include\QtANGLE -IC:\Qt\5.5\mingw492_32\include\QtCore -Idebug -I. -IC:\Qt\5.5\mingw492_32\mkspecs\win32-g++ 
+INCPATH       = -I..\v1 -I. -I..\v1\inc -IC:\Qt\5.5\mingw492_32\include -IC:\Qt\5.5\mingw492_32\include\QtPrintSupport -IC:\Qt\5.5\mingw492_32\include\QtWidgets -IC:\Qt\5.5\mingw492_32\include\QtGui -IC:\Qt\5.5\mingw492_32\include\QtANGLE -IC:\Qt\5.5\mingw492_32\include\QtCore -Idebug -I. -IC:\Qt\5.5\mingw492_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
-LIBS        =        -lmingw32 -LC:/Qt/5.5/mingw492_32/lib -lqtmaind -lshell32 -LD:/git_repositories/Caen_readout_Qt/v1/lib/Win32/Release/ -lCAENComm -lCAENDigitizer -LC:/root_v5.34.34/lib C:/root_v5.34.34/lib/complexDict.lib C:/root_v5.34.34/lib/dequeDict.lib C:/root_v5.34.34/lib/freetype.lib C:/root_v5.34.34/lib/libAfterImage.lib C:/root_v5.34.34/lib/libASImage.lib C:/root_v5.34.34/lib/libASImageGui.lib C:/root_v5.34.34/lib/libCint.lib C:/root_v5.34.34/lib/libCintex.lib C:/root_v5.34.34/lib/libCore.lib C:/root_v5.34.34/lib/libEG.lib C:/root_v5.34.34/lib/libEGPythia8.lib C:/root_v5.34.34/lib/libEve.lib C:/root_v5.34.34/lib/libFitPanel.lib C:/root_v5.34.34/lib/libFoam.lib C:/root_v5.34.34/lib/libFTGL.lib C:/root_v5.34.34/lib/libFumili.lib C:/root_v5.34.34/lib/libGdml.lib C:/root_v5.34.34/lib/libGed.lib C:/root_v5.34.34/lib/libGenetic.lib C:/root_v5.34.34/lib/libGenVector.lib C:/root_v5.34.34/lib/libGeom.lib C:/root_v5.34.34/lib/libGeomBuilder.lib C:/root_v5.34.34/lib/libGeomPainter.lib C:/root_v5.34.34/lib/libGLEW.lib C:/root_v5.34.34/lib/libGpad.lib C:/root_v5.34.34/lib/libGraf.lib C:/root_v5.34.34/lib/libGraf3d.lib C:/root_v5.34.34/lib/libGui.lib C:/root_v5.34.34/lib/libGuiBld.lib C:/root_v5.34.34/lib/libGuiHtml.lib C:/root_v5.34.34/lib/libGviz3d.lib C:/root_v5.34.34/lib/libHist.lib C:/root_v5.34.34/lib/libHistPainter.lib C:/root_v5.34.34/lib/libHtml.lib C:/root_v5.34.34/lib/libMathCore.lib C:/root_v5.34.34/lib/libMathMore.lib C:/root_v5.34.34/lib/libMatrix.lib C:/root_v5.34.34/lib/libMinuit.lib C:/root_v5.34.34/lib/libMinuit2.lib C:/root_v5.34.34/lib/libMLP.lib C:/root_v5.34.34/lib/libNet.lib C:/root_v5.34.34/lib/libPhysics.lib C:/root_v5.34.34/lib/libPostscript.lib C:/root_v5.34.34/lib/libProof.lib C:/root_v5.34.34/lib/libProofDraw.lib C:/root_v5.34.34/lib/libProofPlayer.lib C:/root_v5.34.34/lib/libPyROOT.lib C:/root_v5.34.34/lib/libQuadp.lib C:/root_v5.34.34/lib/libRecorder.lib C:/root_v5.34.34/lib/libReflex.lib C:/root_v5.34.34/lib/libReflexDict.lib C:/root_v5.34.34/lib/libRGL.lib C:/root_v5.34.34/lib/libRHTTP.lib C:/root_v5.34.34/lib/libRint.lib C:/root_v5.34.34/lib/libRIO.lib C:/root_v5.34.34/lib/libRODBC.lib C:/root_v5.34.34/lib/libRooFit.lib C:/root_v5.34.34/lib/libRooFitCore.lib C:/root_v5.34.34/lib/libRooStats.lib C:/root_v5.34.34/lib/libRootAuth.lib C:/root_v5.34.34/lib/libSessionViewer.lib C:/root_v5.34.34/lib/libSmatrix.lib C:/root_v5.34.34/lib/libSpectrum.lib C:/root_v5.34.34/lib/libSpectrumPainter.lib C:/root_v5.34.34/lib/libSPlot.lib C:/root_v5.34.34/lib/libSQLIO.lib C:/root_v5.34.34/lib/libTable.lib C:/root_v5.34.34/lib/libThread.lib C:/root_v5.34.34/lib/libTMVA.lib C:/root_v5.34.34/lib/libTree.lib C:/root_v5.34.34/lib/libTreePlayer.lib C:/root_v5.34.34/lib/libTreeViewer.lib C:/root_v5.34.34/lib/libUnuran.lib C:/root_v5.34.34/lib/libVMC.lib C:/root_v5.34.34/lib/libWin32gdk.lib C:/root_v5.34.34/lib/libXMLIO.lib C:/root_v5.34.34/lib/listDict.lib C:/root_v5.34.34/lib/map2Dict.lib C:/root_v5.34.34/lib/mapDict.lib C:/root_v5.34.34/lib/mathtext.lib C:/root_v5.34.34/lib/multimap2Dict.lib C:/root_v5.34.34/lib/multimapDict.lib C:/root_v5.34.34/lib/multisetDict.lib C:/root_v5.34.34/lib/setDict.lib C:/root_v5.34.34/lib/vectorDict.lib -lQt5PrintSupportd -lQt5Widgetsd -lQt5Guid -lQt5Cored 
+LIBS        =        -lmingw32 -LC:/Qt/5.5/mingw492_32/lib -lqtmaind -lshell32 -LD:/git_repositories/Caen_readout_Qt/v1/lib/Win32/Release/ -lCAENComm -lCAENDigitizer -lQt5PrintSupportd -lQt5Widgetsd -lQt5Guid -lQt5Cored 
 QMAKE         = C:\Qt\5.5\mingw492_32\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -256,35 +256,6 @@ debug/moc_mainwindow.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow \
 		../v1/inc/WaveDump.h \
 		../v1/inc/CAENDigitizer.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
-		C:/root_v5.34.34/include/TFile.h \
-		C:/root_v5.34.34/include/TDirectoryFile.h \
-		C:/root_v5.34.34/include/TDirectory.h \
-		C:/root_v5.34.34/include/TNamed.h \
-		C:/root_v5.34.34/include/TObject.h \
-		C:/root_v5.34.34/include/Rtypes.h \
-		C:/root_v5.34.34/include/RConfig.h \
-		C:/root_v5.34.34/include/RVersion.h \
-		C:/root_v5.34.34/include/DllImport.h \
-		C:/root_v5.34.34/include/Rtypeinfo.h \
-		C:/root_v5.34.34/include/snprintf.h \
-		C:/root_v5.34.34/include/strlcpy.h \
-		C:/root_v5.34.34/include/TGenericClassInfo.h \
-		C:/root_v5.34.34/include/TSchemaHelper.h \
-		C:/root_v5.34.34/include/TStorage.h \
-		C:/root_v5.34.34/include/TVersionCheck.h \
-		C:/root_v5.34.34/include/Riosfwd.h \
-		C:/root_v5.34.34/include/TBuffer.h \
-		C:/root_v5.34.34/include/TString.h \
-		C:/root_v5.34.34/include/TMathBase.h \
-		C:/root_v5.34.34/include/TList.h \
-		C:/root_v5.34.34/include/TSeqCollection.h \
-		C:/root_v5.34.34/include/TCollection.h \
-		C:/root_v5.34.34/include/TIterator.h \
-		C:/root_v5.34.34/include/TDatime.h \
-		C:/root_v5.34.34/include/TUUID.h \
-		C:/root_v5.34.34/include/TMap.h \
-		C:/root_v5.34.34/include/THashTable.h \
-		C:/root_v5.34.34/include/TUrl.h \
 		../v1/inc/WDplot.h \
 		../v1/mythread.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QtCore \
@@ -401,7 +372,7 @@ debug/moc_mainwindow.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow \
 		../v1/inc/X742CorrectionRoutines.h \
 		../v1/inc/fft.h \
 		../v1/mainwindow.h
-	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -ID:/git_repositories/Caen_readout_Qt/v1 -ID:/git_repositories/Caen_readout_Qt/v1/inc -IC:/root_v5.34.34/include -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtPrintSupport -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ..\v1\mainwindow.h -o debug\moc_mainwindow.cpp
+	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -ID:/git_repositories/Caen_readout_Qt/v1 -ID:/git_repositories/Caen_readout_Qt/v1/inc -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtPrintSupport -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ..\v1\mainwindow.h -o debug\moc_mainwindow.cpp
 
 debug/moc_qcustomplot.cpp: C:/Qt/5.5/mingw492_32/include/QtCore/QObject \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qobject.h \
@@ -881,7 +852,7 @@ debug/moc_qcustomplot.cpp: C:/Qt/5.5/mingw492_32/include/QtCore/QObject \
 		C:/Qt/5.5/mingw492_32/include/QtPrintSupport/qprintpreviewwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtPrintSupport/qtprintsupportversion.h \
 		../v1/inc/qcustomplot.h
-	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -ID:/git_repositories/Caen_readout_Qt/v1 -ID:/git_repositories/Caen_readout_Qt/v1/inc -IC:/root_v5.34.34/include -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtPrintSupport -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ..\v1\inc\qcustomplot.h -o debug\moc_qcustomplot.cpp
+	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -ID:/git_repositories/Caen_readout_Qt/v1 -ID:/git_repositories/Caen_readout_Qt/v1/inc -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtPrintSupport -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ..\v1\inc\qcustomplot.h -o debug\moc_qcustomplot.cpp
 
 debug/moc_myworker.cpp: C:/Qt/5.5/mingw492_32/include/QtCore/QtCore \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QtCoreDepends \
@@ -1072,41 +1043,12 @@ debug/moc_myworker.cpp: C:/Qt/5.5/mingw492_32/include/QtCore/QtCore \
 		../v1/inc/WaveDump.h \
 		../v1/inc/CAENDigitizer.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
-		C:/root_v5.34.34/include/TFile.h \
-		C:/root_v5.34.34/include/TDirectoryFile.h \
-		C:/root_v5.34.34/include/TDirectory.h \
-		C:/root_v5.34.34/include/TNamed.h \
-		C:/root_v5.34.34/include/TObject.h \
-		C:/root_v5.34.34/include/Rtypes.h \
-		C:/root_v5.34.34/include/RConfig.h \
-		C:/root_v5.34.34/include/RVersion.h \
-		C:/root_v5.34.34/include/DllImport.h \
-		C:/root_v5.34.34/include/Rtypeinfo.h \
-		C:/root_v5.34.34/include/snprintf.h \
-		C:/root_v5.34.34/include/strlcpy.h \
-		C:/root_v5.34.34/include/TGenericClassInfo.h \
-		C:/root_v5.34.34/include/TSchemaHelper.h \
-		C:/root_v5.34.34/include/TStorage.h \
-		C:/root_v5.34.34/include/TVersionCheck.h \
-		C:/root_v5.34.34/include/Riosfwd.h \
-		C:/root_v5.34.34/include/TBuffer.h \
-		C:/root_v5.34.34/include/TString.h \
-		C:/root_v5.34.34/include/TMathBase.h \
-		C:/root_v5.34.34/include/TList.h \
-		C:/root_v5.34.34/include/TSeqCollection.h \
-		C:/root_v5.34.34/include/TCollection.h \
-		C:/root_v5.34.34/include/TIterator.h \
-		C:/root_v5.34.34/include/TDatime.h \
-		C:/root_v5.34.34/include/TUUID.h \
-		C:/root_v5.34.34/include/TMap.h \
-		C:/root_v5.34.34/include/THashTable.h \
-		C:/root_v5.34.34/include/TUrl.h \
 		../v1/inc/WDplot.h \
 		../v1/inc/WDconfig.h \
 		../v1/inc/X742CorrectionRoutines.h \
 		../v1/inc/fft.h \
 		../v1/myworker.h
-	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -ID:/git_repositories/Caen_readout_Qt/v1 -ID:/git_repositories/Caen_readout_Qt/v1/inc -IC:/root_v5.34.34/include -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtPrintSupport -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ..\v1\myworker.h -o debug\moc_myworker.cpp
+	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -ID:/git_repositories/Caen_readout_Qt/v1 -ID:/git_repositories/Caen_readout_Qt/v1/inc -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtPrintSupport -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ..\v1\myworker.h -o debug\moc_myworker.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1716,35 +1658,6 @@ debug/main.o: ../v1/main.cpp ../v1/mainwindow.h \
 		../v1/inc/WaveDump.h \
 		../v1/inc/CAENDigitizer.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
-		C:/root_v5.34.34/include/TFile.h \
-		C:/root_v5.34.34/include/TDirectoryFile.h \
-		C:/root_v5.34.34/include/TDirectory.h \
-		C:/root_v5.34.34/include/TNamed.h \
-		C:/root_v5.34.34/include/TObject.h \
-		C:/root_v5.34.34/include/Rtypes.h \
-		C:/root_v5.34.34/include/RConfig.h \
-		C:/root_v5.34.34/include/RVersion.h \
-		C:/root_v5.34.34/include/DllImport.h \
-		C:/root_v5.34.34/include/Rtypeinfo.h \
-		C:/root_v5.34.34/include/snprintf.h \
-		C:/root_v5.34.34/include/strlcpy.h \
-		C:/root_v5.34.34/include/TGenericClassInfo.h \
-		C:/root_v5.34.34/include/TSchemaHelper.h \
-		C:/root_v5.34.34/include/TStorage.h \
-		C:/root_v5.34.34/include/TVersionCheck.h \
-		C:/root_v5.34.34/include/Riosfwd.h \
-		C:/root_v5.34.34/include/TBuffer.h \
-		C:/root_v5.34.34/include/TString.h \
-		C:/root_v5.34.34/include/TMathBase.h \
-		C:/root_v5.34.34/include/TList.h \
-		C:/root_v5.34.34/include/TSeqCollection.h \
-		C:/root_v5.34.34/include/TCollection.h \
-		C:/root_v5.34.34/include/TIterator.h \
-		C:/root_v5.34.34/include/TDatime.h \
-		C:/root_v5.34.34/include/TUUID.h \
-		C:/root_v5.34.34/include/TMap.h \
-		C:/root_v5.34.34/include/THashTable.h \
-		C:/root_v5.34.34/include/TUrl.h \
 		../v1/inc/WDplot.h \
 		../v1/mythread.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QtCore \
@@ -1977,35 +1890,6 @@ debug/mainwindow.o: ../v1/mainwindow.cpp ../v1/mainwindow.h \
 		../v1/inc/WaveDump.h \
 		../v1/inc/CAENDigitizer.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
-		C:/root_v5.34.34/include/TFile.h \
-		C:/root_v5.34.34/include/TDirectoryFile.h \
-		C:/root_v5.34.34/include/TDirectory.h \
-		C:/root_v5.34.34/include/TNamed.h \
-		C:/root_v5.34.34/include/TObject.h \
-		C:/root_v5.34.34/include/Rtypes.h \
-		C:/root_v5.34.34/include/RConfig.h \
-		C:/root_v5.34.34/include/RVersion.h \
-		C:/root_v5.34.34/include/DllImport.h \
-		C:/root_v5.34.34/include/Rtypeinfo.h \
-		C:/root_v5.34.34/include/snprintf.h \
-		C:/root_v5.34.34/include/strlcpy.h \
-		C:/root_v5.34.34/include/TGenericClassInfo.h \
-		C:/root_v5.34.34/include/TSchemaHelper.h \
-		C:/root_v5.34.34/include/TStorage.h \
-		C:/root_v5.34.34/include/TVersionCheck.h \
-		C:/root_v5.34.34/include/Riosfwd.h \
-		C:/root_v5.34.34/include/TBuffer.h \
-		C:/root_v5.34.34/include/TString.h \
-		C:/root_v5.34.34/include/TMathBase.h \
-		C:/root_v5.34.34/include/TList.h \
-		C:/root_v5.34.34/include/TSeqCollection.h \
-		C:/root_v5.34.34/include/TCollection.h \
-		C:/root_v5.34.34/include/TIterator.h \
-		C:/root_v5.34.34/include/TDatime.h \
-		C:/root_v5.34.34/include/TUUID.h \
-		C:/root_v5.34.34/include/TMap.h \
-		C:/root_v5.34.34/include/THashTable.h \
-		C:/root_v5.34.34/include/TUrl.h \
 		../v1/inc/WDplot.h \
 		../v1/mythread.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QtCore \
@@ -2456,35 +2340,6 @@ debug/WaveDump.o: ../v1/src/WaveDump.cpp ../v1/inc/CAENDigitizer.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
-		C:/root_v5.34.34/include/TFile.h \
-		C:/root_v5.34.34/include/TDirectoryFile.h \
-		C:/root_v5.34.34/include/TDirectory.h \
-		C:/root_v5.34.34/include/TNamed.h \
-		C:/root_v5.34.34/include/TObject.h \
-		C:/root_v5.34.34/include/Rtypes.h \
-		C:/root_v5.34.34/include/RConfig.h \
-		C:/root_v5.34.34/include/RVersion.h \
-		C:/root_v5.34.34/include/DllImport.h \
-		C:/root_v5.34.34/include/Rtypeinfo.h \
-		C:/root_v5.34.34/include/snprintf.h \
-		C:/root_v5.34.34/include/strlcpy.h \
-		C:/root_v5.34.34/include/TGenericClassInfo.h \
-		C:/root_v5.34.34/include/TSchemaHelper.h \
-		C:/root_v5.34.34/include/TStorage.h \
-		C:/root_v5.34.34/include/TVersionCheck.h \
-		C:/root_v5.34.34/include/Riosfwd.h \
-		C:/root_v5.34.34/include/TBuffer.h \
-		C:/root_v5.34.34/include/TString.h \
-		C:/root_v5.34.34/include/TMathBase.h \
-		C:/root_v5.34.34/include/TList.h \
-		C:/root_v5.34.34/include/TSeqCollection.h \
-		C:/root_v5.34.34/include/TCollection.h \
-		C:/root_v5.34.34/include/TIterator.h \
-		C:/root_v5.34.34/include/TDatime.h \
-		C:/root_v5.34.34/include/TUUID.h \
-		C:/root_v5.34.34/include/TMap.h \
-		C:/root_v5.34.34/include/THashTable.h \
-		C:/root_v5.34.34/include/TUrl.h \
 		../v1/inc/WDplot.h \
 		../v1/inc/fft.h \
 		../v1/inc/keyb.h \
@@ -2561,36 +2416,7 @@ debug/WDconfig.o: ../v1/src/WDconfig.cpp ../v1/inc/CAENDigitizerType.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qrefcount.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
-		C:/root_v5.34.34/include/TFile.h \
-		C:/root_v5.34.34/include/TDirectoryFile.h \
-		C:/root_v5.34.34/include/TDirectory.h \
-		C:/root_v5.34.34/include/TNamed.h \
-		C:/root_v5.34.34/include/TObject.h \
-		C:/root_v5.34.34/include/Rtypes.h \
-		C:/root_v5.34.34/include/RConfig.h \
-		C:/root_v5.34.34/include/RVersion.h \
-		C:/root_v5.34.34/include/DllImport.h \
-		C:/root_v5.34.34/include/Rtypeinfo.h \
-		C:/root_v5.34.34/include/snprintf.h \
-		C:/root_v5.34.34/include/strlcpy.h \
-		C:/root_v5.34.34/include/TGenericClassInfo.h \
-		C:/root_v5.34.34/include/TSchemaHelper.h \
-		C:/root_v5.34.34/include/TStorage.h \
-		C:/root_v5.34.34/include/TVersionCheck.h \
-		C:/root_v5.34.34/include/Riosfwd.h \
-		C:/root_v5.34.34/include/TBuffer.h \
-		C:/root_v5.34.34/include/TString.h \
-		C:/root_v5.34.34/include/TMathBase.h \
-		C:/root_v5.34.34/include/TList.h \
-		C:/root_v5.34.34/include/TSeqCollection.h \
-		C:/root_v5.34.34/include/TCollection.h \
-		C:/root_v5.34.34/include/TIterator.h \
-		C:/root_v5.34.34/include/TDatime.h \
-		C:/root_v5.34.34/include/TUUID.h \
-		C:/root_v5.34.34/include/TMap.h \
-		C:/root_v5.34.34/include/THashTable.h \
-		C:/root_v5.34.34/include/TUrl.h
+		C:/Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\WDconfig.o ..\v1\src\WDconfig.cpp
 
 debug/WDplot.o: ../v1/src/WDplot.cpp ../v1/inc/WDplot.h \
@@ -3271,35 +3097,6 @@ debug/myworker.o: ../v1/myworker.cpp ../v1/myworker.h \
 		../v1/inc/WaveDump.h \
 		../v1/inc/CAENDigitizer.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
-		C:/root_v5.34.34/include/TFile.h \
-		C:/root_v5.34.34/include/TDirectoryFile.h \
-		C:/root_v5.34.34/include/TDirectory.h \
-		C:/root_v5.34.34/include/TNamed.h \
-		C:/root_v5.34.34/include/TObject.h \
-		C:/root_v5.34.34/include/Rtypes.h \
-		C:/root_v5.34.34/include/RConfig.h \
-		C:/root_v5.34.34/include/RVersion.h \
-		C:/root_v5.34.34/include/DllImport.h \
-		C:/root_v5.34.34/include/Rtypeinfo.h \
-		C:/root_v5.34.34/include/snprintf.h \
-		C:/root_v5.34.34/include/strlcpy.h \
-		C:/root_v5.34.34/include/TGenericClassInfo.h \
-		C:/root_v5.34.34/include/TSchemaHelper.h \
-		C:/root_v5.34.34/include/TStorage.h \
-		C:/root_v5.34.34/include/TVersionCheck.h \
-		C:/root_v5.34.34/include/Riosfwd.h \
-		C:/root_v5.34.34/include/TBuffer.h \
-		C:/root_v5.34.34/include/TString.h \
-		C:/root_v5.34.34/include/TMathBase.h \
-		C:/root_v5.34.34/include/TList.h \
-		C:/root_v5.34.34/include/TSeqCollection.h \
-		C:/root_v5.34.34/include/TCollection.h \
-		C:/root_v5.34.34/include/TIterator.h \
-		C:/root_v5.34.34/include/TDatime.h \
-		C:/root_v5.34.34/include/TUUID.h \
-		C:/root_v5.34.34/include/TMap.h \
-		C:/root_v5.34.34/include/THashTable.h \
-		C:/root_v5.34.34/include/TUrl.h \
 		../v1/inc/WDplot.h \
 		../v1/inc/WDconfig.h \
 		../v1/inc/X742CorrectionRoutines.h \

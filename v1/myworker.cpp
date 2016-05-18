@@ -339,8 +339,14 @@ void MyWorker::Readout_loop()
                         for(int index = 0; index < Size; index++)
                         {
                             if(flag)
-                                array_x_data.push_back( (index  + i * Size) * (4 / 1000.0)  );
-                            array_y_data[ch].push_back( Event16->DataChannel[ch][index] );
+                            {
+                                array_x_data.push_back( (index  + i * Size) * (WDcfg.Ts / 1000.0)  );
+                            }
+
+                            if(WDcfg.Nbit != 8)
+                                array_y_data[ch].push_back( (2000 / pow(2.0, WDcfg.Nbit) ) * Event16->DataChannel[ch][index]  - 1000 ); // add value in mV
+                            else
+                                qDebug() << "add device in list" << endl;
                         }
 
                         flag = false;
@@ -776,33 +782,68 @@ void MyWorker::SetTriggerValue(int ch, int val)
 
 void MyWorker::CHANNEL_TRIGGER_signal(int ch, bool value)
 {
-    CAEN_DGTZ_TriggerMode_t tm;
 
-    if(value)
+    switch(BoardInfo.FamilyCode)
     {
-        tm = CAEN_DGTZ_TRGMODE_ACQ_ONLY;
-        qDebug() << " WDcfg.ChannelTriggerMode[" << ch << "] = CAEN_DGTZ_TRGMODE_ACQ_ONLY" << endl;
-    }
-    else
+    case CAEN_DGTZ_XX720_FAMILY_CODE:
     {
-        tm = CAEN_DGTZ_TRGMODE_DISABLED;
-        qDebug() << " WDcfg.ChannelTriggerMode[" << ch << "] = CAEN_DGTZ_TRGMODE_DISABLED" << endl;
-    }
+        CAEN_DGTZ_TriggerMode_t tm;
 
-    WDcfg.ChannelTriggerMode[ch] = tm;
+        if(value)
+        {
+            tm = CAEN_DGTZ_TRGMODE_ACQ_ONLY;
+            qDebug() << " WDcfg.ChannelTriggerMode[" << ch << "] = CAEN_DGTZ_TRGMODE_ACQ_ONLY" << endl;
+        }
+        else
+        {
+            tm = CAEN_DGTZ_TRGMODE_DISABLED;
+            qDebug() << " WDcfg.ChannelTriggerMode[" << ch << "] = CAEN_DGTZ_TRGMODE_DISABLED" << endl;
+        }
+
+        WDcfg.ChannelTriggerMode[ch] = tm;
+        break;
+    }
+    case CAEN_DGTZ_XX740_FAMILY_CODE:
+    {
+        int group = ch / 8;
+
+        if(value)
+            WDcfg.GroupTrgEnableMask[group] |= 1 << (ch - group * 8);
+        else
+            WDcfg.GroupTrgEnableMask[group] &= ~(1 << (ch - group * 8));
+
+        for(int i = 0; i < 8; i++)
+        {
+            qDebug() << " WDcfg.GroupTrgEnableMask[" << i << "] = " << QString::number( WDcfg.GroupTrgEnableMask[i], 2 )  << endl;
+        }
+        break;
+    }
+    default:
+        qDebug() << "Add this device in list" << endl;
+    }
 
     Restart();
 }
 
 void MyWorker::CHANNEL_TRIGGER_all(bool value)
 {
-    for(int ch = 0; ch < 25; ch++)
+    for(int ch = 0; ch < 8; ch++)
     {
         if(value)
+        {
             WDcfg.ChannelTriggerMode[ch] = CAEN_DGTZ_TRGMODE_ACQ_ONLY;
+            WDcfg.GroupTrgEnableMask[ch] = 0xFF;
+        }
         else
+        {
             WDcfg.ChannelTriggerMode[ch] = CAEN_DGTZ_TRGMODE_DISABLED;
+            WDcfg.GroupTrgEnableMask[ch] = 0;
+        }
+
+        qDebug() << " WDcfg.GroupTrgEnableMask[" << ch << "] = " <<  QString::number( WDcfg.GroupTrgEnableMask[ch], 2 ) << endl;
+
     }
+
 
     qDebug() << "CHANNEL_TRIGGER_all = " << value << endl;
 
@@ -848,4 +889,9 @@ void MyWorker::SetEventsPerFile(int value)
 void MyWorker::SetFolder(QString value)
 {
     output_folder = value;
+}
+
+void MyWorker::CHANNEL_TRIGGER_group(int group, bool val)
+{
+
 }

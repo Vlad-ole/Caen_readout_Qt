@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[116];
-    char stringdata0[2794];
+    QByteArrayData data[157];
+    char stringdata0[4745];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -51,101 +51,142 @@ QT_MOC_LITERAL(17, 235, 11), // "MaskChannel"
 QT_MOC_LITERAL(18, 247, 15), // "SetTriggerValue"
 QT_MOC_LITERAL(19, 263, 14), // "MaskChannelAll"
 QT_MOC_LITERAL(20, 278, 22), // "CHANNEL_TRIGGER_signal"
-QT_MOC_LITERAL(21, 301, 19), // "CHANNEL_TRIGGER_all"
-QT_MOC_LITERAL(22, 321, 14), // "SetOutFileType"
-QT_MOC_LITERAL(23, 336, 16), // "SetEventsPerFile"
-QT_MOC_LITERAL(24, 353, 9), // "SetFolder"
-QT_MOC_LITERAL(25, 363, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(26, 385, 25), // "on_radioButton_13_clicked"
-QT_MOC_LITERAL(27, 411, 25), // "on_radioButton_12_clicked"
-QT_MOC_LITERAL(28, 437, 19), // "on_checkBox_clicked"
-QT_MOC_LITERAL(29, 457, 25), // "on_spinBox_3_valueChanged"
-QT_MOC_LITERAL(30, 483, 4), // "arg1"
-QT_MOC_LITERAL(31, 488, 29), // "on_doubleSpinBox_valueChanged"
-QT_MOC_LITERAL(32, 518, 31), // "on_doubleSpinBox_2_valueChanged"
-QT_MOC_LITERAL(33, 550, 25), // "on_spinBox_4_valueChanged"
-QT_MOC_LITERAL(34, 576, 25), // "on_radioButton_15_clicked"
-QT_MOC_LITERAL(35, 602, 7), // "checked"
-QT_MOC_LITERAL(36, 610, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(37, 634, 23), // "on_pushButton_3_clicked"
-QT_MOC_LITERAL(38, 658, 21), // "on_groupBox_3_clicked"
-QT_MOC_LITERAL(39, 680, 28), // "on_spinBox_4_editingFinished"
-QT_MOC_LITERAL(40, 709, 30), // "on_Test_Pattern_button_clicked"
-QT_MOC_LITERAL(41, 740, 23), // "on_pushButton_5_clicked"
-QT_MOC_LITERAL(42, 764, 23), // "on_pushButton_4_clicked"
-QT_MOC_LITERAL(43, 788, 22), // "on_checkBox_11_clicked"
-QT_MOC_LITERAL(44, 811, 22), // "on_checkBox_12_clicked"
-QT_MOC_LITERAL(45, 834, 22), // "on_checkBox_13_clicked"
-QT_MOC_LITERAL(46, 857, 22), // "on_checkBox_14_clicked"
-QT_MOC_LITERAL(47, 880, 22), // "on_checkBox_15_clicked"
-QT_MOC_LITERAL(48, 903, 22), // "on_checkBox_21_clicked"
-QT_MOC_LITERAL(49, 926, 22), // "on_checkBox_22_clicked"
-QT_MOC_LITERAL(50, 949, 22), // "on_checkBox_23_clicked"
-QT_MOC_LITERAL(51, 972, 30), // "on_verticalSlider_valueChanged"
-QT_MOC_LITERAL(52, 1003, 25), // "on_spinBox_2_valueChanged"
-QT_MOC_LITERAL(53, 1029, 23), // "on_pushButton_6_clicked"
-QT_MOC_LITERAL(54, 1053, 31), // "on_pushButton_Reprogram_clicked"
-QT_MOC_LITERAL(55, 1085, 22), // "on_checkBox_24_clicked"
-QT_MOC_LITERAL(56, 1108, 22), // "on_checkBox_25_clicked"
-QT_MOC_LITERAL(57, 1131, 22), // "on_checkBox_31_clicked"
-QT_MOC_LITERAL(58, 1154, 22), // "on_checkBox_32_clicked"
-QT_MOC_LITERAL(59, 1177, 22), // "on_checkBox_33_clicked"
-QT_MOC_LITERAL(60, 1200, 22), // "on_checkBox_34_clicked"
-QT_MOC_LITERAL(61, 1223, 22), // "on_checkBox_35_clicked"
-QT_MOC_LITERAL(62, 1246, 22), // "on_checkBox_41_clicked"
-QT_MOC_LITERAL(63, 1269, 22), // "on_checkBox_42_clicked"
-QT_MOC_LITERAL(64, 1292, 22), // "on_checkBox_43_clicked"
-QT_MOC_LITERAL(65, 1315, 22), // "on_checkBox_44_clicked"
-QT_MOC_LITERAL(66, 1338, 22), // "on_checkBox_45_clicked"
-QT_MOC_LITERAL(67, 1361, 22), // "on_checkBox_51_clicked"
-QT_MOC_LITERAL(68, 1384, 22), // "on_checkBox_52_clicked"
-QT_MOC_LITERAL(69, 1407, 22), // "on_checkBox_53_clicked"
-QT_MOC_LITERAL(70, 1430, 22), // "on_checkBox_54_clicked"
-QT_MOC_LITERAL(71, 1453, 22), // "on_checkBox_55_clicked"
-QT_MOC_LITERAL(72, 1476, 23), // "on_pushButton_7_clicked"
-QT_MOC_LITERAL(73, 1500, 23), // "on_pushButton_8_clicked"
-QT_MOC_LITERAL(74, 1524, 38), // "on_CHANNEL_TRIGGER_checkBox_1..."
-QT_MOC_LITERAL(75, 1563, 38), // "on_CHANNEL_TRIGGER_checkBox_1..."
-QT_MOC_LITERAL(76, 1602, 38), // "on_CHANNEL_TRIGGER_checkBox_1..."
-QT_MOC_LITERAL(77, 1641, 38), // "on_CHANNEL_TRIGGER_checkBox_1..."
-QT_MOC_LITERAL(78, 1680, 38), // "on_CHANNEL_TRIGGER_checkBox_1..."
-QT_MOC_LITERAL(79, 1719, 38), // "on_CHANNEL_TRIGGER_checkBox_2..."
-QT_MOC_LITERAL(80, 1758, 38), // "on_CHANNEL_TRIGGER_checkBox_2..."
-QT_MOC_LITERAL(81, 1797, 38), // "on_CHANNEL_TRIGGER_checkBox_2..."
-QT_MOC_LITERAL(82, 1836, 38), // "on_CHANNEL_TRIGGER_checkBox_2..."
-QT_MOC_LITERAL(83, 1875, 38), // "on_CHANNEL_TRIGGER_checkBox_2..."
-QT_MOC_LITERAL(84, 1914, 38), // "on_CHANNEL_TRIGGER_checkBox_3..."
-QT_MOC_LITERAL(85, 1953, 38), // "on_CHANNEL_TRIGGER_checkBox_3..."
-QT_MOC_LITERAL(86, 1992, 38), // "on_CHANNEL_TRIGGER_checkBox_3..."
-QT_MOC_LITERAL(87, 2031, 38), // "on_CHANNEL_TRIGGER_checkBox_3..."
-QT_MOC_LITERAL(88, 2070, 38), // "on_CHANNEL_TRIGGER_checkBox_3..."
-QT_MOC_LITERAL(89, 2109, 38), // "on_CHANNEL_TRIGGER_checkBox_4..."
-QT_MOC_LITERAL(90, 2148, 38), // "on_CHANNEL_TRIGGER_checkBox_4..."
-QT_MOC_LITERAL(91, 2187, 38), // "on_CHANNEL_TRIGGER_checkBox_4..."
-QT_MOC_LITERAL(92, 2226, 38), // "on_CHANNEL_TRIGGER_checkBox_4..."
-QT_MOC_LITERAL(93, 2265, 38), // "on_CHANNEL_TRIGGER_checkBox_4..."
-QT_MOC_LITERAL(94, 2304, 38), // "on_CHANNEL_TRIGGER_checkBox_5..."
-QT_MOC_LITERAL(95, 2343, 38), // "on_CHANNEL_TRIGGER_checkBox_5..."
-QT_MOC_LITERAL(96, 2382, 38), // "on_CHANNEL_TRIGGER_checkBox_5..."
-QT_MOC_LITERAL(97, 2421, 38), // "on_CHANNEL_TRIGGER_checkBox_5..."
-QT_MOC_LITERAL(98, 2460, 38), // "on_CHANNEL_TRIGGER_checkBox_5..."
-QT_MOC_LITERAL(99, 2499, 24), // "on_radioButton_9_clicked"
-QT_MOC_LITERAL(100, 2524, 25), // "on_radioButton_10_clicked"
-QT_MOC_LITERAL(101, 2550, 32), // "on_radioButton_root_tree_clicked"
-QT_MOC_LITERAL(102, 2583, 23), // "on_spinBox_valueChanged"
-QT_MOC_LITERAL(103, 2607, 35), // "on_pushButton_choose_folder_c..."
-QT_MOC_LITERAL(104, 2643, 7), // "Message"
-QT_MOC_LITERAL(105, 2651, 22), // "InitializationComplete"
-QT_MOC_LITERAL(106, 2674, 16), // "RedrawGraphsFull"
-QT_MOC_LITERAL(107, 2691, 15), // "QVector<double>"
-QT_MOC_LITERAL(108, 2707, 25), // "QVector<QVector<double> >"
-QT_MOC_LITERAL(109, 2733, 13), // "TransferSpeed"
-QT_MOC_LITERAL(110, 2747, 11), // "TriggerRate"
-QT_MOC_LITERAL(111, 2759, 9), // "GraphData"
-QT_MOC_LITERAL(112, 2769, 8), // "double**"
-QT_MOC_LITERAL(113, 2778, 5), // "array"
-QT_MOC_LITERAL(114, 2784, 4), // "rows"
-QT_MOC_LITERAL(115, 2789, 4) // "cols"
+QT_MOC_LITERAL(21, 301, 21), // "CHANNEL_TRIGGER_group"
+QT_MOC_LITERAL(22, 323, 19), // "CHANNEL_TRIGGER_all"
+QT_MOC_LITERAL(23, 343, 14), // "SetOutFileType"
+QT_MOC_LITERAL(24, 358, 16), // "SetEventsPerFile"
+QT_MOC_LITERAL(25, 375, 9), // "SetFolder"
+QT_MOC_LITERAL(26, 385, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(27, 407, 25), // "on_radioButton_13_clicked"
+QT_MOC_LITERAL(28, 433, 25), // "on_radioButton_12_clicked"
+QT_MOC_LITERAL(29, 459, 19), // "on_checkBox_clicked"
+QT_MOC_LITERAL(30, 479, 25), // "on_spinBox_3_valueChanged"
+QT_MOC_LITERAL(31, 505, 4), // "arg1"
+QT_MOC_LITERAL(32, 510, 29), // "on_doubleSpinBox_valueChanged"
+QT_MOC_LITERAL(33, 540, 31), // "on_doubleSpinBox_2_valueChanged"
+QT_MOC_LITERAL(34, 572, 25), // "on_radioButton_15_clicked"
+QT_MOC_LITERAL(35, 598, 7), // "checked"
+QT_MOC_LITERAL(36, 606, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(37, 630, 23), // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(38, 654, 21), // "on_groupBox_3_clicked"
+QT_MOC_LITERAL(39, 676, 28), // "on_spinBox_4_editingFinished"
+QT_MOC_LITERAL(40, 705, 30), // "on_Test_Pattern_button_clicked"
+QT_MOC_LITERAL(41, 736, 23), // "on_pushButton_5_clicked"
+QT_MOC_LITERAL(42, 760, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(43, 784, 22), // "on_checkBox_11_clicked"
+QT_MOC_LITERAL(44, 807, 22), // "on_checkBox_12_clicked"
+QT_MOC_LITERAL(45, 830, 22), // "on_checkBox_13_clicked"
+QT_MOC_LITERAL(46, 853, 22), // "on_checkBox_14_clicked"
+QT_MOC_LITERAL(47, 876, 22), // "on_checkBox_15_clicked"
+QT_MOC_LITERAL(48, 899, 22), // "on_checkBox_21_clicked"
+QT_MOC_LITERAL(49, 922, 22), // "on_checkBox_22_clicked"
+QT_MOC_LITERAL(50, 945, 22), // "on_checkBox_23_clicked"
+QT_MOC_LITERAL(51, 968, 30), // "on_verticalSlider_valueChanged"
+QT_MOC_LITERAL(52, 999, 25), // "on_spinBox_2_valueChanged"
+QT_MOC_LITERAL(53, 1025, 23), // "on_pushButton_6_clicked"
+QT_MOC_LITERAL(54, 1049, 31), // "on_pushButton_Reprogram_clicked"
+QT_MOC_LITERAL(55, 1081, 22), // "on_checkBox_24_clicked"
+QT_MOC_LITERAL(56, 1104, 22), // "on_checkBox_25_clicked"
+QT_MOC_LITERAL(57, 1127, 22), // "on_checkBox_31_clicked"
+QT_MOC_LITERAL(58, 1150, 22), // "on_checkBox_32_clicked"
+QT_MOC_LITERAL(59, 1173, 22), // "on_checkBox_33_clicked"
+QT_MOC_LITERAL(60, 1196, 22), // "on_checkBox_34_clicked"
+QT_MOC_LITERAL(61, 1219, 22), // "on_checkBox_35_clicked"
+QT_MOC_LITERAL(62, 1242, 22), // "on_checkBox_41_clicked"
+QT_MOC_LITERAL(63, 1265, 22), // "on_checkBox_42_clicked"
+QT_MOC_LITERAL(64, 1288, 22), // "on_checkBox_43_clicked"
+QT_MOC_LITERAL(65, 1311, 22), // "on_checkBox_44_clicked"
+QT_MOC_LITERAL(66, 1334, 22), // "on_checkBox_45_clicked"
+QT_MOC_LITERAL(67, 1357, 22), // "on_checkBox_51_clicked"
+QT_MOC_LITERAL(68, 1380, 22), // "on_checkBox_52_clicked"
+QT_MOC_LITERAL(69, 1403, 22), // "on_checkBox_53_clicked"
+QT_MOC_LITERAL(70, 1426, 22), // "on_checkBox_54_clicked"
+QT_MOC_LITERAL(71, 1449, 22), // "on_checkBox_55_clicked"
+QT_MOC_LITERAL(72, 1472, 23), // "on_pushButton_7_clicked"
+QT_MOC_LITERAL(73, 1496, 23), // "on_pushButton_8_clicked"
+QT_MOC_LITERAL(74, 1520, 43), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(75, 1564, 43), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(76, 1608, 43), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(77, 1652, 43), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(78, 1696, 43), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(79, 1740, 43), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(80, 1784, 43), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(81, 1828, 43), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(82, 1872, 43), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(83, 1916, 43), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(84, 1960, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(85, 2005, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(86, 2050, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(87, 2095, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(88, 2140, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(89, 2185, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(90, 2230, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(91, 2275, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(92, 2320, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(93, 2365, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(94, 2410, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(95, 2455, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(96, 2500, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(97, 2545, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(98, 2590, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(99, 2635, 24), // "on_radioButton_9_clicked"
+QT_MOC_LITERAL(100, 2660, 25), // "on_radioButton_10_clicked"
+QT_MOC_LITERAL(101, 2686, 32), // "on_radioButton_root_tree_clicked"
+QT_MOC_LITERAL(102, 2719, 23), // "on_spinBox_valueChanged"
+QT_MOC_LITERAL(103, 2743, 35), // "on_pushButton_choose_folder_c..."
+QT_MOC_LITERAL(104, 2779, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(105, 2824, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(106, 2869, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(107, 2914, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(108, 2959, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(109, 3004, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(110, 3049, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(111, 3094, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(112, 3139, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(113, 3184, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(114, 3229, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(115, 3274, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(116, 3319, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(117, 3364, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(118, 3409, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(119, 3454, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(120, 3499, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(121, 3544, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(122, 3589, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(123, 3634, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(124, 3679, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(125, 3724, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(126, 3769, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(127, 3814, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(128, 3859, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(129, 3904, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(130, 3949, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(131, 3994, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(132, 4039, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(133, 4084, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(134, 4129, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(135, 4174, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(136, 4219, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(137, 4264, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(138, 4309, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(139, 4354, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(140, 4399, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(141, 4444, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(142, 4489, 44), // "on_CHANNEL_TRIGGER_checkBox_g..."
+QT_MOC_LITERAL(143, 4534, 29), // "on_spinBox_x_max_valueChanged"
+QT_MOC_LITERAL(144, 4564, 29), // "on_spinBox_x_min_valueChanged"
+QT_MOC_LITERAL(145, 4594, 7), // "Message"
+QT_MOC_LITERAL(146, 4602, 22), // "InitializationComplete"
+QT_MOC_LITERAL(147, 4625, 16), // "RedrawGraphsFull"
+QT_MOC_LITERAL(148, 4642, 15), // "QVector<double>"
+QT_MOC_LITERAL(149, 4658, 25), // "QVector<QVector<double> >"
+QT_MOC_LITERAL(150, 4684, 13), // "TransferSpeed"
+QT_MOC_LITERAL(151, 4698, 11), // "TriggerRate"
+QT_MOC_LITERAL(152, 4710, 9), // "GraphData"
+QT_MOC_LITERAL(153, 4720, 8), // "double**"
+QT_MOC_LITERAL(154, 4729, 5), // "array"
+QT_MOC_LITERAL(155, 4735, 4), // "rows"
+QT_MOC_LITERAL(156, 4740, 4) // "cols"
 
     },
     "MainWindow\0Init\0\0QuitProgram\0"
@@ -156,15 +197,14 @@ QT_MOC_LITERAL(115, 2789, 4) // "cols"
     "TestPattern\0EnableContinuousPlot\0"
     "DisableContinuousPlot\0MaskChannel\0"
     "SetTriggerValue\0MaskChannelAll\0"
-    "CHANNEL_TRIGGER_signal\0CHANNEL_TRIGGER_all\0"
-    "SetOutFileType\0SetEventsPerFile\0"
-    "SetFolder\0on_pushButton_clicked\0"
-    "on_radioButton_13_clicked\0"
+    "CHANNEL_TRIGGER_signal\0CHANNEL_TRIGGER_group\0"
+    "CHANNEL_TRIGGER_all\0SetOutFileType\0"
+    "SetEventsPerFile\0SetFolder\0"
+    "on_pushButton_clicked\0on_radioButton_13_clicked\0"
     "on_radioButton_12_clicked\0on_checkBox_clicked\0"
     "on_spinBox_3_valueChanged\0arg1\0"
     "on_doubleSpinBox_valueChanged\0"
     "on_doubleSpinBox_2_valueChanged\0"
-    "on_spinBox_4_valueChanged\0"
     "on_radioButton_15_clicked\0checked\0"
     "on_pushButton_2_clicked\0on_pushButton_3_clicked\0"
     "on_groupBox_3_clicked\0"
@@ -189,41 +229,81 @@ QT_MOC_LITERAL(115, 2789, 4) // "cols"
     "on_checkBox_53_clicked\0on_checkBox_54_clicked\0"
     "on_checkBox_55_clicked\0on_pushButton_7_clicked\0"
     "on_pushButton_8_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_11_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_12_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_13_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_14_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_15_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_21_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_22_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_23_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_24_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_25_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_31_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_32_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_33_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_34_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_35_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_41_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_42_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_43_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_44_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_45_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_51_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_52_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_53_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_54_clicked\0"
-    "on_CHANNEL_TRIGGER_checkBox_55_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr0_ch0_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr0_ch1_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr0_ch2_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr0_ch3_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr0_ch4_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr0_ch5_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr0_ch6_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr0_ch7_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr1_ch8_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr1_ch9_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr1_ch10_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr1_ch11_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr1_ch12_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr1_ch13_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr1_ch14_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr1_ch15_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr2_ch16_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr2_ch17_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr2_ch18_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr2_ch19_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr2_ch20_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr2_ch21_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr2_ch22_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr2_ch23_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr3_ch24_clicked\0"
     "on_radioButton_9_clicked\0"
     "on_radioButton_10_clicked\0"
     "on_radioButton_root_tree_clicked\0"
     "on_spinBox_valueChanged\0"
     "on_pushButton_choose_folder_clicked\0"
-    "Message\0InitializationComplete\0"
-    "RedrawGraphsFull\0QVector<double>\0"
-    "QVector<QVector<double> >\0TransferSpeed\0"
-    "TriggerRate\0GraphData\0double**\0array\0"
-    "rows\0cols"
+    "on_CHANNEL_TRIGGER_checkBox_gr3_ch25_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr3_ch26_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr3_ch27_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr3_ch28_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr3_ch29_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr3_ch30_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr3_ch31_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr4_ch32_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr4_ch33_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr4_ch34_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr4_ch35_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr4_ch36_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr4_ch37_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr4_ch38_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr4_ch39_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr5_ch40_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr5_ch41_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr5_ch42_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr5_ch43_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr5_ch44_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr5_ch45_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr5_ch46_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr5_ch47_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr6_ch48_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr6_ch49_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr6_ch50_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr6_ch51_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr6_ch52_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr6_ch53_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr6_ch54_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr6_ch55_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr7_ch56_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr7_ch57_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr7_ch58_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr7_ch59_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr7_ch60_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr7_ch61_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr7_ch62_clicked\0"
+    "on_CHANNEL_TRIGGER_checkBox_gr7_ch63_clicked\0"
+    "on_spinBox_x_max_valueChanged\0"
+    "on_spinBox_x_min_valueChanged\0Message\0"
+    "InitializationComplete\0RedrawGraphsFull\0"
+    "QVector<double>\0QVector<QVector<double> >\0"
+    "TransferSpeed\0TriggerRate\0GraphData\0"
+    "double**\0array\0rows\0cols"
 };
 #undef QT_MOC_LITERAL
 
@@ -233,125 +313,166 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-     109,   14, // methods
+     150,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      22,       // signalCount
+      23,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  559,    2, 0x06 /* Public */,
-       3,    0,  560,    2, 0x06 /* Public */,
-       4,    0,  561,    2, 0x06 /* Public */,
-       5,    0,  562,    2, 0x06 /* Public */,
-       6,    0,  563,    2, 0x06 /* Public */,
-       7,    0,  564,    2, 0x06 /* Public */,
-       8,    0,  565,    2, 0x06 /* Public */,
-       9,    0,  566,    2, 0x06 /* Public */,
-      10,    0,  567,    2, 0x06 /* Public */,
-      11,    0,  568,    2, 0x06 /* Public */,
-      12,    1,  569,    2, 0x06 /* Public */,
-      14,    0,  572,    2, 0x06 /* Public */,
-      15,    0,  573,    2, 0x06 /* Public */,
-      16,    0,  574,    2, 0x06 /* Public */,
-      17,    2,  575,    2, 0x06 /* Public */,
-      18,    2,  580,    2, 0x06 /* Public */,
-      19,    1,  585,    2, 0x06 /* Public */,
-      20,    2,  588,    2, 0x06 /* Public */,
-      21,    1,  593,    2, 0x06 /* Public */,
-      22,    1,  596,    2, 0x06 /* Public */,
-      23,    1,  599,    2, 0x06 /* Public */,
-      24,    1,  602,    2, 0x06 /* Public */,
+       1,    0,  764,    2, 0x06 /* Public */,
+       3,    0,  765,    2, 0x06 /* Public */,
+       4,    0,  766,    2, 0x06 /* Public */,
+       5,    0,  767,    2, 0x06 /* Public */,
+       6,    0,  768,    2, 0x06 /* Public */,
+       7,    0,  769,    2, 0x06 /* Public */,
+       8,    0,  770,    2, 0x06 /* Public */,
+       9,    0,  771,    2, 0x06 /* Public */,
+      10,    0,  772,    2, 0x06 /* Public */,
+      11,    0,  773,    2, 0x06 /* Public */,
+      12,    1,  774,    2, 0x06 /* Public */,
+      14,    0,  777,    2, 0x06 /* Public */,
+      15,    0,  778,    2, 0x06 /* Public */,
+      16,    0,  779,    2, 0x06 /* Public */,
+      17,    2,  780,    2, 0x06 /* Public */,
+      18,    2,  785,    2, 0x06 /* Public */,
+      19,    1,  790,    2, 0x06 /* Public */,
+      20,    2,  793,    2, 0x06 /* Public */,
+      21,    2,  798,    2, 0x06 /* Public */,
+      22,    1,  803,    2, 0x06 /* Public */,
+      23,    1,  806,    2, 0x06 /* Public */,
+      24,    1,  809,    2, 0x06 /* Public */,
+      25,    1,  812,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      25,    0,  605,    2, 0x08 /* Private */,
-      26,    0,  606,    2, 0x08 /* Private */,
-      27,    0,  607,    2, 0x08 /* Private */,
-      28,    0,  608,    2, 0x08 /* Private */,
-      29,    1,  609,    2, 0x08 /* Private */,
-      31,    1,  612,    2, 0x08 /* Private */,
-      32,    1,  615,    2, 0x08 /* Private */,
-      33,    1,  618,    2, 0x08 /* Private */,
-      34,    1,  621,    2, 0x08 /* Private */,
-      36,    0,  624,    2, 0x08 /* Private */,
-      34,    0,  625,    2, 0x08 /* Private */,
-      37,    0,  626,    2, 0x08 /* Private */,
-      38,    0,  627,    2, 0x08 /* Private */,
-      39,    0,  628,    2, 0x08 /* Private */,
-      40,    0,  629,    2, 0x08 /* Private */,
-      28,    1,  630,    2, 0x08 /* Private */,
-      40,    1,  633,    2, 0x08 /* Private */,
-      41,    0,  636,    2, 0x08 /* Private */,
-      42,    0,  637,    2, 0x08 /* Private */,
-      43,    1,  638,    2, 0x08 /* Private */,
-      44,    1,  641,    2, 0x08 /* Private */,
-      45,    1,  644,    2, 0x08 /* Private */,
-      46,    1,  647,    2, 0x08 /* Private */,
-      47,    1,  650,    2, 0x08 /* Private */,
-      48,    1,  653,    2, 0x08 /* Private */,
-      49,    1,  656,    2, 0x08 /* Private */,
-      50,    1,  659,    2, 0x08 /* Private */,
-      51,    1,  662,    2, 0x08 /* Private */,
-      52,    1,  665,    2, 0x08 /* Private */,
-      53,    0,  668,    2, 0x08 /* Private */,
-      54,    0,  669,    2, 0x08 /* Private */,
-      55,    1,  670,    2, 0x08 /* Private */,
-      56,    1,  673,    2, 0x08 /* Private */,
-      57,    1,  676,    2, 0x08 /* Private */,
-      58,    1,  679,    2, 0x08 /* Private */,
-      59,    1,  682,    2, 0x08 /* Private */,
-      60,    1,  685,    2, 0x08 /* Private */,
-      61,    1,  688,    2, 0x08 /* Private */,
-      62,    1,  691,    2, 0x08 /* Private */,
-      63,    1,  694,    2, 0x08 /* Private */,
-      64,    1,  697,    2, 0x08 /* Private */,
-      65,    1,  700,    2, 0x08 /* Private */,
-      66,    1,  703,    2, 0x08 /* Private */,
-      67,    1,  706,    2, 0x08 /* Private */,
-      68,    1,  709,    2, 0x08 /* Private */,
-      69,    1,  712,    2, 0x08 /* Private */,
-      70,    1,  715,    2, 0x08 /* Private */,
-      71,    1,  718,    2, 0x08 /* Private */,
-      72,    0,  721,    2, 0x08 /* Private */,
-      73,    0,  722,    2, 0x08 /* Private */,
-      44,    0,  723,    2, 0x08 /* Private */,
-      74,    1,  724,    2, 0x08 /* Private */,
-      75,    1,  727,    2, 0x08 /* Private */,
-      76,    1,  730,    2, 0x08 /* Private */,
-      77,    1,  733,    2, 0x08 /* Private */,
-      78,    1,  736,    2, 0x08 /* Private */,
-      79,    1,  739,    2, 0x08 /* Private */,
-      80,    1,  742,    2, 0x08 /* Private */,
-      81,    1,  745,    2, 0x08 /* Private */,
-      82,    1,  748,    2, 0x08 /* Private */,
-      83,    1,  751,    2, 0x08 /* Private */,
-      84,    1,  754,    2, 0x08 /* Private */,
-      85,    1,  757,    2, 0x08 /* Private */,
-      86,    1,  760,    2, 0x08 /* Private */,
-      87,    1,  763,    2, 0x08 /* Private */,
-      88,    1,  766,    2, 0x08 /* Private */,
-      89,    1,  769,    2, 0x08 /* Private */,
-      90,    1,  772,    2, 0x08 /* Private */,
-      91,    1,  775,    2, 0x08 /* Private */,
-      92,    1,  778,    2, 0x08 /* Private */,
-      93,    1,  781,    2, 0x08 /* Private */,
-      94,    1,  784,    2, 0x08 /* Private */,
-      95,    1,  787,    2, 0x08 /* Private */,
-      96,    1,  790,    2, 0x08 /* Private */,
-      97,    1,  793,    2, 0x08 /* Private */,
-      98,    1,  796,    2, 0x08 /* Private */,
-      99,    1,  799,    2, 0x08 /* Private */,
-     100,    1,  802,    2, 0x08 /* Private */,
-     101,    1,  805,    2, 0x08 /* Private */,
-     102,    1,  808,    2, 0x08 /* Private */,
-     103,    0,  811,    2, 0x08 /* Private */,
-     104,    1,  812,    2, 0x0a /* Public */,
-     105,    0,  815,    2, 0x0a /* Public */,
-     106,    2,  816,    2, 0x0a /* Public */,
-     109,    1,  821,    2, 0x0a /* Public */,
-     110,    1,  824,    2, 0x0a /* Public */,
-     111,    3,  827,    2, 0x0a /* Public */,
+      26,    0,  815,    2, 0x08 /* Private */,
+      27,    0,  816,    2, 0x08 /* Private */,
+      28,    0,  817,    2, 0x08 /* Private */,
+      29,    0,  818,    2, 0x08 /* Private */,
+      30,    1,  819,    2, 0x08 /* Private */,
+      32,    1,  822,    2, 0x08 /* Private */,
+      33,    1,  825,    2, 0x08 /* Private */,
+      34,    1,  828,    2, 0x08 /* Private */,
+      36,    0,  831,    2, 0x08 /* Private */,
+      34,    0,  832,    2, 0x08 /* Private */,
+      37,    0,  833,    2, 0x08 /* Private */,
+      38,    0,  834,    2, 0x08 /* Private */,
+      39,    0,  835,    2, 0x08 /* Private */,
+      40,    0,  836,    2, 0x08 /* Private */,
+      29,    1,  837,    2, 0x08 /* Private */,
+      40,    1,  840,    2, 0x08 /* Private */,
+      41,    0,  843,    2, 0x08 /* Private */,
+      42,    0,  844,    2, 0x08 /* Private */,
+      43,    1,  845,    2, 0x08 /* Private */,
+      44,    1,  848,    2, 0x08 /* Private */,
+      45,    1,  851,    2, 0x08 /* Private */,
+      46,    1,  854,    2, 0x08 /* Private */,
+      47,    1,  857,    2, 0x08 /* Private */,
+      48,    1,  860,    2, 0x08 /* Private */,
+      49,    1,  863,    2, 0x08 /* Private */,
+      50,    1,  866,    2, 0x08 /* Private */,
+      51,    1,  869,    2, 0x08 /* Private */,
+      52,    1,  872,    2, 0x08 /* Private */,
+      53,    0,  875,    2, 0x08 /* Private */,
+      54,    0,  876,    2, 0x08 /* Private */,
+      55,    1,  877,    2, 0x08 /* Private */,
+      56,    1,  880,    2, 0x08 /* Private */,
+      57,    1,  883,    2, 0x08 /* Private */,
+      58,    1,  886,    2, 0x08 /* Private */,
+      59,    1,  889,    2, 0x08 /* Private */,
+      60,    1,  892,    2, 0x08 /* Private */,
+      61,    1,  895,    2, 0x08 /* Private */,
+      62,    1,  898,    2, 0x08 /* Private */,
+      63,    1,  901,    2, 0x08 /* Private */,
+      64,    1,  904,    2, 0x08 /* Private */,
+      65,    1,  907,    2, 0x08 /* Private */,
+      66,    1,  910,    2, 0x08 /* Private */,
+      67,    1,  913,    2, 0x08 /* Private */,
+      68,    1,  916,    2, 0x08 /* Private */,
+      69,    1,  919,    2, 0x08 /* Private */,
+      70,    1,  922,    2, 0x08 /* Private */,
+      71,    1,  925,    2, 0x08 /* Private */,
+      72,    0,  928,    2, 0x08 /* Private */,
+      73,    0,  929,    2, 0x08 /* Private */,
+      44,    0,  930,    2, 0x08 /* Private */,
+      74,    1,  931,    2, 0x08 /* Private */,
+      75,    1,  934,    2, 0x08 /* Private */,
+      76,    1,  937,    2, 0x08 /* Private */,
+      77,    1,  940,    2, 0x08 /* Private */,
+      78,    1,  943,    2, 0x08 /* Private */,
+      79,    1,  946,    2, 0x08 /* Private */,
+      80,    1,  949,    2, 0x08 /* Private */,
+      81,    1,  952,    2, 0x08 /* Private */,
+      82,    1,  955,    2, 0x08 /* Private */,
+      83,    1,  958,    2, 0x08 /* Private */,
+      84,    1,  961,    2, 0x08 /* Private */,
+      85,    1,  964,    2, 0x08 /* Private */,
+      86,    1,  967,    2, 0x08 /* Private */,
+      87,    1,  970,    2, 0x08 /* Private */,
+      88,    1,  973,    2, 0x08 /* Private */,
+      89,    1,  976,    2, 0x08 /* Private */,
+      90,    1,  979,    2, 0x08 /* Private */,
+      91,    1,  982,    2, 0x08 /* Private */,
+      92,    1,  985,    2, 0x08 /* Private */,
+      93,    1,  988,    2, 0x08 /* Private */,
+      94,    1,  991,    2, 0x08 /* Private */,
+      95,    1,  994,    2, 0x08 /* Private */,
+      96,    1,  997,    2, 0x08 /* Private */,
+      97,    1, 1000,    2, 0x08 /* Private */,
+      98,    1, 1003,    2, 0x08 /* Private */,
+      99,    1, 1006,    2, 0x08 /* Private */,
+     100,    1, 1009,    2, 0x08 /* Private */,
+     101,    1, 1012,    2, 0x08 /* Private */,
+     102,    1, 1015,    2, 0x08 /* Private */,
+     103,    0, 1018,    2, 0x08 /* Private */,
+     104,    1, 1019,    2, 0x08 /* Private */,
+     105,    1, 1022,    2, 0x08 /* Private */,
+     106,    1, 1025,    2, 0x08 /* Private */,
+     107,    1, 1028,    2, 0x08 /* Private */,
+     108,    1, 1031,    2, 0x08 /* Private */,
+     109,    1, 1034,    2, 0x08 /* Private */,
+     110,    1, 1037,    2, 0x08 /* Private */,
+     111,    1, 1040,    2, 0x08 /* Private */,
+     112,    1, 1043,    2, 0x08 /* Private */,
+     113,    1, 1046,    2, 0x08 /* Private */,
+     114,    1, 1049,    2, 0x08 /* Private */,
+     115,    1, 1052,    2, 0x08 /* Private */,
+     116,    1, 1055,    2, 0x08 /* Private */,
+     117,    1, 1058,    2, 0x08 /* Private */,
+     118,    1, 1061,    2, 0x08 /* Private */,
+     119,    1, 1064,    2, 0x08 /* Private */,
+     120,    1, 1067,    2, 0x08 /* Private */,
+     121,    1, 1070,    2, 0x08 /* Private */,
+     122,    1, 1073,    2, 0x08 /* Private */,
+     123,    1, 1076,    2, 0x08 /* Private */,
+     124,    1, 1079,    2, 0x08 /* Private */,
+     125,    1, 1082,    2, 0x08 /* Private */,
+     126,    1, 1085,    2, 0x08 /* Private */,
+     127,    1, 1088,    2, 0x08 /* Private */,
+     128,    1, 1091,    2, 0x08 /* Private */,
+     129,    1, 1094,    2, 0x08 /* Private */,
+     130,    1, 1097,    2, 0x08 /* Private */,
+     131,    1, 1100,    2, 0x08 /* Private */,
+     132,    1, 1103,    2, 0x08 /* Private */,
+     133,    1, 1106,    2, 0x08 /* Private */,
+     134,    1, 1109,    2, 0x08 /* Private */,
+     135,    1, 1112,    2, 0x08 /* Private */,
+     136,    1, 1115,    2, 0x08 /* Private */,
+     137,    1, 1118,    2, 0x08 /* Private */,
+     138,    1, 1121,    2, 0x08 /* Private */,
+     139,    1, 1124,    2, 0x08 /* Private */,
+     140,    1, 1127,    2, 0x08 /* Private */,
+     141,    1, 1130,    2, 0x08 /* Private */,
+     142,    1, 1133,    2, 0x08 /* Private */,
+     143,    1, 1136,    2, 0x08 /* Private */,
+     144,    1, 1139,    2, 0x08 /* Private */,
+     145,    1, 1142,    2, 0x0a /* Public */,
+     146,    0, 1145,    2, 0x0a /* Public */,
+     147,    2, 1146,    2, 0x0a /* Public */,
+     150,    1, 1151,    2, 0x0a /* Public */,
+     151,    1, 1154,    2, 0x0a /* Public */,
+     152,    3, 1157,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -372,6 +493,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Bool,    2,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Bool,    2,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
@@ -382,10 +504,9 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   30,
-    QMetaType::Void, QMetaType::Double,   30,
-    QMetaType::Void, QMetaType::Double,   30,
-    QMetaType::Void, QMetaType::Int,   30,
+    QMetaType::Void, QMetaType::Int,   31,
+    QMetaType::Void, QMetaType::Double,   31,
+    QMetaType::Void, QMetaType::Double,   31,
     QMetaType::Void, QMetaType::Bool,   35,
     QMetaType::Void,
     QMetaType::Void,
@@ -406,7 +527,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::Bool,   35,
     QMetaType::Void, QMetaType::Bool,   35,
     QMetaType::Void, QMetaType::Int,   13,
-    QMetaType::Void, QMetaType::Int,   30,
+    QMetaType::Void, QMetaType::Int,   31,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,   35,
@@ -457,14 +578,55 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::Bool,   35,
     QMetaType::Void, QMetaType::Bool,   35,
     QMetaType::Void, QMetaType::Bool,   35,
-    QMetaType::Void, QMetaType::Int,   30,
+    QMetaType::Void, QMetaType::Int,   31,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Bool,   35,
+    QMetaType::Void, QMetaType::Int,   31,
+    QMetaType::Void, QMetaType::Int,   31,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 107, 0x80000000 | 108,    2,    2,
+    QMetaType::Void, 0x80000000 | 148, 0x80000000 | 149,    2,    2,
     QMetaType::Void, QMetaType::Double,    2,
     QMetaType::Void, QMetaType::Double,    2,
-    QMetaType::Void, 0x80000000 | 112, QMetaType::Int, QMetaType::Int,  113,  114,  115,
+    QMetaType::Void, 0x80000000 | 153, QMetaType::Int, QMetaType::Int,  154,  155,  156,
 
        0        // eod
 };
@@ -493,18 +655,18 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 15: _t->SetTriggerValue((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 16: _t->MaskChannelAll((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 17: _t->CHANNEL_TRIGGER_signal((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
-        case 18: _t->CHANNEL_TRIGGER_all((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 19: _t->SetOutFileType((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 20: _t->SetEventsPerFile((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 21: _t->SetFolder((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 22: _t->on_pushButton_clicked(); break;
-        case 23: _t->on_radioButton_13_clicked(); break;
-        case 24: _t->on_radioButton_12_clicked(); break;
-        case 25: _t->on_checkBox_clicked(); break;
-        case 26: _t->on_spinBox_3_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 27: _t->on_doubleSpinBox_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 28: _t->on_doubleSpinBox_2_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 29: _t->on_spinBox_4_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: _t->CHANNEL_TRIGGER_group((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 19: _t->CHANNEL_TRIGGER_all((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 20: _t->SetOutFileType((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 21: _t->SetEventsPerFile((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 22: _t->SetFolder((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 23: _t->on_pushButton_clicked(); break;
+        case 24: _t->on_radioButton_13_clicked(); break;
+        case 25: _t->on_radioButton_12_clicked(); break;
+        case 26: _t->on_checkBox_clicked(); break;
+        case 27: _t->on_spinBox_3_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 28: _t->on_doubleSpinBox_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 29: _t->on_doubleSpinBox_2_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 30: _t->on_radioButton_15_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 31: _t->on_pushButton_2_clicked(); break;
         case 32: _t->on_radioButton_15_clicked(); break;
@@ -548,48 +710,89 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 70: _t->on_pushButton_7_clicked(); break;
         case 71: _t->on_pushButton_8_clicked(); break;
         case 72: _t->on_checkBox_12_clicked(); break;
-        case 73: _t->on_CHANNEL_TRIGGER_checkBox_11_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 74: _t->on_CHANNEL_TRIGGER_checkBox_12_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 75: _t->on_CHANNEL_TRIGGER_checkBox_13_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 76: _t->on_CHANNEL_TRIGGER_checkBox_14_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 77: _t->on_CHANNEL_TRIGGER_checkBox_15_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 78: _t->on_CHANNEL_TRIGGER_checkBox_21_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 79: _t->on_CHANNEL_TRIGGER_checkBox_22_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 80: _t->on_CHANNEL_TRIGGER_checkBox_23_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 81: _t->on_CHANNEL_TRIGGER_checkBox_24_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 82: _t->on_CHANNEL_TRIGGER_checkBox_25_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 83: _t->on_CHANNEL_TRIGGER_checkBox_31_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 84: _t->on_CHANNEL_TRIGGER_checkBox_32_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 85: _t->on_CHANNEL_TRIGGER_checkBox_33_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 86: _t->on_CHANNEL_TRIGGER_checkBox_34_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 87: _t->on_CHANNEL_TRIGGER_checkBox_35_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 88: _t->on_CHANNEL_TRIGGER_checkBox_41_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 89: _t->on_CHANNEL_TRIGGER_checkBox_42_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 90: _t->on_CHANNEL_TRIGGER_checkBox_43_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 91: _t->on_CHANNEL_TRIGGER_checkBox_44_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 92: _t->on_CHANNEL_TRIGGER_checkBox_45_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 93: _t->on_CHANNEL_TRIGGER_checkBox_51_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 94: _t->on_CHANNEL_TRIGGER_checkBox_52_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 95: _t->on_CHANNEL_TRIGGER_checkBox_53_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 96: _t->on_CHANNEL_TRIGGER_checkBox_54_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 97: _t->on_CHANNEL_TRIGGER_checkBox_55_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 73: _t->on_CHANNEL_TRIGGER_checkBox_gr0_ch0_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 74: _t->on_CHANNEL_TRIGGER_checkBox_gr0_ch1_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 75: _t->on_CHANNEL_TRIGGER_checkBox_gr0_ch2_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 76: _t->on_CHANNEL_TRIGGER_checkBox_gr0_ch3_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 77: _t->on_CHANNEL_TRIGGER_checkBox_gr0_ch4_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 78: _t->on_CHANNEL_TRIGGER_checkBox_gr0_ch5_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 79: _t->on_CHANNEL_TRIGGER_checkBox_gr0_ch6_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 80: _t->on_CHANNEL_TRIGGER_checkBox_gr0_ch7_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 81: _t->on_CHANNEL_TRIGGER_checkBox_gr1_ch8_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 82: _t->on_CHANNEL_TRIGGER_checkBox_gr1_ch9_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 83: _t->on_CHANNEL_TRIGGER_checkBox_gr1_ch10_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 84: _t->on_CHANNEL_TRIGGER_checkBox_gr1_ch11_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 85: _t->on_CHANNEL_TRIGGER_checkBox_gr1_ch12_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 86: _t->on_CHANNEL_TRIGGER_checkBox_gr1_ch13_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 87: _t->on_CHANNEL_TRIGGER_checkBox_gr1_ch14_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 88: _t->on_CHANNEL_TRIGGER_checkBox_gr1_ch15_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 89: _t->on_CHANNEL_TRIGGER_checkBox_gr2_ch16_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 90: _t->on_CHANNEL_TRIGGER_checkBox_gr2_ch17_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 91: _t->on_CHANNEL_TRIGGER_checkBox_gr2_ch18_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 92: _t->on_CHANNEL_TRIGGER_checkBox_gr2_ch19_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 93: _t->on_CHANNEL_TRIGGER_checkBox_gr2_ch20_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 94: _t->on_CHANNEL_TRIGGER_checkBox_gr2_ch21_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 95: _t->on_CHANNEL_TRIGGER_checkBox_gr2_ch22_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 96: _t->on_CHANNEL_TRIGGER_checkBox_gr2_ch23_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 97: _t->on_CHANNEL_TRIGGER_checkBox_gr3_ch24_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 98: _t->on_radioButton_9_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 99: _t->on_radioButton_10_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 100: _t->on_radioButton_root_tree_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 101: _t->on_spinBox_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 102: _t->on_pushButton_choose_folder_clicked(); break;
-        case 103: _t->Message((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 104: _t->InitializationComplete(); break;
-        case 105: _t->RedrawGraphsFull((*reinterpret_cast< QVector<double>(*)>(_a[1])),(*reinterpret_cast< QVector<QVector<double> >(*)>(_a[2]))); break;
-        case 106: _t->TransferSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 107: _t->TriggerRate((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 108: _t->GraphData((*reinterpret_cast< double**(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 103: _t->on_CHANNEL_TRIGGER_checkBox_gr3_ch25_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 104: _t->on_CHANNEL_TRIGGER_checkBox_gr3_ch26_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 105: _t->on_CHANNEL_TRIGGER_checkBox_gr3_ch27_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 106: _t->on_CHANNEL_TRIGGER_checkBox_gr3_ch28_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 107: _t->on_CHANNEL_TRIGGER_checkBox_gr3_ch29_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 108: _t->on_CHANNEL_TRIGGER_checkBox_gr3_ch30_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 109: _t->on_CHANNEL_TRIGGER_checkBox_gr3_ch31_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 110: _t->on_CHANNEL_TRIGGER_checkBox_gr4_ch32_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 111: _t->on_CHANNEL_TRIGGER_checkBox_gr4_ch33_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 112: _t->on_CHANNEL_TRIGGER_checkBox_gr4_ch34_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 113: _t->on_CHANNEL_TRIGGER_checkBox_gr4_ch35_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 114: _t->on_CHANNEL_TRIGGER_checkBox_gr4_ch36_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 115: _t->on_CHANNEL_TRIGGER_checkBox_gr4_ch37_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 116: _t->on_CHANNEL_TRIGGER_checkBox_gr4_ch38_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 117: _t->on_CHANNEL_TRIGGER_checkBox_gr4_ch39_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 118: _t->on_CHANNEL_TRIGGER_checkBox_gr5_ch40_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 119: _t->on_CHANNEL_TRIGGER_checkBox_gr5_ch41_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 120: _t->on_CHANNEL_TRIGGER_checkBox_gr5_ch42_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 121: _t->on_CHANNEL_TRIGGER_checkBox_gr5_ch43_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 122: _t->on_CHANNEL_TRIGGER_checkBox_gr5_ch44_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 123: _t->on_CHANNEL_TRIGGER_checkBox_gr5_ch45_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 124: _t->on_CHANNEL_TRIGGER_checkBox_gr5_ch46_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 125: _t->on_CHANNEL_TRIGGER_checkBox_gr5_ch47_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 126: _t->on_CHANNEL_TRIGGER_checkBox_gr6_ch48_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 127: _t->on_CHANNEL_TRIGGER_checkBox_gr6_ch49_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 128: _t->on_CHANNEL_TRIGGER_checkBox_gr6_ch50_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 129: _t->on_CHANNEL_TRIGGER_checkBox_gr6_ch51_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 130: _t->on_CHANNEL_TRIGGER_checkBox_gr6_ch52_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 131: _t->on_CHANNEL_TRIGGER_checkBox_gr6_ch53_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 132: _t->on_CHANNEL_TRIGGER_checkBox_gr6_ch54_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 133: _t->on_CHANNEL_TRIGGER_checkBox_gr6_ch55_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 134: _t->on_CHANNEL_TRIGGER_checkBox_gr7_ch56_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 135: _t->on_CHANNEL_TRIGGER_checkBox_gr7_ch57_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 136: _t->on_CHANNEL_TRIGGER_checkBox_gr7_ch58_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 137: _t->on_CHANNEL_TRIGGER_checkBox_gr7_ch59_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 138: _t->on_CHANNEL_TRIGGER_checkBox_gr7_ch60_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 139: _t->on_CHANNEL_TRIGGER_checkBox_gr7_ch61_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 140: _t->on_CHANNEL_TRIGGER_checkBox_gr7_ch62_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 141: _t->on_CHANNEL_TRIGGER_checkBox_gr7_ch63_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 142: _t->on_spinBox_x_max_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 143: _t->on_spinBox_x_min_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 144: _t->Message((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 145: _t->InitializationComplete(); break;
+        case 146: _t->RedrawGraphsFull((*reinterpret_cast< QVector<double>(*)>(_a[1])),(*reinterpret_cast< QVector<QVector<double> >(*)>(_a[2]))); break;
+        case 147: _t->TransferSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 148: _t->TriggerRate((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 149: _t->GraphData((*reinterpret_cast< double**(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 105:
+        case 146:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 1:
@@ -711,27 +914,33 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             }
         }
         {
-            typedef void (MainWindow::*_t)(bool );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::CHANNEL_TRIGGER_all)) {
+            typedef void (MainWindow::*_t)(int , bool );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::CHANNEL_TRIGGER_group)) {
                 *result = 18;
             }
         }
         {
-            typedef void (MainWindow::*_t)(int );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::SetOutFileType)) {
+            typedef void (MainWindow::*_t)(bool );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::CHANNEL_TRIGGER_all)) {
                 *result = 19;
             }
         }
         {
             typedef void (MainWindow::*_t)(int );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::SetEventsPerFile)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::SetOutFileType)) {
                 *result = 20;
+            }
+        }
+        {
+            typedef void (MainWindow::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::SetEventsPerFile)) {
+                *result = 21;
             }
         }
         {
             typedef void (MainWindow::*_t)(QString );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::SetFolder)) {
-                *result = 21;
+                *result = 22;
             }
         }
     }
@@ -762,13 +971,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 109)
+        if (_id < 150)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 109;
+        _id -= 150;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 109)
+        if (_id < 150)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 109;
+        _id -= 150;
     }
     return _id;
 }
@@ -887,30 +1096,37 @@ void MainWindow::CHANNEL_TRIGGER_signal(int _t1, bool _t2)
 }
 
 // SIGNAL 18
-void MainWindow::CHANNEL_TRIGGER_all(bool _t1)
+void MainWindow::CHANNEL_TRIGGER_group(int _t1, bool _t2)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 18, _a);
 }
 
 // SIGNAL 19
-void MainWindow::SetOutFileType(int _t1)
+void MainWindow::CHANNEL_TRIGGER_all(bool _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 19, _a);
 }
 
 // SIGNAL 20
-void MainWindow::SetEventsPerFile(int _t1)
+void MainWindow::SetOutFileType(int _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 20, _a);
 }
 
 // SIGNAL 21
-void MainWindow::SetFolder(QString _t1)
+void MainWindow::SetEventsPerFile(int _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 21, _a);
+}
+
+// SIGNAL 22
+void MainWindow::SetFolder(QString _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 22, _a);
 }
 QT_END_MOC_NAMESPACE

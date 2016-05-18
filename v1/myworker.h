@@ -87,8 +87,11 @@ public slots:
     void MaskChannel(int , bool);
     void SetTriggerValue(int, int);
     void MaskChannelAll(bool);
+
     void CHANNEL_TRIGGER_signal(int, bool);
+    void CHANNEL_TRIGGER_group(int, bool);
     void CHANNEL_TRIGGER_all(bool);
+
     void SetOutFileType(int);
     void SetEventsPerFile(int);
     void SetFolder(QString);

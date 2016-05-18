@@ -74,6 +74,42 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 
     on_pushButton_2_clicked_bool = false;
+
+
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch0->setToolTip("ch 0");
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch1->setToolTip("ch 1");
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch2->setToolTip("ch 2");
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch3->setToolTip("ch 3");
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch4->setToolTip("ch 4");
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch5->setToolTip("ch 5");
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch6->setToolTip("ch 6");
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch7->setToolTip("ch 7");
+
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch8->setToolTip("ch 8");
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch9->setToolTip("ch 9");
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch10->setToolTip("ch 10");
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch11->setToolTip("ch 11");
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch12->setToolTip("ch 12");
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch13->setToolTip("ch 13");
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch14->setToolTip("ch 14");
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch15->setToolTip("ch 15");
+
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch16->setToolTip("ch 16");
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch17->setToolTip("ch 17");
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch18->setToolTip("ch 18");
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch19->setToolTip("ch 19");
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch20->setToolTip("ch 20");
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch21->setToolTip("ch 21");
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch22->setToolTip("ch 22");
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch23->setToolTip("ch 23");
+
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch24->setToolTip("ch 24");
+
+    x_min = 0;
+    x_max = 20000;
+    y_min = -1000;
+    y_max = 1000;
+
 }
 
 
@@ -529,112 +565,151 @@ void MainWindow::GraphData(double **array, int rows, int cols)
 
 void MainWindow::on_doubleSpinBox_valueChanged(double arg1)
 {
-    ui->widget_011->yAxis->setRangeUpper(arg1);
-    ui->widget_012->yAxis->setRangeUpper(arg1);
-    ui->widget_013->yAxis->setRangeUpper(arg1);
-    ui->widget_014->yAxis->setRangeUpper(arg1);
-    ui->widget_015->yAxis->setRangeUpper(arg1);
-
-    ui->widget_021->yAxis->setRangeUpper(arg1);
-    ui->widget_022->yAxis->setRangeUpper(arg1);
-    ui->widget_023->yAxis->setRangeUpper(arg1);
-    ui->widget_024->yAxis->setRangeUpper(arg1);
-    ui->widget_025->yAxis->setRangeUpper(arg1);
-
-    ui->widget_031->yAxis->setRangeUpper(arg1);
-    ui->widget_032->yAxis->setRangeUpper(arg1);
-    ui->widget_033->yAxis->setRangeUpper(arg1);
-    ui->widget_034->yAxis->setRangeUpper(arg1);
-    ui->widget_035->yAxis->setRangeUpper(arg1);
-
-    ui->widget_041->yAxis->setRangeUpper(arg1);
-    ui->widget_042->yAxis->setRangeUpper(arg1);
-    ui->widget_043->yAxis->setRangeUpper(arg1);
-    ui->widget_044->yAxis->setRangeUpper(arg1);
-    ui->widget_045->yAxis->setRangeUpper(arg1);
-
-    ui->widget_051->yAxis->setRangeUpper(arg1);
-    ui->widget_052->yAxis->setRangeUpper(arg1);
-    ui->widget_053->yAxis->setRangeUpper(arg1);
-    ui->widget_054->yAxis->setRangeUpper(arg1);
-    ui->widget_055->yAxis->setRangeUpper(arg1);
-
-    ui->widget_011->replot();
+    y_max = arg1;
+    SetRangeX();
 }
 
 void MainWindow::on_doubleSpinBox_2_valueChanged(double arg1)
 {
-    ui->widget_011->yAxis->setRangeLower(arg1);
-    ui->widget_012->yAxis->setRangeLower(arg1);
-    ui->widget_013->yAxis->setRangeLower(arg1);
-    ui->widget_014->yAxis->setRangeLower(arg1);
-    ui->widget_015->yAxis->setRangeLower(arg1);
-
-    ui->widget_021->yAxis->setRangeLower(arg1);
-    ui->widget_022->yAxis->setRangeLower(arg1);
-    ui->widget_023->yAxis->setRangeLower(arg1);
-    ui->widget_024->yAxis->setRangeLower(arg1);
-    ui->widget_025->yAxis->setRangeLower(arg1);
-
-    ui->widget_031->yAxis->setRangeLower(arg1);
-    ui->widget_032->yAxis->setRangeLower(arg1);
-    ui->widget_033->yAxis->setRangeLower(arg1);
-    ui->widget_034->yAxis->setRangeLower(arg1);
-    ui->widget_035->yAxis->setRangeLower(arg1);
-
-    ui->widget_041->yAxis->setRangeLower(arg1);
-    ui->widget_042->yAxis->setRangeLower(arg1);
-    ui->widget_043->yAxis->setRangeLower(arg1);
-    ui->widget_044->yAxis->setRangeLower(arg1);
-    ui->widget_045->yAxis->setRangeLower(arg1);
-
-    ui->widget_051->yAxis->setRangeLower(arg1);
-    ui->widget_052->yAxis->setRangeLower(arg1);
-    ui->widget_053->yAxis->setRangeLower(arg1);
-    ui->widget_054->yAxis->setRangeLower(arg1);
-    ui->widget_055->yAxis->setRangeLower(arg1);
-
-    ui->widget_011->replot();
+    y_min = arg1;
+    SetRangeX();
 }
 
-void MainWindow::on_spinBox_4_valueChanged(int arg1)
+void MainWindow::on_spinBox_x_max_valueChanged(int arg1)
 {
-    const double sampling_rate = 4; // ns
+    x_max = arg1;
+    SetRangeX();
+}
 
-    emit this->SetRecordLength(arg1);
+void MainWindow::SetRangeX()
+{
+    const double x_max_misros = x_max / 1000.0;
+    const double x_min_misros = x_min / 1000.0;
 
-    ui->widget_011->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_012->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_013->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_014->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_015->xAxis->setRange(0, arg1*sampling_rate/1000);
+    //emit this->SetRecordLength(arg1);
 
-    ui->widget_021->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_022->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_023->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_024->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_025->xAxis->setRange(0, arg1*sampling_rate/1000);
+    ui->widget_011->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_012->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_013->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_014->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_015->xAxis->setRange(x_min_misros, x_max_misros);
 
-    ui->widget_031->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_032->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_033->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_034->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_035->xAxis->setRange(0, arg1*sampling_rate/1000);
+    ui->widget_021->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_022->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_023->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_024->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_025->xAxis->setRange(x_min_misros, x_max_misros);
 
-    ui->widget_041->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_042->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_043->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_044->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_045->xAxis->setRange(0, arg1*sampling_rate/1000);
+    ui->widget_031->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_032->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_033->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_034->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_035->xAxis->setRange(x_min_misros, x_max_misros);
 
-    ui->widget_051->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_052->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_053->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_054->xAxis->setRange(0, arg1*sampling_rate/1000);
-    ui->widget_055->xAxis->setRange(0, arg1*sampling_rate/1000);
+    ui->widget_041->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_042->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_043->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_044->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_045->xAxis->setRange(x_min_misros, x_max_misros);
+
+    ui->widget_051->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_052->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_053->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_054->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_055->xAxis->setRange(x_min_misros, x_max_misros);
+
+    ui->widget_011->yAxis->setRangeLower(y_min);
+    ui->widget_012->yAxis->setRangeLower(y_min);
+    ui->widget_013->yAxis->setRangeLower(y_min);
+    ui->widget_014->yAxis->setRangeLower(y_min);
+    ui->widget_015->yAxis->setRangeLower(y_min);
+
+    ui->widget_021->yAxis->setRangeLower(y_min);
+    ui->widget_022->yAxis->setRangeLower(y_min);
+    ui->widget_023->yAxis->setRangeLower(y_min);
+    ui->widget_024->yAxis->setRangeLower(y_min);
+    ui->widget_025->yAxis->setRangeLower(y_min);
+
+    ui->widget_031->yAxis->setRangeLower(y_min);
+    ui->widget_032->yAxis->setRangeLower(y_min);
+    ui->widget_033->yAxis->setRangeLower(y_min);
+    ui->widget_034->yAxis->setRangeLower(y_min);
+    ui->widget_035->yAxis->setRangeLower(y_min);
+
+    ui->widget_041->yAxis->setRangeLower(y_min);
+    ui->widget_042->yAxis->setRangeLower(y_min);
+    ui->widget_043->yAxis->setRangeLower(y_min);
+    ui->widget_044->yAxis->setRangeLower(y_min);
+    ui->widget_045->yAxis->setRangeLower(y_min);
+
+    ui->widget_051->yAxis->setRangeLower(y_min);
+    ui->widget_052->yAxis->setRangeLower(y_min);
+    ui->widget_053->yAxis->setRangeLower(y_min);
+    ui->widget_054->yAxis->setRangeLower(y_min);
+    ui->widget_055->yAxis->setRangeLower(y_min);
+
+     // ------------------------------------------
+    ui->widget_011->yAxis->setRangeUpper(y_max);
+    ui->widget_012->yAxis->setRangeUpper(y_max);
+    ui->widget_013->yAxis->setRangeUpper(y_max);
+    ui->widget_014->yAxis->setRangeUpper(y_max);
+    ui->widget_015->yAxis->setRangeUpper(y_max);
+
+    ui->widget_021->yAxis->setRangeUpper(y_max);
+    ui->widget_022->yAxis->setRangeUpper(y_max);
+    ui->widget_023->yAxis->setRangeUpper(y_max);
+    ui->widget_024->yAxis->setRangeUpper(y_max);
+    ui->widget_025->yAxis->setRangeUpper(y_max);
+
+    ui->widget_031->yAxis->setRangeUpper(y_max);
+    ui->widget_032->yAxis->setRangeUpper(y_max);
+    ui->widget_033->yAxis->setRangeUpper(y_max);
+    ui->widget_034->yAxis->setRangeUpper(y_max);
+    ui->widget_035->yAxis->setRangeUpper(y_max);
+
+    ui->widget_041->yAxis->setRangeUpper(y_max);
+    ui->widget_042->yAxis->setRangeUpper(y_max);
+    ui->widget_043->yAxis->setRangeUpper(y_max);
+    ui->widget_044->yAxis->setRangeUpper(y_max);
+    ui->widget_045->yAxis->setRangeUpper(y_max);
+
+    ui->widget_051->yAxis->setRangeUpper(y_max);
+    ui->widget_052->yAxis->setRangeUpper(y_max);
+    ui->widget_053->yAxis->setRangeUpper(y_max);
+    ui->widget_054->yAxis->setRangeUpper(y_max);
+    ui->widget_055->yAxis->setRangeUpper(y_max);
 
 
     ui->widget_011->replot();
+    ui->widget_012->replot();
+    ui->widget_013->replot();
+    ui->widget_014->replot();
+    ui->widget_015->replot();
+
+    ui->widget_021->replot();
+    ui->widget_022->replot();
+    ui->widget_023->replot();
+    ui->widget_024->replot();
+    ui->widget_025->replot();
+
+    ui->widget_031->replot();
+    ui->widget_032->replot();
+    ui->widget_033->replot();
+    ui->widget_034->replot();
+    ui->widget_035->replot();
+
+    ui->widget_041->replot();
+    ui->widget_042->replot();
+    ui->widget_043->replot();
+    ui->widget_044->replot();
+    ui->widget_045->replot();
+
+    ui->widget_051->replot();
+    ui->widget_052->replot();
+    ui->widget_053->replot();
+    ui->widget_054->replot();
+    ui->widget_055->replot();
+
 }
 
 void MainWindow::on_radioButton_15_clicked(bool checked)
@@ -991,70 +1066,154 @@ void MainWindow::on_checkBox_55_clicked(bool checked)
 
 void MainWindow::on_pushButton_7_clicked()
 {
-    ui->CHANNEL_TRIGGER_checkBox_11->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_12->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_13->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_14->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_15->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch0->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch1->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch2->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch3->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch4->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch5->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch6->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch7->setChecked(true);
 
-    ui->CHANNEL_TRIGGER_checkBox_21->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_22->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_23->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_24->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_25->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch8->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch9->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch10->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch11->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch12->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch13->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch14->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch15->setChecked(true);
 
-    ui->CHANNEL_TRIGGER_checkBox_31->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_32->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_33->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_34->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_35->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch16->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch17->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch18->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch19->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch20->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch21->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch22->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch23->setChecked(true);
 
-    ui->CHANNEL_TRIGGER_checkBox_41->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_42->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_43->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_44->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_45->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch24->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch25->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch26->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch27->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch28->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch29->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch30->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch31->setChecked(true);
 
-    ui->CHANNEL_TRIGGER_checkBox_51->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_52->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_53->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_54->setChecked(true);
-    ui->CHANNEL_TRIGGER_checkBox_55->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch32->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch33->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch34->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch35->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch36->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch37->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch38->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch39->setChecked(true);
+
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch40->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch41->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch42->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch43->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch44->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch45->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch46->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch47->setChecked(true);
+
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch48->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch49->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch50->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch51->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch52->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch53->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch54->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch55->setChecked(true);
+
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch56->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch57->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch58->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch59->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch60->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch61->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch62->setChecked(true);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch63->setChecked(true);
 
     emit this->CHANNEL_TRIGGER_all(true);
 }
 
 void MainWindow::on_pushButton_8_clicked()
 {
-    ui->CHANNEL_TRIGGER_checkBox_11->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_12->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_13->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_14->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_15->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch0->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch1->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch2->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch3->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch4->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch5->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch6->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr0_ch7->setChecked(false);
 
-    ui->CHANNEL_TRIGGER_checkBox_21->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_22->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_23->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_24->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_25->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch8->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch9->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch10->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch11->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch12->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch13->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch14->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr1_ch15->setChecked(false);
 
-    ui->CHANNEL_TRIGGER_checkBox_31->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_32->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_33->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_34->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_35->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch16->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch17->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch18->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch19->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch20->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch21->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch22->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr2_ch23->setChecked(false);
 
-    ui->CHANNEL_TRIGGER_checkBox_41->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_42->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_43->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_44->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_45->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch24->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch25->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch26->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch27->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch28->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch29->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch30->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch31->setChecked(false);
 
-    ui->CHANNEL_TRIGGER_checkBox_51->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_52->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_53->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_54->setChecked(false);
-    ui->CHANNEL_TRIGGER_checkBox_55->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch32->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch33->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch34->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch35->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch36->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch37->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch38->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch39->setChecked(false);
+
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch40->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch41->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch42->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch43->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch44->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch45->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch46->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch47->setChecked(false);
+
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch48->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch49->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch50->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch51->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch52->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch53->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch54->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch55->setChecked(false);
+
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch56->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch57->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch58->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch59->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch60->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch61->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch62->setChecked(false);
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch63->setChecked(false);
 
     emit this->CHANNEL_TRIGGER_all(false);
 }
@@ -1064,129 +1223,129 @@ void MainWindow::on_checkBox_12_clicked()
 
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_11_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr0_ch0_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(0, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_12_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr0_ch1_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(1, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_13_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr0_ch2_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(2, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_14_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr0_ch3_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(3, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_15_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr0_ch4_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(4, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_21_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr0_ch5_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(5, checked);
 }
 
 
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_22_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr0_ch6_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(6, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_23_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr0_ch7_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(7, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_24_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr1_ch8_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(8, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_25_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr1_ch9_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(9, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_31_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr1_ch10_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(10, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_32_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr1_ch11_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(11, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_33_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr1_ch12_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(12, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_34_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr1_ch13_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(13, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_35_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr1_ch14_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(14, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_41_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr1_ch15_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(15, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_42_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr2_ch16_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(16, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_43_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr2_ch17_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(17, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_44_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr2_ch18_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(18, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_45_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr2_ch19_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(19, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_51_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr2_ch20_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(20, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_52_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr2_ch21_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(21, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_53_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr2_ch22_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(22, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_54_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr2_ch23_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(23, checked);
 }
 
-void MainWindow::on_CHANNEL_TRIGGER_checkBox_55_clicked(bool checked)
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr3_ch24_clicked(bool checked)
 {
     emit this->CHANNEL_TRIGGER_signal(24, checked);
 }
@@ -1229,4 +1388,228 @@ void MainWindow::on_pushButton_choose_folder_clicked()
     qDebug() << "dir = " << dir << endl;
 
     emit this->SetFolder(dir);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr3_ch25_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(25, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr3_ch26_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(26, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr3_ch27_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(27, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr3_ch28_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(28, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr3_ch29_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(29, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr3_ch30_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(30, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr3_ch31_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(31, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr4_ch32_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(32, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr4_ch33_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(33, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr4_ch34_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(34, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr4_ch35_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(35, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr4_ch36_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(36, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr4_ch37_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(37, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr4_ch38_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(38, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr4_ch39_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(39, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr5_ch40_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(40, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr5_ch41_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(41, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr5_ch42_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(42, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr5_ch43_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(43, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr5_ch44_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(44, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr5_ch45_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(45, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr5_ch46_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(46, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr5_ch47_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(47, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr6_ch48_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(48, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr6_ch49_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(49, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr6_ch50_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(50, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr6_ch51_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(51, checked);
+}
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr6_ch52_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(52, checked);
+}
+
+
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr6_ch53_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(53, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr6_ch54_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(54, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr6_ch55_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(55, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr7_ch56_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(56, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr7_ch57_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(57, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr7_ch58_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(58, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr7_ch59_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(59, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr7_ch60_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(60, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr7_ch61_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(61, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr7_ch62_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(62, checked);
+}
+
+void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr7_ch63_clicked(bool checked)
+{
+    emit this->CHANNEL_TRIGGER_signal(63, checked);
+}
+
+
+
+void MainWindow::on_spinBox_x_min_valueChanged(int arg1)
+{
+    x_min = arg1;
+    SetRangeX();
 }

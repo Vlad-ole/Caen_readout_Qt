@@ -54,7 +54,7 @@ private slots:
 
     void on_groupBox_3_clicked();
 
-    void on_spinBox_4_editingFinished();
+    //void on_spinBox_4_editingFinished();
 
     void on_Test_Pattern_button_clicked();
 
@@ -66,21 +66,14 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-    void on_checkBox_11_clicked(bool checked);
-
-    void on_checkBox_12_clicked(bool checked);
-
-    void on_checkBox_13_clicked(bool checked);
-
-    void on_checkBox_14_clicked(bool checked);
-
-    void on_checkBox_15_clicked(bool checked);
-
-    void on_checkBox_21_clicked(bool checked);
-
-    void on_checkBox_22_clicked(bool checked);
-
-    void on_checkBox_23_clicked(bool checked);
+//    void on_checkBox_11_clicked(bool checked);
+//    void on_checkBox_12_clicked(bool checked);
+//    void on_checkBox_13_clicked(bool checked);
+//    void on_checkBox_14_clicked(bool checked);
+//    void on_checkBox_15_clicked(bool checked);
+//    void on_checkBox_21_clicked(bool checked);
+//    void on_checkBox_22_clicked(bool checked);
+//    void on_checkBox_23_clicked(bool checked);
 
     void on_verticalSlider_valueChanged(int value);
 
@@ -90,45 +83,29 @@ private slots:
 
     void on_pushButton_Reprogram_clicked();
 
-    void on_checkBox_24_clicked(bool checked);
-
-    void on_checkBox_25_clicked(bool checked);
-
-    void on_checkBox_31_clicked(bool checked);
-
-    void on_checkBox_32_clicked(bool checked);
-
-    void on_checkBox_33_clicked(bool checked);
-
-    void on_checkBox_34_clicked(bool checked);
-
-    void on_checkBox_35_clicked(bool checked);
-
-    void on_checkBox_41_clicked(bool checked);
-
-    void on_checkBox_42_clicked(bool checked);
-
-    void on_checkBox_43_clicked(bool checked);
-
-    void on_checkBox_44_clicked(bool checked);
-
-    void on_checkBox_45_clicked(bool checked);
-
-    void on_checkBox_51_clicked(bool checked);
-
-    void on_checkBox_52_clicked(bool checked);
-
-    void on_checkBox_53_clicked(bool checked);
-
-    void on_checkBox_54_clicked(bool checked);
-
-    void on_checkBox_55_clicked(bool checked);
+//    void on_checkBox_24_clicked(bool checked);
+//    void on_checkBox_25_clicked(bool checked);
+//    void on_checkBox_31_clicked(bool checked);
+//    void on_checkBox_32_clicked(bool checked);
+//    void on_checkBox_33_clicked(bool checked);
+//    void on_checkBox_34_clicked(bool checked);
+//    void on_checkBox_35_clicked(bool checked);
+//    void on_checkBox_41_clicked(bool checked);
+//    void on_checkBox_42_clicked(bool checked);
+//    void on_checkBox_43_clicked(bool checked);
+//    void on_checkBox_44_clicked(bool checked);
+//    void on_checkBox_45_clicked(bool checked);
+//    void on_checkBox_51_clicked(bool checked);
+//    void on_checkBox_52_clicked(bool checked);
+//    void on_checkBox_53_clicked(bool checked);
+//    void on_checkBox_54_clicked(bool checked);
+//    void on_checkBox_55_clicked(bool checked);
 
     void on_pushButton_7_clicked();
 
     void on_pushButton_8_clicked();
 
-    void on_checkBox_12_clicked();
+    //void on_checkBox_12_clicked();
 
 
 
@@ -260,6 +237,29 @@ private slots:
     void on_spinBox_x_max_valueChanged(int arg1);
     void on_spinBox_x_min_valueChanged(int arg1);
 
+    void on_MASK_CHANNEL_checkBox_gr0_ch0_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr0_ch1_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr0_ch2_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr0_ch3_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr0_ch4_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr0_ch5_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr0_ch6_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr0_ch7_clicked(bool checked);
+
+    void on_MASK_CHANNEL_checkBox_gr1_ch0_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr2_ch0_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr3_ch0_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr4_ch0_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr5_ch0_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr6_ch0_clicked(bool checked);
+    void on_MASK_CHANNEL_checkBox_gr7_ch0_clicked(bool checked);
+
+    void on_radioButton_14_clicked(bool checked);
+
+    void on_radioButton_clicked();
+
+    void on_radioButton_clicked(bool checked);
+
 public slots:
     void Message(QString);
     void InitializationComplete();
@@ -267,6 +267,7 @@ public slots:
     void TransferSpeed(double);
     void TriggerRate(double);
     void GraphData(double **array, int rows, int cols);
+    void PlotMask(uint);
     //void GraphData1D(double *array, int size);
     //void RedrawGraphsTest();
 
@@ -282,6 +283,7 @@ private:
     double x_max;
     double y_min;
     double y_max;
+    uint plot_mask;
 
 
     TriggerValueCh trigger_value_ch;
@@ -316,6 +318,8 @@ signals:
     void SetOutFileType(int);
     void SetEventsPerFile(int);
     void SetFolder(QString);
+
+    void SetContinuousTrigger(bool);
 
 };
 

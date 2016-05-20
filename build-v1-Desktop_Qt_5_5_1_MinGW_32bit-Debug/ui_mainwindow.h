@@ -17,7 +17,6 @@
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
@@ -29,6 +28,7 @@
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
@@ -70,45 +70,33 @@ public:
     QRadioButton *radioButton_15;
     QPushButton *Test_Pattern_button;
     QGroupBox *groupBox_9;
-    QLabel *label_11;
-    QLabel *label_5;
-    QWidget *layoutWidget2;
-    QVBoxLayout *verticalLayout_5;
-    QHBoxLayout *horizontalLayout;
-    QCheckBox *checkBox_11;
-    QCheckBox *checkBox_12;
-    QCheckBox *checkBox_13;
-    QCheckBox *checkBox_14;
-    QCheckBox *checkBox_15;
-    QHBoxLayout *horizontalLayout_2;
-    QCheckBox *checkBox_21;
-    QCheckBox *checkBox_22;
-    QCheckBox *checkBox_23;
-    QCheckBox *checkBox_24;
-    QCheckBox *checkBox_25;
-    QHBoxLayout *horizontalLayout_3;
-    QCheckBox *checkBox_31;
-    QCheckBox *checkBox_32;
-    QCheckBox *checkBox_33;
-    QCheckBox *checkBox_34;
-    QCheckBox *checkBox_35;
-    QHBoxLayout *horizontalLayout_4;
-    QCheckBox *checkBox_41;
-    QCheckBox *checkBox_42;
-    QCheckBox *checkBox_43;
-    QCheckBox *checkBox_44;
-    QCheckBox *checkBox_45;
-    QHBoxLayout *horizontalLayout_5;
-    QCheckBox *checkBox_51;
-    QCheckBox *checkBox_52;
-    QCheckBox *checkBox_53;
-    QCheckBox *checkBox_54;
-    QCheckBox *checkBox_55;
-    QLabel *label_4;
-    QLabel *label_10;
-    QLabel *label_9;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
+    QWidget *gridLayoutWidget_3;
+    QGridLayout *gridLayout_5;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch5;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch7;
+    QLabel *label_42;
+    QLabel *label_40;
+    QLabel *label_41;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr1_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch4;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch3;
+    QCheckBox *MASK_CHANNEL_checkBox_gr3_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch2;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch1;
+    QLabel *label_39;
+    QLabel *label_43;
+    QCheckBox *MASK_CHANNEL_checkBox_gr2_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch6;
+    QLabel *label_44;
+    QLabel *label_38;
+    QLabel *label_37;
+    QCheckBox *MASK_CHANNEL_checkBox_gr4_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr5_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr6_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr7_ch0;
     QPushButton *pushButton_Reprogram;
     QGroupBox *groupBox_10;
     QPushButton *pushButton_7;
@@ -196,9 +184,8 @@ public:
     QRadioButton *radioButton_9;
     QRadioButton *radioButton_10;
     QPushButton *pushButton_choose_folder;
-    QWidget *layoutWidget3;
+    QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout_3;
-    QCustomPlot *widget_012;
     QGroupBox *groupBox_7;
     QCheckBox *checkBox;
     QWidget *gridLayoutWidget_2;
@@ -211,32 +198,97 @@ public:
     QSpinBox *spinBox_x_max;
     QDoubleSpinBox *doubleSpinBox_2;
     QDoubleSpinBox *doubleSpinBox;
-    QCustomPlot *widget_022;
-    QCustomPlot *widget_032;
-    QCustomPlot *widget_042;
-    QCustomPlot *widget_052;
-    QCustomPlot *widget_013;
-    QCustomPlot *widget_014;
-    QCustomPlot *widget_015;
-    QCustomPlot *widget_024;
-    QCustomPlot *widget_023;
-    QCustomPlot *widget_025;
-    QCustomPlot *widget_034;
-    QCustomPlot *widget_033;
-    QCustomPlot *widget_035;
-    QCustomPlot *widget_044;
-    QCustomPlot *widget_043;
-    QCustomPlot *widget_045;
-    QCustomPlot *widget_054;
-    QCustomPlot *widget_053;
-    QCustomPlot *widget_055;
-    QCustomPlot *widget_011;
-    QCustomPlot *widget_021;
-    QCustomPlot *widget_041;
-    QCustomPlot *widget_031;
-    QCustomPlot *widget_051;
     QLabel *label_3;
     QLCDNumber *lcdNumber_2;
+    QTabWidget *tabWidget;
+    QWidget *tab_3;
+    QWidget *gridLayoutWidget_4;
+    QGridLayout *gridLayout_2;
+    QCustomPlot *widget_014;
+    QCustomPlot *widget_013;
+    QCustomPlot *widget_011;
+    QCustomPlot *widget_012;
+    QCustomPlot *widget_015;
+    QCustomPlot *widget_021;
+    QCustomPlot *widget_022;
+    QCustomPlot *widget_023;
+    QWidget *tab_4;
+    QWidget *gridLayoutWidget_5;
+    QGridLayout *gridLayout_3;
+    QCustomPlot *widget_032;
+    QCustomPlot *widget_025;
+    QCustomPlot *widget_024;
+    QCustomPlot *widget_031;
+    QCustomPlot *widget_033;
+    QCustomPlot *widget_034;
+    QCustomPlot *widget_035;
+    QCustomPlot *widget_041;
+    QWidget *tab_5;
+    QWidget *gridLayoutWidget_6;
+    QGridLayout *gridLayout_6;
+    QCustomPlot *widget_043;
+    QCustomPlot *widget_044;
+    QCustomPlot *widget_045;
+    QCustomPlot *widget_042;
+    QCustomPlot *widget_051;
+    QCustomPlot *widget_052;
+    QCustomPlot *widget_053;
+    QCustomPlot *widget_054;
+    QWidget *tab_6;
+    QWidget *gridLayoutWidget_7;
+    QGridLayout *gridLayout_7;
+    QCustomPlot *widget_ch_25;
+    QCustomPlot *widget_ch_27;
+    QCustomPlot *widget_ch_26;
+    QCustomPlot *widget_055;
+    QCustomPlot *widget_ch_28;
+    QCustomPlot *widget_ch_29;
+    QCustomPlot *widget_ch_30;
+    QCustomPlot *widget_ch_31;
+    QWidget *tab_7;
+    QWidget *gridLayoutWidget_8;
+    QGridLayout *gridLayout_8;
+    QCustomPlot *widget_ch_34;
+    QCustomPlot *widget_ch_35;
+    QCustomPlot *widget_ch_32;
+    QCustomPlot *widget_ch_33;
+    QCustomPlot *widget_ch_36;
+    QCustomPlot *widget_ch_37;
+    QCustomPlot *widget_ch_38;
+    QCustomPlot *widget_ch_39;
+    QWidget *tab_8;
+    QWidget *gridLayoutWidget_9;
+    QGridLayout *gridLayout_9;
+    QCustomPlot *widget_ch_41;
+    QCustomPlot *widget_ch_42;
+    QCustomPlot *widget_ch_40;
+    QCustomPlot *widget_ch_43;
+    QCustomPlot *widget_ch_44;
+    QCustomPlot *widget_ch_45;
+    QCustomPlot *widget_ch_46;
+    QCustomPlot *widget_ch_47;
+    QWidget *tab_9;
+    QWidget *gridLayoutWidget_10;
+    QGridLayout *gridLayout_10;
+    QCustomPlot *widget_ch_51;
+    QCustomPlot *widget_ch_50;
+    QCustomPlot *widget_ch_48;
+    QCustomPlot *widget_ch_49;
+    QCustomPlot *widget_ch_52;
+    QCustomPlot *widget_ch_53;
+    QCustomPlot *widget_ch_54;
+    QCustomPlot *widget_ch_55;
+    QWidget *tab_10;
+    QWidget *gridLayoutWidget_11;
+    QGridLayout *gridLayout_11;
+    QCustomPlot *widget_ch_56;
+    QCustomPlot *widget_ch_57;
+    QCustomPlot *widget_ch_58;
+    QCustomPlot *widget_ch_59;
+    QCustomPlot *widget_ch_60;
+    QCustomPlot *widget_ch_61;
+    QCustomPlot *widget_ch_62;
+    QCustomPlot *widget_ch_63;
     QMenuBar *menuBar;
     QMenu *menuCAEN;
     QMenu *menuTriggers;
@@ -425,6 +477,7 @@ public:
 
         radioButton_15 = new QRadioButton(layoutWidget_2);
         radioButton_15->setObjectName(QStringLiteral("radioButton_15"));
+        radioButton_15->setChecked(true);
 
         verticalLayout_4->addWidget(radioButton_15);
 
@@ -433,192 +486,137 @@ public:
         Test_Pattern_button->setGeometry(QRect(10, 170, 91, 31));
         groupBox_9 = new QGroupBox(groupBox_3);
         groupBox_9->setObjectName(QStringLiteral("groupBox_9"));
-        groupBox_9->setGeometry(QRect(240, 250, 211, 161));
-        label_11 = new QLabel(groupBox_9);
-        label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setGeometry(QRect(20, 100, 31, 16));
-        label_5 = new QLabel(groupBox_9);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(20, 40, 31, 16));
-        layoutWidget2 = new QWidget(groupBox_9);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(50, 20, 93, 101));
-        verticalLayout_5 = new QVBoxLayout(layoutWidget2);
-        verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        checkBox_11 = new QCheckBox(layoutWidget2);
-        checkBox_11->setObjectName(QStringLiteral("checkBox_11"));
-        checkBox_11->setChecked(true);
-
-        horizontalLayout->addWidget(checkBox_11);
-
-        checkBox_12 = new QCheckBox(layoutWidget2);
-        checkBox_12->setObjectName(QStringLiteral("checkBox_12"));
-
-        horizontalLayout->addWidget(checkBox_12);
-
-        checkBox_13 = new QCheckBox(layoutWidget2);
-        checkBox_13->setObjectName(QStringLiteral("checkBox_13"));
-
-        horizontalLayout->addWidget(checkBox_13);
-
-        checkBox_14 = new QCheckBox(layoutWidget2);
-        checkBox_14->setObjectName(QStringLiteral("checkBox_14"));
-
-        horizontalLayout->addWidget(checkBox_14);
-
-        checkBox_15 = new QCheckBox(layoutWidget2);
-        checkBox_15->setObjectName(QStringLiteral("checkBox_15"));
-
-        horizontalLayout->addWidget(checkBox_15);
-
-
-        verticalLayout_5->addLayout(horizontalLayout);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        checkBox_21 = new QCheckBox(layoutWidget2);
-        checkBox_21->setObjectName(QStringLiteral("checkBox_21"));
-
-        horizontalLayout_2->addWidget(checkBox_21);
-
-        checkBox_22 = new QCheckBox(layoutWidget2);
-        checkBox_22->setObjectName(QStringLiteral("checkBox_22"));
-
-        horizontalLayout_2->addWidget(checkBox_22);
-
-        checkBox_23 = new QCheckBox(layoutWidget2);
-        checkBox_23->setObjectName(QStringLiteral("checkBox_23"));
-
-        horizontalLayout_2->addWidget(checkBox_23);
-
-        checkBox_24 = new QCheckBox(layoutWidget2);
-        checkBox_24->setObjectName(QStringLiteral("checkBox_24"));
-
-        horizontalLayout_2->addWidget(checkBox_24);
-
-        checkBox_25 = new QCheckBox(layoutWidget2);
-        checkBox_25->setObjectName(QStringLiteral("checkBox_25"));
-
-        horizontalLayout_2->addWidget(checkBox_25);
-
-
-        verticalLayout_5->addLayout(horizontalLayout_2);
-
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        checkBox_31 = new QCheckBox(layoutWidget2);
-        checkBox_31->setObjectName(QStringLiteral("checkBox_31"));
-
-        horizontalLayout_3->addWidget(checkBox_31);
-
-        checkBox_32 = new QCheckBox(layoutWidget2);
-        checkBox_32->setObjectName(QStringLiteral("checkBox_32"));
-
-        horizontalLayout_3->addWidget(checkBox_32);
-
-        checkBox_33 = new QCheckBox(layoutWidget2);
-        checkBox_33->setObjectName(QStringLiteral("checkBox_33"));
-
-        horizontalLayout_3->addWidget(checkBox_33);
-
-        checkBox_34 = new QCheckBox(layoutWidget2);
-        checkBox_34->setObjectName(QStringLiteral("checkBox_34"));
-
-        horizontalLayout_3->addWidget(checkBox_34);
-
-        checkBox_35 = new QCheckBox(layoutWidget2);
-        checkBox_35->setObjectName(QStringLiteral("checkBox_35"));
-
-        horizontalLayout_3->addWidget(checkBox_35);
-
-
-        verticalLayout_5->addLayout(horizontalLayout_3);
-
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setSpacing(6);
-        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        checkBox_41 = new QCheckBox(layoutWidget2);
-        checkBox_41->setObjectName(QStringLiteral("checkBox_41"));
-
-        horizontalLayout_4->addWidget(checkBox_41);
-
-        checkBox_42 = new QCheckBox(layoutWidget2);
-        checkBox_42->setObjectName(QStringLiteral("checkBox_42"));
-
-        horizontalLayout_4->addWidget(checkBox_42);
-
-        checkBox_43 = new QCheckBox(layoutWidget2);
-        checkBox_43->setObjectName(QStringLiteral("checkBox_43"));
-
-        horizontalLayout_4->addWidget(checkBox_43);
-
-        checkBox_44 = new QCheckBox(layoutWidget2);
-        checkBox_44->setObjectName(QStringLiteral("checkBox_44"));
-
-        horizontalLayout_4->addWidget(checkBox_44);
-
-        checkBox_45 = new QCheckBox(layoutWidget2);
-        checkBox_45->setObjectName(QStringLiteral("checkBox_45"));
-
-        horizontalLayout_4->addWidget(checkBox_45);
-
-
-        verticalLayout_5->addLayout(horizontalLayout_4);
-
-        horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setSpacing(6);
-        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        checkBox_51 = new QCheckBox(layoutWidget2);
-        checkBox_51->setObjectName(QStringLiteral("checkBox_51"));
-
-        horizontalLayout_5->addWidget(checkBox_51);
-
-        checkBox_52 = new QCheckBox(layoutWidget2);
-        checkBox_52->setObjectName(QStringLiteral("checkBox_52"));
-
-        horizontalLayout_5->addWidget(checkBox_52);
-
-        checkBox_53 = new QCheckBox(layoutWidget2);
-        checkBox_53->setObjectName(QStringLiteral("checkBox_53"));
-
-        horizontalLayout_5->addWidget(checkBox_53);
-
-        checkBox_54 = new QCheckBox(layoutWidget2);
-        checkBox_54->setObjectName(QStringLiteral("checkBox_54"));
-
-        horizontalLayout_5->addWidget(checkBox_54);
-
-        checkBox_55 = new QCheckBox(layoutWidget2);
-        checkBox_55->setObjectName(QStringLiteral("checkBox_55"));
-
-        horizontalLayout_5->addWidget(checkBox_55);
-
-
-        verticalLayout_5->addLayout(horizontalLayout_5);
-
-        label_4 = new QLabel(groupBox_9);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(20, 20, 31, 16));
-        label_10 = new QLabel(groupBox_9);
-        label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setGeometry(QRect(20, 80, 31, 16));
-        label_9 = new QLabel(groupBox_9);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(20, 60, 31, 16));
+        groupBox_9->setGeometry(QRect(220, 250, 231, 221));
         pushButton_4 = new QPushButton(groupBox_9);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(10, 130, 61, 23));
+        pushButton_4->setGeometry(QRect(30, 190, 61, 23));
         pushButton_5 = new QPushButton(groupBox_9);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(90, 130, 61, 23));
+        pushButton_5->setGeometry(QRect(110, 190, 61, 23));
+        gridLayoutWidget_3 = new QWidget(groupBox_9);
+        gridLayoutWidget_3->setObjectName(QStringLiteral("gridLayoutWidget_3"));
+        gridLayoutWidget_3->setGeometry(QRect(10, 20, 201, 161));
+        gridLayout_5 = new QGridLayout(gridLayoutWidget_3);
+        gridLayout_5->setSpacing(6);
+        gridLayout_5->setContentsMargins(11, 11, 11, 11);
+        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        gridLayout_5->setContentsMargins(0, 0, 0, 0);
+        MASK_CHANNEL_checkBox_gr0_ch5 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch5->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch5"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch5, 0, 6, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch7 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch7->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch7"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch7, 0, 8, 1, 1);
+
+        label_42 = new QLabel(gridLayoutWidget_3);
+        label_42->setObjectName(QStringLiteral("label_42"));
+
+        gridLayout_5->addWidget(label_42, 5, 0, 1, 1);
+
+        label_40 = new QLabel(gridLayoutWidget_3);
+        label_40->setObjectName(QStringLiteral("label_40"));
+
+        gridLayout_5->addWidget(label_40, 8, 0, 1, 1);
+
+        label_41 = new QLabel(gridLayoutWidget_3);
+        label_41->setObjectName(QStringLiteral("label_41"));
+
+        gridLayout_5->addWidget(label_41, 2, 0, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch0"));
+        MASK_CHANNEL_checkBox_gr0_ch0->setChecked(true);
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch0, 0, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr1_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr1_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr1_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr1_ch0, 1, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch4 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch4->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch4"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch4, 0, 5, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch3 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch3->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch3"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch3, 0, 4, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr3_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr3_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr3_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr3_ch0, 3, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch2 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch2->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch2"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch2, 0, 3, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch1 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch1->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch1"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch1, 0, 2, 1, 1);
+
+        label_39 = new QLabel(gridLayoutWidget_3);
+        label_39->setObjectName(QStringLiteral("label_39"));
+
+        gridLayout_5->addWidget(label_39, 4, 0, 1, 1);
+
+        label_43 = new QLabel(gridLayoutWidget_3);
+        label_43->setObjectName(QStringLiteral("label_43"));
+
+        gridLayout_5->addWidget(label_43, 6, 0, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr2_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr2_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr2_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr2_ch0, 2, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch6 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch6->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch6"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch6, 0, 7, 1, 1);
+
+        label_44 = new QLabel(gridLayoutWidget_3);
+        label_44->setObjectName(QStringLiteral("label_44"));
+
+        gridLayout_5->addWidget(label_44, 3, 0, 1, 1);
+
+        label_38 = new QLabel(gridLayoutWidget_3);
+        label_38->setObjectName(QStringLiteral("label_38"));
+
+        gridLayout_5->addWidget(label_38, 1, 0, 1, 1);
+
+        label_37 = new QLabel(gridLayoutWidget_3);
+        label_37->setObjectName(QStringLiteral("label_37"));
+
+        gridLayout_5->addWidget(label_37, 0, 0, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr4_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr4_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr4_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr4_ch0, 4, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr5_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr5_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr5_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr5_ch0, 5, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr6_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr6_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr6_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr6_ch0, 6, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr7_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr7_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr7_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr7_ch0, 8, 1, 1, 1);
+
         pushButton_Reprogram = new QPushButton(groupBox_3);
         pushButton_Reprogram->setObjectName(QStringLiteral("pushButton_Reprogram"));
         pushButton_Reprogram->setGeometry(QRect(10, 210, 91, 31));
@@ -1028,20 +1026,18 @@ public:
         radioButton_10 = new QRadioButton(groupBox_5);
         radioButton_10->setObjectName(QStringLiteral("radioButton_10"));
         radioButton_10->setGeometry(QRect(20, 40, 82, 17));
+        radioButton_10->setChecked(true);
         pushButton_choose_folder = new QPushButton(groupBox_6);
         pushButton_choose_folder->setObjectName(QStringLiteral("pushButton_choose_folder"));
         pushButton_choose_folder->setGeometry(QRect(30, 110, 75, 23));
-        layoutWidget3 = new QWidget(centralWidget);
-        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(0, 0, 2, 2));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget3);
+        layoutWidget2 = new QWidget(centralWidget);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(0, 0, 2, 2));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget2);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        widget_012 = new QCustomPlot(centralWidget);
-        widget_012->setObjectName(QStringLiteral("widget_012"));
-        widget_012->setGeometry(QRect(760, 10, 271, 171));
         groupBox_7 = new QGroupBox(centralWidget);
         groupBox_7->setObjectName(QStringLiteral("groupBox_7"));
         groupBox_7->setGeometry(QRect(10, 630, 411, 161));
@@ -1111,84 +1107,423 @@ public:
 
         gridLayout_4->addWidget(doubleSpinBox, 3, 1, 1, 1);
 
-        widget_022 = new QCustomPlot(centralWidget);
-        widget_022->setObjectName(QStringLiteral("widget_022"));
-        widget_022->setGeometry(QRect(760, 180, 271, 171));
-        widget_032 = new QCustomPlot(centralWidget);
-        widget_032->setObjectName(QStringLiteral("widget_032"));
-        widget_032->setGeometry(QRect(760, 350, 271, 171));
-        widget_042 = new QCustomPlot(centralWidget);
-        widget_042->setObjectName(QStringLiteral("widget_042"));
-        widget_042->setGeometry(QRect(760, 520, 271, 171));
-        widget_052 = new QCustomPlot(centralWidget);
-        widget_052->setObjectName(QStringLiteral("widget_052"));
-        widget_052->setGeometry(QRect(760, 690, 271, 171));
-        widget_013 = new QCustomPlot(centralWidget);
-        widget_013->setObjectName(QStringLiteral("widget_013"));
-        widget_013->setGeometry(QRect(1030, 10, 271, 171));
-        widget_014 = new QCustomPlot(centralWidget);
-        widget_014->setObjectName(QStringLiteral("widget_014"));
-        widget_014->setGeometry(QRect(1300, 10, 271, 171));
-        widget_015 = new QCustomPlot(centralWidget);
-        widget_015->setObjectName(QStringLiteral("widget_015"));
-        widget_015->setGeometry(QRect(1570, 10, 271, 171));
-        widget_024 = new QCustomPlot(centralWidget);
-        widget_024->setObjectName(QStringLiteral("widget_024"));
-        widget_024->setGeometry(QRect(1300, 180, 271, 171));
-        widget_023 = new QCustomPlot(centralWidget);
-        widget_023->setObjectName(QStringLiteral("widget_023"));
-        widget_023->setGeometry(QRect(1030, 180, 271, 171));
-        widget_025 = new QCustomPlot(centralWidget);
-        widget_025->setObjectName(QStringLiteral("widget_025"));
-        widget_025->setGeometry(QRect(1570, 180, 271, 171));
-        widget_034 = new QCustomPlot(centralWidget);
-        widget_034->setObjectName(QStringLiteral("widget_034"));
-        widget_034->setGeometry(QRect(1300, 350, 271, 171));
-        widget_033 = new QCustomPlot(centralWidget);
-        widget_033->setObjectName(QStringLiteral("widget_033"));
-        widget_033->setGeometry(QRect(1030, 350, 271, 171));
-        widget_035 = new QCustomPlot(centralWidget);
-        widget_035->setObjectName(QStringLiteral("widget_035"));
-        widget_035->setGeometry(QRect(1570, 350, 271, 171));
-        widget_044 = new QCustomPlot(centralWidget);
-        widget_044->setObjectName(QStringLiteral("widget_044"));
-        widget_044->setGeometry(QRect(1300, 520, 271, 171));
-        widget_043 = new QCustomPlot(centralWidget);
-        widget_043->setObjectName(QStringLiteral("widget_043"));
-        widget_043->setGeometry(QRect(1030, 520, 271, 171));
-        widget_045 = new QCustomPlot(centralWidget);
-        widget_045->setObjectName(QStringLiteral("widget_045"));
-        widget_045->setGeometry(QRect(1570, 520, 271, 171));
-        widget_054 = new QCustomPlot(centralWidget);
-        widget_054->setObjectName(QStringLiteral("widget_054"));
-        widget_054->setGeometry(QRect(1300, 690, 271, 171));
-        widget_053 = new QCustomPlot(centralWidget);
-        widget_053->setObjectName(QStringLiteral("widget_053"));
-        widget_053->setGeometry(QRect(1030, 690, 271, 171));
-        widget_055 = new QCustomPlot(centralWidget);
-        widget_055->setObjectName(QStringLiteral("widget_055"));
-        widget_055->setGeometry(QRect(1570, 690, 271, 171));
-        widget_011 = new QCustomPlot(centralWidget);
-        widget_011->setObjectName(QStringLiteral("widget_011"));
-        widget_011->setGeometry(QRect(490, 10, 271, 171));
-        widget_021 = new QCustomPlot(centralWidget);
-        widget_021->setObjectName(QStringLiteral("widget_021"));
-        widget_021->setGeometry(QRect(490, 180, 271, 171));
-        widget_041 = new QCustomPlot(centralWidget);
-        widget_041->setObjectName(QStringLiteral("widget_041"));
-        widget_041->setGeometry(QRect(490, 520, 271, 171));
-        widget_031 = new QCustomPlot(centralWidget);
-        widget_031->setObjectName(QStringLiteral("widget_031"));
-        widget_031->setGeometry(QRect(490, 350, 271, 171));
-        widget_051 = new QCustomPlot(centralWidget);
-        widget_051->setObjectName(QStringLiteral("widget_051"));
-        widget_051->setGeometry(QRect(490, 690, 271, 171));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(150, 790, 121, 31));
         lcdNumber_2 = new QLCDNumber(centralWidget);
         lcdNumber_2->setObjectName(QStringLiteral("lcdNumber_2"));
         lcdNumber_2->setGeometry(QRect(150, 820, 111, 71));
+        tabWidget = new QTabWidget(centralWidget);
+        tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        tabWidget->setGeometry(QRect(470, 0, 1361, 900));
+        tab_3 = new QWidget();
+        tab_3->setObjectName(QStringLiteral("tab_3"));
+        gridLayoutWidget_4 = new QWidget(tab_3);
+        gridLayoutWidget_4->setObjectName(QStringLiteral("gridLayoutWidget_4"));
+        gridLayoutWidget_4->setGeometry(QRect(0, 0, 1351, 561));
+        gridLayout_2 = new QGridLayout(gridLayoutWidget_4);
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setContentsMargins(11, 11, 11, 11);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        widget_014 = new QCustomPlot(gridLayoutWidget_4);
+        widget_014->setObjectName(QStringLiteral("widget_014"));
+
+        gridLayout_2->addWidget(widget_014, 0, 3, 1, 1);
+
+        widget_013 = new QCustomPlot(gridLayoutWidget_4);
+        widget_013->setObjectName(QStringLiteral("widget_013"));
+
+        gridLayout_2->addWidget(widget_013, 0, 2, 1, 1);
+
+        widget_011 = new QCustomPlot(gridLayoutWidget_4);
+        widget_011->setObjectName(QStringLiteral("widget_011"));
+
+        gridLayout_2->addWidget(widget_011, 0, 0, 1, 1);
+
+        widget_012 = new QCustomPlot(gridLayoutWidget_4);
+        widget_012->setObjectName(QStringLiteral("widget_012"));
+
+        gridLayout_2->addWidget(widget_012, 0, 1, 1, 1);
+
+        widget_015 = new QCustomPlot(gridLayoutWidget_4);
+        widget_015->setObjectName(QStringLiteral("widget_015"));
+
+        gridLayout_2->addWidget(widget_015, 1, 0, 1, 1);
+
+        widget_021 = new QCustomPlot(gridLayoutWidget_4);
+        widget_021->setObjectName(QStringLiteral("widget_021"));
+
+        gridLayout_2->addWidget(widget_021, 1, 1, 1, 1);
+
+        widget_022 = new QCustomPlot(gridLayoutWidget_4);
+        widget_022->setObjectName(QStringLiteral("widget_022"));
+
+        gridLayout_2->addWidget(widget_022, 1, 2, 1, 1);
+
+        widget_023 = new QCustomPlot(gridLayoutWidget_4);
+        widget_023->setObjectName(QStringLiteral("widget_023"));
+
+        gridLayout_2->addWidget(widget_023, 1, 3, 1, 1);
+
+        tabWidget->addTab(tab_3, QString());
+        tab_4 = new QWidget();
+        tab_4->setObjectName(QStringLiteral("tab_4"));
+        gridLayoutWidget_5 = new QWidget(tab_4);
+        gridLayoutWidget_5->setObjectName(QStringLiteral("gridLayoutWidget_5"));
+        gridLayoutWidget_5->setGeometry(QRect(0, 0, 1351, 631));
+        gridLayout_3 = new QGridLayout(gridLayoutWidget_5);
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setContentsMargins(11, 11, 11, 11);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        widget_032 = new QCustomPlot(gridLayoutWidget_5);
+        widget_032->setObjectName(QStringLiteral("widget_032"));
+
+        gridLayout_3->addWidget(widget_032, 0, 3, 1, 1);
+
+        widget_025 = new QCustomPlot(gridLayoutWidget_5);
+        widget_025->setObjectName(QStringLiteral("widget_025"));
+
+        gridLayout_3->addWidget(widget_025, 0, 1, 1, 1);
+
+        widget_024 = new QCustomPlot(gridLayoutWidget_5);
+        widget_024->setObjectName(QStringLiteral("widget_024"));
+
+        gridLayout_3->addWidget(widget_024, 0, 0, 1, 1);
+
+        widget_031 = new QCustomPlot(gridLayoutWidget_5);
+        widget_031->setObjectName(QStringLiteral("widget_031"));
+
+        gridLayout_3->addWidget(widget_031, 0, 2, 1, 1);
+
+        widget_033 = new QCustomPlot(gridLayoutWidget_5);
+        widget_033->setObjectName(QStringLiteral("widget_033"));
+
+        gridLayout_3->addWidget(widget_033, 1, 0, 1, 1);
+
+        widget_034 = new QCustomPlot(gridLayoutWidget_5);
+        widget_034->setObjectName(QStringLiteral("widget_034"));
+
+        gridLayout_3->addWidget(widget_034, 1, 1, 1, 1);
+
+        widget_035 = new QCustomPlot(gridLayoutWidget_5);
+        widget_035->setObjectName(QStringLiteral("widget_035"));
+
+        gridLayout_3->addWidget(widget_035, 1, 2, 1, 1);
+
+        widget_041 = new QCustomPlot(gridLayoutWidget_5);
+        widget_041->setObjectName(QStringLiteral("widget_041"));
+
+        gridLayout_3->addWidget(widget_041, 1, 3, 1, 1);
+
+        tabWidget->addTab(tab_4, QString());
+        tab_5 = new QWidget();
+        tab_5->setObjectName(QStringLiteral("tab_5"));
+        gridLayoutWidget_6 = new QWidget(tab_5);
+        gridLayoutWidget_6->setObjectName(QStringLiteral("gridLayoutWidget_6"));
+        gridLayoutWidget_6->setGeometry(QRect(0, 0, 1351, 601));
+        gridLayout_6 = new QGridLayout(gridLayoutWidget_6);
+        gridLayout_6->setSpacing(6);
+        gridLayout_6->setContentsMargins(11, 11, 11, 11);
+        gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
+        gridLayout_6->setContentsMargins(0, 0, 0, 0);
+        widget_043 = new QCustomPlot(gridLayoutWidget_6);
+        widget_043->setObjectName(QStringLiteral("widget_043"));
+
+        gridLayout_6->addWidget(widget_043, 0, 1, 1, 1);
+
+        widget_044 = new QCustomPlot(gridLayoutWidget_6);
+        widget_044->setObjectName(QStringLiteral("widget_044"));
+
+        gridLayout_6->addWidget(widget_044, 0, 2, 1, 1);
+
+        widget_045 = new QCustomPlot(gridLayoutWidget_6);
+        widget_045->setObjectName(QStringLiteral("widget_045"));
+
+        gridLayout_6->addWidget(widget_045, 0, 3, 1, 1);
+
+        widget_042 = new QCustomPlot(gridLayoutWidget_6);
+        widget_042->setObjectName(QStringLiteral("widget_042"));
+
+        gridLayout_6->addWidget(widget_042, 0, 0, 1, 1);
+
+        widget_051 = new QCustomPlot(gridLayoutWidget_6);
+        widget_051->setObjectName(QStringLiteral("widget_051"));
+
+        gridLayout_6->addWidget(widget_051, 1, 0, 1, 1);
+
+        widget_052 = new QCustomPlot(gridLayoutWidget_6);
+        widget_052->setObjectName(QStringLiteral("widget_052"));
+
+        gridLayout_6->addWidget(widget_052, 1, 1, 1, 1);
+
+        widget_053 = new QCustomPlot(gridLayoutWidget_6);
+        widget_053->setObjectName(QStringLiteral("widget_053"));
+
+        gridLayout_6->addWidget(widget_053, 1, 2, 1, 1);
+
+        widget_054 = new QCustomPlot(gridLayoutWidget_6);
+        widget_054->setObjectName(QStringLiteral("widget_054"));
+
+        gridLayout_6->addWidget(widget_054, 1, 3, 1, 1);
+
+        tabWidget->addTab(tab_5, QString());
+        tab_6 = new QWidget();
+        tab_6->setObjectName(QStringLiteral("tab_6"));
+        gridLayoutWidget_7 = new QWidget(tab_6);
+        gridLayoutWidget_7->setObjectName(QStringLiteral("gridLayoutWidget_7"));
+        gridLayoutWidget_7->setGeometry(QRect(0, 0, 1351, 611));
+        gridLayout_7 = new QGridLayout(gridLayoutWidget_7);
+        gridLayout_7->setSpacing(6);
+        gridLayout_7->setContentsMargins(11, 11, 11, 11);
+        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+        gridLayout_7->setContentsMargins(0, 0, 0, 0);
+        widget_ch_25 = new QCustomPlot(gridLayoutWidget_7);
+        widget_ch_25->setObjectName(QStringLiteral("widget_ch_25"));
+
+        gridLayout_7->addWidget(widget_ch_25, 0, 1, 1, 1);
+
+        widget_ch_27 = new QCustomPlot(gridLayoutWidget_7);
+        widget_ch_27->setObjectName(QStringLiteral("widget_ch_27"));
+
+        gridLayout_7->addWidget(widget_ch_27, 0, 3, 1, 1);
+
+        widget_ch_26 = new QCustomPlot(gridLayoutWidget_7);
+        widget_ch_26->setObjectName(QStringLiteral("widget_ch_26"));
+
+        gridLayout_7->addWidget(widget_ch_26, 0, 2, 1, 1);
+
+        widget_055 = new QCustomPlot(gridLayoutWidget_7);
+        widget_055->setObjectName(QStringLiteral("widget_055"));
+
+        gridLayout_7->addWidget(widget_055, 0, 0, 1, 1);
+
+        widget_ch_28 = new QCustomPlot(gridLayoutWidget_7);
+        widget_ch_28->setObjectName(QStringLiteral("widget_ch_28"));
+
+        gridLayout_7->addWidget(widget_ch_28, 1, 0, 1, 1);
+
+        widget_ch_29 = new QCustomPlot(gridLayoutWidget_7);
+        widget_ch_29->setObjectName(QStringLiteral("widget_ch_29"));
+
+        gridLayout_7->addWidget(widget_ch_29, 1, 1, 1, 1);
+
+        widget_ch_30 = new QCustomPlot(gridLayoutWidget_7);
+        widget_ch_30->setObjectName(QStringLiteral("widget_ch_30"));
+
+        gridLayout_7->addWidget(widget_ch_30, 1, 2, 1, 1);
+
+        widget_ch_31 = new QCustomPlot(gridLayoutWidget_7);
+        widget_ch_31->setObjectName(QStringLiteral("widget_ch_31"));
+
+        gridLayout_7->addWidget(widget_ch_31, 1, 3, 1, 1);
+
+        tabWidget->addTab(tab_6, QString());
+        tab_7 = new QWidget();
+        tab_7->setObjectName(QStringLiteral("tab_7"));
+        gridLayoutWidget_8 = new QWidget(tab_7);
+        gridLayoutWidget_8->setObjectName(QStringLiteral("gridLayoutWidget_8"));
+        gridLayoutWidget_8->setGeometry(QRect(0, 0, 1351, 611));
+        gridLayout_8 = new QGridLayout(gridLayoutWidget_8);
+        gridLayout_8->setSpacing(6);
+        gridLayout_8->setContentsMargins(11, 11, 11, 11);
+        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+        gridLayout_8->setContentsMargins(0, 0, 0, 0);
+        widget_ch_34 = new QCustomPlot(gridLayoutWidget_8);
+        widget_ch_34->setObjectName(QStringLiteral("widget_ch_34"));
+
+        gridLayout_8->addWidget(widget_ch_34, 0, 2, 1, 1);
+
+        widget_ch_35 = new QCustomPlot(gridLayoutWidget_8);
+        widget_ch_35->setObjectName(QStringLiteral("widget_ch_35"));
+
+        gridLayout_8->addWidget(widget_ch_35, 0, 3, 1, 1);
+
+        widget_ch_32 = new QCustomPlot(gridLayoutWidget_8);
+        widget_ch_32->setObjectName(QStringLiteral("widget_ch_32"));
+
+        gridLayout_8->addWidget(widget_ch_32, 0, 0, 1, 1);
+
+        widget_ch_33 = new QCustomPlot(gridLayoutWidget_8);
+        widget_ch_33->setObjectName(QStringLiteral("widget_ch_33"));
+
+        gridLayout_8->addWidget(widget_ch_33, 0, 1, 1, 1);
+
+        widget_ch_36 = new QCustomPlot(gridLayoutWidget_8);
+        widget_ch_36->setObjectName(QStringLiteral("widget_ch_36"));
+
+        gridLayout_8->addWidget(widget_ch_36, 1, 0, 1, 1);
+
+        widget_ch_37 = new QCustomPlot(gridLayoutWidget_8);
+        widget_ch_37->setObjectName(QStringLiteral("widget_ch_37"));
+
+        gridLayout_8->addWidget(widget_ch_37, 1, 1, 1, 1);
+
+        widget_ch_38 = new QCustomPlot(gridLayoutWidget_8);
+        widget_ch_38->setObjectName(QStringLiteral("widget_ch_38"));
+
+        gridLayout_8->addWidget(widget_ch_38, 1, 2, 1, 1);
+
+        widget_ch_39 = new QCustomPlot(gridLayoutWidget_8);
+        widget_ch_39->setObjectName(QStringLiteral("widget_ch_39"));
+
+        gridLayout_8->addWidget(widget_ch_39, 1, 3, 1, 1);
+
+        tabWidget->addTab(tab_7, QString());
+        tab_8 = new QWidget();
+        tab_8->setObjectName(QStringLiteral("tab_8"));
+        gridLayoutWidget_9 = new QWidget(tab_8);
+        gridLayoutWidget_9->setObjectName(QStringLiteral("gridLayoutWidget_9"));
+        gridLayoutWidget_9->setGeometry(QRect(0, 0, 1351, 601));
+        gridLayout_9 = new QGridLayout(gridLayoutWidget_9);
+        gridLayout_9->setSpacing(6);
+        gridLayout_9->setContentsMargins(11, 11, 11, 11);
+        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
+        gridLayout_9->setContentsMargins(0, 0, 0, 0);
+        widget_ch_41 = new QCustomPlot(gridLayoutWidget_9);
+        widget_ch_41->setObjectName(QStringLiteral("widget_ch_41"));
+
+        gridLayout_9->addWidget(widget_ch_41, 0, 1, 1, 1);
+
+        widget_ch_42 = new QCustomPlot(gridLayoutWidget_9);
+        widget_ch_42->setObjectName(QStringLiteral("widget_ch_42"));
+
+        gridLayout_9->addWidget(widget_ch_42, 0, 2, 1, 1);
+
+        widget_ch_40 = new QCustomPlot(gridLayoutWidget_9);
+        widget_ch_40->setObjectName(QStringLiteral("widget_ch_40"));
+
+        gridLayout_9->addWidget(widget_ch_40, 0, 0, 1, 1);
+
+        widget_ch_43 = new QCustomPlot(gridLayoutWidget_9);
+        widget_ch_43->setObjectName(QStringLiteral("widget_ch_43"));
+
+        gridLayout_9->addWidget(widget_ch_43, 0, 3, 1, 1);
+
+        widget_ch_44 = new QCustomPlot(gridLayoutWidget_9);
+        widget_ch_44->setObjectName(QStringLiteral("widget_ch_44"));
+
+        gridLayout_9->addWidget(widget_ch_44, 1, 0, 1, 1);
+
+        widget_ch_45 = new QCustomPlot(gridLayoutWidget_9);
+        widget_ch_45->setObjectName(QStringLiteral("widget_ch_45"));
+
+        gridLayout_9->addWidget(widget_ch_45, 1, 1, 1, 1);
+
+        widget_ch_46 = new QCustomPlot(gridLayoutWidget_9);
+        widget_ch_46->setObjectName(QStringLiteral("widget_ch_46"));
+
+        gridLayout_9->addWidget(widget_ch_46, 1, 2, 1, 1);
+
+        widget_ch_47 = new QCustomPlot(gridLayoutWidget_9);
+        widget_ch_47->setObjectName(QStringLiteral("widget_ch_47"));
+
+        gridLayout_9->addWidget(widget_ch_47, 1, 3, 1, 1);
+
+        tabWidget->addTab(tab_8, QString());
+        tab_9 = new QWidget();
+        tab_9->setObjectName(QStringLiteral("tab_9"));
+        gridLayoutWidget_10 = new QWidget(tab_9);
+        gridLayoutWidget_10->setObjectName(QStringLiteral("gridLayoutWidget_10"));
+        gridLayoutWidget_10->setGeometry(QRect(0, 0, 1351, 601));
+        gridLayout_10 = new QGridLayout(gridLayoutWidget_10);
+        gridLayout_10->setSpacing(6);
+        gridLayout_10->setContentsMargins(11, 11, 11, 11);
+        gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
+        gridLayout_10->setContentsMargins(0, 0, 0, 0);
+        widget_ch_51 = new QCustomPlot(gridLayoutWidget_10);
+        widget_ch_51->setObjectName(QStringLiteral("widget_ch_51"));
+
+        gridLayout_10->addWidget(widget_ch_51, 0, 3, 1, 1);
+
+        widget_ch_50 = new QCustomPlot(gridLayoutWidget_10);
+        widget_ch_50->setObjectName(QStringLiteral("widget_ch_50"));
+
+        gridLayout_10->addWidget(widget_ch_50, 0, 2, 1, 1);
+
+        widget_ch_48 = new QCustomPlot(gridLayoutWidget_10);
+        widget_ch_48->setObjectName(QStringLiteral("widget_ch_48"));
+
+        gridLayout_10->addWidget(widget_ch_48, 0, 0, 1, 1);
+
+        widget_ch_49 = new QCustomPlot(gridLayoutWidget_10);
+        widget_ch_49->setObjectName(QStringLiteral("widget_ch_49"));
+
+        gridLayout_10->addWidget(widget_ch_49, 0, 1, 1, 1);
+
+        widget_ch_52 = new QCustomPlot(gridLayoutWidget_10);
+        widget_ch_52->setObjectName(QStringLiteral("widget_ch_52"));
+
+        gridLayout_10->addWidget(widget_ch_52, 1, 0, 1, 1);
+
+        widget_ch_53 = new QCustomPlot(gridLayoutWidget_10);
+        widget_ch_53->setObjectName(QStringLiteral("widget_ch_53"));
+
+        gridLayout_10->addWidget(widget_ch_53, 1, 1, 1, 1);
+
+        widget_ch_54 = new QCustomPlot(gridLayoutWidget_10);
+        widget_ch_54->setObjectName(QStringLiteral("widget_ch_54"));
+
+        gridLayout_10->addWidget(widget_ch_54, 1, 2, 1, 1);
+
+        widget_ch_55 = new QCustomPlot(gridLayoutWidget_10);
+        widget_ch_55->setObjectName(QStringLiteral("widget_ch_55"));
+
+        gridLayout_10->addWidget(widget_ch_55, 1, 3, 1, 1);
+
+        tabWidget->addTab(tab_9, QString());
+        tab_10 = new QWidget();
+        tab_10->setObjectName(QStringLiteral("tab_10"));
+        gridLayoutWidget_11 = new QWidget(tab_10);
+        gridLayoutWidget_11->setObjectName(QStringLiteral("gridLayoutWidget_11"));
+        gridLayoutWidget_11->setGeometry(QRect(0, 0, 1351, 601));
+        gridLayout_11 = new QGridLayout(gridLayoutWidget_11);
+        gridLayout_11->setSpacing(6);
+        gridLayout_11->setContentsMargins(11, 11, 11, 11);
+        gridLayout_11->setObjectName(QStringLiteral("gridLayout_11"));
+        gridLayout_11->setContentsMargins(0, 0, 0, 0);
+        widget_ch_56 = new QCustomPlot(gridLayoutWidget_11);
+        widget_ch_56->setObjectName(QStringLiteral("widget_ch_56"));
+
+        gridLayout_11->addWidget(widget_ch_56, 0, 0, 1, 1);
+
+        widget_ch_57 = new QCustomPlot(gridLayoutWidget_11);
+        widget_ch_57->setObjectName(QStringLiteral("widget_ch_57"));
+
+        gridLayout_11->addWidget(widget_ch_57, 0, 1, 1, 1);
+
+        widget_ch_58 = new QCustomPlot(gridLayoutWidget_11);
+        widget_ch_58->setObjectName(QStringLiteral("widget_ch_58"));
+
+        gridLayout_11->addWidget(widget_ch_58, 0, 2, 1, 1);
+
+        widget_ch_59 = new QCustomPlot(gridLayoutWidget_11);
+        widget_ch_59->setObjectName(QStringLiteral("widget_ch_59"));
+
+        gridLayout_11->addWidget(widget_ch_59, 0, 3, 1, 1);
+
+        widget_ch_60 = new QCustomPlot(gridLayoutWidget_11);
+        widget_ch_60->setObjectName(QStringLiteral("widget_ch_60"));
+
+        gridLayout_11->addWidget(widget_ch_60, 1, 0, 1, 1);
+
+        widget_ch_61 = new QCustomPlot(gridLayoutWidget_11);
+        widget_ch_61->setObjectName(QStringLiteral("widget_ch_61"));
+
+        gridLayout_11->addWidget(widget_ch_61, 1, 1, 1, 1);
+
+        widget_ch_62 = new QCustomPlot(gridLayoutWidget_11);
+        widget_ch_62->setObjectName(QStringLiteral("widget_ch_62"));
+
+        gridLayout_11->addWidget(widget_ch_62, 1, 2, 1, 1);
+
+        widget_ch_63 = new QCustomPlot(gridLayoutWidget_11);
+        widget_ch_63->setObjectName(QStringLiteral("widget_ch_63"));
+
+        gridLayout_11->addWidget(widget_ch_63, 1, 3, 1, 1);
+
+        tabWidget->addTab(tab_10, QString());
         MainWindow->setCentralWidget(centralWidget);
         groupBox_7->raise();
         groupBox_3->raise();
@@ -1197,33 +1532,9 @@ public:
         lcdNumber->raise();
         label->raise();
         groupBox_6->raise();
-        widget_012->raise();
-        widget_022->raise();
-        widget_032->raise();
-        widget_042->raise();
-        widget_052->raise();
-        widget_013->raise();
-        widget_014->raise();
-        widget_015->raise();
-        widget_024->raise();
-        widget_023->raise();
-        widget_025->raise();
-        widget_034->raise();
-        widget_033->raise();
-        widget_035->raise();
-        widget_044->raise();
-        widget_043->raise();
-        widget_045->raise();
-        widget_054->raise();
-        widget_053->raise();
-        widget_055->raise();
-        widget_011->raise();
-        widget_021->raise();
-        widget_041->raise();
-        widget_031->raise();
-        widget_051->raise();
         label_3->raise();
         lcdNumber_2->raise();
+        tabWidget->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 1860, 21));
@@ -1250,6 +1561,9 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(verticalSlider, SIGNAL(valueChanged(int)), spinBox_3, SLOT(setValue(int)));
         QObject::connect(spinBox_3, SIGNAL(valueChanged(int)), verticalSlider, SLOT(setValue(int)));
+
+        tabWidget->setCurrentIndex(3);
+
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -1281,38 +1595,31 @@ public:
         radioButton_15->setText(QApplication::translate("MainWindow", "Continious (no th)", 0));
         Test_Pattern_button->setText(QApplication::translate("MainWindow", "Test Pattern", 0));
         groupBox_9->setTitle(QApplication::translate("MainWindow", "Mask the channels", 0));
-        label_11->setText(QApplication::translate("MainWindow", "gr 4", 0));
-        label_5->setText(QApplication::translate("MainWindow", "gr 1", 0));
-        checkBox_11->setText(QString());
-        checkBox_12->setText(QString());
-        checkBox_13->setText(QString());
-        checkBox_14->setText(QString());
-        checkBox_15->setText(QString());
-        checkBox_21->setText(QString());
-        checkBox_22->setText(QString());
-        checkBox_23->setText(QString());
-        checkBox_24->setText(QString());
-        checkBox_25->setText(QString());
-        checkBox_31->setText(QString());
-        checkBox_32->setText(QString());
-        checkBox_33->setText(QString());
-        checkBox_34->setText(QString());
-        checkBox_35->setText(QString());
-        checkBox_41->setText(QString());
-        checkBox_42->setText(QString());
-        checkBox_43->setText(QString());
-        checkBox_44->setText(QString());
-        checkBox_45->setText(QString());
-        checkBox_51->setText(QString());
-        checkBox_52->setText(QString());
-        checkBox_53->setText(QString());
-        checkBox_54->setText(QString());
-        checkBox_55->setText(QString());
-        label_4->setText(QApplication::translate("MainWindow", "gr 0", 0));
-        label_10->setText(QApplication::translate("MainWindow", "gr 3", 0));
-        label_9->setText(QApplication::translate("MainWindow", "gr 2", 0));
         pushButton_4->setText(QApplication::translate("MainWindow", "Enalble all", 0));
         pushButton_5->setText(QApplication::translate("MainWindow", "Disalble all", 0));
+        MASK_CHANNEL_checkBox_gr0_ch5->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch7->setText(QString());
+        label_42->setText(QApplication::translate("MainWindow", "gr 5", 0));
+        label_40->setText(QApplication::translate("MainWindow", "gr 7", 0));
+        label_41->setText(QApplication::translate("MainWindow", "gr 2", 0));
+        MASK_CHANNEL_checkBox_gr0_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr1_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch4->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch3->setText(QString());
+        MASK_CHANNEL_checkBox_gr3_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch2->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch1->setText(QString());
+        label_39->setText(QApplication::translate("MainWindow", "gr 4", 0));
+        label_43->setText(QApplication::translate("MainWindow", "gr 6", 0));
+        MASK_CHANNEL_checkBox_gr2_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch6->setText(QString());
+        label_44->setText(QApplication::translate("MainWindow", "gr 3", 0));
+        label_38->setText(QApplication::translate("MainWindow", "gr 1", 0));
+        label_37->setText(QApplication::translate("MainWindow", "gr 0", 0));
+        MASK_CHANNEL_checkBox_gr4_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr5_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr6_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr7_ch0->setText(QString());
         pushButton_Reprogram->setText(QApplication::translate("MainWindow", "Reprogram", 0));
         groupBox_10->setTitle(QApplication::translate("MainWindow", "CHANNEL_TRIGGER", 0));
         pushButton_7->setText(QApplication::translate("MainWindow", "Enalble all", 0));
@@ -1404,6 +1711,14 @@ public:
         label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">y min[mV]</p></body></html>", 0));
         label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">y max[mV]</p></body></html>", 0));
         label_3->setText(QApplication::translate("MainWindow", "Trigger rate [Hz]", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "gr 0", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "gr 1", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "gr 2", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("MainWindow", "gr 3", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow", "gr 4", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_8), QApplication::translate("MainWindow", "gr 5", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_9), QApplication::translate("MainWindow", "gr 6", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_10), QApplication::translate("MainWindow", "gr 7", 0));
         menuCAEN->setTitle(QApplication::translate("MainWindow", "Main", 0));
         menuTriggers->setTitle(QApplication::translate("MainWindow", "Triggers", 0));
         menuAbout->setTitle(QApplication::translate("MainWindow", "About", 0));

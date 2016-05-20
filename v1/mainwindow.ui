@@ -698,6 +698,9 @@ p, li { white-space: pre-wrap; }
          <property name="text">
           <string>Continious (no th)</string>
          </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
       </layout>
@@ -810,7 +813,7 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_gr1">
+        <widget class="QCheckBox" name="MASK_CHANNEL_checkBox_gr1_ch0">
          <property name="text">
           <string/>
          </property>
@@ -831,7 +834,7 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_gr3">
+        <widget class="QCheckBox" name="MASK_CHANNEL_checkBox_gr3_ch0">
          <property name="text">
           <string/>
          </property>
@@ -866,7 +869,7 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_gr2">
+        <widget class="QCheckBox" name="MASK_CHANNEL_checkBox_gr2_ch0">
          <property name="text">
           <string/>
          </property>
@@ -901,28 +904,28 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_gr4">
+        <widget class="QCheckBox" name="MASK_CHANNEL_checkBox_gr4_ch0">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item row="5" column="1">
-        <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_g5">
+        <widget class="QCheckBox" name="MASK_CHANNEL_checkBox_gr5_ch0">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item row="6" column="1">
-        <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_gr6">
+        <widget class="QCheckBox" name="MASK_CHANNEL_checkBox_gr6_ch0">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item row="8" column="1">
-        <widget class="QCheckBox" name="CHANNEL_TRIGGER_checkBox_gr7">
+        <widget class="QCheckBox" name="MASK_CHANNEL_checkBox_gr7_ch0">
          <property name="text">
           <string/>
          </property>
@@ -1613,6 +1616,9 @@ p, li { white-space: pre-wrap; }
       <property name="text">
        <string>BINARY</string>
       </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
      </widget>
     </widget>
     <widget class="QPushButton" name="pushButton_choose_folder">
@@ -1639,16 +1645,6 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3"/>
-   </widget>
-   <widget class="QCustomPlot" name="widget_012" native="true">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>10</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_7">
     <property name="geometry">
@@ -1777,246 +1773,6 @@ p, li { white-space: pre-wrap; }
      </layout>
     </widget>
    </widget>
-   <widget class="QCustomPlot" name="widget_022" native="true">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>180</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_032" native="true">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>350</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_042" native="true">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>520</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_052" native="true">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>690</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_013" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>10</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_014" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1300</x>
-      <y>10</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_015" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1570</x>
-      <y>10</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_024" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1300</x>
-      <y>180</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_023" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>180</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_025" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1570</x>
-      <y>180</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_034" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1300</x>
-      <y>350</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_033" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>350</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_035" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1570</x>
-      <y>350</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_044" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1300</x>
-      <y>520</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_043" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>520</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_045" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1570</x>
-      <y>520</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_054" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1300</x>
-      <y>690</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_053" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>690</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_055" native="true">
-    <property name="geometry">
-     <rect>
-      <x>1570</x>
-      <y>690</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_011" native="true">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>10</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_021" native="true">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>180</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_041" native="true">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>520</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_031" native="true">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>350</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="widget_051" native="true">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>690</y>
-      <width>271</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
@@ -2040,6 +1796,347 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
    </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>0</y>
+      <width>1361</width>
+      <height>900</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>3</number>
+    </property>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>gr 0</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1351</width>
+        <height>561</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="3">
+        <widget class="QCustomPlot" name="widget_014" native="true"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCustomPlot" name="widget_013" native="true"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCustomPlot" name="widget_011" native="true"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QCustomPlot" name="widget_012" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCustomPlot" name="widget_015" native="true"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCustomPlot" name="widget_021" native="true"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCustomPlot" name="widget_022" native="true"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QCustomPlot" name="widget_023" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>gr 1</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1351</width>
+        <height>631</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="3">
+        <widget class="QCustomPlot" name="widget_032" native="true"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QCustomPlot" name="widget_025" native="true"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCustomPlot" name="widget_024" native="true"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCustomPlot" name="widget_031" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCustomPlot" name="widget_033" native="true"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCustomPlot" name="widget_034" native="true"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCustomPlot" name="widget_035" native="true"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QCustomPlot" name="widget_041" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>gr 2</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1351</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="1">
+        <widget class="QCustomPlot" name="widget_043" native="true"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCustomPlot" name="widget_044" native="true"/>
+       </item>
+       <item row="0" column="3">
+        <widget class="QCustomPlot" name="widget_045" native="true"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCustomPlot" name="widget_042" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCustomPlot" name="widget_051" native="true"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCustomPlot" name="widget_052" native="true"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCustomPlot" name="widget_053" native="true"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QCustomPlot" name="widget_054" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>gr 3</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1351</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="1">
+        <widget class="QCustomPlot" name="widget_ch_25" native="true"/>
+       </item>
+       <item row="0" column="3">
+        <widget class="QCustomPlot" name="widget_ch_27" native="true"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCustomPlot" name="widget_ch_26" native="true"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCustomPlot" name="widget_055" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCustomPlot" name="widget_ch_28" native="true"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCustomPlot" name="widget_ch_29" native="true"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCustomPlot" name="widget_ch_30" native="true"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QCustomPlot" name="widget_ch_31" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_7">
+     <attribute name="title">
+      <string>gr 4</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1351</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="2">
+        <widget class="QCustomPlot" name="widget_ch_34" native="true"/>
+       </item>
+       <item row="0" column="3">
+        <widget class="QCustomPlot" name="widget_ch_35" native="true"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCustomPlot" name="widget_ch_32" native="true"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QCustomPlot" name="widget_ch_33" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCustomPlot" name="widget_ch_36" native="true"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCustomPlot" name="widget_ch_37" native="true"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCustomPlot" name="widget_ch_38" native="true"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QCustomPlot" name="widget_ch_39" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_8">
+     <attribute name="title">
+      <string>gr 5</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1351</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_9">
+       <item row="0" column="1">
+        <widget class="QCustomPlot" name="widget_ch_41" native="true"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCustomPlot" name="widget_ch_42" native="true"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCustomPlot" name="widget_ch_40" native="true"/>
+       </item>
+       <item row="0" column="3">
+        <widget class="QCustomPlot" name="widget_ch_43" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCustomPlot" name="widget_ch_44" native="true"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCustomPlot" name="widget_ch_45" native="true"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCustomPlot" name="widget_ch_46" native="true"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QCustomPlot" name="widget_ch_47" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_9">
+     <attribute name="title">
+      <string>gr 6</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1351</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_10">
+       <item row="0" column="3">
+        <widget class="QCustomPlot" name="widget_ch_51" native="true"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCustomPlot" name="widget_ch_50" native="true"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCustomPlot" name="widget_ch_48" native="true"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QCustomPlot" name="widget_ch_49" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCustomPlot" name="widget_ch_52" native="true"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCustomPlot" name="widget_ch_53" native="true"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCustomPlot" name="widget_ch_54" native="true"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QCustomPlot" name="widget_ch_55" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_10">
+     <attribute name="title">
+      <string>gr 7</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_11">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1351</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_11">
+       <item row="0" column="0">
+        <widget class="QCustomPlot" name="widget_ch_56" native="true"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QCustomPlot" name="widget_ch_57" native="true"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCustomPlot" name="widget_ch_58" native="true"/>
+       </item>
+       <item row="0" column="3">
+        <widget class="QCustomPlot" name="widget_ch_59" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCustomPlot" name="widget_ch_60" native="true"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCustomPlot" name="widget_ch_61" native="true"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCustomPlot" name="widget_ch_62" native="true"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QCustomPlot" name="widget_ch_63" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
    <zorder>groupBox_7</zorder>
    <zorder>groupBox_3</zorder>
    <zorder>layoutWidget</zorder>
@@ -2047,33 +2144,9 @@ p, li { white-space: pre-wrap; }
    <zorder>lcdNumber</zorder>
    <zorder>label</zorder>
    <zorder>groupBox_6</zorder>
-   <zorder>widget_012</zorder>
-   <zorder>widget_022</zorder>
-   <zorder>widget_032</zorder>
-   <zorder>widget_042</zorder>
-   <zorder>widget_052</zorder>
-   <zorder>widget_013</zorder>
-   <zorder>widget_014</zorder>
-   <zorder>widget_015</zorder>
-   <zorder>widget_024</zorder>
-   <zorder>widget_023</zorder>
-   <zorder>widget_025</zorder>
-   <zorder>widget_034</zorder>
-   <zorder>widget_033</zorder>
-   <zorder>widget_035</zorder>
-   <zorder>widget_044</zorder>
-   <zorder>widget_043</zorder>
-   <zorder>widget_045</zorder>
-   <zorder>widget_054</zorder>
-   <zorder>widget_053</zorder>
-   <zorder>widget_055</zorder>
-   <zorder>widget_011</zorder>
-   <zorder>widget_021</zorder>
-   <zorder>widget_041</zorder>
-   <zorder>widget_031</zorder>
-   <zorder>widget_051</zorder>
    <zorder>label_3</zorder>
    <zorder>lcdNumber_2</zorder>
+   <zorder>tabWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

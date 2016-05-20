@@ -4,8 +4,7 @@
 
 MyWorker::MyWorker()
 {
-    array_y_data.resize(8);
-
+    //array_y_data.resize(8);
 }
 
 void MyWorker::Init()
@@ -138,6 +137,7 @@ void MyWorker::Init()
 //    }
 
     WDrun.ContinuousPlot = 1;
+    WDrun.ContinuousTrigger = 1;
 
     emit this->InitializationComplete();
 
@@ -267,14 +267,32 @@ void MyWorker::Readout_loop()
             {
                 long time_label_start = get_time();
 
-                array_y_data[0].clear();
-                array_y_data[1].clear();
-                array_y_data[2].clear();
-                array_y_data[3].clear();
-                array_y_data[4].clear();
-                array_y_data[5].clear();
-                array_y_data[6].clear();
-                array_y_data[7].clear();
+                uint N_ch;
+                switch (BoardInfo.FamilyCode)
+                {
+                    case CAEN_DGTZ_XX720_FAMILY_CODE:
+                {
+                    N_ch = 8;
+                    break;
+                }
+                case CAEN_DGTZ_XX740_FAMILY_CODE:
+                {
+                    N_ch = 64;
+                    break;
+                }
+                default:
+                    qDebug() << "add device in list" << endl;
+
+                }
+
+                array_y_data.resize(N_ch);
+
+                for(int i = 0; i < N_ch; i++)
+                {
+                    array_y_data[i].clear();
+                }
+
+
 
                 /* Analyze data */
                 for(i = 0; i < (int)NumEvents; i++)
@@ -328,6 +346,7 @@ void MyWorker::Readout_loop()
                     bool flag = true;
 
 
+
                     for(ch=0; ch<WDcfg.Nch; ch++)
                     {
                         int Size = (WDcfg.Nbit == 8) ? Event8->ChSize[ch] : Event16->ChSize[ch];
@@ -335,6 +354,7 @@ void MyWorker::Readout_loop()
                         {
                             continue;
                         }
+
 
                         for(int index = 0; index < Size; index++)
                         {
@@ -351,7 +371,6 @@ void MyWorker::Readout_loop()
 
                         flag = false;
                     }
-
 
 
                 }
@@ -776,6 +795,7 @@ void MyWorker::MaskChannelAll(bool value)
 
 void MyWorker::SetTriggerValue(int ch, int val)
 {
+    qDebug() << "in SetTriggerValue slot" << endl;
     WDcfg.Threshold[ch] = val;
     Restart();
 }
@@ -894,4 +914,16 @@ void MyWorker::SetFolder(QString value)
 void MyWorker::CHANNEL_TRIGGER_group(int group, bool val)
 {
 
+}
+
+void MyWorker::SetContinuousTrigger(bool value)
+{
+    if(value)
+        WDrun.ContinuousTrigger = 1;
+    else
+        WDrun.ContinuousTrigger = 0;
+
+    qDebug() << "WDrun.ContinuousTrigger = " << WDrun.ContinuousTrigger << endl;
+
+    Restart();
 }

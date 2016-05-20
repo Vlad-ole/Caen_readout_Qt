@@ -10,6 +10,7 @@
 #include "QMessageBox"
 
 #include "QTime"
+#include "myworker.h"
 
 #ifndef max
 #define max(a,b)            (((a) > (b)) ? (a) : (b))
@@ -39,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL( SetContinuousTrigger(bool)) , worker, SLOT( SetContinuousTrigger(bool) ) );
     connect( this, SIGNAL( SetEventsPerFile(int) ), worker, SLOT( SetEventsPerFile(int) ), Qt::DirectConnection );
     connect( this, SIGNAL( SetFolder(QString) ) , worker, SLOT( SetFolder(QString) ), Qt::DirectConnection);
     connect( this, SIGNAL( SetOutFileType(int) ), worker, SLOT( SetOutFileType(int) ) );
@@ -304,11 +306,355 @@ void MainWindow::InitializationComplete()
     ui->widget_054->xAxis->setLabel(x_label);
     ui->widget_054->yAxis->setLabel(y_label);
 
+    //----------------------------
+
     ui->widget_055->axisRect()->setupFullAxesBox();
     ui->widget_055->plotLayout()->insertRow(0);
     ui->widget_055->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_055, "Channel 24"));
     ui->widget_055->xAxis->setLabel(x_label);
     ui->widget_055->yAxis->setLabel(y_label);
+
+    ui->widget_ch_25->axisRect()->setupFullAxesBox();
+    ui->widget_ch_25->plotLayout()->insertRow(0);
+    ui->widget_ch_25->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_25, "Channel 25"));
+    ui->widget_ch_25->xAxis->setLabel(x_label);
+    ui->widget_ch_25->yAxis->setLabel(y_label);
+
+    ui->widget_ch_26->axisRect()->setupFullAxesBox();
+    ui->widget_ch_26->plotLayout()->insertRow(0);
+    ui->widget_ch_26->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_26, "Channel 26"));
+    ui->widget_ch_26->xAxis->setLabel(x_label);
+    ui->widget_ch_26->yAxis->setLabel(y_label);
+
+    ui->widget_ch_27->axisRect()->setupFullAxesBox();
+    ui->widget_ch_27->plotLayout()->insertRow(0);
+    ui->widget_ch_27->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_27, "Channel 27"));
+    ui->widget_ch_27->xAxis->setLabel(x_label);
+    ui->widget_ch_27->yAxis->setLabel(y_label);
+
+    ui->widget_ch_28->axisRect()->setupFullAxesBox();
+    ui->widget_ch_28->plotLayout()->insertRow(0);
+    ui->widget_ch_28->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_28, "Channel 28"));
+    ui->widget_ch_28->xAxis->setLabel(x_label);
+    ui->widget_ch_28->yAxis->setLabel(y_label);
+
+    ui->widget_ch_29->axisRect()->setupFullAxesBox();
+    ui->widget_ch_29->plotLayout()->insertRow(0);
+    ui->widget_ch_29->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_29, "Channel 29"));
+    ui->widget_ch_29->xAxis->setLabel(x_label);
+    ui->widget_ch_29->yAxis->setLabel(y_label);
+
+    ui->widget_ch_30->axisRect()->setupFullAxesBox();
+    ui->widget_ch_30->plotLayout()->insertRow(0);
+    ui->widget_ch_30->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_30, "Channel 30"));
+    ui->widget_ch_30->xAxis->setLabel(x_label);
+    ui->widget_ch_30->yAxis->setLabel(y_label);
+
+    ui->widget_ch_31->axisRect()->setupFullAxesBox();
+    ui->widget_ch_31->plotLayout()->insertRow(0);
+    ui->widget_ch_31->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_31, "Channel 31"));
+    ui->widget_ch_31->xAxis->setLabel(x_label);
+    ui->widget_ch_31->yAxis->setLabel(y_label);
+
+    // ----------------------
+
+    ui->widget_ch_32->axisRect()->setupFullAxesBox();
+    ui->widget_ch_32->plotLayout()->insertRow(0);
+    ui->widget_ch_32->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_32, "Channel 32"));
+    ui->widget_ch_32->xAxis->setLabel(x_label);
+    ui->widget_ch_32->yAxis->setLabel(y_label);
+
+    ui->widget_ch_33->axisRect()->setupFullAxesBox();
+    ui->widget_ch_33->plotLayout()->insertRow(0);
+    ui->widget_ch_33->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_33, "Channel 33"));
+    ui->widget_ch_33->xAxis->setLabel(x_label);
+    ui->widget_ch_33->yAxis->setLabel(y_label);
+
+    ui->widget_ch_34->axisRect()->setupFullAxesBox();
+    ui->widget_ch_34->plotLayout()->insertRow(0);
+    ui->widget_ch_34->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_34, "Channel 34"));
+    ui->widget_ch_34->xAxis->setLabel(x_label);
+    ui->widget_ch_34->yAxis->setLabel(y_label);
+
+    ui->widget_ch_35->axisRect()->setupFullAxesBox();
+    ui->widget_ch_35->plotLayout()->insertRow(0);
+    ui->widget_ch_35->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_35, "Channel 35"));
+    ui->widget_ch_35->xAxis->setLabel(x_label);
+    ui->widget_ch_35->yAxis->setLabel(y_label);
+
+    ui->widget_ch_36->axisRect()->setupFullAxesBox();
+    ui->widget_ch_36->plotLayout()->insertRow(0);
+    ui->widget_ch_36->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_36, "Channel 36"));
+    ui->widget_ch_36->xAxis->setLabel(x_label);
+    ui->widget_ch_36->yAxis->setLabel(y_label);
+
+
+    ui->widget_ch_37->axisRect()->setupFullAxesBox();
+    ui->widget_ch_37->plotLayout()->insertRow(0);
+    ui->widget_ch_37->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_37, "Channel 37"));
+    ui->widget_ch_37->xAxis->setLabel(x_label);
+    ui->widget_ch_37->yAxis->setLabel(y_label);
+
+
+    ui->widget_ch_38->axisRect()->setupFullAxesBox();
+    ui->widget_ch_38->plotLayout()->insertRow(0);
+    ui->widget_ch_38->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_38, "Channel 38"));
+    ui->widget_ch_38->xAxis->setLabel(x_label);
+    ui->widget_ch_38->yAxis->setLabel(y_label);
+
+    ui->widget_ch_39->axisRect()->setupFullAxesBox();
+    ui->widget_ch_39->plotLayout()->insertRow(0);
+    ui->widget_ch_39->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_39, "Channel 39"));
+    ui->widget_ch_39->xAxis->setLabel(x_label);
+    ui->widget_ch_39->yAxis->setLabel(y_label);
+
+    // --------------------------------
+
+    ui->widget_ch_40->axisRect()->setupFullAxesBox();
+    ui->widget_ch_40->plotLayout()->insertRow(0);
+    ui->widget_ch_40->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_40, "Channel 40"));
+    ui->widget_ch_40->xAxis->setLabel(x_label);
+    ui->widget_ch_40->yAxis->setLabel(y_label);
+
+    ui->widget_ch_41->axisRect()->setupFullAxesBox();
+    ui->widget_ch_41->plotLayout()->insertRow(0);
+    ui->widget_ch_41->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_41, "Channel 41"));
+    ui->widget_ch_41->xAxis->setLabel(x_label);
+    ui->widget_ch_41->yAxis->setLabel(y_label);
+
+    ui->widget_ch_42->axisRect()->setupFullAxesBox();
+    ui->widget_ch_42->plotLayout()->insertRow(0);
+    ui->widget_ch_42->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_42, "Channel 42"));
+    ui->widget_ch_42->xAxis->setLabel(x_label);
+    ui->widget_ch_42->yAxis->setLabel(y_label);
+
+    ui->widget_ch_43->axisRect()->setupFullAxesBox();
+    ui->widget_ch_43->plotLayout()->insertRow(0);
+    ui->widget_ch_43->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_43, "Channel 43"));
+    ui->widget_ch_43->xAxis->setLabel(x_label);
+    ui->widget_ch_43->yAxis->setLabel(y_label);
+
+    ui->widget_ch_44->axisRect()->setupFullAxesBox();
+    ui->widget_ch_44->plotLayout()->insertRow(0);
+    ui->widget_ch_44->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_44, "Channel 44"));
+    ui->widget_ch_44->xAxis->setLabel(x_label);
+    ui->widget_ch_44->yAxis->setLabel(y_label);
+
+    ui->widget_ch_45->axisRect()->setupFullAxesBox();
+    ui->widget_ch_45->plotLayout()->insertRow(0);
+    ui->widget_ch_45->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_45, "Channel 45"));
+    ui->widget_ch_45->xAxis->setLabel(x_label);
+    ui->widget_ch_45->yAxis->setLabel(y_label);
+
+    ui->widget_ch_46->axisRect()->setupFullAxesBox();
+    ui->widget_ch_46->plotLayout()->insertRow(0);
+    ui->widget_ch_46->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_46, "Channel 46"));
+    ui->widget_ch_46->xAxis->setLabel(x_label);
+    ui->widget_ch_46->yAxis->setLabel(y_label);
+
+    ui->widget_ch_47->axisRect()->setupFullAxesBox();
+    ui->widget_ch_47->plotLayout()->insertRow(0);
+    ui->widget_ch_47->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_47, "Channel 47"));
+    ui->widget_ch_47->xAxis->setLabel(x_label);
+    ui->widget_ch_47->yAxis->setLabel(y_label);
+
+    ui->widget_ch_48->axisRect()->setupFullAxesBox();
+    ui->widget_ch_48->plotLayout()->insertRow(0);
+    ui->widget_ch_48->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_48, "Channel 48"));
+    ui->widget_ch_48->xAxis->setLabel(x_label);
+    ui->widget_ch_48->yAxis->setLabel(y_label);
+
+    ui->widget_ch_49->axisRect()->setupFullAxesBox();
+    ui->widget_ch_49->plotLayout()->insertRow(0);
+    ui->widget_ch_49->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_49, "Channel 49"));
+    ui->widget_ch_49->xAxis->setLabel(x_label);
+    ui->widget_ch_49->yAxis->setLabel(y_label);
+
+    ui->widget_ch_50->axisRect()->setupFullAxesBox();
+    ui->widget_ch_50->plotLayout()->insertRow(0);
+    ui->widget_ch_50->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_50, "Channel 50"));
+    ui->widget_ch_50->xAxis->setLabel(x_label);
+    ui->widget_ch_50->yAxis->setLabel(y_label);
+
+    ui->widget_ch_51->axisRect()->setupFullAxesBox();
+    ui->widget_ch_51->plotLayout()->insertRow(0);
+    ui->widget_ch_51->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_51, "Channel 51"));
+    ui->widget_ch_51->xAxis->setLabel(x_label);
+    ui->widget_ch_51->yAxis->setLabel(y_label);
+
+    ui->widget_ch_52->axisRect()->setupFullAxesBox();
+    ui->widget_ch_52->plotLayout()->insertRow(0);
+    ui->widget_ch_52->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_52, "Channel 52"));
+    ui->widget_ch_52->xAxis->setLabel(x_label);
+    ui->widget_ch_52->yAxis->setLabel(y_label);
+
+    ui->widget_ch_53->axisRect()->setupFullAxesBox();
+    ui->widget_ch_53->plotLayout()->insertRow(0);
+    ui->widget_ch_53->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_53, "Channel 53"));
+    ui->widget_ch_53->xAxis->setLabel(x_label);
+    ui->widget_ch_53->yAxis->setLabel(y_label);
+
+    ui->widget_ch_54->axisRect()->setupFullAxesBox();
+    ui->widget_ch_54->plotLayout()->insertRow(0);
+    ui->widget_ch_54->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_54, "Channel 54"));
+    ui->widget_ch_54->xAxis->setLabel(x_label);
+    ui->widget_ch_54->yAxis->setLabel(y_label);
+
+    ui->widget_ch_55->axisRect()->setupFullAxesBox();
+    ui->widget_ch_55->plotLayout()->insertRow(0);
+    ui->widget_ch_55->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_55, "Channel 55"));
+    ui->widget_ch_55->xAxis->setLabel(x_label);
+    ui->widget_ch_55->yAxis->setLabel(y_label);
+
+    ui->widget_ch_56->axisRect()->setupFullAxesBox();
+    ui->widget_ch_56->plotLayout()->insertRow(0);
+    ui->widget_ch_56->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_56, "Channel 56"));
+    ui->widget_ch_56->xAxis->setLabel(x_label);
+    ui->widget_ch_56->yAxis->setLabel(y_label);
+
+    ui->widget_ch_57->axisRect()->setupFullAxesBox();
+    ui->widget_ch_57->plotLayout()->insertRow(0);
+    ui->widget_ch_57->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_57, "Channel 57"));
+    ui->widget_ch_57->xAxis->setLabel(x_label);
+    ui->widget_ch_57->yAxis->setLabel(y_label);
+
+    ui->widget_ch_58->axisRect()->setupFullAxesBox();
+    ui->widget_ch_58->plotLayout()->insertRow(0);
+    ui->widget_ch_58->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_58, "Channel 58"));
+    ui->widget_ch_58->xAxis->setLabel(x_label);
+    ui->widget_ch_58->yAxis->setLabel(y_label);
+
+    ui->widget_ch_59->axisRect()->setupFullAxesBox();
+    ui->widget_ch_59->plotLayout()->insertRow(0);
+    ui->widget_ch_59->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_59, "Channel 59"));
+    ui->widget_ch_59->xAxis->setLabel(x_label);
+    ui->widget_ch_59->yAxis->setLabel(y_label);
+
+    ui->widget_ch_60->axisRect()->setupFullAxesBox();
+    ui->widget_ch_60->plotLayout()->insertRow(0);
+    ui->widget_ch_60->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_60, "Channel 60"));
+    ui->widget_ch_60->xAxis->setLabel(x_label);
+    ui->widget_ch_60->yAxis->setLabel(y_label);
+
+    ui->widget_ch_61->axisRect()->setupFullAxesBox();
+    ui->widget_ch_61->plotLayout()->insertRow(0);
+    ui->widget_ch_61->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_61, "Channel 61"));
+    ui->widget_ch_61->xAxis->setLabel(x_label);
+    ui->widget_ch_61->yAxis->setLabel(y_label);
+
+    ui->widget_ch_62->axisRect()->setupFullAxesBox();
+    ui->widget_ch_62->plotLayout()->insertRow(0);
+    ui->widget_ch_62->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_62, "Channel 62"));
+    ui->widget_ch_62->xAxis->setLabel(x_label);
+    ui->widget_ch_62->yAxis->setLabel(y_label);
+
+    ui->widget_ch_63->axisRect()->setupFullAxesBox();
+    ui->widget_ch_63->plotLayout()->insertRow(0);
+    ui->widget_ch_63->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->widget_ch_63, "Channel 63"));
+    ui->widget_ch_63->xAxis->setLabel(x_label);
+    ui->widget_ch_63->yAxis->setLabel(y_label);
+
+    SetRangeX();
+
+
+    // set mask gui according to device model
+
+    switch (worker->BoardInfo.FamilyCode)
+    {
+    case CAEN_DGTZ_XX720_FAMILY_CODE:
+    {
+
+        ui->MASK_CHANNEL_checkBox_gr1_ch0->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr2_ch0->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr3_ch0->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr4_ch0->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr5_ch0->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr6_ch0->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr7_ch0->setEnabled(false);
+
+        ui->CHANNEL_TRIGGER_checkBox_gr1_ch8->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr1_ch9->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr1_ch10->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr1_ch11->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr1_ch12->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr1_ch13->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr1_ch14->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr1_ch15->setEnabled(false);
+
+        ui->CHANNEL_TRIGGER_checkBox_gr2_ch16->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr2_ch17->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr2_ch18->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr2_ch19->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr2_ch20->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr2_ch21->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr2_ch22->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr2_ch23->setEnabled(false);
+
+        ui->CHANNEL_TRIGGER_checkBox_gr3_ch24->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr3_ch25->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr3_ch26->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr3_ch27->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr3_ch28->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr3_ch29->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr3_ch30->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr3_ch31->setEnabled(false);
+
+        ui->CHANNEL_TRIGGER_checkBox_gr4_ch32->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr4_ch33->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr4_ch34->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr4_ch35->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr4_ch36->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr4_ch37->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr4_ch38->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr4_ch39->setEnabled(false);
+
+        ui->CHANNEL_TRIGGER_checkBox_gr5_ch40->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr5_ch41->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr5_ch42->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr5_ch43->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr5_ch44->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr5_ch45->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr5_ch46->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr5_ch47->setEnabled(false);
+
+        ui->CHANNEL_TRIGGER_checkBox_gr6_ch48->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr6_ch49->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr6_ch50->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr6_ch51->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr6_ch52->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr6_ch53->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr6_ch54->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr6_ch55->setEnabled(false);
+
+        ui->CHANNEL_TRIGGER_checkBox_gr7_ch56->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr7_ch57->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr7_ch58->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr7_ch59->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr7_ch60->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr7_ch61->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr7_ch62->setEnabled(false);
+        ui->CHANNEL_TRIGGER_checkBox_gr7_ch63->setEnabled(false);
+
+
+
+        break;
+    }
+    case CAEN_DGTZ_XX740_FAMILY_CODE:
+    {
+        ui->MASK_CHANNEL_checkBox_gr0_ch1->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr0_ch2->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr0_ch3->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr0_ch4->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr0_ch5->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr0_ch6->setEnabled(false);
+        ui->MASK_CHANNEL_checkBox_gr0_ch7->setEnabled(false);
+        break;
+    }
+    default:
+        qDebug() << "Add device in list" << endl;
+
+    }
+
 
 
 
@@ -376,66 +722,322 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
 {
     long time_label_start = get_time();
 
+
     ui->widget_011->clearGraphs();
     ui->widget_012->clearGraphs();
     ui->widget_013->clearGraphs();
     ui->widget_014->clearGraphs();
     ui->widget_015->clearGraphs();
-
     ui->widget_021->clearGraphs();
     ui->widget_022->clearGraphs();
     ui->widget_023->clearGraphs();
+
     ui->widget_024->clearGraphs();
     ui->widget_025->clearGraphs();
-
     ui->widget_031->clearGraphs();
     ui->widget_032->clearGraphs();
     ui->widget_033->clearGraphs();
     ui->widget_034->clearGraphs();
     ui->widget_035->clearGraphs();
-
     ui->widget_041->clearGraphs();
+
     ui->widget_042->clearGraphs();
     ui->widget_043->clearGraphs();
     ui->widget_044->clearGraphs();
     ui->widget_045->clearGraphs();
-
     ui->widget_051->clearGraphs();
     ui->widget_052->clearGraphs();
     ui->widget_053->clearGraphs();
     ui->widget_054->clearGraphs();
-    ui->widget_055->clearGraphs();
+
+    ui->widget_055->clearGraphs();    
+    ui->widget_ch_25->clearGraphs();
+    ui->widget_ch_26->clearGraphs();
+    ui->widget_ch_27->clearGraphs();
+    ui->widget_ch_28->clearGraphs();
+    ui->widget_ch_29->clearGraphs();
+    ui->widget_ch_30->clearGraphs();
+    ui->widget_ch_31->clearGraphs();
+
+    ui->widget_ch_32->clearGraphs();
+    ui->widget_ch_33->clearGraphs();
+    ui->widget_ch_34->clearGraphs();
+    ui->widget_ch_35->clearGraphs();
+    ui->widget_ch_36->clearGraphs();
+    ui->widget_ch_37->clearGraphs();
+    ui->widget_ch_38->clearGraphs();
+    ui->widget_ch_39->clearGraphs();
+
+    ui->widget_ch_40->clearGraphs();
+    ui->widget_ch_41->clearGraphs();
+    ui->widget_ch_42->clearGraphs();
+    ui->widget_ch_43->clearGraphs();
+    ui->widget_ch_44->clearGraphs();
+    ui->widget_ch_45->clearGraphs();
+    ui->widget_ch_46->clearGraphs();
+    ui->widget_ch_47->clearGraphs();
+
+    ui->widget_ch_48->clearGraphs();
+    ui->widget_ch_49->clearGraphs();
+    ui->widget_ch_50->clearGraphs();
+    ui->widget_ch_51->clearGraphs();
+    ui->widget_ch_52->clearGraphs();
+    ui->widget_ch_53->clearGraphs();
+    ui->widget_ch_54->clearGraphs();
+    ui->widget_ch_55->clearGraphs();
+
+    ui->widget_ch_56->clearGraphs();
+    ui->widget_ch_57->clearGraphs();
+    ui->widget_ch_58->clearGraphs();
+    ui->widget_ch_59->clearGraphs();
+    ui->widget_ch_60->clearGraphs();
+    ui->widget_ch_61->clearGraphs();
+    ui->widget_ch_62->clearGraphs();
+    ui->widget_ch_63->clearGraphs();
+
 
     // ///////////////////
-    ui->widget_011->addGraph();
-    ui->widget_012->addGraph();
-    ui->widget_013->addGraph();
-    ui->widget_014->addGraph();
-    ui->widget_015->addGraph();
+    switch (worker->BoardInfo.FamilyCode)
+    {
+    case CAEN_DGTZ_XX720_FAMILY_CODE:
+    {
 
-    ui->widget_021->addGraph();
-    ui->widget_022->addGraph();
-    ui->widget_023->addGraph();
-    ui->widget_024->addGraph();
-    ui->widget_025->addGraph();
+        if(worker->WDcfg.EnableMask & 1)
+        {
+            ui->widget_011->addGraph();
+            ui->widget_011->graph(0)->setData(array_x, array_y[0]);
+        }
 
-    ui->widget_031->addGraph();
-    ui->widget_032->addGraph();
-    ui->widget_033->addGraph();
-    ui->widget_034->addGraph();
-    ui->widget_035->addGraph();
+        if(worker->WDcfg.EnableMask & 2)
+        {
+            ui->widget_012->addGraph();
+            ui->widget_012->graph(0)->setData(array_x, array_y[1]);
+        }
 
-    ui->widget_041->addGraph();
-    ui->widget_042->addGraph();
-    ui->widget_043->addGraph();
-    ui->widget_044->addGraph();
-    ui->widget_045->addGraph();
+        if(worker->WDcfg.EnableMask & 4)
+        {
+            ui->widget_013->addGraph();
+            ui->widget_013->graph(0)->setData(array_x, array_y[2]);
+        }
 
-    ui->widget_051->addGraph();
-    ui->widget_052->addGraph();
-    ui->widget_053->addGraph();
-    ui->widget_054->addGraph();
-    ui->widget_055->addGraph();
+        if(worker->WDcfg.EnableMask & 8)
+        {
+            ui->widget_014->addGraph();
+            ui->widget_014->graph(0)->setData(array_x, array_y[3]);
+        }
+
+        if(worker->WDcfg.EnableMask & 16)
+        {
+            ui->widget_015->addGraph();
+            ui->widget_015->graph(0)->setData(array_x, array_y[4]);
+        }
+
+        if(worker->WDcfg.EnableMask & 32)
+        {
+            ui->widget_021->addGraph();
+            ui->widget_021->graph(0)->setData(array_x, array_y[5]);
+        }
+
+        if(worker->WDcfg.EnableMask & 64)
+        {
+            ui->widget_022->addGraph();
+            ui->widget_022->graph(0)->setData(array_x, array_y[6]);
+        }
+
+        if(worker->WDcfg.EnableMask & 128)
+        {
+            ui->widget_023->addGraph();
+            ui->widget_023->graph(0)->setData(array_x, array_y[7]);
+        }
+
+        break;
+    }
+
+    case CAEN_DGTZ_XX740_FAMILY_CODE:
+    {
+        if(worker->WDcfg.EnableMask & 1)
+        {
+            ui->widget_011->addGraph();
+            ui->widget_012->addGraph();
+            ui->widget_013->addGraph();
+            ui->widget_014->addGraph();
+            ui->widget_015->addGraph();
+            ui->widget_021->addGraph();
+            ui->widget_022->addGraph();
+            ui->widget_023->addGraph();
+
+            ui->widget_011->graph(0)->setData(array_x, array_y[0]);
+            ui->widget_012->graph(0)->setData(array_x, array_y[1]);
+            ui->widget_013->graph(0)->setData(array_x, array_y[2]);
+            ui->widget_014->graph(0)->setData(array_x, array_y[3]);
+            ui->widget_015->graph(0)->setData(array_x, array_y[4]);
+            ui->widget_021->graph(0)->setData(array_x, array_y[5]);
+            ui->widget_022->graph(0)->setData(array_x, array_y[6]);
+            ui->widget_023->graph(0)->setData(array_x, array_y[7]);
+
+        }
+
+        if(worker->WDcfg.EnableMask & 2)
+        {
+            ui->widget_024->addGraph();
+            ui->widget_025->addGraph();
+            ui->widget_031->addGraph();
+            ui->widget_032->addGraph();
+            ui->widget_033->addGraph();
+            ui->widget_034->addGraph();
+            ui->widget_035->addGraph();
+            ui->widget_041->addGraph();
+
+            ui->widget_024->graph(0)->setData(array_x, array_y[8]);
+            ui->widget_025->graph(0)->setData(array_x, array_y[9]);
+            ui->widget_031->graph(0)->setData(array_x, array_y[10]);
+            ui->widget_032->graph(0)->setData(array_x, array_y[11]);
+            ui->widget_033->graph(0)->setData(array_x, array_y[12]);
+            ui->widget_034->graph(0)->setData(array_x, array_y[13]);
+            ui->widget_035->graph(0)->setData(array_x, array_y[14]);
+            ui->widget_041->graph(0)->setData(array_x, array_y[15]);
+        }
+
+        if(worker->WDcfg.EnableMask & 4)
+        {
+            ui->widget_042->addGraph();
+            ui->widget_043->addGraph();
+            ui->widget_044->addGraph();
+            ui->widget_045->addGraph();
+            ui->widget_051->addGraph();
+            ui->widget_052->addGraph();
+            ui->widget_053->addGraph();
+            ui->widget_054->addGraph();
+
+            ui->widget_042->graph(0)->setData(array_x, array_y[16]);
+            ui->widget_043->graph(0)->setData(array_x, array_y[17]);
+            ui->widget_044->graph(0)->setData(array_x, array_y[18]);
+            ui->widget_045->graph(0)->setData(array_x, array_y[19]);
+            ui->widget_051->graph(0)->setData(array_x, array_y[20]);
+            ui->widget_052->graph(0)->setData(array_x, array_y[21]);
+            ui->widget_053->graph(0)->setData(array_x, array_y[22]);
+            ui->widget_054->graph(0)->setData(array_x, array_y[23]);
+
+        }
+
+        if(worker->WDcfg.EnableMask & 8)
+        {
+             ui->widget_055->addGraph();
+             ui->widget_ch_25->addGraph();
+             ui->widget_ch_26->addGraph();
+             ui->widget_ch_27->addGraph();
+             ui->widget_ch_28->addGraph();
+             ui->widget_ch_29->addGraph();
+             ui->widget_ch_30->addGraph();
+             ui->widget_ch_31->addGraph();
+
+             ui->widget_055->graph(0)->setData(array_x, array_y[24]);
+             ui->widget_ch_25->graph(0)->setData(array_x, array_y[25]);
+             ui->widget_ch_26->graph(0)->setData(array_x, array_y[26]);
+             ui->widget_ch_27->graph(0)->setData(array_x, array_y[27]);
+             ui->widget_ch_28->graph(0)->setData(array_x, array_y[28]);
+             ui->widget_ch_29->graph(0)->setData(array_x, array_y[29]);
+             ui->widget_ch_30->graph(0)->setData(array_x, array_y[30]);
+             ui->widget_ch_31->graph(0)->setData(array_x, array_y[31]);
+
+
+        }
+
+        if(worker->WDcfg.EnableMask & 16)
+        {
+            ui->widget_ch_32->addGraph();
+            ui->widget_ch_33->addGraph();
+            ui->widget_ch_34->addGraph();
+            ui->widget_ch_35->addGraph();
+            ui->widget_ch_36->addGraph();
+            ui->widget_ch_37->addGraph();
+            ui->widget_ch_38->addGraph();
+            ui->widget_ch_39->addGraph();
+
+            ui->widget_ch_32->graph(0)->setData(array_x, array_y[32]);
+            ui->widget_ch_33->graph(0)->setData(array_x, array_y[33]);
+            ui->widget_ch_34->graph(0)->setData(array_x, array_y[34]);
+            ui->widget_ch_35->graph(0)->setData(array_x, array_y[35]);
+            ui->widget_ch_36->graph(0)->setData(array_x, array_y[36]);
+            ui->widget_ch_37->graph(0)->setData(array_x, array_y[37]);
+            ui->widget_ch_38->graph(0)->setData(array_x, array_y[38]);
+            ui->widget_ch_39->graph(0)->setData(array_x, array_y[39]);
+
+
+        }
+
+        if(worker->WDcfg.EnableMask & 32)
+        {
+            ui->widget_ch_40->addGraph();
+            ui->widget_ch_41->addGraph();
+            ui->widget_ch_42->addGraph();
+            ui->widget_ch_43->addGraph();
+            ui->widget_ch_44->addGraph();
+            ui->widget_ch_45->addGraph();
+            ui->widget_ch_45->addGraph();
+            ui->widget_ch_47->addGraph();
+
+            ui->widget_ch_40->graph(0)->setData(array_x, array_y[40]);
+            ui->widget_ch_41->graph(0)->setData(array_x, array_y[41]);
+            ui->widget_ch_42->graph(0)->setData(array_x, array_y[42]);
+            ui->widget_ch_43->graph(0)->setData(array_x, array_y[43]);
+            ui->widget_ch_44->graph(0)->setData(array_x, array_y[44]);
+            ui->widget_ch_45->graph(0)->setData(array_x, array_y[45]);
+            ui->widget_ch_45->graph(0)->setData(array_x, array_y[46]);
+            ui->widget_ch_47->graph(0)->setData(array_x, array_y[47]);
+        }
+
+        if(worker->WDcfg.EnableMask & 64)
+        {
+            ui->widget_ch_48->addGraph();
+            ui->widget_ch_49->addGraph();
+            ui->widget_ch_50->addGraph();
+            ui->widget_ch_51->addGraph();
+            ui->widget_ch_52->addGraph();
+            ui->widget_ch_53->addGraph();
+            ui->widget_ch_54->addGraph();
+            ui->widget_ch_55->addGraph();
+
+            ui->widget_ch_48->graph(0)->setData(array_x, array_y[48]);
+            ui->widget_ch_49->graph(0)->setData(array_x, array_y[49]);
+            ui->widget_ch_50->graph(0)->setData(array_x, array_y[50]);
+            ui->widget_ch_51->graph(0)->setData(array_x, array_y[51]);
+            ui->widget_ch_52->graph(0)->setData(array_x, array_y[52]);
+            ui->widget_ch_53->graph(0)->setData(array_x, array_y[53]);
+            ui->widget_ch_54->graph(0)->setData(array_x, array_y[54]);
+            ui->widget_ch_55->graph(0)->setData(array_x, array_y[55]);
+        }
+
+        if(worker->WDcfg.EnableMask & 128)
+        {
+            ui->widget_ch_56->addGraph();
+            ui->widget_ch_57->addGraph();
+            ui->widget_ch_58->addGraph();
+            ui->widget_ch_59->addGraph();
+            ui->widget_ch_60->addGraph();
+            ui->widget_ch_61->addGraph();
+            ui->widget_ch_62->addGraph();
+            ui->widget_ch_63->addGraph();
+
+            ui->widget_ch_56->graph(0)->setData(array_x, array_y[56]);
+            ui->widget_ch_57->graph(0)->setData(array_x, array_y[57]);
+            ui->widget_ch_58->graph(0)->setData(array_x, array_y[58]);
+            ui->widget_ch_59->graph(0)->setData(array_x, array_y[59]);
+            ui->widget_ch_60->graph(0)->setData(array_x, array_y[60]);
+            ui->widget_ch_61->graph(0)->setData(array_x, array_y[61]);
+            ui->widget_ch_62->graph(0)->setData(array_x, array_y[62]);
+            ui->widget_ch_63->graph(0)->setData(array_x, array_y[63]);
+        }
+
+        break;
+    }
+    default:
+        qDebug() << "add device in list" << endl;
+
+    }
+
+
+
 
     // /////////////////////////
 
@@ -458,37 +1060,6 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
 //        xx.push_back(i);
 //    }
 
-    ui->widget_011->graph(0)->setData(array_x, array_y[0]);
-    ui->widget_012->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_013->graph(0)->setData(array_x, array_y[2]);
-    ui->widget_014->graph(0)->setData(array_x, array_y[3]);
-    ui->widget_015->graph(0)->setData(array_x, array_y[4]);
-
-    ui->widget_021->graph(0)->setData(array_x, array_y[5]);
-    ui->widget_022->graph(0)->setData(array_x, array_y[6]);
-    ui->widget_023->graph(0)->setData(array_x, array_y[7]);
-    ui->widget_024->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_025->graph(0)->setData(array_x, array_y[1]);
-
-    ui->widget_031->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_032->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_033->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_034->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_035->graph(0)->setData(array_x, array_y[1]);
-
-    ui->widget_041->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_042->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_043->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_044->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_045->graph(0)->setData(array_x, array_y[1]);
-
-    ui->widget_051->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_052->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_053->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_054->graph(0)->setData(array_x, array_y[1]);
-    ui->widget_055->graph(0)->setData(array_x, array_y[1]);
-
-
 
     ///////////////////
     //ui->widget_011->graph(0)->setName("Ch 0");
@@ -502,30 +1073,74 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
     ui->widget_013->replot();
     ui->widget_014->replot();
     ui->widget_015->replot();
-
     ui->widget_021->replot();
     ui->widget_022->replot();
     ui->widget_023->replot();
+
     ui->widget_024->replot();
     ui->widget_025->replot();
-
     ui->widget_031->replot();
     ui->widget_032->replot();
     ui->widget_033->replot();
     ui->widget_034->replot();
     ui->widget_035->replot();
-
     ui->widget_041->replot();
+
     ui->widget_042->replot();
     ui->widget_043->replot();
     ui->widget_044->replot();
     ui->widget_045->replot();
-
     ui->widget_051->replot();
     ui->widget_052->replot();
     ui->widget_053->replot();
     ui->widget_054->replot();
-    ui->widget_055->replot();
+
+    ui->widget_055->replot();    
+    ui->widget_ch_25->replot();
+    ui->widget_ch_26->replot();
+    ui->widget_ch_27->replot();
+    ui->widget_ch_28->replot();
+    ui->widget_ch_29->replot();
+    ui->widget_ch_30->replot();
+    ui->widget_ch_31->replot();
+
+    ui->widget_ch_32->replot();
+    ui->widget_ch_33->replot();
+    ui->widget_ch_34->replot();
+    ui->widget_ch_35->replot();
+    ui->widget_ch_36->replot();
+    ui->widget_ch_37->replot();
+    ui->widget_ch_38->replot();
+    ui->widget_ch_39->replot();
+
+    ui->widget_ch_40->replot();
+    ui->widget_ch_41->replot();
+    ui->widget_ch_42->replot();
+    ui->widget_ch_43->replot();
+    ui->widget_ch_44->replot();
+    ui->widget_ch_45->replot();
+    ui->widget_ch_46->replot();
+    ui->widget_ch_47->replot();
+
+    ui->widget_ch_48->replot();
+    ui->widget_ch_49->replot();
+    ui->widget_ch_50->replot();
+    ui->widget_ch_51->replot();
+    ui->widget_ch_52->replot();
+    ui->widget_ch_53->replot();
+    ui->widget_ch_54->replot();
+    ui->widget_ch_55->replot();
+
+    ui->widget_ch_56->replot();
+    ui->widget_ch_57->replot();
+    ui->widget_ch_58->replot();
+    ui->widget_ch_59->replot();
+    ui->widget_ch_60->replot();
+    ui->widget_ch_61->replot();
+    ui->widget_ch_62->replot();
+    ui->widget_ch_63->replot();
+
+
 
     qDebug() << "in RedrawGraphs (time)" << get_time() - time_label_start << endl;
 }
@@ -715,6 +1330,12 @@ void MainWindow::SetRangeX()
 void MainWindow::on_radioButton_15_clicked(bool checked)
 {
     //CAEN_DGTZ_SendSWtrigger(handle);
+    emit this->SetContinuousTrigger(true);
+}
+
+void MainWindow::PlotMask(uint value)
+{
+    plot_mask = value;
 }
 
 
@@ -768,10 +1389,10 @@ void MainWindow::on_groupBox_3_clicked()
 
 }
 
-void MainWindow::on_spinBox_4_editingFinished()
-{
+//void MainWindow::on_spinBox_4_editingFinished()
+//{
 
-}
+//}
 
 void MainWindow::on_Test_Pattern_button_clicked()
 {
@@ -807,35 +1428,22 @@ void MainWindow::on_Test_Pattern_button_clicked(bool checked)
 
 void MainWindow::on_pushButton_5_clicked()
 {
-    ui->checkBox_11->setChecked(false);
-    ui->checkBox_12->setChecked(false);
-    ui->checkBox_13->setChecked(false);
-    ui->checkBox_14->setChecked(false);
-    ui->checkBox_15->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch1->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch2->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch3->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch4->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch5->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch6->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch7->setChecked(false);
 
-    ui->checkBox_21->setChecked(false);
-    ui->checkBox_22->setChecked(false);
-    ui->checkBox_23->setChecked(false);
-    ui->checkBox_24->setChecked(false);
-    ui->checkBox_25->setChecked(false);
-
-    ui->checkBox_31->setChecked(false);
-    ui->checkBox_32->setChecked(false);
-    ui->checkBox_33->setChecked(false);
-    ui->checkBox_34->setChecked(false);
-    ui->checkBox_35->setChecked(false);
-
-    ui->checkBox_41->setChecked(false);
-    ui->checkBox_42->setChecked(false);
-    ui->checkBox_43->setChecked(false);
-    ui->checkBox_44->setChecked(false);
-    ui->checkBox_45->setChecked(false);
-
-    ui->checkBox_51->setChecked(false);
-    ui->checkBox_52->setChecked(false);
-    ui->checkBox_53->setChecked(false);
-    ui->checkBox_54->setChecked(false);
-    ui->checkBox_55->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr1_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr2_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr3_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr4_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr5_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr6_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr7_ch0->setChecked(false);
 
     emit this->MaskChannelAll(false);
 
@@ -843,35 +1451,23 @@ void MainWindow::on_pushButton_5_clicked()
 
 void MainWindow::on_pushButton_4_clicked()
 {
-    ui->checkBox_11->setChecked(true);
-    ui->checkBox_12->setChecked(true);
-    ui->checkBox_13->setChecked(true);
-    ui->checkBox_14->setChecked(true);
-    ui->checkBox_15->setChecked(true);
 
-    ui->checkBox_21->setChecked(true);
-    ui->checkBox_22->setChecked(true);
-    ui->checkBox_23->setChecked(true);
-    ui->checkBox_24->setChecked(true);
-    ui->checkBox_25->setChecked(true);
+    ui->MASK_CHANNEL_checkBox_gr0_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch1->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch2->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch3->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch4->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch5->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch6->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr0_ch7->setChecked(false);
 
-    ui->checkBox_31->setChecked(true);
-    ui->checkBox_32->setChecked(true);
-    ui->checkBox_33->setChecked(true);
-    ui->checkBox_34->setChecked(true);
-    ui->checkBox_35->setChecked(true);
-
-    ui->checkBox_41->setChecked(true);
-    ui->checkBox_42->setChecked(true);
-    ui->checkBox_43->setChecked(true);
-    ui->checkBox_44->setChecked(true);
-    ui->checkBox_45->setChecked(true);
-
-    ui->checkBox_51->setChecked(true);
-    ui->checkBox_52->setChecked(true);
-    ui->checkBox_53->setChecked(true);
-    ui->checkBox_54->setChecked(true);
-    ui->checkBox_55->setChecked(true);
+    ui->MASK_CHANNEL_checkBox_gr1_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr2_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr3_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr4_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr5_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr6_ch0->setChecked(false);
+    ui->MASK_CHANNEL_checkBox_gr7_ch0->setChecked(false);
 
 
     emit this->MaskChannelAll(true);
@@ -879,54 +1475,55 @@ void MainWindow::on_pushButton_4_clicked()
 
 }
 
-void MainWindow::on_checkBox_11_clicked(bool checked)
+
+
+void MainWindow::on_MASK_CHANNEL_checkBox_gr0_ch0_clicked(bool checked)
 {
     emit this->MaskChannel(0, checked);
 }
 
-void MainWindow::on_checkBox_12_clicked(bool checked)
+void MainWindow::on_MASK_CHANNEL_checkBox_gr0_ch1_clicked(bool checked)
 {
     emit this->MaskChannel(1, checked);
 }
 
-void MainWindow::on_checkBox_13_clicked(bool checked)
+void MainWindow::on_MASK_CHANNEL_checkBox_gr0_ch2_clicked(bool checked)
 {
     emit this->MaskChannel(2, checked);
 }
 
-void MainWindow::on_checkBox_14_clicked(bool checked)
+void MainWindow::on_MASK_CHANNEL_checkBox_gr0_ch3_clicked(bool checked)
 {
     emit this->MaskChannel(3, checked);
 }
 
-void MainWindow::on_checkBox_15_clicked(bool checked)
+void MainWindow::on_MASK_CHANNEL_checkBox_gr0_ch4_clicked(bool checked)
 {
     emit this->MaskChannel(4, checked);
 }
 
-////////////////////////////////////////
-
-void MainWindow::on_checkBox_21_clicked(bool checked)
+void MainWindow::on_MASK_CHANNEL_checkBox_gr0_ch5_clicked(bool checked)
 {
     emit this->MaskChannel(5, checked);
 }
 
-void MainWindow::on_checkBox_22_clicked(bool checked)
+void MainWindow::on_MASK_CHANNEL_checkBox_gr0_ch6_clicked(bool checked)
 {
     emit this->MaskChannel(6, checked);
 }
 
-void MainWindow::on_checkBox_23_clicked(bool checked)
+void MainWindow::on_MASK_CHANNEL_checkBox_gr0_ch7_clicked(bool checked)
 {
     emit this->MaskChannel(7, checked);
 }
 
-void MainWindow::on_checkBox_24_clicked(bool checked)
-{
-    emit this->MaskChannel(8, checked);
-}
+
 
 ////////////////////////////////////////
+
+
+
+
 
 void MainWindow::on_verticalSlider_valueChanged(int value)
 {
@@ -968,101 +1565,101 @@ void MainWindow::on_pushButton_Reprogram_clicked()
 
 
 
-void MainWindow::on_checkBox_25_clicked(bool checked)
-{
-    emit this->MaskChannel(9, checked);
-}
+//void MainWindow::on_checkBox_25_clicked(bool checked)
+//{
+//    emit this->MaskChannel(9, checked);
+//}
 
-void MainWindow::on_checkBox_31_clicked(bool checked)
-{
-    emit this->MaskChannel(10, checked);
-}
+//void MainWindow::on_checkBox_31_clicked(bool checked)
+//{
+//    emit this->MaskChannel(10, checked);
+//}
 
-void MainWindow::on_checkBox_32_clicked(bool checked)
-{
-    emit this->MaskChannel(11, checked);
-}
+//void MainWindow::on_checkBox_32_clicked(bool checked)
+//{
+//    emit this->MaskChannel(11, checked);
+//}
 
-void MainWindow::on_checkBox_33_clicked(bool checked)
-{
-    emit this->MaskChannel(12, checked);
-}
+//void MainWindow::on_checkBox_33_clicked(bool checked)
+//{
+//    emit this->MaskChannel(12, checked);
+//}
 
-void MainWindow::on_checkBox_34_clicked(bool checked)
-{
-    emit this->MaskChannel(13, checked);
-}
+//void MainWindow::on_checkBox_34_clicked(bool checked)
+//{
+//    emit this->MaskChannel(13, checked);
+//}
 
-void MainWindow::on_checkBox_35_clicked(bool checked)
-{
-    emit this->MaskChannel(14, checked);
-}
-
-
-
-void MainWindow::on_checkBox_41_clicked(bool checked)
-{
-    emit this->MaskChannel(15, checked);
-}
-
-void MainWindow::on_checkBox_42_clicked(bool checked)
-{
-    emit this->MaskChannel(16, checked);
-}
+//void MainWindow::on_checkBox_35_clicked(bool checked)
+//{
+//    emit this->MaskChannel(14, checked);
+//}
 
 
 
-void MainWindow::on_checkBox_43_clicked(bool checked)
-{
-    emit this->MaskChannel(17, checked);
-}
+//void MainWindow::on_checkBox_41_clicked(bool checked)
+//{
+//    emit this->MaskChannel(15, checked);
+//}
 
-void MainWindow::on_checkBox_44_clicked(bool checked)
-{
-    emit this->MaskChannel(18, checked);
-}
-
-
-
-void MainWindow::on_checkBox_45_clicked(bool checked)
-{
-    emit this->MaskChannel(19, checked);
-}
+//void MainWindow::on_checkBox_42_clicked(bool checked)
+//{
+//    emit this->MaskChannel(16, checked);
+//}
 
 
 
-void MainWindow::on_checkBox_51_clicked(bool checked)
-{
-    emit this->MaskChannel(20, checked);
-}
+//void MainWindow::on_checkBox_43_clicked(bool checked)
+//{
+//    emit this->MaskChannel(17, checked);
+//}
+
+//void MainWindow::on_checkBox_44_clicked(bool checked)
+//{
+//    emit this->MaskChannel(18, checked);
+//}
 
 
 
-void MainWindow::on_checkBox_52_clicked(bool checked)
-{
-    emit this->MaskChannel(21, checked);
-}
+//void MainWindow::on_checkBox_45_clicked(bool checked)
+//{
+//    emit this->MaskChannel(19, checked);
+//}
 
 
 
-void MainWindow::on_checkBox_53_clicked(bool checked)
-{
-    emit this->MaskChannel(22, checked);
-}
+//void MainWindow::on_checkBox_51_clicked(bool checked)
+//{
+//    emit this->MaskChannel(20, checked);
+//}
 
 
 
-void MainWindow::on_checkBox_54_clicked(bool checked)
-{
-    emit this->MaskChannel(23, checked);
-}
+//void MainWindow::on_checkBox_52_clicked(bool checked)
+//{
+//    emit this->MaskChannel(21, checked);
+//}
 
 
 
-void MainWindow::on_checkBox_55_clicked(bool checked)
-{
-    emit this->MaskChannel(24, checked);
-}
+//void MainWindow::on_checkBox_53_clicked(bool checked)
+//{
+//    emit this->MaskChannel(22, checked);
+//}
+
+
+
+//void MainWindow::on_checkBox_54_clicked(bool checked)
+//{
+//    emit this->MaskChannel(23, checked);
+//}
+
+
+
+//void MainWindow::on_checkBox_55_clicked(bool checked)
+//{
+//    emit this->MaskChannel(24, checked);
+//}
 
 void MainWindow::on_pushButton_7_clicked()
 {
@@ -1218,10 +1815,10 @@ void MainWindow::on_pushButton_8_clicked()
     emit this->CHANNEL_TRIGGER_all(false);
 }
 
-void MainWindow::on_checkBox_12_clicked()
-{
+//void MainWindow::on_checkBox_12_clicked()
+//{
 
-}
+//}
 
 void MainWindow::on_CHANNEL_TRIGGER_checkBox_gr0_ch0_clicked(bool checked)
 {
@@ -1612,4 +2209,54 @@ void MainWindow::on_spinBox_x_min_valueChanged(int arg1)
 {
     x_min = arg1;
     SetRangeX();
+}
+
+void MainWindow::on_MASK_CHANNEL_checkBox_gr1_ch0_clicked(bool checked)
+{
+    emit this->MaskChannel(1, checked); // mask the group, not channel
+}
+
+void MainWindow::on_MASK_CHANNEL_checkBox_gr2_ch0_clicked(bool checked)
+{
+    emit this->MaskChannel(2, checked); // mask the group, not channel
+}
+
+void MainWindow::on_MASK_CHANNEL_checkBox_gr3_ch0_clicked(bool checked)
+{
+    emit this->MaskChannel(3, checked); // mask the group, not channel
+}
+
+void MainWindow::on_MASK_CHANNEL_checkBox_gr4_ch0_clicked(bool checked)
+{
+    emit this->MaskChannel(4, checked); // mask the group, not channel
+}
+
+void MainWindow::on_MASK_CHANNEL_checkBox_gr5_ch0_clicked(bool checked)
+{
+    emit this->MaskChannel(5, checked); // mask the group, not channel
+}
+
+void MainWindow::on_MASK_CHANNEL_checkBox_gr6_ch0_clicked(bool checked)
+{
+    emit this->MaskChannel(6, checked); // mask the group, not channel
+}
+
+void MainWindow::on_MASK_CHANNEL_checkBox_gr7_ch0_clicked(bool checked)
+{
+    emit this->MaskChannel(7, checked); // mask the group, not channel
+}
+
+void MainWindow::on_radioButton_14_clicked(bool checked)
+{
+
+}
+
+void MainWindow::on_radioButton_clicked()
+{
+
+}
+
+void MainWindow::on_radioButton_clicked(bool checked)
+{
+    emit this->SetContinuousTrigger(false);
 }

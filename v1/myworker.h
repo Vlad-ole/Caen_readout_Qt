@@ -96,6 +96,9 @@ public slots:
     void SetEventsPerFile(int);
     void SetFolder(QString);
 
+    void SetContinuousTrigger(bool);
+
+
 signals:
     void Message(QString);
     void finished();
@@ -107,6 +110,7 @@ signals:
     //void GraphData(double **array, int rows, int cols);
     //void GraphData1D(double *array, int size);
     void RedrawGraphsTest();
+    void PlotMask(uint);
 
 
 };

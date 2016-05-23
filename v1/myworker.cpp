@@ -796,7 +796,24 @@ void MyWorker::MaskChannelAll(bool value)
 void MyWorker::SetTriggerValue(int ch, int val)
 {
     qDebug() << "in SetTriggerValue slot" << endl;
-    WDcfg.Threshold[ch] = val;
+
+    double Vpp = 2000; // mV
+
+    switch (BoardInfo.FamilyCode)
+    {
+    case CAEN_DGTZ_XX720_FAMILY_CODE:
+    case CAEN_DGTZ_XX740_FAMILY_CODE:
+    {
+        WDcfg.Threshold[ch] = ( pow(2.0, BoardInfo.ADC_NBits) - 1 ) * (val / Vpp + 0.5);
+        qDebug() << "WDcfg.Threshold[" << ch << "] = " << WDcfg.Threshold[ch] << endl;
+        break;
+    }
+    default:
+        qDebug() << "add device in list" << endl;
+    }
+
+
+
     Restart();
 }
 

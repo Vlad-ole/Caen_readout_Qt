@@ -584,7 +584,7 @@ p, li { white-space: pre-wrap; }
       </rect>
      </property>
      <property name="title">
-      <string>Threshold</string>
+      <string>Threshold[mV]</string>
      </property>
      <property name="flat">
       <bool>false</bool>
@@ -602,7 +602,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="maximum">
-       <number>4095</number>
+       <number>63</number>
       </property>
      </widget>
      <widget class="QSlider" name="verticalSlider">
@@ -614,8 +614,11 @@ p, li { white-space: pre-wrap; }
         <height>31</height>
        </rect>
       </property>
+      <property name="minimum">
+       <number>-1000</number>
+      </property>
       <property name="maximum">
-       <number>4095</number>
+       <number>1000</number>
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>

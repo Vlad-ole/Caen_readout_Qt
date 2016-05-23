@@ -260,6 +260,8 @@ private slots:
 
     void on_radioButton_clicked(bool checked);
 
+    void on_pushButton_6_clicked(bool checked);
+
 public slots:
     void Message(QString);
     void InitializationComplete();

@@ -439,11 +439,12 @@ public:
         spinBox_3 = new QSpinBox(groupBox_2);
         spinBox_3->setObjectName(QStringLiteral("spinBox_3"));
         spinBox_3->setGeometry(QRect(10, 50, 71, 31));
-        spinBox_3->setMaximum(4095);
+        spinBox_3->setMaximum(63);
         verticalSlider = new QSlider(groupBox_2);
         verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
         verticalSlider->setGeometry(QRect(10, 20, 171, 31));
-        verticalSlider->setMaximum(4095);
+        verticalSlider->setMinimum(-1000);
+        verticalSlider->setMaximum(1000);
         verticalSlider->setOrientation(Qt::Horizontal);
         verticalSlider->setInvertedControls(true);
         verticalSlider->setTickPosition(QSlider::NoTicks);
@@ -1586,7 +1587,7 @@ public:
         radioButton_12->setText(QApplication::translate("MainWindow", "External", 0));
         radioButton_13->setText(QApplication::translate("MainWindow", "Internal", 0));
         groupBox->setTitle(QApplication::translate("MainWindow", "Source", 0));
-        groupBox_2->setTitle(QApplication::translate("MainWindow", "Threshold", 0));
+        groupBox_2->setTitle(QApplication::translate("MainWindow", "Threshold[mV]", 0));
         pushButton_6->setText(QApplication::translate("MainWindow", "Set", 0));
         pushButton_2->setText(QApplication::translate("MainWindow", "Acquisition", 0));
         groupBox_8->setTitle(QApplication::translate("MainWindow", "Single / continious", 0));

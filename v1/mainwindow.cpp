@@ -112,6 +112,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     y_min = -1000;
     y_max = 1000;
 
+    trigger_value_ch.ch = 0;
+    trigger_value_ch.value = 0;
+
 }
 
 
@@ -1540,7 +1543,7 @@ void MainWindow::on_spinBox_2_valueChanged(int arg1)
 void MainWindow::on_pushButton_6_clicked()
 {
     emit this->SetTriggerValue(trigger_value_ch.ch, trigger_value_ch.value);
-    qDebug() << "SetTriggerValue_clicked()" << endl;
+    qDebug() << "SetTriggerValue_clicked() " << trigger_value_ch.ch << "   " << trigger_value_ch.value  << endl;
 }
 
 void MainWindow::on_pushButton_Reprogram_clicked()
@@ -2259,4 +2262,9 @@ void MainWindow::on_radioButton_clicked()
 void MainWindow::on_radioButton_clicked(bool checked)
 {
     emit this->SetContinuousTrigger(false);
+}
+
+void MainWindow::on_pushButton_6_clicked(bool checked)
+{
+
 }

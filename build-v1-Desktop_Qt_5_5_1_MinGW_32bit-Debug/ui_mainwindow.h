@@ -175,6 +175,9 @@ public:
     QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch61;
     QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch62;
     QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch63;
+    QGroupBox *groupBox_11;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton_3;
     QGroupBox *groupBox_6;
     QPushButton *pushButton_3;
     QSpinBox *spinBox;
@@ -439,7 +442,8 @@ public:
         spinBox_3 = new QSpinBox(groupBox_2);
         spinBox_3->setObjectName(QStringLiteral("spinBox_3"));
         spinBox_3->setGeometry(QRect(10, 50, 71, 31));
-        spinBox_3->setMaximum(63);
+        spinBox_3->setMinimum(-1000);
+        spinBox_3->setMaximum(1000);
         verticalSlider = new QSlider(groupBox_2);
         verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
         verticalSlider->setGeometry(QRect(10, 20, 171, 31));
@@ -999,6 +1003,16 @@ public:
 
         gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch63, 7, 8, 1, 1);
 
+        groupBox_11 = new QGroupBox(groupBox_3);
+        groupBox_11->setObjectName(QStringLiteral("groupBox_11"));
+        groupBox_11->setGeometry(QRect(260, 130, 101, 111));
+        radioButton_2 = new QRadioButton(groupBox_11);
+        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
+        radioButton_2->setGeometry(QRect(10, 30, 82, 17));
+        radioButton_2->setChecked(true);
+        radioButton_3 = new QRadioButton(groupBox_11);
+        radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
+        radioButton_3->setGeometry(QRect(10, 60, 82, 17));
         groupBox_6 = new QGroupBox(centralWidget);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
         groupBox_6->setGeometry(QRect(150, 10, 321, 141));
@@ -1024,10 +1038,11 @@ public:
         radioButton_9 = new QRadioButton(groupBox_5);
         radioButton_9->setObjectName(QStringLiteral("radioButton_9"));
         radioButton_9->setGeometry(QRect(20, 20, 82, 17));
+        radioButton_9->setChecked(true);
         radioButton_10 = new QRadioButton(groupBox_5);
         radioButton_10->setObjectName(QStringLiteral("radioButton_10"));
         radioButton_10->setGeometry(QRect(20, 40, 82, 17));
-        radioButton_10->setChecked(true);
+        radioButton_10->setChecked(false);
         pushButton_choose_folder = new QPushButton(groupBox_6);
         pushButton_choose_folder->setObjectName(QStringLiteral("pushButton_choose_folder"));
         pushButton_choose_folder->setGeometry(QRect(30, 110, 75, 23));
@@ -1563,7 +1578,7 @@ public:
         QObject::connect(verticalSlider, SIGNAL(valueChanged(int)), spinBox_3, SLOT(setValue(int)));
         QObject::connect(spinBox_3, SIGNAL(valueChanged(int)), verticalSlider, SLOT(setValue(int)));
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1697,6 +1712,9 @@ public:
         CHANNEL_TRIGGER_checkBox_gr7_ch61->setText(QString());
         CHANNEL_TRIGGER_checkBox_gr7_ch62->setText(QString());
         CHANNEL_TRIGGER_checkBox_gr7_ch63->setText(QString());
+        groupBox_11->setTitle(QApplication::translate("MainWindow", "Rising / Falling", 0));
+        radioButton_2->setText(QApplication::translate("MainWindow", "Rising", 0));
+        radioButton_3->setText(QApplication::translate("MainWindow", "Falling", 0));
         groupBox_6->setTitle(QApplication::translate("MainWindow", "Output settings", 0));
         pushButton_3->setText(QApplication::translate("MainWindow", "Write data", 0));
         label_2->setText(QApplication::translate("MainWindow", "Events per file", 0));

@@ -262,6 +262,12 @@ private slots:
 
     void on_pushButton_6_clicked(bool checked);
 
+    void on_lcdNumber_2_windowTitleChanged(const QString &title);
+
+    void on_radioButton_2_clicked(bool checked);
+
+    void on_radioButton_3_clicked(bool checked);
+
 public slots:
     void Message(QString);
     void InitializationComplete();
@@ -322,6 +328,7 @@ signals:
     void SetFolder(QString);
 
     void SetContinuousTrigger(bool);
+    void SetRisingFalling(bool);
 
 };
 

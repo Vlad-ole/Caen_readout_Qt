@@ -40,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL( SetRisingFalling(bool) ), worker, SLOT( SetRisingFalling(bool) ) );
     connect( this, SIGNAL( SetContinuousTrigger(bool)) , worker, SLOT( SetContinuousTrigger(bool) ) );
     connect( this, SIGNAL( SetEventsPerFile(int) ), worker, SLOT( SetEventsPerFile(int) ), Qt::DirectConnection );
     connect( this, SIGNAL( SetFolder(QString) ) , worker, SLOT( SetFolder(QString) ), Qt::DirectConnection);
@@ -2267,4 +2268,19 @@ void MainWindow::on_radioButton_clicked(bool checked)
 void MainWindow::on_pushButton_6_clicked(bool checked)
 {
 
+}
+
+void MainWindow::on_lcdNumber_2_windowTitleChanged(const QString &title)
+{
+
+}
+
+void MainWindow::on_radioButton_2_clicked(bool checked)
+{
+    emit this->SetRisingFalling(true);
+}
+
+void MainWindow::on_radioButton_3_clicked(bool checked)
+{
+    emit this->SetRisingFalling(false);
 }

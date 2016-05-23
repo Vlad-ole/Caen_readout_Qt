@@ -617,8 +617,7 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
             BinHeader[5] = EventInfo->TriggerTimeTag;
 
 
-
-            if (!WDrun->fout[ch])
+           if (!WDrun->fout[ch])
             {
                 //qDebug() << "WriteOutputFiles" << endl;
 
@@ -645,10 +644,16 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
                 }
             }
             if (WDcfg->Nbit == 8)
-                ns = (int)fwrite(Event8->DataChannel[ch], 1, Size, WDrun->fout[ch]);
+            {
+                 ns = (int)fwrite(Event8->DataChannel[ch], 1, Size, WDrun->fout[ch]);
+            }
             else
+            {
                 ns = (int)fwrite(Event16->DataChannel[ch] , 1 , Size*2, WDrun->fout[ch]) / 2; // my case
-            if (ns != Size) {
+                //qDebug() <<  << endl;
+            }
+            if (ns != Size)
+            {
                 // error writing to file
                 fclose(WDrun->fout[ch]);
                 WDrun->fout[ch]= NULL;
@@ -680,11 +685,20 @@ int WriteOutputFiles(WaveDumpConfig_t *WDcfg, WaveDumpRun_t *WDrun, CAEN_DGTZ_Ev
                 fprintf(WDrun->fout[ch], "Trigger Time Stamp: %u\n", EventInfo->TriggerTimeTag);
                 fprintf(WDrun->fout[ch], "DC offset (DAC): 0x%04X\n", WDcfg->DCoffset[ch] & 0xFFFF);
             }
-            for(j=0; j<Size; j++) {
+            for(j=0; j<Size; j++)
+            {
+                double Vpp = 2000; // mV
+
                 if (WDcfg->Nbit == 8)
-                    fprintf(WDrun->fout[ch], "%d\n", Event8->DataChannel[ch][j]);
+                {
+                    //fprintf(WDrun->fout[ch], "%f\n", Vpp * ( Event8->DataChannel[ch][j] / 255.0 - 0.5 ) ); // mV
+                    fprintf(WDrun->fout[ch], "%d\n", Event8->DataChannel[ch][j]); //channel
+                }
                 else
+                {
+                    //fprintf(WDrun->fout[ch], "%f\n", Vpp * ( Event16->DataChannel[ch][j] / 4095.0 - 0.5 ) ); // mV
                     fprintf(WDrun->fout[ch], "%d\n", Event16->DataChannel[ch][j]);
+                }
             }
         }
         else

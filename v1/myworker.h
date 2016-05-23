@@ -97,6 +97,7 @@ public slots:
     void SetFolder(QString);
 
     void SetContinuousTrigger(bool);
+    void SetRisingFalling(bool);
 
 
 signals:

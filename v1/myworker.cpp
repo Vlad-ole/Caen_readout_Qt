@@ -16,7 +16,7 @@ void MyWorker::Init()
     run_counter = 0;
     absolute_event_counter = 0;
 
-    WDcfg.out_file_isheader = false;
+
 
     int argc_my = 1;
     char* argv_my[0] = {};
@@ -76,6 +76,10 @@ void MyWorker::Init()
     ParseConfigFile(f_ini, &WDcfg);
     fclose(f_ini);
 
+
+    WDcfg.out_file_isheader = false;
+    WDcfg.out_file_type = ASCII;
+    WDcfg.TriggerEdge = 0;
 
     /* *************************************************************************************** */
     /* Open the digitizer and read the board information                                       */
@@ -243,6 +247,8 @@ void MyWorker::Readout_loop()
                 {
                     //printf("No data...\n");
                     qDebug() << "No data...\n";
+                    emit this->TransferSpeed( 0 );
+                    emit this->TriggerRate( 0 );
                 }
             }
             else
@@ -457,6 +463,8 @@ void MyWorker::Readout_loop()
                         qDebug() << "absolute_event_counter  = " << absolute_event_counter << endl;
                         for(int ch = 0; ch < Ch ;ch++)
                         {
+                            if(WDrun.fout[ch] != NULL)
+                                fclose(WDrun.fout[ch]);
                             WDrun.fout[ch] = NULL;
                             qDebug() << "WDrun.fout[" << ch << "] = " << WDrun.fout[ch] << endl;
                         }
@@ -942,5 +950,16 @@ void MyWorker::SetContinuousTrigger(bool value)
 
     qDebug() << "WDrun.ContinuousTrigger = " << WDrun.ContinuousTrigger << endl;
 
+    Restart();
+}
+
+void MyWorker::SetRisingFalling(bool IsRising)
+{
+    if(IsRising)
+        WDcfg.TriggerEdge = 0;
+    else
+        WDcfg.TriggerEdge = 1;
+
+    qDebug() << "WDcfg.TriggerEdge = " << WDcfg.TriggerEdge << endl;
     Restart();
 }

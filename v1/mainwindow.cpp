@@ -40,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL( SetDCOffset(int,int) ), worker, SLOT( SetDCOffset(int,int) ) );
     connect( this, SIGNAL( SetRisingFalling(bool) ), worker, SLOT( SetRisingFalling(bool) ) );
     connect( this, SIGNAL( SetContinuousTrigger(bool)) , worker, SLOT( SetContinuousTrigger(bool) ) );
     connect( this, SIGNAL( SetEventsPerFile(int) ), worker, SLOT( SetEventsPerFile(int) ), Qt::DirectConnection );
@@ -805,6 +806,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
     {
     case CAEN_DGTZ_XX720_FAMILY_CODE:
     {
+        qDebug() << "CAEN_DGTZ_XX720_FAMILY_CODE" << endl;
 
         if(worker->WDcfg.EnableMask & 1)
         {
@@ -859,6 +861,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
 
     case CAEN_DGTZ_XX740_FAMILY_CODE:
     {
+         qDebug() << "CAEN_DGTZ_XX740_FAMILY_CODE" << endl;
         if(worker->WDcfg.EnableMask & 1)
         {
             ui->widget_011->addGraph();
@@ -878,6 +881,8 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_021->graph(0)->setData(array_x, array_y[5]);
             ui->widget_022->graph(0)->setData(array_x, array_y[6]);
             ui->widget_023->graph(0)->setData(array_x, array_y[7]);
+
+            qDebug() << "worker->WDcfg.EnableMask & 1" << endl;
 
         }
 
@@ -900,6 +905,8 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_034->graph(0)->setData(array_x, array_y[13]);
             ui->widget_035->graph(0)->setData(array_x, array_y[14]);
             ui->widget_041->graph(0)->setData(array_x, array_y[15]);
+
+            qDebug() << "worker->WDcfg.EnableMask & 2" << endl;
         }
 
         if(worker->WDcfg.EnableMask & 4)
@@ -921,6 +928,8 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_052->graph(0)->setData(array_x, array_y[21]);
             ui->widget_053->graph(0)->setData(array_x, array_y[22]);
             ui->widget_054->graph(0)->setData(array_x, array_y[23]);
+
+            qDebug() << "worker->WDcfg.EnableMask & 4" << endl;
 
         }
 
@@ -944,7 +953,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
              ui->widget_ch_30->graph(0)->setData(array_x, array_y[30]);
              ui->widget_ch_31->graph(0)->setData(array_x, array_y[31]);
 
-
+            qDebug() << "worker->WDcfg.EnableMask & 8" << endl;
         }
 
         if(worker->WDcfg.EnableMask & 16)
@@ -967,7 +976,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_ch_38->graph(0)->setData(array_x, array_y[38]);
             ui->widget_ch_39->graph(0)->setData(array_x, array_y[39]);
 
-
+            qDebug() << "worker->WDcfg.EnableMask & 16" << endl;
         }
 
         if(worker->WDcfg.EnableMask & 32)
@@ -978,7 +987,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_ch_43->addGraph();
             ui->widget_ch_44->addGraph();
             ui->widget_ch_45->addGraph();
-            ui->widget_ch_45->addGraph();
+            ui->widget_ch_46->addGraph();
             ui->widget_ch_47->addGraph();
 
             ui->widget_ch_40->graph(0)->setData(array_x, array_y[40]);
@@ -987,8 +996,10 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_ch_43->graph(0)->setData(array_x, array_y[43]);
             ui->widget_ch_44->graph(0)->setData(array_x, array_y[44]);
             ui->widget_ch_45->graph(0)->setData(array_x, array_y[45]);
-            ui->widget_ch_45->graph(0)->setData(array_x, array_y[46]);
+            ui->widget_ch_46->graph(0)->setData(array_x, array_y[46]);
             ui->widget_ch_47->graph(0)->setData(array_x, array_y[47]);
+
+            qDebug() << "worker->WDcfg.EnableMask & 32" << endl;
         }
 
         if(worker->WDcfg.EnableMask & 64)
@@ -1010,6 +1021,8 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_ch_53->graph(0)->setData(array_x, array_y[53]);
             ui->widget_ch_54->graph(0)->setData(array_x, array_y[54]);
             ui->widget_ch_55->graph(0)->setData(array_x, array_y[55]);
+
+            qDebug() << "worker->WDcfg.EnableMask & 64" << endl;
         }
 
         if(worker->WDcfg.EnableMask & 128)
@@ -1031,6 +1044,8 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_ch_61->graph(0)->setData(array_x, array_y[61]);
             ui->widget_ch_62->graph(0)->setData(array_x, array_y[62]);
             ui->widget_ch_63->graph(0)->setData(array_x, array_y[63]);
+
+            qDebug() << "worker->WDcfg.EnableMask & 128" << endl;
         }
 
         break;
@@ -1205,7 +1220,7 @@ void MainWindow::SetRangeX()
     const double x_max_misros = x_max / 1000.0;
     const double x_min_misros = x_min / 1000.0;
 
-    //emit this->SetRecordLength(arg1);
+
 
     ui->widget_011->xAxis->setRange(x_min_misros, x_max_misros);
     ui->widget_012->xAxis->setRange(x_min_misros, x_max_misros);
@@ -1235,7 +1250,52 @@ void MainWindow::SetRangeX()
     ui->widget_052->xAxis->setRange(x_min_misros, x_max_misros);
     ui->widget_053->xAxis->setRange(x_min_misros, x_max_misros);
     ui->widget_054->xAxis->setRange(x_min_misros, x_max_misros);
+
     ui->widget_055->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_25->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_26->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_27->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_28->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_29->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_30->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_31->xAxis->setRange(x_min_misros, x_max_misros);
+
+    ui->widget_ch_32->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_33->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_34->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_35->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_36->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_37->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_38->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_39->xAxis->setRange(x_min_misros, x_max_misros);
+
+    ui->widget_ch_40->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_41->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_42->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_43->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_44->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_45->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_46->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_47->xAxis->setRange(x_min_misros, x_max_misros);
+
+    ui->widget_ch_48->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_49->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_50->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_51->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_52->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_53->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_54->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_55->xAxis->setRange(x_min_misros, x_max_misros);
+
+    ui->widget_ch_56->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_57->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_58->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_59->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_60->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_61->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_62->xAxis->setRange(x_min_misros, x_max_misros);
+    ui->widget_ch_63->xAxis->setRange(x_min_misros, x_max_misros);
+
 
     ui->widget_011->yAxis->setRangeLower(y_min);
     ui->widget_012->yAxis->setRangeLower(y_min);
@@ -1265,7 +1325,51 @@ void MainWindow::SetRangeX()
     ui->widget_052->yAxis->setRangeLower(y_min);
     ui->widget_053->yAxis->setRangeLower(y_min);
     ui->widget_054->yAxis->setRangeLower(y_min);
+
     ui->widget_055->yAxis->setRangeLower(y_min);
+    ui->widget_ch_25->yAxis->setRangeLower(y_min);
+    ui->widget_ch_26->yAxis->setRangeLower(y_min);
+    ui->widget_ch_27->yAxis->setRangeLower(y_min);
+    ui->widget_ch_28->yAxis->setRangeLower(y_min);
+    ui->widget_ch_29->yAxis->setRangeLower(y_min);
+    ui->widget_ch_30->yAxis->setRangeLower(y_min);
+    ui->widget_ch_31->yAxis->setRangeLower(y_min);
+
+    ui->widget_ch_32->yAxis->setRangeLower(y_min);
+    ui->widget_ch_33->yAxis->setRangeLower(y_min);
+    ui->widget_ch_34->yAxis->setRangeLower(y_min);
+    ui->widget_ch_35->yAxis->setRangeLower(y_min);
+    ui->widget_ch_36->yAxis->setRangeLower(y_min);
+    ui->widget_ch_37->yAxis->setRangeLower(y_min);
+    ui->widget_ch_38->yAxis->setRangeLower(y_min);
+    ui->widget_ch_39->yAxis->setRangeLower(y_min);
+
+    ui->widget_ch_40->yAxis->setRangeLower(y_min);
+    ui->widget_ch_41->yAxis->setRangeLower(y_min);
+    ui->widget_ch_42->yAxis->setRangeLower(y_min);
+    ui->widget_ch_43->yAxis->setRangeLower(y_min);
+    ui->widget_ch_44->yAxis->setRangeLower(y_min);
+    ui->widget_ch_45->yAxis->setRangeLower(y_min);
+    ui->widget_ch_46->yAxis->setRangeLower(y_min);
+    ui->widget_ch_47->yAxis->setRangeLower(y_min);
+
+    ui->widget_ch_48->yAxis->setRangeLower(y_min);
+    ui->widget_ch_49->yAxis->setRangeLower(y_min);
+    ui->widget_ch_50->yAxis->setRangeLower(y_min);
+    ui->widget_ch_51->yAxis->setRangeLower(y_min);
+    ui->widget_ch_52->yAxis->setRangeLower(y_min);
+    ui->widget_ch_53->yAxis->setRangeLower(y_min);
+    ui->widget_ch_54->yAxis->setRangeLower(y_min);
+    ui->widget_ch_55->yAxis->setRangeLower(y_min);
+
+    ui->widget_ch_56->yAxis->setRangeLower(y_min);
+    ui->widget_ch_57->yAxis->setRangeLower(y_min);
+    ui->widget_ch_58->yAxis->setRangeLower(y_min);
+    ui->widget_ch_59->yAxis->setRangeLower(y_min);
+    ui->widget_ch_60->yAxis->setRangeLower(y_min);
+    ui->widget_ch_61->yAxis->setRangeLower(y_min);
+    ui->widget_ch_62->yAxis->setRangeLower(y_min);
+    ui->widget_ch_63->yAxis->setRangeLower(y_min);
 
      // ------------------------------------------
     ui->widget_011->yAxis->setRangeUpper(y_max);
@@ -1296,7 +1400,51 @@ void MainWindow::SetRangeX()
     ui->widget_052->yAxis->setRangeUpper(y_max);
     ui->widget_053->yAxis->setRangeUpper(y_max);
     ui->widget_054->yAxis->setRangeUpper(y_max);
+
     ui->widget_055->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_25->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_26->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_27->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_28->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_29->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_30->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_31->yAxis->setRangeUpper(y_max);
+
+    ui->widget_ch_32->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_33->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_34->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_35->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_36->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_37->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_38->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_39->yAxis->setRangeUpper(y_max);
+
+    ui->widget_ch_40->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_41->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_42->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_43->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_44->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_45->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_46->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_47->yAxis->setRangeUpper(y_max);
+
+    ui->widget_ch_48->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_49->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_50->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_51->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_52->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_53->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_54->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_55->yAxis->setRangeUpper(y_max);
+
+    ui->widget_ch_56->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_57->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_58->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_59->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_60->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_61->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_62->yAxis->setRangeUpper(y_max);
+    ui->widget_ch_63->yAxis->setRangeUpper(y_max);
 
 
     ui->widget_011->replot();
@@ -2283,4 +2431,63 @@ void MainWindow::on_radioButton_2_clicked(bool checked)
 void MainWindow::on_radioButton_3_clicked(bool checked)
 {
     emit this->SetRisingFalling(false);
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    ui->spinBox_dcoffset_gr0->setValue(0);
+    ui->spinBox_dcoffset_gr1->setValue(0);
+    ui->spinBox_dcoffset_gr2->setValue(0);
+    ui->spinBox_dcoffset_gr3->setValue(0);
+    ui->spinBox_dcoffset_gr4->setValue(0);
+    ui->spinBox_dcoffset_gr5->setValue(0);
+    ui->spinBox_dcoffset_gr6->setValue(0);
+    ui->spinBox_dcoffset_gr7->setValue(0);
+}
+
+void MainWindow::on_spinBox_dcoffset_gr0_valueChanged(int arg1)
+{
+    emit this->SetDCOffset(0, arg1);
+}
+
+void MainWindow::on_spinBox_dcoffset_gr1_valueChanged(int arg1)
+{
+    emit this->SetDCOffset(1, arg1);
+}
+
+void MainWindow::on_spinBox_dcoffset_gr2_valueChanged(int arg1)
+{
+    emit this->SetDCOffset(2, arg1);
+}
+
+void MainWindow::on_spinBox_dcoffset_gr3_valueChanged(int arg1)
+{
+    emit this->SetDCOffset(3, arg1);
+}
+
+void MainWindow::on_spinBox_dcoffset_gr4_valueChanged(int arg1)
+{
+    emit this->SetDCOffset(4, arg1);
+}
+
+void MainWindow::on_spinBox_dcoffset_gr5_valueChanged(int arg1)
+{
+    emit this->SetDCOffset(5, arg1);
+}
+
+void MainWindow::on_spinBox_dcoffset_gr6_valueChanged(int arg1)
+{
+    emit this->SetDCOffset(6, arg1);
+}
+
+void MainWindow::on_spinBox_dcoffset_gr7_valueChanged(int arg1)
+{
+    emit this->SetDCOffset(7, arg1);
+}
+
+void MainWindow::on_spinBox_4_valueChanged(int arg1)
+{
+    emit this->SetRecordLength(arg1);
+
+    ui->spinBox_5->setValue(worker->WDcfg.Ts * arg1);
 }

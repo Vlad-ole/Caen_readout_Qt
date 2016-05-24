@@ -268,6 +268,26 @@ private slots:
 
     void on_radioButton_3_clicked(bool checked);
 
+    void on_pushButton_9_clicked();
+
+    void on_spinBox_dcoffset_gr0_valueChanged(int arg1);
+
+    void on_spinBox_dcoffset_gr1_valueChanged(int arg1);
+
+    void on_spinBox_dcoffset_gr2_valueChanged(int arg1);
+
+    void on_spinBox_dcoffset_gr3_valueChanged(int arg1);
+
+    void on_spinBox_dcoffset_gr4_valueChanged(int arg1);
+
+    void on_spinBox_dcoffset_gr5_valueChanged(int arg1);
+
+    void on_spinBox_dcoffset_gr6_valueChanged(int arg1);
+
+    void on_spinBox_dcoffset_gr7_valueChanged(int arg1);
+
+    void on_spinBox_4_valueChanged(int arg1);
+
 public slots:
     void Message(QString);
     void InitializationComplete();
@@ -329,6 +349,7 @@ signals:
 
     void SetContinuousTrigger(bool);
     void SetRisingFalling(bool);
+    void SetDCOffset(int, int);
 
 };
 

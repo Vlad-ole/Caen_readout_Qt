@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MyWorker_t {
-    QByteArrayData data[36];
-    char stringdata0[528];
+    QByteArrayData data[37];
+    char stringdata0[540];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -65,7 +65,8 @@ QT_MOC_LITERAL(31, 448, 14), // "SetOutFileType"
 QT_MOC_LITERAL(32, 463, 16), // "SetEventsPerFile"
 QT_MOC_LITERAL(33, 480, 9), // "SetFolder"
 QT_MOC_LITERAL(34, 490, 20), // "SetContinuousTrigger"
-QT_MOC_LITERAL(35, 511, 16) // "SetRisingFalling"
+QT_MOC_LITERAL(35, 511, 16), // "SetRisingFalling"
+QT_MOC_LITERAL(36, 528, 11) // "SetDCOffset"
 
     },
     "MyWorker\0Message\0\0finished\0"
@@ -82,7 +83,8 @@ QT_MOC_LITERAL(35, 511, 16) // "SetRisingFalling"
     "CHANNEL_TRIGGER_signal\0CHANNEL_TRIGGER_group\0"
     "CHANNEL_TRIGGER_all\0SetOutFileType\0"
     "SetEventsPerFile\0SetFolder\0"
-    "SetContinuousTrigger\0SetRisingFalling"
+    "SetContinuousTrigger\0SetRisingFalling\0"
+    "SetDCOffset"
 };
 #undef QT_MOC_LITERAL
 
@@ -92,7 +94,7 @@ static const uint qt_meta_data_MyWorker[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      31,   14, // methods
+      32,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -100,39 +102,40 @@ static const uint qt_meta_data_MyWorker[] = {
        9,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  169,    2, 0x06 /* Public */,
-       3,    0,  172,    2, 0x06 /* Public */,
-       4,    0,  173,    2, 0x06 /* Public */,
-       5,    2,  174,    2, 0x06 /* Public */,
-       7,    2,  179,    2, 0x06 /* Public */,
-       9,    1,  184,    2, 0x06 /* Public */,
-      10,    1,  187,    2, 0x06 /* Public */,
-      11,    0,  190,    2, 0x06 /* Public */,
-      12,    1,  191,    2, 0x06 /* Public */,
+       1,    1,  174,    2, 0x06 /* Public */,
+       3,    0,  177,    2, 0x06 /* Public */,
+       4,    0,  178,    2, 0x06 /* Public */,
+       5,    2,  179,    2, 0x06 /* Public */,
+       7,    2,  184,    2, 0x06 /* Public */,
+       9,    1,  189,    2, 0x06 /* Public */,
+      10,    1,  192,    2, 0x06 /* Public */,
+      11,    0,  195,    2, 0x06 /* Public */,
+      12,    1,  196,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      13,    0,  194,    2, 0x0a /* Public */,
-      14,    0,  195,    2, 0x0a /* Public */,
-      15,    0,  196,    2, 0x0a /* Public */,
-      16,    0,  197,    2, 0x0a /* Public */,
-      17,    0,  198,    2, 0x0a /* Public */,
-      18,    0,  199,    2, 0x0a /* Public */,
-      19,    0,  200,    2, 0x0a /* Public */,
-      20,    1,  201,    2, 0x0a /* Public */,
-      22,    0,  204,    2, 0x0a /* Public */,
-      23,    0,  205,    2, 0x0a /* Public */,
-      24,    0,  206,    2, 0x0a /* Public */,
-      25,    2,  207,    2, 0x0a /* Public */,
-      26,    2,  212,    2, 0x0a /* Public */,
-      27,    1,  217,    2, 0x0a /* Public */,
-      28,    2,  220,    2, 0x0a /* Public */,
-      29,    2,  225,    2, 0x0a /* Public */,
-      30,    1,  230,    2, 0x0a /* Public */,
-      31,    1,  233,    2, 0x0a /* Public */,
-      32,    1,  236,    2, 0x0a /* Public */,
-      33,    1,  239,    2, 0x0a /* Public */,
-      34,    1,  242,    2, 0x0a /* Public */,
-      35,    1,  245,    2, 0x0a /* Public */,
+      13,    0,  199,    2, 0x0a /* Public */,
+      14,    0,  200,    2, 0x0a /* Public */,
+      15,    0,  201,    2, 0x0a /* Public */,
+      16,    0,  202,    2, 0x0a /* Public */,
+      17,    0,  203,    2, 0x0a /* Public */,
+      18,    0,  204,    2, 0x0a /* Public */,
+      19,    0,  205,    2, 0x0a /* Public */,
+      20,    1,  206,    2, 0x0a /* Public */,
+      22,    0,  209,    2, 0x0a /* Public */,
+      23,    0,  210,    2, 0x0a /* Public */,
+      24,    0,  211,    2, 0x0a /* Public */,
+      25,    2,  212,    2, 0x0a /* Public */,
+      26,    2,  217,    2, 0x0a /* Public */,
+      27,    1,  222,    2, 0x0a /* Public */,
+      28,    2,  225,    2, 0x0a /* Public */,
+      29,    2,  230,    2, 0x0a /* Public */,
+      30,    1,  235,    2, 0x0a /* Public */,
+      31,    1,  238,    2, 0x0a /* Public */,
+      32,    1,  241,    2, 0x0a /* Public */,
+      33,    1,  244,    2, 0x0a /* Public */,
+      34,    1,  247,    2, 0x0a /* Public */,
+      35,    1,  250,    2, 0x0a /* Public */,
+      36,    2,  253,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
@@ -168,6 +171,7 @@ static const uint qt_meta_data_MyWorker[] = {
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Bool,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
 
        0        // eod
 };
@@ -209,6 +213,7 @@ void MyWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 28: _t->SetFolder((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 29: _t->SetContinuousTrigger((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 30: _t->SetRisingFalling((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 31: _t->SetDCOffset((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -317,13 +322,13 @@ int MyWorker::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 31)
+        if (_id < 32)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 31;
+        _id -= 32;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 31)
+        if (_id < 32)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 31;
+        _id -= 32;
     }
     return _id;
 }

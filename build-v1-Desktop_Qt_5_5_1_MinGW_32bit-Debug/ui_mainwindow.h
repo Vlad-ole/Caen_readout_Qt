@@ -49,135 +49,6 @@ public:
     QVBoxLayout *verticalLayout;
     QPushButton *pushButton;
     QTextBrowser *textBrowser;
-    QGroupBox *groupBox_3;
-    QGroupBox *groupBox_4;
-    QWidget *layoutWidget1;
-    QVBoxLayout *verticalLayout_2;
-    QRadioButton *radioButton_12;
-    QRadioButton *radioButton_13;
-    QGroupBox *groupBox;
-    QSpinBox *spinBox_2;
-    QGroupBox *groupBox_2;
-    QSpinBox *spinBox_3;
-    QSlider *verticalSlider;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_2;
-    QGroupBox *groupBox_8;
-    QWidget *layoutWidget_2;
-    QVBoxLayout *verticalLayout_4;
-    QRadioButton *radioButton_14;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_15;
-    QPushButton *Test_Pattern_button;
-    QGroupBox *groupBox_9;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
-    QWidget *gridLayoutWidget_3;
-    QGridLayout *gridLayout_5;
-    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch5;
-    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch7;
-    QLabel *label_42;
-    QLabel *label_40;
-    QLabel *label_41;
-    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch0;
-    QCheckBox *MASK_CHANNEL_checkBox_gr1_ch0;
-    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch4;
-    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch3;
-    QCheckBox *MASK_CHANNEL_checkBox_gr3_ch0;
-    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch2;
-    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch1;
-    QLabel *label_39;
-    QLabel *label_43;
-    QCheckBox *MASK_CHANNEL_checkBox_gr2_ch0;
-    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch6;
-    QLabel *label_44;
-    QLabel *label_38;
-    QLabel *label_37;
-    QCheckBox *MASK_CHANNEL_checkBox_gr4_ch0;
-    QCheckBox *MASK_CHANNEL_checkBox_gr5_ch0;
-    QCheckBox *MASK_CHANNEL_checkBox_gr6_ch0;
-    QCheckBox *MASK_CHANNEL_checkBox_gr7_ch0;
-    QPushButton *pushButton_Reprogram;
-    QGroupBox *groupBox_10;
-    QPushButton *pushButton_7;
-    QPushButton *pushButton_8;
-    QWidget *gridLayoutWidget;
-    QGridLayout *gridLayout;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch0;
-    QLabel *label_14;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch3;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch4;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch5;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch6;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch7;
-    QLabel *label_16;
-    QLabel *label_15;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch2;
-    QLabel *label_12;
-    QLabel *label_18;
-    QLabel *label_17;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch1;
-    QLabel *label_13;
-    QLabel *label_19;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch8;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch9;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch10;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch11;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch12;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch13;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch14;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch15;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch16;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch17;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch18;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch19;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch20;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch21;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch22;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch23;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch24;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch25;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch26;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch27;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch28;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch29;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch30;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch31;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch32;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch33;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch34;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch35;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch36;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch37;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch38;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch39;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch40;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch41;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch42;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch43;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch44;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch45;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch46;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch47;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch48;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch49;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch50;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch51;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch52;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch53;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch54;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch55;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch56;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch57;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch58;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch59;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch60;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch61;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch62;
-    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch63;
-    QGroupBox *groupBox_11;
-    QRadioButton *radioButton_2;
-    QRadioButton *radioButton_3;
     QGroupBox *groupBox_6;
     QPushButton *pushButton_3;
     QSpinBox *spinBox;
@@ -187,7 +58,7 @@ public:
     QRadioButton *radioButton_9;
     QRadioButton *radioButton_10;
     QPushButton *pushButton_choose_folder;
-    QWidget *layoutWidget2;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_3;
     QGroupBox *groupBox_7;
     QCheckBox *checkBox;
@@ -292,6 +163,175 @@ public:
     QCustomPlot *widget_ch_61;
     QCustomPlot *widget_ch_62;
     QCustomPlot *widget_ch_63;
+    QTabWidget *tabWidget_2;
+    QWidget *tab;
+    QGroupBox *groupBox_3;
+    QGroupBox *groupBox_4;
+    QWidget *layoutWidget2;
+    QVBoxLayout *verticalLayout_2;
+    QRadioButton *radioButton_12;
+    QRadioButton *radioButton_13;
+    QGroupBox *groupBox;
+    QSpinBox *spinBox_2;
+    QGroupBox *groupBox_2;
+    QSpinBox *spinBox_3;
+    QSlider *verticalSlider;
+    QPushButton *pushButton_6;
+    QPushButton *pushButton_2;
+    QGroupBox *groupBox_8;
+    QWidget *layoutWidget_2;
+    QVBoxLayout *verticalLayout_4;
+    QRadioButton *radioButton_14;
+    QRadioButton *radioButton;
+    QRadioButton *radioButton_15;
+    QPushButton *Test_Pattern_button;
+    QPushButton *pushButton_Reprogram;
+    QGroupBox *groupBox_11;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton_3;
+    QWidget *tab_2;
+    QWidget *gridLayoutWidget_12;
+    QGridLayout *gridLayout_12;
+    QLabel *label_20;
+    QLabel *label_11;
+    QLabel *label_21;
+    QLabel *label_22;
+    QLabel *label_10;
+    QLabel *label_5;
+    QLabel *label_4;
+    QSlider *verticalSlider_dcoffset_gr3;
+    QSlider *verticalSlider_dcoffset_gr0;
+    QSlider *verticalSlider_dcoffset_gr7;
+    QSlider *verticalSlider_dcoffset_gr2;
+    QSlider *verticalSlider_dcoffset_gr1;
+    QSlider *verticalSlider_dcoffset_gr4;
+    QSlider *verticalSlider_dcoffset_gr5;
+    QSlider *verticalSlider_dcoffset_gr6;
+    QLabel *label_9;
+    QSpinBox *spinBox_dcoffset_gr0;
+    QSpinBox *spinBox_dcoffset_gr1;
+    QSpinBox *spinBox_dcoffset_gr2;
+    QSpinBox *spinBox_dcoffset_gr3;
+    QSpinBox *spinBox_dcoffset_gr4;
+    QSpinBox *spinBox_dcoffset_gr5;
+    QSpinBox *spinBox_dcoffset_gr6;
+    QSpinBox *spinBox_dcoffset_gr7;
+    QPushButton *pushButton_9;
+    QWidget *tab_11;
+    QGroupBox *groupBox_10;
+    QPushButton *pushButton_7;
+    QPushButton *pushButton_8;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch0;
+    QLabel *label_14;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch3;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch4;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch5;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch6;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch7;
+    QLabel *label_16;
+    QLabel *label_15;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch2;
+    QLabel *label_12;
+    QLabel *label_18;
+    QLabel *label_17;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr0_ch1;
+    QLabel *label_13;
+    QLabel *label_19;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch8;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch9;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch10;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch11;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch12;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch13;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch14;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr1_ch15;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch16;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch17;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch18;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch19;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch20;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch21;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch22;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr2_ch23;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch24;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch25;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch26;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch27;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch28;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch29;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch30;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr3_ch31;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch32;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch33;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch34;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch35;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch36;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch37;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch38;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr4_ch39;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch40;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch41;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch42;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch43;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch44;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch45;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch46;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr5_ch47;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch48;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch49;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch50;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch51;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch52;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch53;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch54;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr6_ch55;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch56;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch57;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch58;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch59;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch60;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch61;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch62;
+    QCheckBox *CHANNEL_TRIGGER_checkBox_gr7_ch63;
+    QGroupBox *groupBox_9;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
+    QWidget *gridLayoutWidget_3;
+    QGridLayout *gridLayout_5;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch5;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch7;
+    QLabel *label_42;
+    QLabel *label_40;
+    QLabel *label_41;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr1_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch4;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch3;
+    QCheckBox *MASK_CHANNEL_checkBox_gr3_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch2;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch1;
+    QLabel *label_39;
+    QLabel *label_43;
+    QCheckBox *MASK_CHANNEL_checkBox_gr2_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr0_ch6;
+    QLabel *label_44;
+    QLabel *label_38;
+    QLabel *label_37;
+    QCheckBox *MASK_CHANNEL_checkBox_gr4_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr5_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr6_ch0;
+    QCheckBox *MASK_CHANNEL_checkBox_gr7_ch0;
+    QWidget *tab_12;
+    QWidget *gridLayoutWidget_13;
+    QGridLayout *gridLayout_13;
+    QSpinBox *spinBox_4;
+    QLabel *label_24;
+    QSlider *horizontalSlider;
+    QLabel *label_23;
+    QLabel *label_25;
+    QSpinBox *spinBox_5;
     QMenuBar *menuBar;
     QMenu *menuCAEN;
     QMenu *menuTriggers;
@@ -312,11 +352,11 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         lcdNumber = new QLCDNumber(centralWidget);
         lcdNumber->setObjectName(QStringLiteral("lcdNumber"));
-        lcdNumber->setGeometry(QRect(20, 820, 111, 71));
+        lcdNumber->setGeometry(QRect(10, 650, 111, 71));
         lcdNumber->setSmallDecimalPoint(true);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(20, 790, 121, 31));
+        label->setGeometry(QRect(10, 620, 121, 31));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(20, 10, 121, 102));
@@ -401,618 +441,6 @@ public:
 
         verticalLayout->addWidget(textBrowser);
 
-        groupBox_3 = new QGroupBox(centralWidget);
-        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(0, 150, 471, 481));
-        groupBox_4 = new QGroupBox(groupBox_3);
-        groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(10, 30, 91, 91));
-        layoutWidget1 = new QWidget(groupBox_4);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 20, 77, 61));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget1);
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        radioButton_12 = new QRadioButton(layoutWidget1);
-        radioButton_12->setObjectName(QStringLiteral("radioButton_12"));
-
-        verticalLayout_2->addWidget(radioButton_12);
-
-        radioButton_13 = new QRadioButton(layoutWidget1);
-        radioButton_13->setObjectName(QStringLiteral("radioButton_13"));
-
-        verticalLayout_2->addWidget(radioButton_13);
-
-        groupBox = new QGroupBox(groupBox_3);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(100, 30, 81, 91));
-        groupBox->setFlat(false);
-        groupBox->setCheckable(false);
-        spinBox_2 = new QSpinBox(groupBox);
-        spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
-        spinBox_2->setGeometry(QRect(10, 20, 61, 31));
-        spinBox_2->setMaximum(7);
-        groupBox_2 = new QGroupBox(groupBox_3);
-        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(180, 30, 191, 91));
-        groupBox_2->setFlat(false);
-        groupBox_2->setCheckable(false);
-        spinBox_3 = new QSpinBox(groupBox_2);
-        spinBox_3->setObjectName(QStringLiteral("spinBox_3"));
-        spinBox_3->setGeometry(QRect(10, 50, 71, 31));
-        spinBox_3->setMinimum(-1000);
-        spinBox_3->setMaximum(1000);
-        verticalSlider = new QSlider(groupBox_2);
-        verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
-        verticalSlider->setGeometry(QRect(10, 20, 171, 31));
-        verticalSlider->setMinimum(-1000);
-        verticalSlider->setMaximum(1000);
-        verticalSlider->setOrientation(Qt::Horizontal);
-        verticalSlider->setInvertedControls(true);
-        verticalSlider->setTickPosition(QSlider::NoTicks);
-        verticalSlider->setTickInterval(0);
-        pushButton_6 = new QPushButton(groupBox_2);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(90, 50, 91, 31));
-        pushButton_2 = new QPushButton(groupBox_3);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(10, 130, 91, 31));
-        groupBox_8 = new QGroupBox(groupBox_3);
-        groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
-        groupBox_8->setGeometry(QRect(110, 130, 141, 111));
-        layoutWidget_2 = new QWidget(groupBox_8);
-        layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(10, 20, 119, 81));
-        verticalLayout_4 = new QVBoxLayout(layoutWidget_2);
-        verticalLayout_4->setSpacing(6);
-        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        radioButton_14 = new QRadioButton(layoutWidget_2);
-        radioButton_14->setObjectName(QStringLiteral("radioButton_14"));
-
-        verticalLayout_4->addWidget(radioButton_14);
-
-        radioButton = new QRadioButton(layoutWidget_2);
-        radioButton->setObjectName(QStringLiteral("radioButton"));
-
-        verticalLayout_4->addWidget(radioButton);
-
-        radioButton_15 = new QRadioButton(layoutWidget_2);
-        radioButton_15->setObjectName(QStringLiteral("radioButton_15"));
-        radioButton_15->setChecked(true);
-
-        verticalLayout_4->addWidget(radioButton_15);
-
-        Test_Pattern_button = new QPushButton(groupBox_3);
-        Test_Pattern_button->setObjectName(QStringLiteral("Test_Pattern_button"));
-        Test_Pattern_button->setGeometry(QRect(10, 170, 91, 31));
-        groupBox_9 = new QGroupBox(groupBox_3);
-        groupBox_9->setObjectName(QStringLiteral("groupBox_9"));
-        groupBox_9->setGeometry(QRect(220, 250, 231, 221));
-        pushButton_4 = new QPushButton(groupBox_9);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(30, 190, 61, 23));
-        pushButton_5 = new QPushButton(groupBox_9);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(110, 190, 61, 23));
-        gridLayoutWidget_3 = new QWidget(groupBox_9);
-        gridLayoutWidget_3->setObjectName(QStringLiteral("gridLayoutWidget_3"));
-        gridLayoutWidget_3->setGeometry(QRect(10, 20, 201, 161));
-        gridLayout_5 = new QGridLayout(gridLayoutWidget_3);
-        gridLayout_5->setSpacing(6);
-        gridLayout_5->setContentsMargins(11, 11, 11, 11);
-        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
-        gridLayout_5->setContentsMargins(0, 0, 0, 0);
-        MASK_CHANNEL_checkBox_gr0_ch5 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr0_ch5->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch5"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch5, 0, 6, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr0_ch7 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr0_ch7->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch7"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch7, 0, 8, 1, 1);
-
-        label_42 = new QLabel(gridLayoutWidget_3);
-        label_42->setObjectName(QStringLiteral("label_42"));
-
-        gridLayout_5->addWidget(label_42, 5, 0, 1, 1);
-
-        label_40 = new QLabel(gridLayoutWidget_3);
-        label_40->setObjectName(QStringLiteral("label_40"));
-
-        gridLayout_5->addWidget(label_40, 8, 0, 1, 1);
-
-        label_41 = new QLabel(gridLayoutWidget_3);
-        label_41->setObjectName(QStringLiteral("label_41"));
-
-        gridLayout_5->addWidget(label_41, 2, 0, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr0_ch0 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr0_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch0"));
-        MASK_CHANNEL_checkBox_gr0_ch0->setChecked(true);
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch0, 0, 1, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr1_ch0 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr1_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr1_ch0"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr1_ch0, 1, 1, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr0_ch4 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr0_ch4->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch4"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch4, 0, 5, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr0_ch3 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr0_ch3->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch3"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch3, 0, 4, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr3_ch0 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr3_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr3_ch0"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr3_ch0, 3, 1, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr0_ch2 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr0_ch2->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch2"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch2, 0, 3, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr0_ch1 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr0_ch1->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch1"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch1, 0, 2, 1, 1);
-
-        label_39 = new QLabel(gridLayoutWidget_3);
-        label_39->setObjectName(QStringLiteral("label_39"));
-
-        gridLayout_5->addWidget(label_39, 4, 0, 1, 1);
-
-        label_43 = new QLabel(gridLayoutWidget_3);
-        label_43->setObjectName(QStringLiteral("label_43"));
-
-        gridLayout_5->addWidget(label_43, 6, 0, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr2_ch0 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr2_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr2_ch0"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr2_ch0, 2, 1, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr0_ch6 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr0_ch6->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch6"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch6, 0, 7, 1, 1);
-
-        label_44 = new QLabel(gridLayoutWidget_3);
-        label_44->setObjectName(QStringLiteral("label_44"));
-
-        gridLayout_5->addWidget(label_44, 3, 0, 1, 1);
-
-        label_38 = new QLabel(gridLayoutWidget_3);
-        label_38->setObjectName(QStringLiteral("label_38"));
-
-        gridLayout_5->addWidget(label_38, 1, 0, 1, 1);
-
-        label_37 = new QLabel(gridLayoutWidget_3);
-        label_37->setObjectName(QStringLiteral("label_37"));
-
-        gridLayout_5->addWidget(label_37, 0, 0, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr4_ch0 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr4_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr4_ch0"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr4_ch0, 4, 1, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr5_ch0 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr5_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr5_ch0"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr5_ch0, 5, 1, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr6_ch0 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr6_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr6_ch0"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr6_ch0, 6, 1, 1, 1);
-
-        MASK_CHANNEL_checkBox_gr7_ch0 = new QCheckBox(gridLayoutWidget_3);
-        MASK_CHANNEL_checkBox_gr7_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr7_ch0"));
-
-        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr7_ch0, 8, 1, 1, 1);
-
-        pushButton_Reprogram = new QPushButton(groupBox_3);
-        pushButton_Reprogram->setObjectName(QStringLiteral("pushButton_Reprogram"));
-        pushButton_Reprogram->setGeometry(QRect(10, 210, 91, 31));
-        groupBox_10 = new QGroupBox(groupBox_3);
-        groupBox_10->setObjectName(QStringLiteral("groupBox_10"));
-        groupBox_10->setGeometry(QRect(0, 250, 211, 221));
-        pushButton_7 = new QPushButton(groupBox_10);
-        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
-        pushButton_7->setGeometry(QRect(10, 190, 61, 23));
-        pushButton_8 = new QPushButton(groupBox_10);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
-        pushButton_8->setGeometry(QRect(80, 190, 61, 23));
-        gridLayoutWidget = new QWidget(groupBox_10);
-        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(20, 20, 173, 148));
-        gridLayout = new QGridLayout(gridLayoutWidget);
-        gridLayout->setSpacing(6);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        CHANNEL_TRIGGER_checkBox_gr0_ch0 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr0_ch0->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch0"));
-        CHANNEL_TRIGGER_checkBox_gr0_ch0->setChecked(true);
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch0, 0, 1, 1, 1);
-
-        label_14 = new QLabel(gridLayoutWidget);
-        label_14->setObjectName(QStringLiteral("label_14"));
-
-        gridLayout->addWidget(label_14, 0, 0, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr0_ch3 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr0_ch3->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch3"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch3, 0, 4, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr0_ch4 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr0_ch4->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch4"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch4, 0, 5, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr0_ch5 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr0_ch5->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch5"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch5, 0, 6, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr0_ch6 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr0_ch6->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch6"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch6, 0, 7, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr0_ch7 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr0_ch7->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch7"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch7, 0, 8, 1, 1);
-
-        label_16 = new QLabel(gridLayoutWidget);
-        label_16->setObjectName(QStringLiteral("label_16"));
-
-        gridLayout->addWidget(label_16, 2, 0, 1, 1);
-
-        label_15 = new QLabel(gridLayoutWidget);
-        label_15->setObjectName(QStringLiteral("label_15"));
-
-        gridLayout->addWidget(label_15, 3, 0, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr0_ch2 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr0_ch2->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch2"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch2, 0, 3, 1, 1);
-
-        label_12 = new QLabel(gridLayoutWidget);
-        label_12->setObjectName(QStringLiteral("label_12"));
-
-        gridLayout->addWidget(label_12, 4, 0, 1, 1);
-
-        label_18 = new QLabel(gridLayoutWidget);
-        label_18->setObjectName(QStringLiteral("label_18"));
-
-        gridLayout->addWidget(label_18, 6, 0, 1, 1);
-
-        label_17 = new QLabel(gridLayoutWidget);
-        label_17->setObjectName(QStringLiteral("label_17"));
-
-        gridLayout->addWidget(label_17, 5, 0, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr0_ch1 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr0_ch1->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch1"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch1, 0, 2, 1, 1);
-
-        label_13 = new QLabel(gridLayoutWidget);
-        label_13->setObjectName(QStringLiteral("label_13"));
-
-        gridLayout->addWidget(label_13, 1, 0, 1, 1);
-
-        label_19 = new QLabel(gridLayoutWidget);
-        label_19->setObjectName(QStringLiteral("label_19"));
-
-        gridLayout->addWidget(label_19, 7, 0, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr1_ch8 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr1_ch8->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch8"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch8, 1, 1, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr1_ch9 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr1_ch9->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch9"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch9, 1, 2, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr1_ch10 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr1_ch10->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch10"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch10, 1, 3, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr1_ch11 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr1_ch11->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch11"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch11, 1, 4, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr1_ch12 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr1_ch12->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch12"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch12, 1, 5, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr1_ch13 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr1_ch13->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch13"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch13, 1, 6, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr1_ch14 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr1_ch14->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch14"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch14, 1, 7, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr1_ch15 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr1_ch15->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch15"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch15, 1, 8, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr2_ch16 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr2_ch16->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch16"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch16, 2, 1, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr2_ch17 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr2_ch17->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch17"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch17, 2, 2, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr2_ch18 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr2_ch18->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch18"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch18, 2, 3, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr2_ch19 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr2_ch19->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch19"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch19, 2, 4, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr2_ch20 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr2_ch20->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch20"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch20, 2, 5, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr2_ch21 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr2_ch21->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch21"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch21, 2, 6, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr2_ch22 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr2_ch22->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch22"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch22, 2, 7, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr2_ch23 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr2_ch23->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch23"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch23, 2, 8, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr3_ch24 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr3_ch24->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch24"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch24, 3, 1, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr3_ch25 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr3_ch25->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch25"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch25, 3, 2, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr3_ch26 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr3_ch26->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch26"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch26, 3, 3, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr3_ch27 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr3_ch27->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch27"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch27, 3, 4, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr3_ch28 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr3_ch28->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch28"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch28, 3, 5, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr3_ch29 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr3_ch29->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch29"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch29, 3, 6, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr3_ch30 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr3_ch30->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch30"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch30, 3, 7, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr3_ch31 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr3_ch31->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch31"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch31, 3, 8, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr4_ch32 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr4_ch32->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch32"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch32, 4, 1, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr4_ch33 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr4_ch33->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch33"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch33, 4, 2, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr4_ch34 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr4_ch34->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch34"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch34, 4, 3, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr4_ch35 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr4_ch35->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch35"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch35, 4, 4, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr4_ch36 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr4_ch36->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch36"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch36, 4, 5, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr4_ch37 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr4_ch37->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch37"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch37, 4, 6, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr4_ch38 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr4_ch38->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch38"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch38, 4, 7, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr4_ch39 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr4_ch39->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch39"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch39, 4, 8, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr5_ch40 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr5_ch40->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch40"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch40, 5, 1, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr5_ch41 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr5_ch41->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch41"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch41, 5, 2, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr5_ch42 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr5_ch42->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch42"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch42, 5, 3, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr5_ch43 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr5_ch43->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch43"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch43, 5, 4, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr5_ch44 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr5_ch44->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch44"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch44, 5, 5, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr5_ch45 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr5_ch45->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch45"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch45, 5, 6, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr5_ch46 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr5_ch46->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch46"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch46, 5, 7, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr5_ch47 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr5_ch47->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch47"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch47, 5, 8, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr6_ch48 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr6_ch48->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch48"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch48, 6, 1, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr6_ch49 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr6_ch49->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch49"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch49, 6, 2, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr6_ch50 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr6_ch50->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch50"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch50, 6, 3, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr6_ch51 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr6_ch51->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch51"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch51, 6, 4, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr6_ch52 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr6_ch52->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch52"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch52, 6, 5, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr6_ch53 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr6_ch53->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch53"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch53, 6, 6, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr6_ch54 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr6_ch54->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch54"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch54, 6, 7, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr6_ch55 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr6_ch55->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch55"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch55, 6, 8, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr7_ch56 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr7_ch56->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch56"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch56, 7, 1, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr7_ch57 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr7_ch57->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch57"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch57, 7, 2, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr7_ch58 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr7_ch58->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch58"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch58, 7, 3, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr7_ch59 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr7_ch59->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch59"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch59, 7, 4, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr7_ch60 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr7_ch60->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch60"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch60, 7, 5, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr7_ch61 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr7_ch61->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch61"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch61, 7, 6, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr7_ch62 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr7_ch62->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch62"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch62, 7, 7, 1, 1);
-
-        CHANNEL_TRIGGER_checkBox_gr7_ch63 = new QCheckBox(gridLayoutWidget);
-        CHANNEL_TRIGGER_checkBox_gr7_ch63->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch63"));
-
-        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch63, 7, 8, 1, 1);
-
-        groupBox_11 = new QGroupBox(groupBox_3);
-        groupBox_11->setObjectName(QStringLiteral("groupBox_11"));
-        groupBox_11->setGeometry(QRect(260, 130, 101, 111));
-        radioButton_2 = new QRadioButton(groupBox_11);
-        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
-        radioButton_2->setGeometry(QRect(10, 30, 82, 17));
-        radioButton_2->setChecked(true);
-        radioButton_3 = new QRadioButton(groupBox_11);
-        radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
-        radioButton_3->setGeometry(QRect(10, 60, 82, 17));
         groupBox_6 = new QGroupBox(centralWidget);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
         groupBox_6->setGeometry(QRect(150, 10, 321, 141));
@@ -1046,17 +474,17 @@ public:
         pushButton_choose_folder = new QPushButton(groupBox_6);
         pushButton_choose_folder->setObjectName(QStringLiteral("pushButton_choose_folder"));
         pushButton_choose_folder->setGeometry(QRect(30, 110, 75, 23));
-        layoutWidget2 = new QWidget(centralWidget);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(0, 0, 2, 2));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget2);
+        layoutWidget1 = new QWidget(centralWidget);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(0, 0, 2, 2));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget1);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
         groupBox_7 = new QGroupBox(centralWidget);
         groupBox_7->setObjectName(QStringLiteral("groupBox_7"));
-        groupBox_7->setGeometry(QRect(10, 630, 411, 161));
+        groupBox_7->setGeometry(QRect(0, 450, 411, 161));
         checkBox = new QCheckBox(groupBox_7);
         checkBox->setObjectName(QStringLiteral("checkBox"));
         checkBox->setGeometry(QRect(20, 130, 101, 21));
@@ -1125,10 +553,10 @@ public:
 
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(150, 790, 121, 31));
+        label_3->setGeometry(QRect(140, 620, 121, 31));
         lcdNumber_2 = new QLCDNumber(centralWidget);
         lcdNumber_2->setObjectName(QStringLiteral("lcdNumber_2"));
-        lcdNumber_2->setGeometry(QRect(150, 820, 111, 71));
+        lcdNumber_2->setGeometry(QRect(140, 650, 111, 71));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setGeometry(QRect(470, 0, 1361, 900));
@@ -1540,9 +968,857 @@ public:
         gridLayout_11->addWidget(widget_ch_63, 1, 3, 1, 1);
 
         tabWidget->addTab(tab_10, QString());
+        tabWidget_2 = new QTabWidget(centralWidget);
+        tabWidget_2->setObjectName(QStringLiteral("tabWidget_2"));
+        tabWidget_2->setGeometry(QRect(10, 160, 451, 291));
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        groupBox_3 = new QGroupBox(tab);
+        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
+        groupBox_3->setGeometry(QRect(0, 10, 471, 481));
+        groupBox_4 = new QGroupBox(groupBox_3);
+        groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
+        groupBox_4->setGeometry(QRect(10, 30, 91, 91));
+        layoutWidget2 = new QWidget(groupBox_4);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(10, 20, 77, 61));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget2);
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        radioButton_12 = new QRadioButton(layoutWidget2);
+        radioButton_12->setObjectName(QStringLiteral("radioButton_12"));
+
+        verticalLayout_2->addWidget(radioButton_12);
+
+        radioButton_13 = new QRadioButton(layoutWidget2);
+        radioButton_13->setObjectName(QStringLiteral("radioButton_13"));
+
+        verticalLayout_2->addWidget(radioButton_13);
+
+        groupBox = new QGroupBox(groupBox_3);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(100, 30, 81, 91));
+        groupBox->setFlat(false);
+        groupBox->setCheckable(false);
+        spinBox_2 = new QSpinBox(groupBox);
+        spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
+        spinBox_2->setGeometry(QRect(10, 20, 61, 31));
+        spinBox_2->setMaximum(7);
+        groupBox_2 = new QGroupBox(groupBox_3);
+        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
+        groupBox_2->setGeometry(QRect(180, 30, 191, 91));
+        groupBox_2->setFlat(false);
+        groupBox_2->setCheckable(false);
+        spinBox_3 = new QSpinBox(groupBox_2);
+        spinBox_3->setObjectName(QStringLiteral("spinBox_3"));
+        spinBox_3->setGeometry(QRect(10, 50, 71, 31));
+        spinBox_3->setMinimum(-1000);
+        spinBox_3->setMaximum(1000);
+        verticalSlider = new QSlider(groupBox_2);
+        verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
+        verticalSlider->setGeometry(QRect(10, 20, 171, 31));
+        verticalSlider->setMinimum(-1000);
+        verticalSlider->setMaximum(1000);
+        verticalSlider->setOrientation(Qt::Horizontal);
+        verticalSlider->setInvertedControls(true);
+        verticalSlider->setTickPosition(QSlider::NoTicks);
+        verticalSlider->setTickInterval(0);
+        pushButton_6 = new QPushButton(groupBox_2);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(90, 50, 91, 31));
+        pushButton_2 = new QPushButton(groupBox_3);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(10, 130, 91, 31));
+        groupBox_8 = new QGroupBox(groupBox_3);
+        groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
+        groupBox_8->setGeometry(QRect(110, 130, 141, 111));
+        layoutWidget_2 = new QWidget(groupBox_8);
+        layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
+        layoutWidget_2->setGeometry(QRect(10, 20, 119, 81));
+        verticalLayout_4 = new QVBoxLayout(layoutWidget_2);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        radioButton_14 = new QRadioButton(layoutWidget_2);
+        radioButton_14->setObjectName(QStringLiteral("radioButton_14"));
+
+        verticalLayout_4->addWidget(radioButton_14);
+
+        radioButton = new QRadioButton(layoutWidget_2);
+        radioButton->setObjectName(QStringLiteral("radioButton"));
+
+        verticalLayout_4->addWidget(radioButton);
+
+        radioButton_15 = new QRadioButton(layoutWidget_2);
+        radioButton_15->setObjectName(QStringLiteral("radioButton_15"));
+        radioButton_15->setChecked(true);
+
+        verticalLayout_4->addWidget(radioButton_15);
+
+        Test_Pattern_button = new QPushButton(groupBox_3);
+        Test_Pattern_button->setObjectName(QStringLiteral("Test_Pattern_button"));
+        Test_Pattern_button->setGeometry(QRect(10, 170, 91, 31));
+        pushButton_Reprogram = new QPushButton(groupBox_3);
+        pushButton_Reprogram->setObjectName(QStringLiteral("pushButton_Reprogram"));
+        pushButton_Reprogram->setGeometry(QRect(10, 210, 91, 31));
+        groupBox_11 = new QGroupBox(groupBox_3);
+        groupBox_11->setObjectName(QStringLiteral("groupBox_11"));
+        groupBox_11->setGeometry(QRect(260, 130, 101, 111));
+        radioButton_2 = new QRadioButton(groupBox_11);
+        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
+        radioButton_2->setGeometry(QRect(10, 30, 82, 17));
+        radioButton_2->setChecked(true);
+        radioButton_3 = new QRadioButton(groupBox_11);
+        radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
+        radioButton_3->setGeometry(QRect(10, 60, 82, 17));
+        tabWidget_2->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        gridLayoutWidget_12 = new QWidget(tab_2);
+        gridLayoutWidget_12->setObjectName(QStringLiteral("gridLayoutWidget_12"));
+        gridLayoutWidget_12->setGeometry(QRect(0, 20, 441, 181));
+        gridLayout_12 = new QGridLayout(gridLayoutWidget_12);
+        gridLayout_12->setSpacing(6);
+        gridLayout_12->setContentsMargins(11, 11, 11, 11);
+        gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
+        gridLayout_12->setSizeConstraint(QLayout::SetDefaultConstraint);
+        gridLayout_12->setContentsMargins(0, 0, 0, 0);
+        label_20 = new QLabel(gridLayoutWidget_12);
+        label_20->setObjectName(QStringLiteral("label_20"));
+
+        gridLayout_12->addWidget(label_20, 0, 5, 1, 1);
+
+        label_11 = new QLabel(gridLayoutWidget_12);
+        label_11->setObjectName(QStringLiteral("label_11"));
+
+        gridLayout_12->addWidget(label_11, 0, 4, 1, 1);
+
+        label_21 = new QLabel(gridLayoutWidget_12);
+        label_21->setObjectName(QStringLiteral("label_21"));
+
+        gridLayout_12->addWidget(label_21, 0, 6, 1, 1);
+
+        label_22 = new QLabel(gridLayoutWidget_12);
+        label_22->setObjectName(QStringLiteral("label_22"));
+
+        gridLayout_12->addWidget(label_22, 0, 7, 1, 1);
+
+        label_10 = new QLabel(gridLayoutWidget_12);
+        label_10->setObjectName(QStringLiteral("label_10"));
+
+        gridLayout_12->addWidget(label_10, 0, 3, 1, 1);
+
+        label_5 = new QLabel(gridLayoutWidget_12);
+        label_5->setObjectName(QStringLiteral("label_5"));
+
+        gridLayout_12->addWidget(label_5, 0, 1, 1, 1);
+
+        label_4 = new QLabel(gridLayoutWidget_12);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        gridLayout_12->addWidget(label_4, 0, 0, 1, 1);
+
+        verticalSlider_dcoffset_gr3 = new QSlider(gridLayoutWidget_12);
+        verticalSlider_dcoffset_gr3->setObjectName(QStringLiteral("verticalSlider_dcoffset_gr3"));
+        verticalSlider_dcoffset_gr3->setMinimum(-50);
+        verticalSlider_dcoffset_gr3->setMaximum(50);
+        verticalSlider_dcoffset_gr3->setOrientation(Qt::Vertical);
+
+        gridLayout_12->addWidget(verticalSlider_dcoffset_gr3, 1, 3, 1, 1);
+
+        verticalSlider_dcoffset_gr0 = new QSlider(gridLayoutWidget_12);
+        verticalSlider_dcoffset_gr0->setObjectName(QStringLiteral("verticalSlider_dcoffset_gr0"));
+        verticalSlider_dcoffset_gr0->setMinimum(-50);
+        verticalSlider_dcoffset_gr0->setMaximum(50);
+        verticalSlider_dcoffset_gr0->setValue(0);
+        verticalSlider_dcoffset_gr0->setOrientation(Qt::Vertical);
+        verticalSlider_dcoffset_gr0->setTickPosition(QSlider::NoTicks);
+        verticalSlider_dcoffset_gr0->setTickInterval(9);
+
+        gridLayout_12->addWidget(verticalSlider_dcoffset_gr0, 1, 0, 1, 1);
+
+        verticalSlider_dcoffset_gr7 = new QSlider(gridLayoutWidget_12);
+        verticalSlider_dcoffset_gr7->setObjectName(QStringLiteral("verticalSlider_dcoffset_gr7"));
+        verticalSlider_dcoffset_gr7->setMinimum(-50);
+        verticalSlider_dcoffset_gr7->setMaximum(50);
+        verticalSlider_dcoffset_gr7->setOrientation(Qt::Vertical);
+
+        gridLayout_12->addWidget(verticalSlider_dcoffset_gr7, 1, 7, 1, 1);
+
+        verticalSlider_dcoffset_gr2 = new QSlider(gridLayoutWidget_12);
+        verticalSlider_dcoffset_gr2->setObjectName(QStringLiteral("verticalSlider_dcoffset_gr2"));
+        verticalSlider_dcoffset_gr2->setMinimum(-50);
+        verticalSlider_dcoffset_gr2->setMaximum(50);
+        verticalSlider_dcoffset_gr2->setOrientation(Qt::Vertical);
+
+        gridLayout_12->addWidget(verticalSlider_dcoffset_gr2, 1, 2, 1, 1);
+
+        verticalSlider_dcoffset_gr1 = new QSlider(gridLayoutWidget_12);
+        verticalSlider_dcoffset_gr1->setObjectName(QStringLiteral("verticalSlider_dcoffset_gr1"));
+        verticalSlider_dcoffset_gr1->setMinimum(-50);
+        verticalSlider_dcoffset_gr1->setMaximum(50);
+        verticalSlider_dcoffset_gr1->setSingleStep(1);
+        verticalSlider_dcoffset_gr1->setOrientation(Qt::Vertical);
+
+        gridLayout_12->addWidget(verticalSlider_dcoffset_gr1, 1, 1, 1, 1);
+
+        verticalSlider_dcoffset_gr4 = new QSlider(gridLayoutWidget_12);
+        verticalSlider_dcoffset_gr4->setObjectName(QStringLiteral("verticalSlider_dcoffset_gr4"));
+        verticalSlider_dcoffset_gr4->setMinimum(-50);
+        verticalSlider_dcoffset_gr4->setMaximum(50);
+        verticalSlider_dcoffset_gr4->setOrientation(Qt::Vertical);
+
+        gridLayout_12->addWidget(verticalSlider_dcoffset_gr4, 1, 4, 1, 1);
+
+        verticalSlider_dcoffset_gr5 = new QSlider(gridLayoutWidget_12);
+        verticalSlider_dcoffset_gr5->setObjectName(QStringLiteral("verticalSlider_dcoffset_gr5"));
+        verticalSlider_dcoffset_gr5->setMinimum(-50);
+        verticalSlider_dcoffset_gr5->setMaximum(50);
+        verticalSlider_dcoffset_gr5->setOrientation(Qt::Vertical);
+
+        gridLayout_12->addWidget(verticalSlider_dcoffset_gr5, 1, 5, 1, 1);
+
+        verticalSlider_dcoffset_gr6 = new QSlider(gridLayoutWidget_12);
+        verticalSlider_dcoffset_gr6->setObjectName(QStringLiteral("verticalSlider_dcoffset_gr6"));
+        verticalSlider_dcoffset_gr6->setMinimum(-50);
+        verticalSlider_dcoffset_gr6->setMaximum(50);
+        verticalSlider_dcoffset_gr6->setOrientation(Qt::Vertical);
+
+        gridLayout_12->addWidget(verticalSlider_dcoffset_gr6, 1, 6, 1, 1);
+
+        label_9 = new QLabel(gridLayoutWidget_12);
+        label_9->setObjectName(QStringLiteral("label_9"));
+
+        gridLayout_12->addWidget(label_9, 0, 2, 1, 1);
+
+        spinBox_dcoffset_gr0 = new QSpinBox(gridLayoutWidget_12);
+        spinBox_dcoffset_gr0->setObjectName(QStringLiteral("spinBox_dcoffset_gr0"));
+        spinBox_dcoffset_gr0->setMinimum(-50);
+        spinBox_dcoffset_gr0->setMaximum(50);
+
+        gridLayout_12->addWidget(spinBox_dcoffset_gr0, 2, 0, 1, 1);
+
+        spinBox_dcoffset_gr1 = new QSpinBox(gridLayoutWidget_12);
+        spinBox_dcoffset_gr1->setObjectName(QStringLiteral("spinBox_dcoffset_gr1"));
+        spinBox_dcoffset_gr1->setMinimum(-50);
+        spinBox_dcoffset_gr1->setMaximum(50);
+
+        gridLayout_12->addWidget(spinBox_dcoffset_gr1, 2, 1, 1, 1);
+
+        spinBox_dcoffset_gr2 = new QSpinBox(gridLayoutWidget_12);
+        spinBox_dcoffset_gr2->setObjectName(QStringLiteral("spinBox_dcoffset_gr2"));
+        spinBox_dcoffset_gr2->setMinimum(-50);
+        spinBox_dcoffset_gr2->setMaximum(50);
+
+        gridLayout_12->addWidget(spinBox_dcoffset_gr2, 2, 2, 1, 1);
+
+        spinBox_dcoffset_gr3 = new QSpinBox(gridLayoutWidget_12);
+        spinBox_dcoffset_gr3->setObjectName(QStringLiteral("spinBox_dcoffset_gr3"));
+        spinBox_dcoffset_gr3->setMinimum(-50);
+        spinBox_dcoffset_gr3->setMaximum(50);
+
+        gridLayout_12->addWidget(spinBox_dcoffset_gr3, 2, 3, 1, 1);
+
+        spinBox_dcoffset_gr4 = new QSpinBox(gridLayoutWidget_12);
+        spinBox_dcoffset_gr4->setObjectName(QStringLiteral("spinBox_dcoffset_gr4"));
+        spinBox_dcoffset_gr4->setMinimum(-50);
+        spinBox_dcoffset_gr4->setMaximum(50);
+
+        gridLayout_12->addWidget(spinBox_dcoffset_gr4, 2, 4, 1, 1);
+
+        spinBox_dcoffset_gr5 = new QSpinBox(gridLayoutWidget_12);
+        spinBox_dcoffset_gr5->setObjectName(QStringLiteral("spinBox_dcoffset_gr5"));
+        spinBox_dcoffset_gr5->setMinimum(-50);
+        spinBox_dcoffset_gr5->setMaximum(50);
+
+        gridLayout_12->addWidget(spinBox_dcoffset_gr5, 2, 5, 1, 1);
+
+        spinBox_dcoffset_gr6 = new QSpinBox(gridLayoutWidget_12);
+        spinBox_dcoffset_gr6->setObjectName(QStringLiteral("spinBox_dcoffset_gr6"));
+        spinBox_dcoffset_gr6->setMinimum(-50);
+        spinBox_dcoffset_gr6->setMaximum(50);
+
+        gridLayout_12->addWidget(spinBox_dcoffset_gr6, 2, 6, 1, 1);
+
+        spinBox_dcoffset_gr7 = new QSpinBox(gridLayoutWidget_12);
+        spinBox_dcoffset_gr7->setObjectName(QStringLiteral("spinBox_dcoffset_gr7"));
+        spinBox_dcoffset_gr7->setMinimum(-50);
+        spinBox_dcoffset_gr7->setMaximum(50);
+
+        gridLayout_12->addWidget(spinBox_dcoffset_gr7, 2, 7, 1, 1);
+
+        pushButton_9 = new QPushButton(tab_2);
+        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+        pushButton_9->setGeometry(QRect(10, 210, 75, 23));
+        tabWidget_2->addTab(tab_2, QString());
+        tab_11 = new QWidget();
+        tab_11->setObjectName(QStringLiteral("tab_11"));
+        groupBox_10 = new QGroupBox(tab_11);
+        groupBox_10->setObjectName(QStringLiteral("groupBox_10"));
+        groupBox_10->setGeometry(QRect(0, 10, 211, 221));
+        pushButton_7 = new QPushButton(groupBox_10);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        pushButton_7->setGeometry(QRect(10, 190, 61, 23));
+        pushButton_8 = new QPushButton(groupBox_10);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        pushButton_8->setGeometry(QRect(80, 190, 61, 23));
+        gridLayoutWidget = new QWidget(groupBox_10);
+        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(20, 20, 173, 148));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        CHANNEL_TRIGGER_checkBox_gr0_ch0 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr0_ch0->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch0"));
+        CHANNEL_TRIGGER_checkBox_gr0_ch0->setChecked(true);
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch0, 0, 1, 1, 1);
+
+        label_14 = new QLabel(gridLayoutWidget);
+        label_14->setObjectName(QStringLiteral("label_14"));
+
+        gridLayout->addWidget(label_14, 0, 0, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr0_ch3 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr0_ch3->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch3"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch3, 0, 4, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr0_ch4 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr0_ch4->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch4"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch4, 0, 5, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr0_ch5 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr0_ch5->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch5"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch5, 0, 6, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr0_ch6 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr0_ch6->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch6"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch6, 0, 7, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr0_ch7 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr0_ch7->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch7"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch7, 0, 8, 1, 1);
+
+        label_16 = new QLabel(gridLayoutWidget);
+        label_16->setObjectName(QStringLiteral("label_16"));
+
+        gridLayout->addWidget(label_16, 2, 0, 1, 1);
+
+        label_15 = new QLabel(gridLayoutWidget);
+        label_15->setObjectName(QStringLiteral("label_15"));
+
+        gridLayout->addWidget(label_15, 3, 0, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr0_ch2 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr0_ch2->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch2"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch2, 0, 3, 1, 1);
+
+        label_12 = new QLabel(gridLayoutWidget);
+        label_12->setObjectName(QStringLiteral("label_12"));
+
+        gridLayout->addWidget(label_12, 4, 0, 1, 1);
+
+        label_18 = new QLabel(gridLayoutWidget);
+        label_18->setObjectName(QStringLiteral("label_18"));
+
+        gridLayout->addWidget(label_18, 6, 0, 1, 1);
+
+        label_17 = new QLabel(gridLayoutWidget);
+        label_17->setObjectName(QStringLiteral("label_17"));
+
+        gridLayout->addWidget(label_17, 5, 0, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr0_ch1 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr0_ch1->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr0_ch1"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr0_ch1, 0, 2, 1, 1);
+
+        label_13 = new QLabel(gridLayoutWidget);
+        label_13->setObjectName(QStringLiteral("label_13"));
+
+        gridLayout->addWidget(label_13, 1, 0, 1, 1);
+
+        label_19 = new QLabel(gridLayoutWidget);
+        label_19->setObjectName(QStringLiteral("label_19"));
+
+        gridLayout->addWidget(label_19, 7, 0, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr1_ch8 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr1_ch8->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch8"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch8, 1, 1, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr1_ch9 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr1_ch9->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch9"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch9, 1, 2, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr1_ch10 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr1_ch10->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch10"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch10, 1, 3, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr1_ch11 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr1_ch11->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch11"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch11, 1, 4, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr1_ch12 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr1_ch12->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch12"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch12, 1, 5, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr1_ch13 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr1_ch13->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch13"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch13, 1, 6, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr1_ch14 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr1_ch14->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch14"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch14, 1, 7, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr1_ch15 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr1_ch15->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr1_ch15"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr1_ch15, 1, 8, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr2_ch16 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr2_ch16->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch16"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch16, 2, 1, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr2_ch17 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr2_ch17->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch17"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch17, 2, 2, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr2_ch18 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr2_ch18->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch18"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch18, 2, 3, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr2_ch19 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr2_ch19->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch19"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch19, 2, 4, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr2_ch20 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr2_ch20->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch20"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch20, 2, 5, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr2_ch21 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr2_ch21->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch21"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch21, 2, 6, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr2_ch22 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr2_ch22->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch22"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch22, 2, 7, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr2_ch23 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr2_ch23->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr2_ch23"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr2_ch23, 2, 8, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr3_ch24 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr3_ch24->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch24"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch24, 3, 1, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr3_ch25 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr3_ch25->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch25"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch25, 3, 2, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr3_ch26 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr3_ch26->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch26"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch26, 3, 3, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr3_ch27 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr3_ch27->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch27"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch27, 3, 4, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr3_ch28 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr3_ch28->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch28"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch28, 3, 5, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr3_ch29 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr3_ch29->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch29"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch29, 3, 6, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr3_ch30 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr3_ch30->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch30"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch30, 3, 7, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr3_ch31 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr3_ch31->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr3_ch31"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr3_ch31, 3, 8, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr4_ch32 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr4_ch32->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch32"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch32, 4, 1, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr4_ch33 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr4_ch33->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch33"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch33, 4, 2, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr4_ch34 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr4_ch34->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch34"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch34, 4, 3, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr4_ch35 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr4_ch35->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch35"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch35, 4, 4, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr4_ch36 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr4_ch36->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch36"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch36, 4, 5, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr4_ch37 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr4_ch37->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch37"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch37, 4, 6, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr4_ch38 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr4_ch38->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch38"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch38, 4, 7, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr4_ch39 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr4_ch39->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr4_ch39"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr4_ch39, 4, 8, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr5_ch40 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr5_ch40->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch40"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch40, 5, 1, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr5_ch41 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr5_ch41->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch41"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch41, 5, 2, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr5_ch42 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr5_ch42->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch42"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch42, 5, 3, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr5_ch43 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr5_ch43->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch43"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch43, 5, 4, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr5_ch44 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr5_ch44->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch44"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch44, 5, 5, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr5_ch45 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr5_ch45->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch45"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch45, 5, 6, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr5_ch46 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr5_ch46->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch46"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch46, 5, 7, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr5_ch47 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr5_ch47->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr5_ch47"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr5_ch47, 5, 8, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr6_ch48 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr6_ch48->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch48"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch48, 6, 1, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr6_ch49 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr6_ch49->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch49"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch49, 6, 2, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr6_ch50 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr6_ch50->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch50"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch50, 6, 3, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr6_ch51 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr6_ch51->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch51"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch51, 6, 4, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr6_ch52 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr6_ch52->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch52"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch52, 6, 5, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr6_ch53 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr6_ch53->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch53"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch53, 6, 6, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr6_ch54 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr6_ch54->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch54"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch54, 6, 7, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr6_ch55 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr6_ch55->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr6_ch55"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr6_ch55, 6, 8, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr7_ch56 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr7_ch56->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch56"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch56, 7, 1, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr7_ch57 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr7_ch57->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch57"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch57, 7, 2, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr7_ch58 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr7_ch58->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch58"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch58, 7, 3, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr7_ch59 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr7_ch59->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch59"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch59, 7, 4, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr7_ch60 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr7_ch60->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch60"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch60, 7, 5, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr7_ch61 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr7_ch61->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch61"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch61, 7, 6, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr7_ch62 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr7_ch62->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch62"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch62, 7, 7, 1, 1);
+
+        CHANNEL_TRIGGER_checkBox_gr7_ch63 = new QCheckBox(gridLayoutWidget);
+        CHANNEL_TRIGGER_checkBox_gr7_ch63->setObjectName(QStringLiteral("CHANNEL_TRIGGER_checkBox_gr7_ch63"));
+
+        gridLayout->addWidget(CHANNEL_TRIGGER_checkBox_gr7_ch63, 7, 8, 1, 1);
+
+        groupBox_9 = new QGroupBox(tab_11);
+        groupBox_9->setObjectName(QStringLiteral("groupBox_9"));
+        groupBox_9->setGeometry(QRect(210, 10, 231, 221));
+        pushButton_4 = new QPushButton(groupBox_9);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(30, 190, 61, 23));
+        pushButton_5 = new QPushButton(groupBox_9);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(110, 190, 61, 23));
+        gridLayoutWidget_3 = new QWidget(groupBox_9);
+        gridLayoutWidget_3->setObjectName(QStringLiteral("gridLayoutWidget_3"));
+        gridLayoutWidget_3->setGeometry(QRect(10, 20, 201, 161));
+        gridLayout_5 = new QGridLayout(gridLayoutWidget_3);
+        gridLayout_5->setSpacing(6);
+        gridLayout_5->setContentsMargins(11, 11, 11, 11);
+        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        gridLayout_5->setContentsMargins(0, 0, 0, 0);
+        MASK_CHANNEL_checkBox_gr0_ch5 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch5->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch5"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch5, 0, 6, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch7 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch7->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch7"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch7, 0, 8, 1, 1);
+
+        label_42 = new QLabel(gridLayoutWidget_3);
+        label_42->setObjectName(QStringLiteral("label_42"));
+
+        gridLayout_5->addWidget(label_42, 5, 0, 1, 1);
+
+        label_40 = new QLabel(gridLayoutWidget_3);
+        label_40->setObjectName(QStringLiteral("label_40"));
+
+        gridLayout_5->addWidget(label_40, 8, 0, 1, 1);
+
+        label_41 = new QLabel(gridLayoutWidget_3);
+        label_41->setObjectName(QStringLiteral("label_41"));
+
+        gridLayout_5->addWidget(label_41, 2, 0, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch0"));
+        MASK_CHANNEL_checkBox_gr0_ch0->setChecked(true);
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch0, 0, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr1_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr1_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr1_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr1_ch0, 1, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch4 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch4->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch4"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch4, 0, 5, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch3 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch3->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch3"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch3, 0, 4, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr3_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr3_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr3_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr3_ch0, 3, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch2 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch2->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch2"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch2, 0, 3, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch1 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch1->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch1"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch1, 0, 2, 1, 1);
+
+        label_39 = new QLabel(gridLayoutWidget_3);
+        label_39->setObjectName(QStringLiteral("label_39"));
+
+        gridLayout_5->addWidget(label_39, 4, 0, 1, 1);
+
+        label_43 = new QLabel(gridLayoutWidget_3);
+        label_43->setObjectName(QStringLiteral("label_43"));
+
+        gridLayout_5->addWidget(label_43, 6, 0, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr2_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr2_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr2_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr2_ch0, 2, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr0_ch6 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr0_ch6->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr0_ch6"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr0_ch6, 0, 7, 1, 1);
+
+        label_44 = new QLabel(gridLayoutWidget_3);
+        label_44->setObjectName(QStringLiteral("label_44"));
+
+        gridLayout_5->addWidget(label_44, 3, 0, 1, 1);
+
+        label_38 = new QLabel(gridLayoutWidget_3);
+        label_38->setObjectName(QStringLiteral("label_38"));
+
+        gridLayout_5->addWidget(label_38, 1, 0, 1, 1);
+
+        label_37 = new QLabel(gridLayoutWidget_3);
+        label_37->setObjectName(QStringLiteral("label_37"));
+
+        gridLayout_5->addWidget(label_37, 0, 0, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr4_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr4_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr4_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr4_ch0, 4, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr5_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr5_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr5_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr5_ch0, 5, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr6_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr6_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr6_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr6_ch0, 6, 1, 1, 1);
+
+        MASK_CHANNEL_checkBox_gr7_ch0 = new QCheckBox(gridLayoutWidget_3);
+        MASK_CHANNEL_checkBox_gr7_ch0->setObjectName(QStringLiteral("MASK_CHANNEL_checkBox_gr7_ch0"));
+
+        gridLayout_5->addWidget(MASK_CHANNEL_checkBox_gr7_ch0, 8, 1, 1, 1);
+
+        tabWidget_2->addTab(tab_11, QString());
+        tab_12 = new QWidget();
+        tab_12->setObjectName(QStringLiteral("tab_12"));
+        gridLayoutWidget_13 = new QWidget(tab_12);
+        gridLayoutWidget_13->setObjectName(QStringLiteral("gridLayoutWidget_13"));
+        gridLayoutWidget_13->setGeometry(QRect(20, 10, 311, 51));
+        gridLayout_13 = new QGridLayout(gridLayoutWidget_13);
+        gridLayout_13->setSpacing(6);
+        gridLayout_13->setContentsMargins(11, 11, 11, 11);
+        gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
+        gridLayout_13->setSizeConstraint(QLayout::SetMinimumSize);
+        gridLayout_13->setContentsMargins(0, 0, 0, 0);
+        spinBox_4 = new QSpinBox(gridLayoutWidget_13);
+        spinBox_4->setObjectName(QStringLiteral("spinBox_4"));
+        spinBox_4->setMinimum(1);
+        spinBox_4->setMaximum(1500000);
+
+        gridLayout_13->addWidget(spinBox_4, 1, 1, 1, 1);
+
+        label_24 = new QLabel(gridLayoutWidget_13);
+        label_24->setObjectName(QStringLiteral("label_24"));
+
+        gridLayout_13->addWidget(label_24, 0, 1, 1, 1);
+
+        horizontalSlider = new QSlider(gridLayoutWidget_13);
+        horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
+        horizontalSlider->setMinimum(1);
+        horizontalSlider->setMaximum(1500000);
+        horizontalSlider->setOrientation(Qt::Horizontal);
+
+        gridLayout_13->addWidget(horizontalSlider, 1, 0, 1, 1);
+
+        label_23 = new QLabel(gridLayoutWidget_13);
+        label_23->setObjectName(QStringLiteral("label_23"));
+
+        gridLayout_13->addWidget(label_23, 0, 0, 1, 1);
+
+        label_25 = new QLabel(gridLayoutWidget_13);
+        label_25->setObjectName(QStringLiteral("label_25"));
+
+        gridLayout_13->addWidget(label_25, 0, 2, 1, 1);
+
+        spinBox_5 = new QSpinBox(gridLayoutWidget_13);
+        spinBox_5->setObjectName(QStringLiteral("spinBox_5"));
+        spinBox_5->setMinimum(1);
+        spinBox_5->setMaximum(1500000);
+
+        gridLayout_13->addWidget(spinBox_5, 1, 2, 1, 1);
+
+        tabWidget_2->addTab(tab_12, QString());
         MainWindow->setCentralWidget(centralWidget);
         groupBox_7->raise();
-        groupBox_3->raise();
         layoutWidget->raise();
         layoutWidget->raise();
         lcdNumber->raise();
@@ -1551,6 +1827,7 @@ public:
         label_3->raise();
         lcdNumber_2->raise();
         tabWidget->raise();
+        tabWidget_2->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 1860, 21));
@@ -1575,10 +1852,27 @@ public:
         menuAbout->addAction(actionAbout_program);
 
         retranslateUi(MainWindow);
-        QObject::connect(verticalSlider, SIGNAL(valueChanged(int)), spinBox_3, SLOT(setValue(int)));
-        QObject::connect(spinBox_3, SIGNAL(valueChanged(int)), verticalSlider, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_dcoffset_gr0, SIGNAL(valueChanged(int)), spinBox_dcoffset_gr0, SLOT(setValue(int)));
+        QObject::connect(spinBox_dcoffset_gr0, SIGNAL(valueChanged(int)), verticalSlider_dcoffset_gr0, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_dcoffset_gr1, SIGNAL(valueChanged(int)), spinBox_dcoffset_gr1, SLOT(setValue(int)));
+        QObject::connect(spinBox_dcoffset_gr1, SIGNAL(valueChanged(int)), verticalSlider_dcoffset_gr1, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_dcoffset_gr2, SIGNAL(valueChanged(int)), spinBox_dcoffset_gr2, SLOT(setValue(int)));
+        QObject::connect(spinBox_dcoffset_gr2, SIGNAL(valueChanged(int)), verticalSlider_dcoffset_gr2, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_dcoffset_gr3, SIGNAL(valueChanged(int)), spinBox_dcoffset_gr3, SLOT(setValue(int)));
+        QObject::connect(spinBox_dcoffset_gr3, SIGNAL(valueChanged(int)), verticalSlider_dcoffset_gr3, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_dcoffset_gr4, SIGNAL(valueChanged(int)), spinBox_dcoffset_gr4, SLOT(setValue(int)));
+        QObject::connect(spinBox_dcoffset_gr4, SIGNAL(valueChanged(int)), verticalSlider_dcoffset_gr4, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_dcoffset_gr5, SIGNAL(valueChanged(int)), spinBox_dcoffset_gr5, SLOT(setValue(int)));
+        QObject::connect(spinBox_dcoffset_gr5, SIGNAL(valueChanged(int)), verticalSlider_dcoffset_gr5, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_dcoffset_gr6, SIGNAL(valueChanged(int)), spinBox_dcoffset_gr6, SLOT(setValue(int)));
+        QObject::connect(spinBox_dcoffset_gr6, SIGNAL(valueChanged(int)), verticalSlider_dcoffset_gr6, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_dcoffset_gr7, SIGNAL(valueChanged(int)), spinBox_dcoffset_gr7, SLOT(setValue(int)));
+        QObject::connect(spinBox_dcoffset_gr7, SIGNAL(valueChanged(int)), verticalSlider_dcoffset_gr7, SLOT(setValue(int)));
+        QObject::connect(horizontalSlider, SIGNAL(valueChanged(int)), spinBox_4, SLOT(setValue(int)));
+        QObject::connect(spinBox_4, SIGNAL(valueChanged(int)), horizontalSlider, SLOT(setValue(int)));
 
         tabWidget->setCurrentIndex(0);
+        tabWidget_2->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1597,6 +1891,29 @@ public:
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", 0));
         textBrowser->setPlaceholderText(QApplication::translate("MainWindow", "Device not connected", 0));
+        groupBox_6->setTitle(QApplication::translate("MainWindow", "Output settings", 0));
+        pushButton_3->setText(QApplication::translate("MainWindow", "Write data", 0));
+        label_2->setText(QApplication::translate("MainWindow", "Events per file", 0));
+        groupBox_5->setTitle(QApplication::translate("MainWindow", "Type of outputfile", 0));
+        radioButton_root_tree->setText(QApplication::translate("MainWindow", "root tree", 0));
+        radioButton_9->setText(QApplication::translate("MainWindow", "ASCII", 0));
+        radioButton_10->setText(QApplication::translate("MainWindow", "BINARY", 0));
+        pushButton_choose_folder->setText(QApplication::translate("MainWindow", "Choose folder", 0));
+        groupBox_7->setTitle(QApplication::translate("MainWindow", "Plot settings", 0));
+        checkBox->setText(QApplication::translate("MainWindow", "Plot graphs", 0));
+        label_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">x min [ns]</p></body></html>", 0));
+        label_36->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">x max [ns]</p></body></html>", 0));
+        label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">y min[mV]</p></body></html>", 0));
+        label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">y max[mV]</p></body></html>", 0));
+        label_3->setText(QApplication::translate("MainWindow", "Trigger rate [Hz]", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "gr 0", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "gr 1", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "gr 2", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("MainWindow", "gr 3", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow", "gr 4", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_8), QApplication::translate("MainWindow", "gr 5", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_9), QApplication::translate("MainWindow", "gr 6", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_10), QApplication::translate("MainWindow", "gr 7", 0));
         groupBox_3->setTitle(QApplication::translate("MainWindow", "Trigger settings", 0));
         groupBox_4->setTitle(QApplication::translate("MainWindow", "Choose trigger:", 0));
         radioButton_12->setText(QApplication::translate("MainWindow", "External", 0));
@@ -1610,33 +1927,21 @@ public:
         radioButton->setText(QApplication::translate("MainWindow", "Continious (with th)", 0));
         radioButton_15->setText(QApplication::translate("MainWindow", "Continious (no th)", 0));
         Test_Pattern_button->setText(QApplication::translate("MainWindow", "Test Pattern", 0));
-        groupBox_9->setTitle(QApplication::translate("MainWindow", "Mask the channels", 0));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Enalble all", 0));
-        pushButton_5->setText(QApplication::translate("MainWindow", "Disalble all", 0));
-        MASK_CHANNEL_checkBox_gr0_ch5->setText(QString());
-        MASK_CHANNEL_checkBox_gr0_ch7->setText(QString());
-        label_42->setText(QApplication::translate("MainWindow", "gr 5", 0));
-        label_40->setText(QApplication::translate("MainWindow", "gr 7", 0));
-        label_41->setText(QApplication::translate("MainWindow", "gr 2", 0));
-        MASK_CHANNEL_checkBox_gr0_ch0->setText(QString());
-        MASK_CHANNEL_checkBox_gr1_ch0->setText(QString());
-        MASK_CHANNEL_checkBox_gr0_ch4->setText(QString());
-        MASK_CHANNEL_checkBox_gr0_ch3->setText(QString());
-        MASK_CHANNEL_checkBox_gr3_ch0->setText(QString());
-        MASK_CHANNEL_checkBox_gr0_ch2->setText(QString());
-        MASK_CHANNEL_checkBox_gr0_ch1->setText(QString());
-        label_39->setText(QApplication::translate("MainWindow", "gr 4", 0));
-        label_43->setText(QApplication::translate("MainWindow", "gr 6", 0));
-        MASK_CHANNEL_checkBox_gr2_ch0->setText(QString());
-        MASK_CHANNEL_checkBox_gr0_ch6->setText(QString());
-        label_44->setText(QApplication::translate("MainWindow", "gr 3", 0));
-        label_38->setText(QApplication::translate("MainWindow", "gr 1", 0));
-        label_37->setText(QApplication::translate("MainWindow", "gr 0", 0));
-        MASK_CHANNEL_checkBox_gr4_ch0->setText(QString());
-        MASK_CHANNEL_checkBox_gr5_ch0->setText(QString());
-        MASK_CHANNEL_checkBox_gr6_ch0->setText(QString());
-        MASK_CHANNEL_checkBox_gr7_ch0->setText(QString());
         pushButton_Reprogram->setText(QApplication::translate("MainWindow", "Reprogram", 0));
+        groupBox_11->setTitle(QApplication::translate("MainWindow", "Rising / Falling", 0));
+        radioButton_2->setText(QApplication::translate("MainWindow", "Rising", 0));
+        radioButton_3->setText(QApplication::translate("MainWindow", "Falling", 0));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindow", "Trigger main settings", 0));
+        label_20->setText(QApplication::translate("MainWindow", "gr5", 0));
+        label_11->setText(QApplication::translate("MainWindow", "gr4", 0));
+        label_21->setText(QApplication::translate("MainWindow", "gr6", 0));
+        label_22->setText(QApplication::translate("MainWindow", "gr7", 0));
+        label_10->setText(QApplication::translate("MainWindow", "gr3", 0));
+        label_5->setText(QApplication::translate("MainWindow", "gr1", 0));
+        label_4->setText(QApplication::translate("MainWindow", "gr0", 0));
+        label_9->setText(QApplication::translate("MainWindow", "gr2", 0));
+        pushButton_9->setText(QApplication::translate("MainWindow", "Reset", 0));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QApplication::translate("MainWindow", "DC Offset", 0));
         groupBox_10->setTitle(QApplication::translate("MainWindow", "CHANNEL_TRIGGER", 0));
         pushButton_7->setText(QApplication::translate("MainWindow", "Enalble all", 0));
         pushButton_8->setText(QApplication::translate("MainWindow", "Disalble all", 0));
@@ -1712,32 +2017,37 @@ public:
         CHANNEL_TRIGGER_checkBox_gr7_ch61->setText(QString());
         CHANNEL_TRIGGER_checkBox_gr7_ch62->setText(QString());
         CHANNEL_TRIGGER_checkBox_gr7_ch63->setText(QString());
-        groupBox_11->setTitle(QApplication::translate("MainWindow", "Rising / Falling", 0));
-        radioButton_2->setText(QApplication::translate("MainWindow", "Rising", 0));
-        radioButton_3->setText(QApplication::translate("MainWindow", "Falling", 0));
-        groupBox_6->setTitle(QApplication::translate("MainWindow", "Output settings", 0));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Write data", 0));
-        label_2->setText(QApplication::translate("MainWindow", "Events per file", 0));
-        groupBox_5->setTitle(QApplication::translate("MainWindow", "Type of outputfile", 0));
-        radioButton_root_tree->setText(QApplication::translate("MainWindow", "root tree", 0));
-        radioButton_9->setText(QApplication::translate("MainWindow", "ASCII", 0));
-        radioButton_10->setText(QApplication::translate("MainWindow", "BINARY", 0));
-        pushButton_choose_folder->setText(QApplication::translate("MainWindow", "Choose folder", 0));
-        groupBox_7->setTitle(QApplication::translate("MainWindow", "Plot settings", 0));
-        checkBox->setText(QApplication::translate("MainWindow", "Plot graphs", 0));
-        label_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">x min [ns]</p></body></html>", 0));
-        label_36->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">x max [ns]</p></body></html>", 0));
-        label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">y min[mV]</p></body></html>", 0));
-        label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">y max[mV]</p></body></html>", 0));
-        label_3->setText(QApplication::translate("MainWindow", "Trigger rate [Hz]", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "gr 0", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "gr 1", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "gr 2", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("MainWindow", "gr 3", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow", "gr 4", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_8), QApplication::translate("MainWindow", "gr 5", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_9), QApplication::translate("MainWindow", "gr 6", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_10), QApplication::translate("MainWindow", "gr 7", 0));
+        groupBox_9->setTitle(QApplication::translate("MainWindow", "Mask the channels", 0));
+        pushButton_4->setText(QApplication::translate("MainWindow", "Enalble all", 0));
+        pushButton_5->setText(QApplication::translate("MainWindow", "Disalble all", 0));
+        MASK_CHANNEL_checkBox_gr0_ch5->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch7->setText(QString());
+        label_42->setText(QApplication::translate("MainWindow", "gr 5", 0));
+        label_40->setText(QApplication::translate("MainWindow", "gr 7", 0));
+        label_41->setText(QApplication::translate("MainWindow", "gr 2", 0));
+        MASK_CHANNEL_checkBox_gr0_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr1_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch4->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch3->setText(QString());
+        MASK_CHANNEL_checkBox_gr3_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch2->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch1->setText(QString());
+        label_39->setText(QApplication::translate("MainWindow", "gr 4", 0));
+        label_43->setText(QApplication::translate("MainWindow", "gr 6", 0));
+        MASK_CHANNEL_checkBox_gr2_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr0_ch6->setText(QString());
+        label_44->setText(QApplication::translate("MainWindow", "gr 3", 0));
+        label_38->setText(QApplication::translate("MainWindow", "gr 1", 0));
+        label_37->setText(QApplication::translate("MainWindow", "gr 0", 0));
+        MASK_CHANNEL_checkBox_gr4_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr5_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr6_ch0->setText(QString());
+        MASK_CHANNEL_checkBox_gr7_ch0->setText(QString());
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_11), QApplication::translate("MainWindow", "Mask channels", 0));
+        label_24->setText(QApplication::translate("MainWindow", "Samples", 0));
+        label_23->setText(QApplication::translate("MainWindow", "Record length", 0));
+        label_25->setText(QApplication::translate("MainWindow", "ns", 0));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_12), QApplication::translate("MainWindow", "Record ", 0));
         menuCAEN->setTitle(QApplication::translate("MainWindow", "Main", 0));
         menuTriggers->setTitle(QApplication::translate("MainWindow", "Triggers", 0));
         menuAbout->setTitle(QApplication::translate("MainWindow", "About", 0));

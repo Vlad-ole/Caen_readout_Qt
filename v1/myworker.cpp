@@ -361,7 +361,6 @@ void MyWorker::Readout_loop()
                             continue;
                         }
 
-
                         for(int index = 0; index < Size; index++)
                         {
                             if(flag)
@@ -370,10 +369,14 @@ void MyWorker::Readout_loop()
                             }
 
                             if(WDcfg.Nbit != 8)
-                                array_y_data[ch].push_back( (2000 / pow(2.0, WDcfg.Nbit) ) * Event16->DataChannel[ch][index]  - 1000 ); // add value in mV
+                            {
+                                array_y_data[ch].push_back( (2000 / (pow(2.0, WDcfg.Nbit) - 1) ) * Event16->DataChannel[ch][index]  - 1000 ); // add value in mV
+                            }
                             else
                                 qDebug() << "add device in list" << endl;
                         }
+
+                        qDebug() << "ch = " << ch << endl;
 
                         flag = false;
                     }
@@ -524,6 +527,8 @@ void MyWorker::ContinuousTrigger()
  void MyWorker::SetRecordLength(double value)
  {
     WDcfg.RecordLength = value;
+    qDebug() << "WDcfg.RecordLength = " << WDcfg.RecordLength << endl;
+    Restart();
  }
 
 void MyWorker::Restart()
@@ -961,5 +966,13 @@ void MyWorker::SetRisingFalling(bool IsRising)
         WDcfg.TriggerEdge = 1;
 
     qDebug() << "WDcfg.TriggerEdge = " << WDcfg.TriggerEdge << endl;
+    Restart();
+}
+
+void MyWorker::SetDCOffset(int gr, int dc)
+{
+    int value = (int)((dc+50) * 65535 / 100);
+    WDcfg.DCoffset[gr] = value;
+    qDebug() << "WDcfg.DCoffset[" << gr << "] = " << WDcfg.DCoffset[gr] << endl;
     Restart();
 }

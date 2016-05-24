@@ -98,6 +98,7 @@ public slots:
 
     void SetContinuousTrigger(bool);
     void SetRisingFalling(bool);
+    void SetDCOffset(int, int);
 
 
 signals:

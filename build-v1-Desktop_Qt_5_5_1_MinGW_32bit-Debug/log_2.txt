@@ -1,0 +1,779 @@
+Запускается D:\git_repositories\Caen_readout_Qt\build-v1-Desktop_Qt_5_5_1_MinGW_32bit-Debug\debug\v1.exe...
+Thread in MainWindow is  0x58c
+QMetaObject::connectSlotsByName: No matching signal for on_spinBox_3_valueChanged(int)
+QMetaObject::connectSlotsByName: No matching signal for on_verticalSlider_valueChanged(int)
+QMetaObject::connectSlotsByName: No matching signal for on_spinBox_2_valueChanged(int)
+QMetaObject::connectSlotsByName: No matching signal for on_pushButton_6_clicked()
+QMetaObject::connectSlotsByName: No matching signal for on_pushButton_6_clicked(bool)
+Thread in Init() is  0x5c4
+handle  0
+Thread in Mask_the_channels() is  0x5c4
+Thread in Program_the_digitizer() is  0x5c4
+Thread in Program_the_digitizer() over is  0x5c4
+worker->WDrun.Quit == 0 
+
+in Readout_loop()  
+
+Thread in Readout_loop() is  0x5c4
+WDcfg.InterruptNumEvents  0
+BufferSize  120004
+handle  0
+WDrun.Quit  0
+WDrun.ContinuousWrite  0
+Continuous trigger is enabled
+
+WDcfg.Threshold[0] =  1800 
+
+WDcfg.Threshold[1] =  1800 
+
+WDcfg.Threshold[2] =  1800 
+
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  31
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  14
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  13
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  9
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  9
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  716325 
+
+TDrawFinished (sec.) =  0 
+
+in RedrawGraphs (time) 178 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  9
+in RedrawGraphs (time) 89 
+
+in RedrawGraphs (time) 98 
+
+in RedrawGraphs (time) 89 
+
+in RedrawGraphs (time) 93 
+
+in RedrawGraphs (time) 90 
+
+in RedrawGraphs (time) 93 
+
+in RedrawGraphs (time) 91 
+
+in RedrawGraphs (time) 118 
+
+Thread in Readout_loop() is  0x5c4
+WDcfg.InterruptNumEvents  0
+BufferSize  120004
+handle  0
+WDrun.Quit  0
+WDrun.ContinuousWrite  0
+Continuous trigger is enabled
+
+WDcfg.Threshold[0] =  1800 
+
+WDcfg.Threshold[1] =  1800 
+
+WDcfg.Threshold[2] =  1800 
+
+in RedrawGraphs (time) 108 
+
+in RedrawGraphs (time) 95 
+
+in RedrawGraphs (time) 106 
+
+in RedrawGraphs (time) 114 
+
+in RedrawGraphs (time) 101 
+
+in RedrawGraphs (time) 108 
+
+in RedrawGraphs (time) 91 
+
+in RedrawGraphs (time) 100 
+
+in RedrawGraphs (time) 107 
+
+in RedrawGraphs (time) 93 
+
+Thread in Readout_loop() is  0x5c4
+WDcfg.InterruptNumEvents  0
+BufferSize  120004
+handle  0
+WDrun.Quit  0
+WDrun.ContinuousWrite  0
+Continuous trigger is enabled
+
+WDcfg.Threshold[0] =  1800 
+
+WDcfg.Threshold[1] =  1800 
+
+WDcfg.Threshold[2] =  1800 
+
+get_time() - TDrawFinished (sec.) =  1.001 
+
+TDrawFinished (sec.) =  716327 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  9
+Thread in Readout_loop() is  0x5c4
+WDcfg.InterruptNumEvents  0
+BufferSize  120004
+handle  0
+WDrun.Quit  0
+WDrun.ContinuousWrite  0
+Continuous trigger is enabled
+
+WDcfg.Threshold[0] =  1800 
+
+WDcfg.Threshold[1] =  1800 
+
+WDcfg.Threshold[2] =  1800 
+
+get_time() - TDrawFinished (sec.) =  1.012 
+
+TDrawFinished (sec.) =  716327 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  1.022 
+
+TDrawFinished (sec.) =  716327 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  1.032 
+
+TDrawFinished (sec.) =  716327 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  1.042 
+
+TDrawFinished (sec.) =  716327 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  1.052 
+
+TDrawFinished (sec.) =  716327 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  1.062 
+
+TDrawFinished (sec.) =  716327 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  1.072 
+
+TDrawFinished (sec.) =  716327 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  9
+get_time() - TDrawFinished (sec.) =  1.083 
+
+TDrawFinished (sec.) =  716327 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  1.093 
+
+TDrawFinished (sec.) =  716327 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+get_time() - TDrawFinished (sec.) =  1.103 
+
+TDrawFinished (sec.) =  716327 
+
+in RedrawGraphs (time) 94 
+
+ch =  0 
+
+ch =  1 
+
+ch =  2 
+
+ch =  3 
+
+ch =  4 
+
+ch =  5 
+
+ch =  6 
+
+ch =  7 
+
+Delta time (prepare data)=  8
+in RedrawGraphs (time) 96 
+
+in RedrawGraphs (time) 91 
+
+in RedrawGraphs (time) 94 
+
+in RedrawGraphs (time) 89 
+
+in RedrawGraphs (time) 97 
+
+in RedrawGraphs (time) 110 
+
+in RedrawGraphs (time) 104 
+
+in RedrawGraphs (time) 99 
+
+in RedrawGraphs (time) 96 
+
+Thread in Readout_loop() is  0x5c4
+WDcfg.InterruptNumEvents  0
+BufferSize  120004
+handle  0
+WDrun.Quit  0
+WDrun.ContinuousWrite  0
+Continuous trigger is enabled
+
+WDcfg.Threshold[0] =  1800 
+
+WDcfg.Threshold[1] =  1800 
+
+WDcfg.Threshold[2] =  1800 
+
+in RedrawGraphs (time) 107 
+
+in StopReadout_loop()  
+
+WDrun.Quit =  1 

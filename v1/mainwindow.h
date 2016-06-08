@@ -26,6 +26,7 @@ public:
     bool on_pushButton_2_clicked_bool;
     void SetRangeX();
 
+
 private slots:
     void on_pushButton_clicked();
 
@@ -35,7 +36,6 @@ private slots:
 
     void on_checkBox_clicked();
 
-    void on_spinBox_3_valueChanged(int arg1);
 
     void on_doubleSpinBox_valueChanged(double arg1);
 
@@ -75,11 +75,8 @@ private slots:
 //    void on_checkBox_22_clicked(bool checked);
 //    void on_checkBox_23_clicked(bool checked);
 
-    void on_verticalSlider_valueChanged(int value);
 
-    void on_spinBox_2_valueChanged(int arg1);
 
-    void on_pushButton_6_clicked();
 
     void on_pushButton_Reprogram_clicked();
 
@@ -260,8 +257,6 @@ private slots:
 
     void on_radioButton_clicked(bool checked);
 
-    void on_pushButton_6_clicked(bool checked);
-
     void on_lcdNumber_2_windowTitleChanged(const QString &title);
 
     void on_radioButton_2_clicked(bool checked);
@@ -287,6 +282,30 @@ private slots:
     void on_spinBox_dcoffset_gr7_valueChanged(int arg1);
 
     void on_spinBox_4_valueChanged(int arg1);
+
+    void on_radioButton_13_clicked(bool checked);
+
+    void on_radioButton_12_clicked(bool checked);
+
+    void on_pushButton_8_clicked(bool checked);
+
+    void on_pushButton_threshold_gr_all_reset_clicked();
+
+    void on_spinBox_threshold_gr0_valueChanged(int arg1);
+
+    void on_spinBox_threshold_gr1_valueChanged(int arg1);
+
+    void on_spinBox_threshold_gr2_valueChanged(int arg1);
+
+    void on_spinBox_threshold_gr3_valueChanged(int arg1);
+
+    void on_spinBox_threshold_gr4_valueChanged(int arg1);
+
+    void on_spinBox_threshold_gr5_valueChanged(int arg1);
+
+    void on_spinBox_threshold_gr6_valueChanged(int arg1);
+
+    void on_spinBox_threshold_gr7_valueChanged(int arg1);
 
 public slots:
     void Message(QString);
@@ -350,6 +369,9 @@ signals:
     void SetContinuousTrigger(bool);
     void SetRisingFalling(bool);
     void SetDCOffset(int, int);
+
+    void SetExternalTrigger(bool);
+    void SetTDrawFinished(long);
 
 };
 

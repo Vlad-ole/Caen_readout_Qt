@@ -17,6 +17,7 @@ void MyWorker::Init()
     absolute_event_counter = 0;
 
 
+    TDrawFinished = 0;
 
     int argc_my = 1;
     char* argv_my[0] = {};
@@ -202,6 +203,7 @@ void MyWorker::Readout_loop()
         {
             uint32_t lstatus;
             ret = CAEN_DGTZ_ReadRegister(handle, CAEN_DGTZ_ACQ_STATUS_ADD, &lstatus);
+            qDebug() << "BufferSize = 0!. ret = " << ret << endl;
             if (lstatus & (0x1 << 19))
             {
                 ErrCode = ERR_OVERTEMP;
@@ -268,10 +270,14 @@ void MyWorker::Readout_loop()
             qDebug() << "WDcfg.Threshold[1] = " << WDcfg.Threshold[1] << endl;
             qDebug() << "WDcfg.Threshold[2] = " << WDcfg.Threshold[2] << endl;
 
+        //}//if( ElapsedTime >= 1000)
 
-            if(WDrun.ContinuousPlot)
+
+            if(WDrun.ContinuousPlot && (get_time() > TDrawFinished )  )
             {
                 long time_label_start = get_time();
+                qDebug() << "get_time() - TDrawFinished (sec.) = " << (get_time() - TDrawFinished) / 1000.0 << endl;
+                qDebug() << "TDrawFinished (sec.) = " << (TDrawFinished) / 1000.0 << endl;
 
                 uint N_ch;
                 switch (BoardInfo.FamilyCode)
@@ -395,123 +401,123 @@ void MyWorker::Readout_loop()
 
 
 
-        if(WDrun.ContinuousWrite)
-        {
-            /* Analyze data */
-            for(i = 0; i < (int)NumEvents; i++)
-            {
+//        if(WDrun.ContinuousWrite)
+//        {
+//            /* Analyze data */
+//            for(i = 0; i < (int)NumEvents; i++)
+//            {
 
-                /* Get one event from the readout buffer */
-                ret = CAEN_DGTZ_GetEventInfo(handle, buffer, BufferSize, i, &EventInfo, &EventPtr);
-                if (ret)
-                {
-                    ErrCode = ERR_EVENT_BUILD;
-                    //goto QuitProgram;
-                    QuitProgram();
-                    return;
-                }
+//                /* Get one event from the readout buffer */
+//                ret = CAEN_DGTZ_GetEventInfo(handle, buffer, BufferSize, i, &EventInfo, &EventPtr);
+//                if (ret)
+//                {
+//                    ErrCode = ERR_EVENT_BUILD;
+//                    //goto QuitProgram;
+//                    QuitProgram();
+//                    return;
+//                }
 
 
-                /* decode the event */
-                if (WDcfg.Nbit == 8)
-                    ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event8);
-                else
-                    if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)
-                    {
-                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event16); // it's my case
-                    }
-                    else
-                    {
-                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event742);
-                        if (WDcfg.useCorrections != -1)
-                        { // if manual corrections
-                            uint32_t gr;
-                            for (gr = 0; gr < WDcfg.MaxGroupNumber; gr++)
-                            {
-                                if ( ((WDcfg.EnableMask >> gr) & 0x1) == 0)
-                                    continue;
-                                ApplyDataCorrection( &(X742Tables[gr]), WDcfg.DRS4Frequency, WDcfg.useCorrections, &(Event742->DataGroup[gr]));
-                            }
-                        }
-                    }
-                if (ret) {
-                    ErrCode = ERR_EVENT_BUILD;
-                    //goto QuitProgram;
-                    QuitProgram();
-                    return;
-                }
+//                /* decode the event */
+//                if (WDcfg.Nbit == 8)
+//                    ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event8);
+//                else
+//                    if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)
+//                    {
+//                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event16); // it's my case
+//                    }
+//                    else
+//                    {
+//                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event742);
+//                        if (WDcfg.useCorrections != -1)
+//                        { // if manual corrections
+//                            uint32_t gr;
+//                            for (gr = 0; gr < WDcfg.MaxGroupNumber; gr++)
+//                            {
+//                                if ( ((WDcfg.EnableMask >> gr) & 0x1) == 0)
+//                                    continue;
+//                                ApplyDataCorrection( &(X742Tables[gr]), WDcfg.DRS4Frequency, WDcfg.useCorrections, &(Event742->DataGroup[gr]));
+//                            }
+//                        }
+//                    }
+//                if (ret) {
+//                    ErrCode = ERR_EVENT_BUILD;
+//                    //goto QuitProgram;
+//                    QuitProgram();
+//                    return;
+//                }
                 
 
-                /* Write Event data to file */
-                if (WDrun.ContinuousWrite || WDrun.SingleWrite)
-                {
-                    //qDebug() << "Write data ..." << endl;
+//                /* Write Event data to file */
+//                if (WDrun.ContinuousWrite || WDrun.SingleWrite)
+//                {
+//                    //qDebug() << "Write data ..." << endl;
 
 
-                    if( absolute_event_counter % events_per_file == 0 )
-                    {
-                        int Ch;
+//                    if( absolute_event_counter % events_per_file == 0 )
+//                    {
+//                        int Ch;
 
-                        for(Ch=0; Ch<WDcfg.Nch; Ch++)
-                        {
-                            int Size = (WDcfg.Nbit == 8) ? Event8->ChSize[Ch] : Event16->ChSize[Ch];
-                            if (Size <= 0)
-                            {
-                                continue;
-                            }
-                        }
+//                        for(Ch=0; Ch<WDcfg.Nch; Ch++)
+//                        {
+//                            int Size = (WDcfg.Nbit == 8) ? Event8->ChSize[Ch] : Event16->ChSize[Ch];
+//                            if (Size <= 0)
+//                            {
+//                                continue;
+//                            }
+//                        }
 
-                        qDebug() << "events_per_file  = " << events_per_file << endl;
-                        qDebug() << "run_counter  = " << run_counter << endl;
-                        qDebug() << "absolute_event_counter  = " << absolute_event_counter << endl;
-                        for(int ch = 0; ch < Ch ;ch++)
-                        {
-                            if(WDrun.fout[ch] != NULL)
-                                fclose(WDrun.fout[ch]);
-                            WDrun.fout[ch] = NULL;
-                            qDebug() << "WDrun.fout[" << ch << "] = " << WDrun.fout[ch] << endl;
-                        }
+//                        qDebug() << "events_per_file  = " << events_per_file << endl;
+//                        qDebug() << "run_counter  = " << run_counter << endl;
+//                        qDebug() << "absolute_event_counter  = " << absolute_event_counter << endl;
+//                        for(int ch = 0; ch < Ch ;ch++)
+//                        {
+//                            if(WDrun.fout[ch] != NULL)
+//                                fclose(WDrun.fout[ch]);
+//                            WDrun.fout[ch] = NULL;
+//                            qDebug() << "WDrun.fout[" << ch << "] = " << WDrun.fout[ch] << endl;
+//                        }
 
-                        //absolute_event_counter = 0;
-                        run_counter++;
-                    }
+//                        //absolute_event_counter = 0;
+//                        run_counter++;
+//                    }
 
 
 
-                    std::ostringstream oss_path;
-                    oss_path << output_folder.toStdString() << "run_" << run_counter;
-                    std::string path_string = oss_path.str();
+//                    std::ostringstream oss_path;
+//                    oss_path << output_folder.toStdString() << "run_" << run_counter;
+//                    std::string path_string = oss_path.str();
 
-                    // Note: use a thread here to allow parallel readout and file writing
-                    if (BoardInfo.FamilyCode == CAEN_DGTZ_XX742_FAMILY_CODE) {
-                        ret = WriteOutputFilesx742(&WDcfg, &WDrun, &EventInfo, Event742);
-                    }
-                    else if (WDcfg.Nbit == 8)
-                    {
-                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event8, path_string);
-                    }
-                    else
-                    {
-                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event16, path_string); //my case
+//                    // Note: use a thread here to allow parallel readout and file writing
+//                    if (BoardInfo.FamilyCode == CAEN_DGTZ_XX742_FAMILY_CODE) {
+//                        ret = WriteOutputFilesx742(&WDcfg, &WDrun, &EventInfo, Event742);
+//                    }
+//                    else if (WDcfg.Nbit == 8)
+//                    {
+//                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event8, path_string);
+//                    }
+//                    else
+//                    {
+//                        ret = WriteOutputFiles(&WDcfg, &WDrun, &EventInfo, Event16, path_string); //my case
 
-                    }
-                    if (ret)
-                    {
-                        ErrCode = ERR_OUTFILE_WRITE;
-                        //goto QuitProgram;
-                        QuitProgram();
-                    }
-                    if (WDrun.SingleWrite)
-                    {
-                        printf("Single Event saved to output files\n");
-                        WDrun.SingleWrite = 0;
-                    }
+//                    }
+//                    if (ret)
+//                    {
+//                        ErrCode = ERR_OUTFILE_WRITE;
+//                        //goto QuitProgram;
+//                        QuitProgram();
+//                    }
+//                    if (WDrun.SingleWrite)
+//                    {
+//                        printf("Single Event saved to output files\n");
+//                        WDrun.SingleWrite = 0;
+//                    }
 
-                    absolute_event_counter++;
-                }
+//                    absolute_event_counter++;
+//                }
 
-            }//for(i = 0; i < (int)NumEvents; i++)
-        }
+//            }//for(i = 0; i < (int)NumEvents; i++)
+//        }
 
 
     }
@@ -818,7 +824,7 @@ void MyWorker::SetTriggerValue(int ch, int val)
     case CAEN_DGTZ_XX740_FAMILY_CODE:
     {
         WDcfg.Threshold[ch] = ( pow(2.0, BoardInfo.ADC_NBits) - 1 ) * (val / Vpp + 0.5);
-        qDebug() << "WDcfg.Threshold[" << ch << "] = " << WDcfg.Threshold[ch] << endl;
+        qDebug() << "WDcfg.Threshold[" << ch << "] = " << val << " mV; = " << WDcfg.Threshold[ch] << " ADC" << endl;
         break;
     }
     default:
@@ -976,3 +982,31 @@ void MyWorker::SetDCOffset(int gr, int dc)
     qDebug() << "WDcfg.DCoffset[" << gr << "] = " << WDcfg.DCoffset[gr] << endl;
     Restart();
 }
+
+void MyWorker::SetExternalTrigger(bool value)
+{
+    if(value)
+    {
+//        for(i=0; i<8; i++)
+//        {
+//            WDcfg.ChannelTriggerMode[i] = CAEN_DGTZ_TRGMODE_DISABLED;
+//        }
+
+        WDcfg.ExtTriggerMode = CAEN_DGTZ_TRGMODE_ACQ_ONLY;
+
+
+        qDebug() << "SetExternalTrigger = " << value << endl;
+    }
+    else
+    {
+        WDcfg.ExtTriggerMode = CAEN_DGTZ_TRGMODE_DISABLED;
+        qDebug() << "SetExternalTrigger = " << value << endl;
+    }
+
+    Restart();
+}
+
+ void MyWorker::SetTDrawFinished(long val)
+ {
+     TDrawFinished = val;
+ }

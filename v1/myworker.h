@@ -64,6 +64,7 @@ public:
     //QVector<double> array_y;
 
 
+    long TDrawFinished;
 
 
 public slots:
@@ -99,6 +100,8 @@ public slots:
     void SetContinuousTrigger(bool);
     void SetRisingFalling(bool);
     void SetDCOffset(int, int);
+    void SetExternalTrigger(bool);
+    void SetTDrawFinished(long);
 
 
 signals:

@@ -171,12 +171,6 @@ public:
     QVBoxLayout *verticalLayout_2;
     QRadioButton *radioButton_12;
     QRadioButton *radioButton_13;
-    QGroupBox *groupBox;
-    QSpinBox *spinBox_2;
-    QGroupBox *groupBox_2;
-    QSpinBox *spinBox_3;
-    QSlider *verticalSlider;
-    QPushButton *pushButton_6;
     QPushButton *pushButton_2;
     QGroupBox *groupBox_8;
     QWidget *layoutWidget_2;
@@ -189,6 +183,34 @@ public:
     QGroupBox *groupBox_11;
     QRadioButton *radioButton_2;
     QRadioButton *radioButton_3;
+    QWidget *tab_13;
+    QWidget *gridLayoutWidget_14;
+    QGridLayout *gridLayout_14;
+    QSlider *verticalSlider_threshold_gr0;
+    QSlider *verticalSlider_threshold_gr1;
+    QSlider *verticalSlider_threshold_gr2;
+    QSlider *verticalSlider_threshold_gr3;
+    QSlider *verticalSlider_threshold_gr4;
+    QSlider *verticalSlider_threshold_gr7;
+    QSlider *verticalSlider_threshold_gr6;
+    QSlider *verticalSlider_threshold_gr5;
+    QLabel *label_31;
+    QLabel *label_27;
+    QLabel *label_30;
+    QLabel *label_29;
+    QLabel *label_28;
+    QLabel *label_33;
+    QLabel *label_32;
+    QLabel *label_26;
+    QSpinBox *spinBox_threshold_gr0;
+    QSpinBox *spinBox_threshold_gr1;
+    QSpinBox *spinBox_threshold_gr2;
+    QSpinBox *spinBox_threshold_gr3;
+    QSpinBox *spinBox_threshold_gr4;
+    QSpinBox *spinBox_threshold_gr5;
+    QSpinBox *spinBox_threshold_gr6;
+    QSpinBox *spinBox_threshold_gr7;
+    QPushButton *pushButton_threshold_gr_all_reset;
     QWidget *tab_2;
     QWidget *gridLayoutWidget_12;
     QGridLayout *gridLayout_12;
@@ -997,37 +1019,6 @@ public:
 
         verticalLayout_2->addWidget(radioButton_13);
 
-        groupBox = new QGroupBox(groupBox_3);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(100, 30, 81, 91));
-        groupBox->setFlat(false);
-        groupBox->setCheckable(false);
-        spinBox_2 = new QSpinBox(groupBox);
-        spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
-        spinBox_2->setGeometry(QRect(10, 20, 61, 31));
-        spinBox_2->setMaximum(7);
-        groupBox_2 = new QGroupBox(groupBox_3);
-        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(180, 30, 191, 91));
-        groupBox_2->setFlat(false);
-        groupBox_2->setCheckable(false);
-        spinBox_3 = new QSpinBox(groupBox_2);
-        spinBox_3->setObjectName(QStringLiteral("spinBox_3"));
-        spinBox_3->setGeometry(QRect(10, 50, 71, 31));
-        spinBox_3->setMinimum(-1000);
-        spinBox_3->setMaximum(1000);
-        verticalSlider = new QSlider(groupBox_2);
-        verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
-        verticalSlider->setGeometry(QRect(10, 20, 171, 31));
-        verticalSlider->setMinimum(-1000);
-        verticalSlider->setMaximum(1000);
-        verticalSlider->setOrientation(Qt::Horizontal);
-        verticalSlider->setInvertedControls(true);
-        verticalSlider->setTickPosition(QSlider::NoTicks);
-        verticalSlider->setTickInterval(0);
-        pushButton_6 = new QPushButton(groupBox_2);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(90, 50, 91, 31));
         pushButton_2 = new QPushButton(groupBox_3);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(10, 130, 91, 31));
@@ -1075,6 +1066,196 @@ public:
         radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
         radioButton_3->setGeometry(QRect(10, 60, 82, 17));
         tabWidget_2->addTab(tab, QString());
+        tab_13 = new QWidget();
+        tab_13->setObjectName(QStringLiteral("tab_13"));
+        gridLayoutWidget_14 = new QWidget(tab_13);
+        gridLayoutWidget_14->setObjectName(QStringLiteral("gridLayoutWidget_14"));
+        gridLayoutWidget_14->setGeometry(QRect(10, 20, 468, 181));
+        gridLayout_14 = new QGridLayout(gridLayoutWidget_14);
+        gridLayout_14->setSpacing(6);
+        gridLayout_14->setContentsMargins(11, 11, 11, 11);
+        gridLayout_14->setObjectName(QStringLiteral("gridLayout_14"));
+        gridLayout_14->setContentsMargins(0, 0, 0, 0);
+        verticalSlider_threshold_gr0 = new QSlider(gridLayoutWidget_14);
+        verticalSlider_threshold_gr0->setObjectName(QStringLiteral("verticalSlider_threshold_gr0"));
+        verticalSlider_threshold_gr0->setMinimum(-1000);
+        verticalSlider_threshold_gr0->setMaximum(1000);
+        verticalSlider_threshold_gr0->setSingleStep(10);
+        verticalSlider_threshold_gr0->setPageStep(100);
+        verticalSlider_threshold_gr0->setOrientation(Qt::Vertical);
+
+        gridLayout_14->addWidget(verticalSlider_threshold_gr0, 1, 0, 1, 1);
+
+        verticalSlider_threshold_gr1 = new QSlider(gridLayoutWidget_14);
+        verticalSlider_threshold_gr1->setObjectName(QStringLiteral("verticalSlider_threshold_gr1"));
+        verticalSlider_threshold_gr1->setMinimum(-1000);
+        verticalSlider_threshold_gr1->setMaximum(1000);
+        verticalSlider_threshold_gr1->setSingleStep(10);
+        verticalSlider_threshold_gr1->setPageStep(100);
+        verticalSlider_threshold_gr1->setOrientation(Qt::Vertical);
+
+        gridLayout_14->addWidget(verticalSlider_threshold_gr1, 1, 1, 1, 1);
+
+        verticalSlider_threshold_gr2 = new QSlider(gridLayoutWidget_14);
+        verticalSlider_threshold_gr2->setObjectName(QStringLiteral("verticalSlider_threshold_gr2"));
+        verticalSlider_threshold_gr2->setMinimum(-1000);
+        verticalSlider_threshold_gr2->setMaximum(1000);
+        verticalSlider_threshold_gr2->setSingleStep(10);
+        verticalSlider_threshold_gr2->setPageStep(100);
+        verticalSlider_threshold_gr2->setOrientation(Qt::Vertical);
+
+        gridLayout_14->addWidget(verticalSlider_threshold_gr2, 1, 2, 1, 1);
+
+        verticalSlider_threshold_gr3 = new QSlider(gridLayoutWidget_14);
+        verticalSlider_threshold_gr3->setObjectName(QStringLiteral("verticalSlider_threshold_gr3"));
+        verticalSlider_threshold_gr3->setMinimum(-1000);
+        verticalSlider_threshold_gr3->setMaximum(1000);
+        verticalSlider_threshold_gr3->setSingleStep(10);
+        verticalSlider_threshold_gr3->setPageStep(100);
+        verticalSlider_threshold_gr3->setOrientation(Qt::Vertical);
+
+        gridLayout_14->addWidget(verticalSlider_threshold_gr3, 1, 3, 1, 1);
+
+        verticalSlider_threshold_gr4 = new QSlider(gridLayoutWidget_14);
+        verticalSlider_threshold_gr4->setObjectName(QStringLiteral("verticalSlider_threshold_gr4"));
+        verticalSlider_threshold_gr4->setMinimum(-1000);
+        verticalSlider_threshold_gr4->setMaximum(1000);
+        verticalSlider_threshold_gr4->setSingleStep(10);
+        verticalSlider_threshold_gr4->setPageStep(100);
+        verticalSlider_threshold_gr4->setOrientation(Qt::Vertical);
+
+        gridLayout_14->addWidget(verticalSlider_threshold_gr4, 1, 4, 1, 1);
+
+        verticalSlider_threshold_gr7 = new QSlider(gridLayoutWidget_14);
+        verticalSlider_threshold_gr7->setObjectName(QStringLiteral("verticalSlider_threshold_gr7"));
+        verticalSlider_threshold_gr7->setMinimum(-1000);
+        verticalSlider_threshold_gr7->setMaximum(1000);
+        verticalSlider_threshold_gr7->setSingleStep(10);
+        verticalSlider_threshold_gr7->setPageStep(100);
+        verticalSlider_threshold_gr7->setOrientation(Qt::Vertical);
+
+        gridLayout_14->addWidget(verticalSlider_threshold_gr7, 1, 7, 1, 1);
+
+        verticalSlider_threshold_gr6 = new QSlider(gridLayoutWidget_14);
+        verticalSlider_threshold_gr6->setObjectName(QStringLiteral("verticalSlider_threshold_gr6"));
+        verticalSlider_threshold_gr6->setMinimum(-1000);
+        verticalSlider_threshold_gr6->setMaximum(1000);
+        verticalSlider_threshold_gr6->setSingleStep(10);
+        verticalSlider_threshold_gr6->setPageStep(100);
+        verticalSlider_threshold_gr6->setOrientation(Qt::Vertical);
+
+        gridLayout_14->addWidget(verticalSlider_threshold_gr6, 1, 6, 1, 1);
+
+        verticalSlider_threshold_gr5 = new QSlider(gridLayoutWidget_14);
+        verticalSlider_threshold_gr5->setObjectName(QStringLiteral("verticalSlider_threshold_gr5"));
+        verticalSlider_threshold_gr5->setMinimum(-1000);
+        verticalSlider_threshold_gr5->setMaximum(1000);
+        verticalSlider_threshold_gr5->setSingleStep(10);
+        verticalSlider_threshold_gr5->setPageStep(100);
+        verticalSlider_threshold_gr5->setOrientation(Qt::Vertical);
+
+        gridLayout_14->addWidget(verticalSlider_threshold_gr5, 1, 5, 1, 1);
+
+        label_31 = new QLabel(gridLayoutWidget_14);
+        label_31->setObjectName(QStringLiteral("label_31"));
+
+        gridLayout_14->addWidget(label_31, 0, 0, 1, 1);
+
+        label_27 = new QLabel(gridLayoutWidget_14);
+        label_27->setObjectName(QStringLiteral("label_27"));
+
+        gridLayout_14->addWidget(label_27, 0, 1, 1, 1);
+
+        label_30 = new QLabel(gridLayoutWidget_14);
+        label_30->setObjectName(QStringLiteral("label_30"));
+
+        gridLayout_14->addWidget(label_30, 0, 2, 1, 1);
+
+        label_29 = new QLabel(gridLayoutWidget_14);
+        label_29->setObjectName(QStringLiteral("label_29"));
+
+        gridLayout_14->addWidget(label_29, 0, 3, 1, 1);
+
+        label_28 = new QLabel(gridLayoutWidget_14);
+        label_28->setObjectName(QStringLiteral("label_28"));
+
+        gridLayout_14->addWidget(label_28, 0, 4, 1, 1);
+
+        label_33 = new QLabel(gridLayoutWidget_14);
+        label_33->setObjectName(QStringLiteral("label_33"));
+
+        gridLayout_14->addWidget(label_33, 0, 5, 1, 1);
+
+        label_32 = new QLabel(gridLayoutWidget_14);
+        label_32->setObjectName(QStringLiteral("label_32"));
+
+        gridLayout_14->addWidget(label_32, 0, 6, 1, 1);
+
+        label_26 = new QLabel(gridLayoutWidget_14);
+        label_26->setObjectName(QStringLiteral("label_26"));
+
+        gridLayout_14->addWidget(label_26, 0, 7, 1, 1);
+
+        spinBox_threshold_gr0 = new QSpinBox(gridLayoutWidget_14);
+        spinBox_threshold_gr0->setObjectName(QStringLiteral("spinBox_threshold_gr0"));
+        spinBox_threshold_gr0->setMinimum(-1000);
+        spinBox_threshold_gr0->setMaximum(1000);
+
+        gridLayout_14->addWidget(spinBox_threshold_gr0, 2, 0, 1, 1);
+
+        spinBox_threshold_gr1 = new QSpinBox(gridLayoutWidget_14);
+        spinBox_threshold_gr1->setObjectName(QStringLiteral("spinBox_threshold_gr1"));
+        spinBox_threshold_gr1->setMinimum(-1000);
+        spinBox_threshold_gr1->setMaximum(1000);
+
+        gridLayout_14->addWidget(spinBox_threshold_gr1, 2, 1, 1, 1);
+
+        spinBox_threshold_gr2 = new QSpinBox(gridLayoutWidget_14);
+        spinBox_threshold_gr2->setObjectName(QStringLiteral("spinBox_threshold_gr2"));
+        spinBox_threshold_gr2->setMinimum(-1000);
+        spinBox_threshold_gr2->setMaximum(1000);
+
+        gridLayout_14->addWidget(spinBox_threshold_gr2, 2, 2, 1, 1);
+
+        spinBox_threshold_gr3 = new QSpinBox(gridLayoutWidget_14);
+        spinBox_threshold_gr3->setObjectName(QStringLiteral("spinBox_threshold_gr3"));
+        spinBox_threshold_gr3->setMinimum(-1000);
+        spinBox_threshold_gr3->setMaximum(1000);
+
+        gridLayout_14->addWidget(spinBox_threshold_gr3, 2, 3, 1, 1);
+
+        spinBox_threshold_gr4 = new QSpinBox(gridLayoutWidget_14);
+        spinBox_threshold_gr4->setObjectName(QStringLiteral("spinBox_threshold_gr4"));
+        spinBox_threshold_gr4->setMinimum(-1000);
+        spinBox_threshold_gr4->setMaximum(1000);
+
+        gridLayout_14->addWidget(spinBox_threshold_gr4, 2, 4, 1, 1);
+
+        spinBox_threshold_gr5 = new QSpinBox(gridLayoutWidget_14);
+        spinBox_threshold_gr5->setObjectName(QStringLiteral("spinBox_threshold_gr5"));
+        spinBox_threshold_gr5->setMinimum(-1000);
+        spinBox_threshold_gr5->setMaximum(1000);
+
+        gridLayout_14->addWidget(spinBox_threshold_gr5, 2, 5, 1, 1);
+
+        spinBox_threshold_gr6 = new QSpinBox(gridLayoutWidget_14);
+        spinBox_threshold_gr6->setObjectName(QStringLiteral("spinBox_threshold_gr6"));
+        spinBox_threshold_gr6->setMinimum(-1000);
+        spinBox_threshold_gr6->setMaximum(1000);
+
+        gridLayout_14->addWidget(spinBox_threshold_gr6, 2, 6, 1, 1);
+
+        spinBox_threshold_gr7 = new QSpinBox(gridLayoutWidget_14);
+        spinBox_threshold_gr7->setObjectName(QStringLiteral("spinBox_threshold_gr7"));
+        spinBox_threshold_gr7->setMinimum(-1000);
+        spinBox_threshold_gr7->setMaximum(1000);
+
+        gridLayout_14->addWidget(spinBox_threshold_gr7, 2, 7, 1, 1);
+
+        pushButton_threshold_gr_all_reset = new QPushButton(tab_13);
+        pushButton_threshold_gr_all_reset->setObjectName(QStringLiteral("pushButton_threshold_gr_all_reset"));
+        pushButton_threshold_gr_all_reset->setGeometry(QRect(10, 220, 75, 23));
+        tabWidget_2->addTab(tab_13, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
         gridLayoutWidget_12 = new QWidget(tab_2);
@@ -1870,9 +2051,25 @@ public:
         QObject::connect(spinBox_dcoffset_gr7, SIGNAL(valueChanged(int)), verticalSlider_dcoffset_gr7, SLOT(setValue(int)));
         QObject::connect(horizontalSlider, SIGNAL(valueChanged(int)), spinBox_4, SLOT(setValue(int)));
         QObject::connect(spinBox_4, SIGNAL(valueChanged(int)), horizontalSlider, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_threshold_gr0, SIGNAL(valueChanged(int)), spinBox_threshold_gr0, SLOT(setValue(int)));
+        QObject::connect(spinBox_threshold_gr0, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr0, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_threshold_gr1, SIGNAL(valueChanged(int)), spinBox_threshold_gr1, SLOT(setValue(int)));
+        QObject::connect(spinBox_threshold_gr1, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr1, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_threshold_gr2, SIGNAL(valueChanged(int)), spinBox_threshold_gr2, SLOT(setValue(int)));
+        QObject::connect(spinBox_threshold_gr2, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr2, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_threshold_gr3, SIGNAL(valueChanged(int)), spinBox_threshold_gr3, SLOT(setValue(int)));
+        QObject::connect(spinBox_threshold_gr3, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr3, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_threshold_gr4, SIGNAL(valueChanged(int)), spinBox_threshold_gr4, SLOT(setValue(int)));
+        QObject::connect(spinBox_threshold_gr4, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr4, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_threshold_gr5, SIGNAL(valueChanged(int)), spinBox_threshold_gr5, SLOT(setValue(int)));
+        QObject::connect(spinBox_threshold_gr5, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr5, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_threshold_gr6, SIGNAL(valueChanged(int)), spinBox_threshold_gr6, SLOT(setValue(int)));
+        QObject::connect(spinBox_threshold_gr6, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr6, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_threshold_gr7, SIGNAL(valueChanged(int)), spinBox_threshold_gr7, SLOT(setValue(int)));
+        QObject::connect(spinBox_threshold_gr7, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr7, SLOT(setValue(int)));
 
         tabWidget->setCurrentIndex(0);
-        tabWidget_2->setCurrentIndex(3);
+        tabWidget_2->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1918,9 +2115,6 @@ public:
         groupBox_4->setTitle(QApplication::translate("MainWindow", "Choose trigger:", 0));
         radioButton_12->setText(QApplication::translate("MainWindow", "External", 0));
         radioButton_13->setText(QApplication::translate("MainWindow", "Internal", 0));
-        groupBox->setTitle(QApplication::translate("MainWindow", "Source", 0));
-        groupBox_2->setTitle(QApplication::translate("MainWindow", "Threshold[mV]", 0));
-        pushButton_6->setText(QApplication::translate("MainWindow", "Set", 0));
         pushButton_2->setText(QApplication::translate("MainWindow", "Acquisition", 0));
         groupBox_8->setTitle(QApplication::translate("MainWindow", "Single / continious", 0));
         radioButton_14->setText(QApplication::translate("MainWindow", "Single", 0));
@@ -1932,6 +2126,16 @@ public:
         radioButton_2->setText(QApplication::translate("MainWindow", "Rising", 0));
         radioButton_3->setText(QApplication::translate("MainWindow", "Falling", 0));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindow", "Trigger main settings", 0));
+        label_31->setText(QApplication::translate("MainWindow", "gr0", 0));
+        label_27->setText(QApplication::translate("MainWindow", "gr1", 0));
+        label_30->setText(QApplication::translate("MainWindow", "gr2", 0));
+        label_29->setText(QApplication::translate("MainWindow", "gr3", 0));
+        label_28->setText(QApplication::translate("MainWindow", "gr4", 0));
+        label_33->setText(QApplication::translate("MainWindow", "gr5", 0));
+        label_32->setText(QApplication::translate("MainWindow", "gr6", 0));
+        label_26->setText(QApplication::translate("MainWindow", "gr7", 0));
+        pushButton_threshold_gr_all_reset->setText(QApplication::translate("MainWindow", "Reset", 0));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_13), QApplication::translate("MainWindow", "Threshold [mV]", 0));
         label_20->setText(QApplication::translate("MainWindow", "gr5", 0));
         label_11->setText(QApplication::translate("MainWindow", "gr4", 0));
         label_21->setText(QApplication::translate("MainWindow", "gr6", 0));
@@ -1942,7 +2146,7 @@ public:
         label_9->setText(QApplication::translate("MainWindow", "gr2", 0));
         pushButton_9->setText(QApplication::translate("MainWindow", "Reset", 0));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QApplication::translate("MainWindow", "DC Offset", 0));
-        groupBox_10->setTitle(QApplication::translate("MainWindow", "CHANNEL_TRIGGER", 0));
+        groupBox_10->setTitle(QApplication::translate("MainWindow", "TRIGGER (OR)", 0));
         pushButton_7->setText(QApplication::translate("MainWindow", "Enalble all", 0));
         pushButton_8->setText(QApplication::translate("MainWindow", "Disalble all", 0));
         CHANNEL_TRIGGER_checkBox_gr0_ch0->setText(QString());

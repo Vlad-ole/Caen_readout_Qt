@@ -40,6 +40,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL(SetTDrawFinished(long)), worker, SLOT( SetTDrawFinished(long) ), Qt::DirectConnection  );
+    connect( this, SIGNAL( SetExternalTrigger(bool) ), worker, SLOT( SetExternalTrigger(bool) ) );
     connect( this, SIGNAL( SetDCOffset(int,int) ), worker, SLOT( SetDCOffset(int,int) ) );
     connect( this, SIGNAL( SetRisingFalling(bool) ), worker, SLOT( SetRisingFalling(bool) ) );
     connect( this, SIGNAL( SetContinuousTrigger(bool)) , worker, SLOT( SetContinuousTrigger(bool) ) );
@@ -155,6 +157,7 @@ void MainWindow::InitializationComplete()
     ui->radioButton_13->setChecked(true);
     ui->pushButton->setStyleSheet("background-color: green");
     ui->pushButton->setEnabled(false);
+    ui->groupBox_10->setEnabled(false);
 
 ///////////////
     QString x_label = "time [us]";
@@ -806,7 +809,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
     {
     case CAEN_DGTZ_XX720_FAMILY_CODE:
     {
-        qDebug() << "CAEN_DGTZ_XX720_FAMILY_CODE" << endl;
+        //qDebug() << "CAEN_DGTZ_XX720_FAMILY_CODE" << endl;
 
         if(worker->WDcfg.EnableMask & 1)
         {
@@ -861,7 +864,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
 
     case CAEN_DGTZ_XX740_FAMILY_CODE:
     {
-         qDebug() << "CAEN_DGTZ_XX740_FAMILY_CODE" << endl;
+        //qDebug() << "CAEN_DGTZ_XX740_FAMILY_CODE" << endl;
         if(worker->WDcfg.EnableMask & 1)
         {
             ui->widget_011->addGraph();
@@ -882,7 +885,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_022->graph(0)->setData(array_x, array_y[6]);
             ui->widget_023->graph(0)->setData(array_x, array_y[7]);
 
-            qDebug() << "worker->WDcfg.EnableMask & 1" << endl;
+            //qDebug() << "worker->WDcfg.EnableMask & 1" << endl;
 
         }
 
@@ -906,7 +909,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_035->graph(0)->setData(array_x, array_y[14]);
             ui->widget_041->graph(0)->setData(array_x, array_y[15]);
 
-            qDebug() << "worker->WDcfg.EnableMask & 2" << endl;
+            //qDebug() << "worker->WDcfg.EnableMask & 2" << endl;
         }
 
         if(worker->WDcfg.EnableMask & 4)
@@ -929,7 +932,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_053->graph(0)->setData(array_x, array_y[22]);
             ui->widget_054->graph(0)->setData(array_x, array_y[23]);
 
-            qDebug() << "worker->WDcfg.EnableMask & 4" << endl;
+            //qDebug() << "worker->WDcfg.EnableMask & 4" << endl;
 
         }
 
@@ -953,7 +956,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
              ui->widget_ch_30->graph(0)->setData(array_x, array_y[30]);
              ui->widget_ch_31->graph(0)->setData(array_x, array_y[31]);
 
-            qDebug() << "worker->WDcfg.EnableMask & 8" << endl;
+            //qDebug() << "worker->WDcfg.EnableMask & 8" << endl;
         }
 
         if(worker->WDcfg.EnableMask & 16)
@@ -976,7 +979,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_ch_38->graph(0)->setData(array_x, array_y[38]);
             ui->widget_ch_39->graph(0)->setData(array_x, array_y[39]);
 
-            qDebug() << "worker->WDcfg.EnableMask & 16" << endl;
+            //qDebug() << "worker->WDcfg.EnableMask & 16" << endl;
         }
 
         if(worker->WDcfg.EnableMask & 32)
@@ -999,7 +1002,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_ch_46->graph(0)->setData(array_x, array_y[46]);
             ui->widget_ch_47->graph(0)->setData(array_x, array_y[47]);
 
-            qDebug() << "worker->WDcfg.EnableMask & 32" << endl;
+            //qDebug() << "worker->WDcfg.EnableMask & 32" << endl;
         }
 
         if(worker->WDcfg.EnableMask & 64)
@@ -1022,7 +1025,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_ch_54->graph(0)->setData(array_x, array_y[54]);
             ui->widget_ch_55->graph(0)->setData(array_x, array_y[55]);
 
-            qDebug() << "worker->WDcfg.EnableMask & 64" << endl;
+            //qDebug() << "worker->WDcfg.EnableMask & 64" << endl;
         }
 
         if(worker->WDcfg.EnableMask & 128)
@@ -1045,7 +1048,7 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
             ui->widget_ch_62->graph(0)->setData(array_x, array_y[62]);
             ui->widget_ch_63->graph(0)->setData(array_x, array_y[63]);
 
-            qDebug() << "worker->WDcfg.EnableMask & 128" << endl;
+            //qDebug() << "worker->WDcfg.EnableMask & 128" << endl;
         }
 
         break;
@@ -1159,9 +1162,8 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
     ui->widget_ch_62->replot();
     ui->widget_ch_63->replot();
 
-
-
     qDebug() << "in RedrawGraphs (time)" << get_time() - time_label_start << endl;
+    emit this->SetTDrawFinished( get_time() );
 }
 
 void MainWindow::Message(QString s)
@@ -1172,14 +1174,11 @@ void MainWindow::Message(QString s)
 
 void MainWindow::on_radioButton_13_clicked()
 {
-    ui->spinBox_2->setEnabled(true);
-    ui->groupBox_2->setEnabled(true);
 }
 
 void MainWindow::on_radioButton_12_clicked()
 {
-    ui->spinBox_2->setEnabled(false);
-    ui->groupBox_2->setEnabled(false);
+
 }
 
 void MainWindow::on_checkBox_clicked()
@@ -1187,10 +1186,6 @@ void MainWindow::on_checkBox_clicked()
 
 }
 
-void MainWindow::on_spinBox_3_valueChanged(int arg1)
-{
-
-}
 
 void MainWindow::GraphData(double **array, int rows, int cols)
 {
@@ -1677,23 +1672,9 @@ void MainWindow::on_MASK_CHANNEL_checkBox_gr0_ch7_clicked(bool checked)
 
 
 
-void MainWindow::on_verticalSlider_valueChanged(int value)
-{
-    trigger_value_ch.value = value;
-    qDebug() << "trigger_value_ch.value = " << value << endl;
-}
 
-void MainWindow::on_spinBox_2_valueChanged(int arg1)
-{
-    trigger_value_ch.ch = arg1;
-    qDebug() << "trigger_value_ch.ch = " << arg1 << endl;
-}
 
-void MainWindow::on_pushButton_6_clicked()
-{
-    emit this->SetTriggerValue(trigger_value_ch.ch, trigger_value_ch.value);
-    qDebug() << "SetTriggerValue_clicked() " << trigger_value_ch.ch << "   " << trigger_value_ch.value  << endl;
-}
+
 
 void MainWindow::on_pushButton_Reprogram_clicked()
 {
@@ -2411,12 +2392,9 @@ void MainWindow::on_radioButton_clicked()
 void MainWindow::on_radioButton_clicked(bool checked)
 {
     emit this->SetContinuousTrigger(false);
+    ui->groupBox_10->setEnabled(true);
 }
 
-void MainWindow::on_pushButton_6_clicked(bool checked)
-{
-
-}
 
 void MainWindow::on_lcdNumber_2_windowTitleChanged(const QString &title)
 {
@@ -2490,4 +2468,80 @@ void MainWindow::on_spinBox_4_valueChanged(int arg1)
     emit this->SetRecordLength(arg1);
 
     ui->spinBox_5->setValue(worker->WDcfg.Ts * arg1);
+}
+
+void MainWindow::on_radioButton_13_clicked(bool checked)
+{
+    ui->groupBox_10->setEnabled(true);
+    ui->radioButton_15->setEnabled(true);
+    emit this->SetExternalTrigger(false);
+}
+
+void MainWindow::on_radioButton_12_clicked(bool checked)
+{
+    ui->groupBox_10->setEnabled(false);
+    ui->radioButton_15->setEnabled(false);
+
+    ui->radioButton->setChecked(true);
+    emit this->SetContinuousTrigger(false);
+
+    on_pushButton_8_clicked(); // disable all
+    emit this->SetExternalTrigger(true);
+}
+
+void MainWindow::on_pushButton_8_clicked(bool checked)
+{
+
+}
+
+void MainWindow::on_pushButton_threshold_gr_all_reset_clicked()
+{
+    ui->spinBox_threshold_gr0->setValue(0);
+    ui->spinBox_threshold_gr1->setValue(0);
+    ui->spinBox_threshold_gr2->setValue(0);
+    ui->spinBox_threshold_gr3->setValue(0);
+    ui->spinBox_threshold_gr4->setValue(0);
+    ui->spinBox_threshold_gr5->setValue(0);
+    ui->spinBox_threshold_gr6->setValue(0);
+    ui->spinBox_threshold_gr7->setValue(0);
+}
+
+void MainWindow::on_spinBox_threshold_gr0_valueChanged(int arg1)
+{
+    emit this->SetTriggerValue(0, arg1);
+}
+
+void MainWindow::on_spinBox_threshold_gr1_valueChanged(int arg1)
+{
+    emit this->SetTriggerValue(1, arg1);
+}
+
+void MainWindow::on_spinBox_threshold_gr2_valueChanged(int arg1)
+{
+    emit this->SetTriggerValue(2, arg1);
+}
+
+void MainWindow::on_spinBox_threshold_gr3_valueChanged(int arg1)
+{
+    emit this->SetTriggerValue(3, arg1);
+}
+
+void MainWindow::on_spinBox_threshold_gr4_valueChanged(int arg1)
+{
+    emit this->SetTriggerValue(4, arg1);
+}
+
+void MainWindow::on_spinBox_threshold_gr5_valueChanged(int arg1)
+{
+    emit this->SetTriggerValue(5, arg1);
+}
+
+void MainWindow::on_spinBox_threshold_gr6_valueChanged(int arg1)
+{
+    emit this->SetTriggerValue(6, arg1);
+}
+
+void MainWindow::on_spinBox_threshold_gr7_valueChanged(int arg1)
+{
+    emit this->SetTriggerValue(7, arg1);
 }

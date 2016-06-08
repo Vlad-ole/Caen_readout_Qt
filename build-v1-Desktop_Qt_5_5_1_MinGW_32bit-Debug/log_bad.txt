@@ -1,0 +1,24 @@
+Thread in Readout_loop() is  0x450
+WDcfg.InterruptNumEvents  0
+BufferSize  0
+handle  0
+WDrun.Quit  0
+WDrun.ContinuousWrite  0
+Continuous trigger is disabled
+
+WDcfg.Threshold[0] =  2088 
+
+WDcfg.Threshold[1] =  1800 
+
+WDcfg.Threshold[2] =  1800 
+
+Delta time (prepare data)=  1
+CAEN_DGTZ_XX740_FAMILY_CODE 
+
+worker->WDcfg.EnableMask & 1 
+
+in RedrawGraphs (time) 95 
+
+
+
+

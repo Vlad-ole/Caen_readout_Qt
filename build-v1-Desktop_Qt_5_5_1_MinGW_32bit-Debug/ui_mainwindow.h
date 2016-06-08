@@ -72,6 +72,10 @@ public:
     QSpinBox *spinBox_x_max;
     QDoubleSpinBox *doubleSpinBox_2;
     QDoubleSpinBox *doubleSpinBox;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout_5;
+    QLabel *label_34;
+    QSpinBox *spinBox_UpdateTime;
     QLabel *label_3;
     QLCDNumber *lcdNumber_2;
     QTabWidget *tabWidget;
@@ -572,6 +576,28 @@ public:
         doubleSpinBox->setValue(1000);
 
         gridLayout_4->addWidget(doubleSpinBox, 3, 1, 1, 1);
+
+        verticalLayoutWidget = new QWidget(groupBox_7);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(180, 20, 101, 71));
+        verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
+        label_34 = new QLabel(verticalLayoutWidget);
+        label_34->setObjectName(QStringLiteral("label_34"));
+
+        verticalLayout_5->addWidget(label_34);
+
+        spinBox_UpdateTime = new QSpinBox(verticalLayoutWidget);
+        spinBox_UpdateTime->setObjectName(QStringLiteral("spinBox_UpdateTime"));
+        spinBox_UpdateTime->setMinimum(200);
+        spinBox_UpdateTime->setMaximum(5000);
+        spinBox_UpdateTime->setSingleStep(100);
+        spinBox_UpdateTime->setValue(1000);
+
+        verticalLayout_5->addWidget(spinBox_UpdateTime);
 
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
@@ -2069,7 +2095,7 @@ public:
         QObject::connect(spinBox_threshold_gr7, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr7, SLOT(setValue(int)));
 
         tabWidget->setCurrentIndex(0);
-        tabWidget_2->setCurrentIndex(1);
+        tabWidget_2->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -2102,6 +2128,7 @@ public:
         label_36->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">x max [ns]</p></body></html>", 0));
         label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">y min[mV]</p></body></html>", 0));
         label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">y max[mV]</p></body></html>", 0));
+        label_34->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Update time [ms]</p><p align=\"center\">from 200 to 5000</p></body></html>", 0));
         label_3->setText(QApplication::translate("MainWindow", "Trigger rate [Hz]", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "gr 0", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "gr 1", 0));

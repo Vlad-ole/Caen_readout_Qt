@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MyWorker_t {
-    QByteArrayData data[39];
-    char stringdata0[576];
+    QByteArrayData data[40];
+    char stringdata0[590];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -68,7 +68,8 @@ QT_MOC_LITERAL(34, 490, 20), // "SetContinuousTrigger"
 QT_MOC_LITERAL(35, 511, 16), // "SetRisingFalling"
 QT_MOC_LITERAL(36, 528, 11), // "SetDCOffset"
 QT_MOC_LITERAL(37, 540, 18), // "SetExternalTrigger"
-QT_MOC_LITERAL(38, 559, 16) // "SetTDrawFinished"
+QT_MOC_LITERAL(38, 559, 16), // "SetTDrawFinished"
+QT_MOC_LITERAL(39, 576, 13) // "SetUpdateTime"
 
     },
     "MyWorker\0Message\0\0finished\0"
@@ -87,7 +88,7 @@ QT_MOC_LITERAL(38, 559, 16) // "SetTDrawFinished"
     "SetEventsPerFile\0SetFolder\0"
     "SetContinuousTrigger\0SetRisingFalling\0"
     "SetDCOffset\0SetExternalTrigger\0"
-    "SetTDrawFinished"
+    "SetTDrawFinished\0SetUpdateTime"
 };
 #undef QT_MOC_LITERAL
 
@@ -97,7 +98,7 @@ static const uint qt_meta_data_MyWorker[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      34,   14, // methods
+      35,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -105,42 +106,43 @@ static const uint qt_meta_data_MyWorker[] = {
        9,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  184,    2, 0x06 /* Public */,
-       3,    0,  187,    2, 0x06 /* Public */,
-       4,    0,  188,    2, 0x06 /* Public */,
-       5,    2,  189,    2, 0x06 /* Public */,
-       7,    2,  194,    2, 0x06 /* Public */,
-       9,    1,  199,    2, 0x06 /* Public */,
-      10,    1,  202,    2, 0x06 /* Public */,
-      11,    0,  205,    2, 0x06 /* Public */,
-      12,    1,  206,    2, 0x06 /* Public */,
+       1,    1,  189,    2, 0x06 /* Public */,
+       3,    0,  192,    2, 0x06 /* Public */,
+       4,    0,  193,    2, 0x06 /* Public */,
+       5,    2,  194,    2, 0x06 /* Public */,
+       7,    2,  199,    2, 0x06 /* Public */,
+       9,    1,  204,    2, 0x06 /* Public */,
+      10,    1,  207,    2, 0x06 /* Public */,
+      11,    0,  210,    2, 0x06 /* Public */,
+      12,    1,  211,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      13,    0,  209,    2, 0x0a /* Public */,
-      14,    0,  210,    2, 0x0a /* Public */,
-      15,    0,  211,    2, 0x0a /* Public */,
-      16,    0,  212,    2, 0x0a /* Public */,
-      17,    0,  213,    2, 0x0a /* Public */,
-      18,    0,  214,    2, 0x0a /* Public */,
-      19,    0,  215,    2, 0x0a /* Public */,
-      20,    1,  216,    2, 0x0a /* Public */,
-      22,    0,  219,    2, 0x0a /* Public */,
-      23,    0,  220,    2, 0x0a /* Public */,
-      24,    0,  221,    2, 0x0a /* Public */,
-      25,    2,  222,    2, 0x0a /* Public */,
-      26,    2,  227,    2, 0x0a /* Public */,
-      27,    1,  232,    2, 0x0a /* Public */,
-      28,    2,  235,    2, 0x0a /* Public */,
-      29,    2,  240,    2, 0x0a /* Public */,
-      30,    1,  245,    2, 0x0a /* Public */,
-      31,    1,  248,    2, 0x0a /* Public */,
-      32,    1,  251,    2, 0x0a /* Public */,
-      33,    1,  254,    2, 0x0a /* Public */,
-      34,    1,  257,    2, 0x0a /* Public */,
-      35,    1,  260,    2, 0x0a /* Public */,
-      36,    2,  263,    2, 0x0a /* Public */,
-      37,    1,  268,    2, 0x0a /* Public */,
-      38,    1,  271,    2, 0x0a /* Public */,
+      13,    0,  214,    2, 0x0a /* Public */,
+      14,    0,  215,    2, 0x0a /* Public */,
+      15,    0,  216,    2, 0x0a /* Public */,
+      16,    0,  217,    2, 0x0a /* Public */,
+      17,    0,  218,    2, 0x0a /* Public */,
+      18,    0,  219,    2, 0x0a /* Public */,
+      19,    0,  220,    2, 0x0a /* Public */,
+      20,    1,  221,    2, 0x0a /* Public */,
+      22,    0,  224,    2, 0x0a /* Public */,
+      23,    0,  225,    2, 0x0a /* Public */,
+      24,    0,  226,    2, 0x0a /* Public */,
+      25,    2,  227,    2, 0x0a /* Public */,
+      26,    2,  232,    2, 0x0a /* Public */,
+      27,    1,  237,    2, 0x0a /* Public */,
+      28,    2,  240,    2, 0x0a /* Public */,
+      29,    2,  245,    2, 0x0a /* Public */,
+      30,    1,  250,    2, 0x0a /* Public */,
+      31,    1,  253,    2, 0x0a /* Public */,
+      32,    1,  256,    2, 0x0a /* Public */,
+      33,    1,  259,    2, 0x0a /* Public */,
+      34,    1,  262,    2, 0x0a /* Public */,
+      35,    1,  265,    2, 0x0a /* Public */,
+      36,    2,  268,    2, 0x0a /* Public */,
+      37,    1,  273,    2, 0x0a /* Public */,
+      38,    1,  276,    2, 0x0a /* Public */,
+      39,    1,  279,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
@@ -179,6 +181,7 @@ static const uint qt_meta_data_MyWorker[] = {
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Long,    2,
+    QMetaType::Void, QMetaType::Int,    2,
 
        0        // eod
 };
@@ -223,6 +226,7 @@ void MyWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 31: _t->SetDCOffset((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 32: _t->SetExternalTrigger((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 33: _t->SetTDrawFinished((*reinterpret_cast< long(*)>(_a[1]))); break;
+        case 34: _t->SetUpdateTime((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -331,13 +335,13 @@ int MyWorker::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 34)
+        if (_id < 35)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 34;
+        _id -= 35;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 34)
+        if (_id < 35)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 34;
+        _id -= 35;
     }
     return _id;
 }

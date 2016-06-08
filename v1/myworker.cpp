@@ -18,6 +18,8 @@ void MyWorker::Init()
 
 
     TDrawFinished = 0;
+    UpdateTime = 1000;
+    PrevPlotTime = 0;
 
     int argc_my = 1;
     char* argv_my[0] = {};
@@ -203,7 +205,7 @@ void MyWorker::Readout_loop()
         {
             uint32_t lstatus;
             ret = CAEN_DGTZ_ReadRegister(handle, CAEN_DGTZ_ACQ_STATUS_ADD, &lstatus);
-            qDebug() << "BufferSize = 0!. ret = " << ret << endl;
+            qDebug() << "BufferSize = 0. ret = " << ret << " time = " << get_time() << endl;
             if (lstatus & (0x1 << 19))
             {
                 ErrCode = ERR_OVERTEMP;
@@ -270,14 +272,14 @@ void MyWorker::Readout_loop()
             qDebug() << "WDcfg.Threshold[1] = " << WDcfg.Threshold[1] << endl;
             qDebug() << "WDcfg.Threshold[2] = " << WDcfg.Threshold[2] << endl;
 
-        //}//if( ElapsedTime >= 1000)
+        }//if( ElapsedTime >= 1000)
 
 
-            if(WDrun.ContinuousPlot && (get_time() > TDrawFinished )  )
+            if(WDrun.ContinuousPlot && (BufferSize != 0) && (get_time() > TDrawFinished /*plot is busy?*/) && (get_time() - PrevPlotTime > UpdateTime /*set period of update*/)  )
             {
                 long time_label_start = get_time();
                 qDebug() << "get_time() - TDrawFinished (sec.) = " << (get_time() - TDrawFinished) / 1000.0 << endl;
-                qDebug() << "TDrawFinished (sec.) = " << (TDrawFinished) / 1000.0 << endl;
+                qDebug() << "UpdateTime (ms) = " << UpdateTime << endl;
 
                 uint N_ch;
                 switch (BoardInfo.FamilyCode)
@@ -299,15 +301,17 @@ void MyWorker::Readout_loop()
 
                 array_y_data.resize(N_ch);
 
+                //clear vectors
                 for(int i = 0; i < N_ch; i++)
                 {
                     array_y_data[i].clear();
                 }
+                array_x_data.clear();
 
 
 
                 /* Analyze data */
-                for(i = 0; i < (int)NumEvents; i++)
+              for(i = 0; i < (int)NumEvents; i++)
                 {
 
 
@@ -392,9 +396,10 @@ void MyWorker::Readout_loop()
 
                 emit this->RedrawGraphsFull(array_x_data, array_y_data);
                 qDebug() << "Delta time (prepare data)= " << get_time() - time_label_start;
+                PrevPlotTime = get_time();
             }
 
-        }//if( ElapsedTime >= 1000)
+        //}//if( ElapsedTime >= 1000)
 
 
 
@@ -1010,3 +1015,8 @@ void MyWorker::SetExternalTrigger(bool value)
  {
      TDrawFinished = val;
  }
+
+void MyWorker::SetUpdateTime(int val)
+{
+    UpdateTime  = val;
+}

@@ -65,6 +65,8 @@ public:
 
 
     long TDrawFinished;
+    int UpdateTime;
+    long PrevPlotTime;
 
 
 public slots:
@@ -102,6 +104,8 @@ public slots:
     void SetDCOffset(int, int);
     void SetExternalTrigger(bool);
     void SetTDrawFinished(long);
+
+    void SetUpdateTime(int);
 
 
 signals:

@@ -307,6 +307,8 @@ private slots:
 
     void on_spinBox_threshold_gr7_valueChanged(int arg1);
 
+    void on_spinBox_UpdateTime_valueChanged(int arg1);
+
 public slots:
     void Message(QString);
     void InitializationComplete();
@@ -372,6 +374,8 @@ signals:
 
     void SetExternalTrigger(bool);
     void SetTDrawFinished(long);
+
+    void SetUpdateTime(int);
 
 };
 

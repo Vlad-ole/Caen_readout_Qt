@@ -40,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL( SetUpdateTime(int)  ), worker, SLOT( SetUpdateTime(int)  ), Qt::DirectConnection );
     connect( this, SIGNAL(SetTDrawFinished(long)), worker, SLOT( SetTDrawFinished(long) ), Qt::DirectConnection  );
     connect( this, SIGNAL( SetExternalTrigger(bool) ), worker, SLOT( SetExternalTrigger(bool) ) );
     connect( this, SIGNAL( SetDCOffset(int,int) ), worker, SLOT( SetDCOffset(int,int) ) );
@@ -2544,4 +2545,9 @@ void MainWindow::on_spinBox_threshold_gr6_valueChanged(int arg1)
 void MainWindow::on_spinBox_threshold_gr7_valueChanged(int arg1)
 {
     emit this->SetTriggerValue(7, arg1);
+}
+
+void MainWindow::on_spinBox_UpdateTime_valueChanged(int arg1)
+{
+    emit this->SetUpdateTime(arg1);
 }

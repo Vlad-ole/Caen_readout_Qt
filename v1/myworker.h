@@ -106,6 +106,7 @@ public slots:
     void SetTDrawFinished(long);
 
     void SetUpdateTime(int);
+    void SetPostTrigger(int);
 
 
 signals:

@@ -187,6 +187,9 @@ public:
     QGroupBox *groupBox_11;
     QRadioButton *radioButton_2;
     QRadioButton *radioButton_3;
+    QGroupBox *groupBox_postTrigger;
+    QSlider *verticalSlider_postTrigger;
+    QSpinBox *spinBox_2;
     QWidget *tab_13;
     QWidget *gridLayoutWidget_14;
     QGridLayout *gridLayout_14;
@@ -1023,7 +1026,7 @@ public:
         tab->setObjectName(QStringLiteral("tab"));
         groupBox_3 = new QGroupBox(tab);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(0, 10, 471, 481));
+        groupBox_3->setGeometry(QRect(0, 10, 441, 471));
         groupBox_4 = new QGroupBox(groupBox_3);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
         groupBox_4->setGeometry(QRect(10, 30, 91, 91));
@@ -1083,7 +1086,7 @@ public:
         pushButton_Reprogram->setGeometry(QRect(10, 210, 91, 31));
         groupBox_11 = new QGroupBox(groupBox_3);
         groupBox_11->setObjectName(QStringLiteral("groupBox_11"));
-        groupBox_11->setGeometry(QRect(260, 130, 101, 111));
+        groupBox_11->setGeometry(QRect(110, 10, 101, 111));
         radioButton_2 = new QRadioButton(groupBox_11);
         radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
         radioButton_2->setGeometry(QRect(10, 30, 82, 17));
@@ -1091,12 +1094,24 @@ public:
         radioButton_3 = new QRadioButton(groupBox_11);
         radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
         radioButton_3->setGeometry(QRect(10, 60, 82, 17));
+        groupBox_postTrigger = new QGroupBox(groupBox_3);
+        groupBox_postTrigger->setObjectName(QStringLiteral("groupBox_postTrigger"));
+        groupBox_postTrigger->setGeometry(QRect(260, 30, 91, 211));
+        verticalSlider_postTrigger = new QSlider(groupBox_postTrigger);
+        verticalSlider_postTrigger->setObjectName(QStringLiteral("verticalSlider_postTrigger"));
+        verticalSlider_postTrigger->setGeometry(QRect(20, 30, 19, 144));
+        verticalSlider_postTrigger->setMaximum(100);
+        verticalSlider_postTrigger->setOrientation(Qt::Vertical);
+        spinBox_2 = new QSpinBox(groupBox_postTrigger);
+        spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
+        spinBox_2->setGeometry(QRect(10, 180, 61, 20));
+        spinBox_2->setMaximum(100);
         tabWidget_2->addTab(tab, QString());
         tab_13 = new QWidget();
         tab_13->setObjectName(QStringLiteral("tab_13"));
         gridLayoutWidget_14 = new QWidget(tab_13);
         gridLayoutWidget_14->setObjectName(QStringLiteral("gridLayoutWidget_14"));
-        gridLayoutWidget_14->setGeometry(QRect(10, 20, 468, 181));
+        gridLayoutWidget_14->setGeometry(QRect(10, 20, 421, 181));
         gridLayout_14 = new QGridLayout(gridLayoutWidget_14);
         gridLayout_14->setSpacing(6);
         gridLayout_14->setContentsMargins(11, 11, 11, 11);
@@ -2093,6 +2108,8 @@ public:
         QObject::connect(spinBox_threshold_gr6, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr6, SLOT(setValue(int)));
         QObject::connect(verticalSlider_threshold_gr7, SIGNAL(valueChanged(int)), spinBox_threshold_gr7, SLOT(setValue(int)));
         QObject::connect(spinBox_threshold_gr7, SIGNAL(valueChanged(int)), verticalSlider_threshold_gr7, SLOT(setValue(int)));
+        QObject::connect(verticalSlider_postTrigger, SIGNAL(valueChanged(int)), spinBox_2, SLOT(setValue(int)));
+        QObject::connect(spinBox_2, SIGNAL(valueChanged(int)), verticalSlider_postTrigger, SLOT(setValue(int)));
 
         tabWidget->setCurrentIndex(0);
         tabWidget_2->setCurrentIndex(0);
@@ -2152,6 +2169,7 @@ public:
         groupBox_11->setTitle(QApplication::translate("MainWindow", "Rising / Falling", 0));
         radioButton_2->setText(QApplication::translate("MainWindow", "Rising", 0));
         radioButton_3->setText(QApplication::translate("MainWindow", "Falling", 0));
+        groupBox_postTrigger->setTitle(QApplication::translate("MainWindow", "PostTrigger (%)", 0));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindow", "Trigger main settings", 0));
         label_31->setText(QApplication::translate("MainWindow", "gr0", 0));
         label_27->setText(QApplication::translate("MainWindow", "gr1", 0));

@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->groupBox_3->setEnabled(false);
     ui->groupBox_6->setEnabled(false);
     ui->groupBox_7->setEnabled(false);
+    ui->groupBox_postTrigger->setEnabled(false);
     ui->pushButton->setStyleSheet("background-color: red");
 
     worker = new MyWorker();
@@ -40,6 +41,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( worker, SIGNAL( TriggerRate(double)) , this, SLOT( TriggerRate(double)) );
 
     connect( this, SIGNAL(Init()), worker, SLOT(Init()) );
+    connect( this, SIGNAL(  SetPostTrigger(int)  ), worker, SLOT( SetPostTrigger(int)   ) );
     connect( this, SIGNAL( SetUpdateTime(int)  ), worker, SLOT( SetUpdateTime(int)  ), Qt::DirectConnection );
     connect( this, SIGNAL(SetTDrawFinished(long)), worker, SLOT( SetTDrawFinished(long) ), Qt::DirectConnection  );
     connect( this, SIGNAL( SetExternalTrigger(bool) ), worker, SLOT( SetExternalTrigger(bool) ) );
@@ -159,6 +161,7 @@ void MainWindow::InitializationComplete()
     ui->pushButton->setStyleSheet("background-color: green");
     ui->pushButton->setEnabled(false);
     ui->groupBox_10->setEnabled(false);
+    ui->groupBox_11->setEnabled(false);
 
 ///////////////
     QString x_label = "time [us]";
@@ -1478,6 +1481,8 @@ void MainWindow::SetRangeX()
 void MainWindow::on_radioButton_15_clicked(bool checked)
 {
     //CAEN_DGTZ_SendSWtrigger(handle);
+    ui->groupBox_11->setEnabled(false);
+    ui->groupBox_postTrigger->setEnabled(false);
     emit this->SetContinuousTrigger(true);
 }
 
@@ -2394,6 +2399,9 @@ void MainWindow::on_radioButton_clicked(bool checked)
 {
     emit this->SetContinuousTrigger(false);
     ui->groupBox_10->setEnabled(true);
+    ui->groupBox_postTrigger->setEnabled(true);
+    ui->groupBox_11->setEnabled(true);
+
 }
 
 
@@ -2550,4 +2558,9 @@ void MainWindow::on_spinBox_threshold_gr7_valueChanged(int arg1)
 void MainWindow::on_spinBox_UpdateTime_valueChanged(int arg1)
 {
     emit this->SetUpdateTime(arg1);
+}
+
+void MainWindow::on_spinBox_2_valueChanged(int arg1)
+{
+    emit this->SetPostTrigger(arg1);
 }

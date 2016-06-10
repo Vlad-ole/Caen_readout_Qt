@@ -84,6 +84,15 @@ void MyWorker::Init()
     WDcfg.out_file_type = ASCII;
     WDcfg.TriggerEdge = 0;
 
+    WDcfg.GroupTrgEnableMask[0] = 1;
+    WDcfg.GroupTrgEnableMask[1] = 0;
+    WDcfg.GroupTrgEnableMask[2] = 0;
+    WDcfg.GroupTrgEnableMask[3] = 0;
+    WDcfg.GroupTrgEnableMask[4] = 0;
+    WDcfg.GroupTrgEnableMask[5] = 0;
+    WDcfg.GroupTrgEnableMask[6] = 0;
+    WDcfg.GroupTrgEnableMask[7] = 0;
+
     /* *************************************************************************************** */
     /* Open the digitizer and read the board information                                       */
     /* *************************************************************************************** */
@@ -205,7 +214,7 @@ void MyWorker::Readout_loop()
         {
             uint32_t lstatus;
             ret = CAEN_DGTZ_ReadRegister(handle, CAEN_DGTZ_ACQ_STATUS_ADD, &lstatus);
-            qDebug() << "BufferSize = 0. ret = " << ret << " time = " << get_time() << endl;
+            //qDebug() << "BufferSize = 0. ret = " << ret << " time = " << get_time() << endl;
             if (lstatus & (0x1 << 19))
             {
                 ErrCode = ERR_OVERTEMP;
@@ -972,11 +981,17 @@ void MyWorker::SetContinuousTrigger(bool value)
 void MyWorker::SetRisingFalling(bool IsRising)
 {
     if(IsRising)
+    {
         WDcfg.TriggerEdge = 0;
+        qDebug() << "WDcfg.TriggerEdge = Rising" << endl;
+    }
     else
+    {
         WDcfg.TriggerEdge = 1;
+        qDebug() << "WDcfg.TriggerEdge = Falling" << endl;
+    }
 
-    qDebug() << "WDcfg.TriggerEdge = " << WDcfg.TriggerEdge << endl;
+
     Restart();
 }
 
@@ -1019,4 +1034,11 @@ void MyWorker::SetExternalTrigger(bool value)
 void MyWorker::SetUpdateTime(int val)
 {
     UpdateTime  = val;
+}
+
+void MyWorker::SetPostTrigger(int val)
+{
+    WDcfg.PostTrigger = val;
+    qDebug() << "PostTrigger = " << WDcfg.PostTrigger << endl;
+    Restart();
 }

@@ -83,6 +83,7 @@ void MyWorker::Init()
     WDcfg.out_file_isheader = false;
     WDcfg.out_file_type = ASCII;
     WDcfg.TriggerEdge = 0;
+    WDcfg.PostTrigger = 80;
 
     WDcfg.GroupTrgEnableMask[0] = 1;
     WDcfg.GroupTrgEnableMask[1] = 0;

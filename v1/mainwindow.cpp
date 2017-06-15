@@ -113,6 +113,50 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->CHANNEL_TRIGGER_checkBox_gr2_ch23->setToolTip("ch 23");
 
     ui->CHANNEL_TRIGGER_checkBox_gr3_ch24->setToolTip("ch 24");
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch25->setToolTip("ch 25");
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch26->setToolTip("ch 26");
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch27->setToolTip("ch 27");
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch28->setToolTip("ch 28");
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch29->setToolTip("ch 29");
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch30->setToolTip("ch 30");
+    ui->CHANNEL_TRIGGER_checkBox_gr3_ch31->setToolTip("ch 31");
+
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch32->setToolTip("ch 32");
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch33->setToolTip("ch 33");
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch34->setToolTip("ch 34");
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch35->setToolTip("ch 35");
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch36->setToolTip("ch 36");
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch37->setToolTip("ch 37");
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch38->setToolTip("ch 38");
+    ui->CHANNEL_TRIGGER_checkBox_gr4_ch39->setToolTip("ch 39");
+
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch40->setToolTip("ch 40");
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch41->setToolTip("ch 41");
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch42->setToolTip("ch 42");
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch43->setToolTip("ch 43");
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch44->setToolTip("ch 44");
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch45->setToolTip("ch 45");
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch46->setToolTip("ch 46");
+    ui->CHANNEL_TRIGGER_checkBox_gr5_ch47->setToolTip("ch 47");
+
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch48->setToolTip("ch 48");
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch49->setToolTip("ch 49");
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch50->setToolTip("ch 50");
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch51->setToolTip("ch 51");
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch52->setToolTip("ch 52");
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch53->setToolTip("ch 53");
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch54->setToolTip("ch 54");
+    ui->CHANNEL_TRIGGER_checkBox_gr6_ch55->setToolTip("ch 55");
+
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch56->setToolTip("ch 56");
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch57->setToolTip("ch 57");
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch58->setToolTip("ch 58");
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch59->setToolTip("ch 59");
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch60->setToolTip("ch 60");
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch61->setToolTip("ch 61");
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch62->setToolTip("ch 62");
+    ui->CHANNEL_TRIGGER_checkBox_gr7_ch63->setToolTip("ch 64");
+
 
     x_min = 0;
     x_max = 20000;
@@ -732,7 +776,7 @@ void MainWindow::InitializationComplete()
 
 void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<double> > array_y)
 {
-    long time_label_start = get_time();
+    long time_label_start = QDateTime::currentMSecsSinceEpoch();
 
 
     ui->widget_011->clearGraphs();
@@ -1166,8 +1210,8 @@ void MainWindow::RedrawGraphsFull(QVector<double> array_x, QVector< QVector<doub
     ui->widget_ch_62->replot();
     ui->widget_ch_63->replot();
 
-    qDebug() << "in RedrawGraphs (time)" << get_time() - time_label_start << endl;
-    emit this->SetTDrawFinished( get_time() );
+    qDebug() << "in RedrawGraphs (time)" << QDateTime::currentMSecsSinceEpoch() - time_label_start << endl;
+    emit this->SetTDrawFinished( QDateTime::currentMSecsSinceEpoch() );
 }
 
 void MainWindow::Message(QString s)

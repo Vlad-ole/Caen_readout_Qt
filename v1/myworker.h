@@ -64,9 +64,9 @@ public:
     //QVector<double> array_y;
 
 
-    long TDrawFinished;
-    int UpdateTime;
-    long PrevPlotTime;
+    qint64 TDrawFinished;
+    qint64 UpdateTime;
+    qint64 PrevPlotTime;
 
 
 public slots:

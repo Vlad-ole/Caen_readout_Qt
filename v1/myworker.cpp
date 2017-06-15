@@ -147,11 +147,11 @@ void MyWorker::Init()
     Program_the_digitizer();
 
 
-//    for(int i=0; i < 10000000; i++)
-//    {
-//        double a = log( exp(i) * sin(i) ) * sin(log( exp(i) * sin(i) ));
+    //    for(int i=0; i < 10000000; i++)
+    //    {
+    //        double a = log( exp(i) * sin(i) ) * sin(log( exp(i) * sin(i) ));
 
-//    }
+    //    }
 
     WDrun.ContinuousPlot = 1;
     WDrun.ContinuousTrigger = 1;
@@ -215,7 +215,7 @@ void MyWorker::Readout_loop()
         {
             uint32_t lstatus;
             ret = CAEN_DGTZ_ReadRegister(handle, CAEN_DGTZ_ACQ_STATUS_ADD, &lstatus);
-            //qDebug() << "BufferSize = 0. ret = " << ret << " time = " << get_time() << endl;
+            //qDebug() << "BufferSize = 0. ret = " << ret << " time = " << QDateTime::currentMSecsSinceEpoch() << endl;
             if (lstatus & (0x1 << 19))
             {
                 ErrCode = ERR_OVERTEMP;
@@ -228,22 +228,25 @@ void MyWorker::Readout_loop()
         /* Calculate throughput and trigger rate (every second) */
         Nb += BufferSize;
         Ne += NumEvents;
-        CurrentTime = get_time();
+        CurrentTime = QDateTime::currentMSecsSinceEpoch();
         ElapsedTime = CurrentTime - PrevRateTime;
-
         nCycles++;
+
+        qDebug() << "CurrentTime = " << CurrentTime << endl;
+        qDebug() << "PrevRateTime = " << PrevRateTime << endl;
+        qDebug() << "ElapsedTime = " << ElapsedTime << endl;
 
         if( ElapsedTime >= 1000)
         {
             //qDebug() << "time[s] = " << ElapsedTime / 1000.0 << endl;
             //emit this->RedrawGraphs();
 
-           qDebug() << "Thread in Readout_loop() is " << QThread::currentThreadId();
-           qDebug() << "WDcfg.InterruptNumEvents " << WDcfg.InterruptNumEvents;
-           qDebug() << "BufferSize " << BufferSize ;
-           qDebug() << "handle " << handle;
-           qDebug() << "WDrun.Quit " << WDrun.Quit;
-           qDebug() << "WDrun.ContinuousWrite " << WDrun.ContinuousWrite;
+            qDebug() << "Thread in Readout_loop() is " << QThread::currentThreadId();
+            qDebug() << "WDcfg.InterruptNumEvents " << WDcfg.InterruptNumEvents;
+            qDebug() << "BufferSize " << BufferSize ;
+            qDebug() << "handle " << handle;
+            qDebug() << "WDrun.Quit " << WDrun.Quit;
+            qDebug() << "WDrun.ContinuousWrite " << WDrun.ContinuousWrite;
 
             if (WDrun.ContinuousTrigger)
                 qDebug() << "Continuous trigger is enabled\n";
@@ -284,130 +287,141 @@ void MyWorker::Readout_loop()
 
         }//if( ElapsedTime >= 1000)
 
+        qDebug() << "*********** " ;
+        qDebug() << "QDateTime::currentMSecsSinceEpoch() = " << QDateTime::currentMSecsSinceEpoch() << endl;
+        qDebug() << "TDrawFinished = " << TDrawFinished << endl;
+        qDebug() << "(QDateTime::currentMSecsSinceEpoch() > TDrawFinished) = " << (QDateTime::currentMSecsSinceEpoch() > TDrawFinished) << endl;
+        qDebug() << "PrevPlotTime = " << PrevPlotTime << endl;
+        qDebug() << "UpdateTime = " << UpdateTime << endl;
+        qDebug() << "QDateTime::currentMSecsSinceEpoch() - PrevPlotTime = " << QDateTime::currentMSecsSinceEpoch() - PrevPlotTime << endl;
+        qDebug() << "(QDateTime::currentMSecsSinceEpoch() - PrevPlotTime > UpdateTime /*set period of update*/) = " << (QDateTime::currentMSecsSinceEpoch() - PrevPlotTime > UpdateTime /*set period of update*/) << endl;
 
-            if(WDrun.ContinuousPlot && (BufferSize != 0) && (get_time() > TDrawFinished /*plot is busy?*/) && (get_time() - PrevPlotTime > UpdateTime /*set period of update*/)  )
+        qDebug() << "*********** " ;
+
+        if(WDrun.ContinuousPlot && (BufferSize != 0) && (QDateTime::currentMSecsSinceEpoch() > TDrawFinished /*plot is busy?*/) && (QDateTime::currentMSecsSinceEpoch() - PrevPlotTime > UpdateTime /*set period of update*/)  )
+        {
+            qint64 time_label_start = QDateTime::currentMSecsSinceEpoch();
+            qDebug() << "QDateTime::currentMSecsSinceEpoch() - TDrawFinished (sec.) = " << (QDateTime::currentMSecsSinceEpoch() - TDrawFinished) / 1000.0 << endl;
+            qDebug() << "UpdateTime (ms) = " << UpdateTime << endl;
+
+            uint N_ch;
+            switch (BoardInfo.FamilyCode)
             {
-                long time_label_start = get_time();
-                qDebug() << "get_time() - TDrawFinished (sec.) = " << (get_time() - TDrawFinished) / 1000.0 << endl;
-                qDebug() << "UpdateTime (ms) = " << UpdateTime << endl;
+            case CAEN_DGTZ_XX720_FAMILY_CODE:
+            {
+                N_ch = 8;
+                break;
+            }
+            case CAEN_DGTZ_XX740_FAMILY_CODE:
+            {
+                N_ch = 64;
+                break;
+            }
+            default:
+                qDebug() << "add device in list" << endl;
 
-                uint N_ch;
-                switch (BoardInfo.FamilyCode)
+            }
+
+            array_y_data.resize(N_ch);
+
+            //clear vectors
+            for(int i = 0; i < N_ch; i++)
+            {
+                array_y_data[i].clear();
+            }
+            array_x_data.clear();
+
+
+
+            /* Analyze data */
+            for(i = 0; i < (int)NumEvents; i++)
+            {
+
+
+                /* Get one event from the readout buffer */
+                ret = CAEN_DGTZ_GetEventInfo(handle, buffer, BufferSize, i, &EventInfo, &EventPtr);
+                if (ret)
                 {
-                    case CAEN_DGTZ_XX720_FAMILY_CODE:
-                {
-                    N_ch = 8;
-                    break;
+                    ErrCode = ERR_EVENT_BUILD;
+                    //goto QuitProgram;
+                    QuitProgram();
+                    return;
                 }
-                case CAEN_DGTZ_XX740_FAMILY_CODE:
-                {
-                    N_ch = 64;
-                    break;
-                }
-                default:
-                    qDebug() << "add device in list" << endl;
-
-                }
-
-                array_y_data.resize(N_ch);
-
-                //clear vectors
-                for(int i = 0; i < N_ch; i++)
-                {
-                    array_y_data[i].clear();
-                }
-                array_x_data.clear();
 
 
-
-                /* Analyze data */
-              for(i = 0; i < (int)NumEvents; i++)
-                {
-
-
-                    /* Get one event from the readout buffer */
-                    ret = CAEN_DGTZ_GetEventInfo(handle, buffer, BufferSize, i, &EventInfo, &EventPtr);
-                    if (ret)
+                /* decode the event */
+                if (WDcfg.Nbit == 8)
+                    ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event8);
+                else
+                    if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)
                     {
-                        ErrCode = ERR_EVENT_BUILD;
-                        //goto QuitProgram;
-                        QuitProgram();
-                        return;
+                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event16); // it's my case
+                    }
+                    else
+                    {
+                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event742);
+                        if (WDcfg.useCorrections != -1)
+                        { // if manual corrections
+                            uint32_t gr;
+                            for (gr = 0; gr < WDcfg.MaxGroupNumber; gr++)
+                            {
+                                if ( ((WDcfg.EnableMask >> gr) & 0x1) == 0)
+                                    continue;
+                                ApplyDataCorrection( &(X742Tables[gr]), WDcfg.DRS4Frequency, WDcfg.useCorrections, &(Event742->DataGroup[gr]));
+                            }
+                        }
                     }
 
 
-                    /* decode the event */
-                    if (WDcfg.Nbit == 8)
-                        ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event8);
-                    else
-                        if (BoardInfo.FamilyCode != CAEN_DGTZ_XX742_FAMILY_CODE)
+                if (ret)
+                {
+                    ErrCode = ERR_EVENT_BUILD;
+                    //goto QuitProgram;
+                    QuitProgram();
+                    return;
+                }
+
+
+                bool flag = true;
+
+
+
+                for(ch=0; ch<WDcfg.Nch; ch++)
+                {
+                    int Size = (WDcfg.Nbit == 8) ? Event8->ChSize[ch] : Event16->ChSize[ch];
+                    if (Size <= 0)
+                    {
+                        continue;
+                    }
+
+                    for(int index = 0; index < Size; index++)
+                    {
+                        if(flag)
                         {
-                            ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event16); // it's my case
+                            array_x_data.push_back( (index  + i * Size) * (WDcfg.Ts / 1000.0)  );
+                        }
+
+                        if(WDcfg.Nbit != 8)
+                        {
+                            array_y_data[ch].push_back( (2000 / (pow(2.0, WDcfg.Nbit) - 1) ) * Event16->DataChannel[ch][index]  - 1000 ); // add value in mV
                         }
                         else
-                        {
-                            ret = CAEN_DGTZ_DecodeEvent(handle, EventPtr, (void**)&Event742);
-                            if (WDcfg.useCorrections != -1)
-                            { // if manual corrections
-                                uint32_t gr;
-                                for (gr = 0; gr < WDcfg.MaxGroupNumber; gr++)
-                                {
-                                    if ( ((WDcfg.EnableMask >> gr) & 0x1) == 0)
-                                        continue;
-                                    ApplyDataCorrection( &(X742Tables[gr]), WDcfg.DRS4Frequency, WDcfg.useCorrections, &(Event742->DataGroup[gr]));
-                                }
-                            }
-                        }
-
-
-                    if (ret)
-                    {
-                        ErrCode = ERR_EVENT_BUILD;
-                        //goto QuitProgram;
-                        QuitProgram();
-                        return;
+                            qDebug() << "add device in list" << endl;
                     }
 
+                    qDebug() << "ch = " << ch << endl;
 
-                    bool flag = true;
-
-
-
-                    for(ch=0; ch<WDcfg.Nch; ch++)
-                    {
-                        int Size = (WDcfg.Nbit == 8) ? Event8->ChSize[ch] : Event16->ChSize[ch];
-                        if (Size <= 0)
-                        {
-                            continue;
-                        }
-
-                        for(int index = 0; index < Size; index++)
-                        {
-                            if(flag)
-                            {
-                                array_x_data.push_back( (index  + i * Size) * (WDcfg.Ts / 1000.0)  );
-                            }
-
-                            if(WDcfg.Nbit != 8)
-                            {
-                                array_y_data[ch].push_back( (2000 / (pow(2.0, WDcfg.Nbit) - 1) ) * Event16->DataChannel[ch][index]  - 1000 ); // add value in mV
-                            }
-                            else
-                                qDebug() << "add device in list" << endl;
-                        }
-
-                        qDebug() << "ch = " << ch << endl;
-
-                        flag = false;
-                    }
-
-
+                    flag = false;
                 }
 
-                emit this->RedrawGraphsFull(array_x_data, array_y_data);
-                qDebug() << "Delta time (prepare data)= " << get_time() - time_label_start;
-                PrevPlotTime = get_time();
+
             }
+
+            emit this->RedrawGraphsFull(array_x_data, array_y_data);
+            qDebug() << "time_label_start = " << time_label_start;
+            qDebug() << "Delta time (prepare data)= " << QDateTime::currentMSecsSinceEpoch() - time_label_start;
+            PrevPlotTime = QDateTime::currentMSecsSinceEpoch();
+        }
 
         //}//if( ElapsedTime >= 1000)
 
@@ -541,16 +555,16 @@ void MyWorker::Readout_loop()
 
 void MyWorker::ContinuousTrigger()
 {
-     //WDrun.ContinuousTrigger = 1;
+    //WDrun.ContinuousTrigger = 1;
     WDrun.ContinuousTrigger ^= 1;
 }
 
- void MyWorker::SetRecordLength(double value)
- {
+void MyWorker::SetRecordLength(double value)
+{
     WDcfg.RecordLength = value;
     qDebug() << "WDcfg.RecordLength = " << WDcfg.RecordLength << endl;
     Restart();
- }
+}
 
 void MyWorker::Restart()
 {
@@ -665,7 +679,7 @@ void MyWorker::Program_the_digitizer()
                 }
                 if ((ret = CAEN_DGTZ_EnableDRS4Correction(handle)) != CAEN_DGTZ_Success)
                 {
-                   // goto QuitProgram;
+                    // goto QuitProgram;
                     QuitProgram();
                     return;
                 }
@@ -706,7 +720,7 @@ void MyWorker::Program_the_digitizer()
     else
         printf("[s] start/stop the acquisition, [q] quit, [SPACE] help\n");
     WDrun.Restart = 0;
-    PrevRateTime = get_time();
+    PrevRateTime = QDateTime::currentMSecsSinceEpoch();
     /* *************************************************************************************** */
     /* *************************************************************************************** */
     /* end program the digitizer                                                                   */
@@ -1008,10 +1022,10 @@ void MyWorker::SetExternalTrigger(bool value)
 {
     if(value)
     {
-//        for(i=0; i<8; i++)
-//        {
-//            WDcfg.ChannelTriggerMode[i] = CAEN_DGTZ_TRGMODE_DISABLED;
-//        }
+        //        for(i=0; i<8; i++)
+        //        {
+        //            WDcfg.ChannelTriggerMode[i] = CAEN_DGTZ_TRGMODE_DISABLED;
+        //        }
 
         WDcfg.ExtTriggerMode = CAEN_DGTZ_TRGMODE_ACQ_ONLY;
 
@@ -1027,10 +1041,10 @@ void MyWorker::SetExternalTrigger(bool value)
     Restart();
 }
 
- void MyWorker::SetTDrawFinished(long val)
- {
-     TDrawFinished = val;
- }
+void MyWorker::SetTDrawFinished(long val)
+{
+    TDrawFinished = val;
+}
 
 void MyWorker::SetUpdateTime(int val)
 {

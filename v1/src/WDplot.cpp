@@ -32,6 +32,9 @@
 
 #include "WDplot.h"
 
+/* vlad */
+#include <QDebug>
+/* vlad */
 
 /* Defines */
 #define PLOT_DATA_FILE   "PlotData.txt"
@@ -67,6 +70,7 @@ static long get_time()
 	struct _timeb timebuffer;
 	_ftime( &timebuffer );
 	time_ms = (long)timebuffer.time * 1000 + (long)timebuffer.millitm;
+    qDebug() << "(long)timebuffer.time * 1000 = " << (long)timebuffer.time * 1000 << endl;
 #else
 	struct timeval t1;    
 	struct timezone tz;

@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\fft.o
+./release\keyb.o
+./release\WaveDump.o
+./release\WDconfig.o
+./release\WDplot.o
+./release\X742CorrectionRoutines.o
+./release\qcustomplot.o
+./release\myworker.o
+./release\moc_mainwindow.o
+./release\moc_qcustomplot.o
+./release\moc_myworker.o
+);

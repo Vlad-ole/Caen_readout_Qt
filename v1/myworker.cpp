@@ -82,8 +82,9 @@ void MyWorker::Init()
 
     WDcfg.out_file_isheader = false;
     WDcfg.out_file_type = ASCII;
-    WDcfg.TriggerEdge = 0;
-    WDcfg.PostTrigger = 80;
+    WDcfg.TriggerEdge = 0; //Set Rising trigger by default
+    WDcfg.FPIOtype = 0; //Set NIM I/O by default
+    WDcfg.PostTrigger = 80; //Set 80% of posttrigger by default
 
     WDcfg.GroupTrgEnableMask[0] = 1;
     WDcfg.GroupTrgEnableMask[1] = 0;
@@ -1009,6 +1010,24 @@ void MyWorker::SetRisingFalling(bool IsRising)
 
     Restart();
 }
+
+void MyWorker::SetIsNIM(bool IsNIM)
+{
+    if(IsNIM)
+    {
+        WDcfg.FPIOtype = 0;
+        qDebug() << "WDcfg.FPIOtype = NIM" << endl;
+    }
+    else
+    {
+        WDcfg.FPIOtype = 1;
+        qDebug() << "WDcfg.FPIOtype = TTL" << endl;
+    }
+
+
+    Restart();
+}
+
 
 void MyWorker::SetDCOffset(int gr, int dc)
 {

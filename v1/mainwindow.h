@@ -311,6 +311,10 @@ private slots:
 
     void on_spinBox_2_valueChanged(int arg1);
 
+    void on_radioButton_NIM_clicked(bool checked);
+
+    void on_radioButton_TTL_clicked(bool checked);
+
 public slots:
     void Message(QString);
     void InitializationComplete();
@@ -372,6 +376,7 @@ signals:
 
     void SetContinuousTrigger(bool);
     void SetRisingFalling(bool);
+    void SetIsNIM(bool);
     void SetDCOffset(int, int);
 
     void SetExternalTrigger(bool);

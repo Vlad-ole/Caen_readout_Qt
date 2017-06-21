@@ -47,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( this, SIGNAL( SetExternalTrigger(bool) ), worker, SLOT( SetExternalTrigger(bool) ) );
     connect( this, SIGNAL( SetDCOffset(int,int) ), worker, SLOT( SetDCOffset(int,int) ) );
     connect( this, SIGNAL( SetRisingFalling(bool) ), worker, SLOT( SetRisingFalling(bool) ) );
+    connect( this, SIGNAL( SetIsNIM(bool) ), worker, SLOT( SetIsNIM(bool) ) );
     connect( this, SIGNAL( SetContinuousTrigger(bool)) , worker, SLOT( SetContinuousTrigger(bool) ) );
     connect( this, SIGNAL( SetEventsPerFile(int) ), worker, SLOT( SetEventsPerFile(int) ), Qt::DirectConnection );
     connect( this, SIGNAL( SetFolder(QString) ) , worker, SLOT( SetFolder(QString) ), Qt::DirectConnection);
@@ -2464,6 +2465,7 @@ void MainWindow::on_radioButton_3_clicked(bool checked)
     emit this->SetRisingFalling(false);
 }
 
+
 void MainWindow::on_pushButton_9_clicked()
 {
     ui->spinBox_dcoffset_gr0->setValue(0);
@@ -2608,3 +2610,14 @@ void MainWindow::on_spinBox_2_valueChanged(int arg1)
 {
     emit this->SetPostTrigger(arg1);
 }
+
+void MainWindow::on_radioButton_NIM_clicked(bool checked)
+{
+    emit this->SetIsNIM(true);
+}
+
+void MainWindow::on_radioButton_TTL_clicked(bool checked)
+{
+    emit this->SetIsNIM(false);
+}
+

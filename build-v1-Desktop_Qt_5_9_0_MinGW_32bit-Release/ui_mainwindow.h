@@ -190,6 +190,9 @@ public:
     QGroupBox *groupBox_postTrigger;
     QSlider *verticalSlider_postTrigger;
     QSpinBox *spinBox_2;
+    QGroupBox *groupBox_NIM_TTL;
+    QRadioButton *radioButton_NIM;
+    QRadioButton *radioButton_TTL;
     QWidget *tab_13;
     QWidget *gridLayoutWidget_14;
     QGridLayout *gridLayout_14;
@@ -1108,6 +1111,16 @@ public:
         spinBox_2->setGeometry(QRect(10, 180, 61, 20));
         spinBox_2->setMaximum(100);
         spinBox_2->setValue(80);
+        groupBox_NIM_TTL = new QGroupBox(groupBox_3);
+        groupBox_NIM_TTL->setObjectName(QStringLiteral("groupBox_NIM_TTL"));
+        groupBox_NIM_TTL->setGeometry(QRect(360, 30, 71, 71));
+        radioButton_NIM = new QRadioButton(groupBox_NIM_TTL);
+        radioButton_NIM->setObjectName(QStringLiteral("radioButton_NIM"));
+        radioButton_NIM->setGeometry(QRect(10, 20, 51, 17));
+        radioButton_NIM->setChecked(true);
+        radioButton_TTL = new QRadioButton(groupBox_NIM_TTL);
+        radioButton_TTL->setObjectName(QStringLiteral("radioButton_TTL"));
+        radioButton_TTL->setGeometry(QRect(10, 40, 51, 17));
         tabWidget_2->addTab(tab, QString());
         tab_13 = new QWidget();
         tab_13->setObjectName(QStringLiteral("tab_13"));
@@ -2122,7 +2135,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "CAEN readout (v 1.0)", Q_NULLPTR));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "CAEN readout (v 1.2)", Q_NULLPTR));
         actionAbout_author->setText(QApplication::translate("MainWindow", "About author", Q_NULLPTR));
         actionAbout_program->setText(QApplication::translate("MainWindow", "About program", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "Transfer speed [MB / s]", Q_NULLPTR));
@@ -2172,6 +2185,9 @@ public:
         radioButton_2->setText(QApplication::translate("MainWindow", "Rising", Q_NULLPTR));
         radioButton_3->setText(QApplication::translate("MainWindow", "Falling", Q_NULLPTR));
         groupBox_postTrigger->setTitle(QApplication::translate("MainWindow", "PostTrigger (%)", Q_NULLPTR));
+        groupBox_NIM_TTL->setTitle(QApplication::translate("MainWindow", "I/O logic", Q_NULLPTR));
+        radioButton_NIM->setText(QApplication::translate("MainWindow", "NIM", Q_NULLPTR));
+        radioButton_TTL->setText(QApplication::translate("MainWindow", "TTL", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindow", "Trigger main settings", Q_NULLPTR));
         label_31->setText(QApplication::translate("MainWindow", "gr0", Q_NULLPTR));
         label_27->setText(QApplication::translate("MainWindow", "gr1", Q_NULLPTR));

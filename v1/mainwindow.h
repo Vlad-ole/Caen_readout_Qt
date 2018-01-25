@@ -315,6 +315,8 @@ private slots:
 
     void on_radioButton_TTL_clicked(bool checked);
 
+    void on_checkBox_sound_clicked(bool checked);
+
 public slots:
     void Message(QString);
     void InitializationComplete();
@@ -364,6 +366,7 @@ signals:
     void MaskChannel(int, bool);
     void SetTriggerValue(int, int);
     void MaskChannelAll(bool);
+    void EnableSound(bool val);
 
     void CHANNEL_TRIGGER_signal(int, bool);
     void CHANNEL_TRIGGER_group(int, bool);

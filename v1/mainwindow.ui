@@ -795,6 +795,19 @@ p, li { white-space: pre-wrap; }
       </item>
      </layout>
     </widget>
+    <widget class="QCheckBox" name="checkBox_sound">
+     <property name="geometry">
+      <rect>
+       <x>103</x>
+       <y>130</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sound (affect on performance)</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
@@ -1459,7 +1472,7 @@ p, li { white-space: pre-wrap; }
         <x>10</x>
         <y>20</y>
         <width>468</width>
-        <height>181</height>
+        <height>171</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_14">

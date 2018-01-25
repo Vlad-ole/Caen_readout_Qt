@@ -52,6 +52,8 @@ public:
     char ConfigFileName[100];
     int ReloadCfgStatus;
 
+    bool is_sound;
+
 
     void Program_the_digitizer();
     void Mask_the_channels();
@@ -90,6 +92,7 @@ public slots:
     void MaskChannel(int , bool);
     void SetTriggerValue(int, int);
     void MaskChannelAll(bool);
+    void EnableSound(bool val);
 
     void CHANNEL_TRIGGER_signal(int, bool);
     void CHANNEL_TRIGGER_group(int, bool);

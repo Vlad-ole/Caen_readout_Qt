@@ -76,6 +76,7 @@ public:
     QVBoxLayout *verticalLayout_5;
     QLabel *label_34;
     QSpinBox *spinBox_UpdateTime;
+    QCheckBox *checkBox_sound;
     QLabel *label_3;
     QLCDNumber *lcdNumber_2;
     QTabWidget *tabWidget;
@@ -605,6 +606,9 @@ public:
 
         verticalLayout_5->addWidget(spinBox_UpdateTime);
 
+        checkBox_sound = new QCheckBox(groupBox_7);
+        checkBox_sound->setObjectName(QStringLiteral("checkBox_sound"));
+        checkBox_sound->setGeometry(QRect(103, 130, 181, 21));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(140, 620, 121, 31));
@@ -1126,7 +1130,7 @@ public:
         tab_13->setObjectName(QStringLiteral("tab_13"));
         gridLayoutWidget_14 = new QWidget(tab_13);
         gridLayoutWidget_14->setObjectName(QStringLiteral("gridLayoutWidget_14"));
-        gridLayoutWidget_14->setGeometry(QRect(10, 20, 468, 181));
+        gridLayoutWidget_14->setGeometry(QRect(10, 20, 468, 171));
         gridLayout_14 = new QGridLayout(gridLayoutWidget_14);
         gridLayout_14->setSpacing(6);
         gridLayout_14->setContentsMargins(11, 11, 11, 11);
@@ -2161,6 +2165,7 @@ public:
         label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">y min[mV]</p></body></html>", Q_NULLPTR));
         label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">y max[mV]</p></body></html>", Q_NULLPTR));
         label_34->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Update time [ms]</p><p align=\"center\">from 200 to 5000</p></body></html>", Q_NULLPTR));
+        checkBox_sound->setText(QApplication::translate("MainWindow", "Sound (affect on performance)", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainWindow", "Trigger rate [Hz]", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "gr 0", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "gr 1", Q_NULLPTR));

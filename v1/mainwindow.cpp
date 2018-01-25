@@ -55,6 +55,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( this, SIGNAL( CHANNEL_TRIGGER_all(bool) ), worker, SLOT( CHANNEL_TRIGGER_all(bool) ) );
     connect( this, SIGNAL(CHANNEL_TRIGGER_signal(int,bool)), worker, SLOT(CHANNEL_TRIGGER_signal(int,bool)) );
     connect( this, SIGNAL( MaskChannelAll(bool) ), worker, SLOT( MaskChannelAll(bool) ) );
+    connect( this, SIGNAL( EnableSound(bool) ), worker, SLOT( EnableSound(bool) ) );
     connect( this, SIGNAL(Restart()), worker, SLOT(Restart()) );
     connect( this, SIGNAL(SetTriggerValue(int,int)), worker, SLOT(SetTriggerValue(int,int)) );
     connect( this, SIGNAL(MaskChannel(int,bool)), worker, SLOT(MaskChannel(int,bool)), Qt::DirectConnection);
@@ -2621,3 +2622,8 @@ void MainWindow::on_radioButton_TTL_clicked(bool checked)
     emit this->SetIsNIM(false);
 }
 
+
+void MainWindow::on_checkBox_sound_clicked(bool checked)
+{
+    emit this->EnableSound(checked);
+}

@@ -11,6 +11,8 @@ void MyWorker::Init()
 {
     qDebug() << "Thread in Init() is " << QThread::currentThreadId();
 
+    is_sound = false;
+
     events_per_file = 10;
     output_folder = "";
     run_counter = 0;
@@ -203,6 +205,11 @@ void MyWorker::Readout_loop()
         NumEvents = 0;
         if (BufferSize != 0)
         {
+            if(is_sound)
+            {
+                Beep(700, 300);
+                Beep(500, 500); // (hertz,milliseconds)
+            }
             ret = CAEN_DGTZ_GetNumEvents(handle, buffer, BufferSize, &NumEvents);
             if (ret)
             {
@@ -806,6 +813,12 @@ void MyWorker::EnableContinuousPlot()
 void MyWorker::DisableContinuousPlot()
 {
     WDrun.ContinuousPlot = 0;
+}
+
+void MyWorker::EnableSound(bool val)
+{
+    is_sound = val;
+    qDebug() << " Sound is " << val << endl;
 }
 
 void MyWorker::MaskChannel(int ch, bool Enable)

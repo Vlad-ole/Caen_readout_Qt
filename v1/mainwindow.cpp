@@ -20,9 +20,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     qDebug() << "Thread in MainWindow is " << QThread::currentThreadId();
 
-
-
     ui->setupUi(this);
+
+
+
     ui->groupBox_3->setEnabled(false);
     ui->groupBox_6->setEnabled(false);
     ui->groupBox_7->setEnabled(false);
